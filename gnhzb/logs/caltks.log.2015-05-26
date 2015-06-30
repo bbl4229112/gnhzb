@@ -1,0 +1,4 @@
+2015-05-26 20:30:52,583 [main] WARN  [net.sf.json.JSONObject] - Tried to assign property classcode:java.lang.String to bean of class edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree
+2015-05-26 20:30:52,584 [main] WARN  [net.sf.json.JSONObject] - Tried to assign property flag:java.lang.Integer to bean of class edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree
+2015-05-26 20:30:52,584 [main] WARN  [net.sf.json.JSONObject] - Tried to assign property classname:java.lang.String to bean of class edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree
+2015-05-26 20:30:52,584 [main] WARN  [net.sf.json.JSONObject] - Tried to assign property rule:java.lang.String to bean of class edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree

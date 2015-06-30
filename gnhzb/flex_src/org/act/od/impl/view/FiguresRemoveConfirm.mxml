@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+				layout="absolute" width="336" height="156" 
+				title="Figure Remove" initialize="init()">
+	
+
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.events.FigureCanvasAppEvent;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import mx.events.CloseEvent;
+		
+			import mx.managers.PopUpManager;
+			import mx.binding.utils.BindingUtils;
+
+
+		[Bindable] private var text:String = "Do you want to remove this figure?";
+
+
+		public function init():void{
+			
+		}
+
+		public function onCancleHandle(event:MouseEvent):void{
+			PopUpManager.removePopUp(this);
+		}
+		
+		private var feFileID :String;
+		
+		public function setFileID(fileID :String) :void { 
+			this.feFileID = fileID;
+		}
+		
+		public function onConfirmHandle(event:MouseEvent):void{
+			PopUpManager.removePopUp(this);
+			
+			//dispatch event
+			new FigureCanvasAppEvent(FigureCanvasAppEvent.FIGURE_DELETE_FROM_CANVAS, 
+									 {fileID :feFileID}  ).dispatch();
+		}
+
+		]]>
+	</mx:Script>
+
+	<mx:HRule x="0" y="79" width="316"/>
+	<mx:Button label="Confirm" x="64" y="89" click="onConfirmHandle(event)" />
+	<mx:Button label="Cancel" x="186" y="89" click="onCancleHandle(event)"  width="71" height="22"/>
+	<mx:Label x="39" y="31" id="lb" width="218" height="40" text="{this.text}"/>
+
+</mx:TitleWindow>

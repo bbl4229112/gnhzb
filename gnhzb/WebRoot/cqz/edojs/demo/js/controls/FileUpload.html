@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+第三方开源的FLASH上传组件：swfupload<br />
+官方网站: <a href="http://www.swfupload.org/" target="_blank" style="color:Blue;">http://www.swfupload.org</a><br />
+文档翻译: <a href="http://www.v-sky.com/doc/swfupload/Documentation.html" style="color:Blue;" target="_blank">http://www.v-sky.com/doc/swfupload/Documentation.html</a><br /><br />            
+
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<!--需要引用第三方库:swfupload-->
+<script src="../../../scripts/thirdlib/swfupload/swfupload.js" type="text/javascript"></script>
+<script type="text/javascript">
+Edo.create({
+    id: 'box',
+    type: 'box',
+    render: document.body,
+    children: [
+        {
+            type: 'box', cls: 'e-toolbar',width: '100%', layout: 'horizontal', padding: 2,
+            children: [                
+                {
+                    type: 'button',
+                    text: '取消上传',
+                    onclick: function(e){       
+                        fileupload1.upload.cancelUpload();
+                    }
+                },
+                {type:'space',width:'100%'},
+                {
+                    type: 'button',
+                    text: '上传',
+                    onclick: function(e){
+                        //upload对象就是swfupload的原生对象
+                        fileupload1.upload.startUpload();
+                    }
+                }
+            ]
+        },
+        {
+            id: 'fileupload1',
+            type: 'fileupload',
+            width: 300,
+            swfUploadConfig: {              //swfUploadConfig配置对象请参考swfupload组件说明
+                
+                upload_url: 'upload.aspx', //上传地址
+                flash_url : '../../../scripts/thirdlib/swfupload/swfupload.swf',
+                button_image_url : 'XPButtonUploadText_61x22.png',      //按钮图片地址
+                file_types: '*.gif;*.png;*.jpg',                        //上传文件后缀名限制
+                file_post_name: 'Fdata',                                //上传的文件引用名
+                file_size_limit: '1000',                               //文件上传
+                post_params: {                                  //上传文件的时候, 可以附加一些信息参数
+                    id: 'abc'
+                }
+            },
+            
+            onfilequeueerror: function(e){
+                alert("文件选择错误:"+e.message);
+            },
+            onfilequeued: function(e){
+                
+                //alert("文件选择成功");
+                
+                //this.upload();    //也可以在选择文件后, 默认直接上传
+            },
+            
+            onfilestart: function(e){   
+                //alert("开始上传");
+                box.mask();
+            },
+            onfileerror: function(e){
+                alert("上传失败:"+e.message);
+                
+                box.unmask();
+            },
+            onfilesuccess: function(e){    
+                alert("上传成功");
+                Edo.util.Dom.append(document.body, '<img src="/Upload/'+e.serverData+'"/>');
+                
+                box.unmask();
+            }
+        }        
+    ]
+});
+</script>

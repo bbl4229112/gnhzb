@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Image xmlns:mx="http://www.adobe.com/2006/mxml" initialize="init()" styleName="glowColor">
+		<mx:Script>
+		<![CDATA[
+			private var glowFilter:GlowFilter;
+			
+//			[IconFile("GlowButton.png")]
+//			[Style(name="glowColor", type="uint", format="Color")]
+//			
+//			[Bindable]
+//			[Style ]
+			private function init():void{
+				this.glowFilter = new GlowFilter;
+				this.glowFilter.blurX = 12; glowFilter.blurY = 9;
+				this.glowFilter.alpha = 1;
+				this.glowFilter.quality = 2;
+				this.glowFilter.knockout = false;
+				this.glowFilter.strength = 1; 
+				this.addEventListener(MouseEvent.MOUSE_OVER, handleMouseOver);
+				this.addEventListener(MouseEvent.MOUSE_OUT, handleMouseOut);
+				this.addEventListener(MouseEvent.MOUSE_DOWN, handleMouseDown);
+				this.addEventListener(MouseEvent.MOUSE_UP, handleMouseUp);
+			}
+			private function handleMouseOver(event:MouseEvent):void {
+				this.filters = [this.glowFilter];
+			}
+		
+			private function handleMouseOut(event:MouseEvent):void {
+				this.filters = null;
+			}
+			
+			private function handleMouseDown(event:MouseEvent):void {
+				this.x += 1;
+				this.y += 1;
+			}
+			private function handleMouseUp(event:MouseEvent):void {
+				this.x -= 1;
+				this.y -= 1;
+			}
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void{
+				this.glowFilter.color = this.getStyle("glowColor");
+				super.updateDisplayList(unscaledWidth, unscaledHeight);
+			}
+		]]>
+	</mx:Script>
+</mx:Image>

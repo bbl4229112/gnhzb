@@ -1,0 +1,197 @@
+body {
+    *font:200 14px 'Microsoft Yahei',arial,verdana;
+    background-color:#FFFFFF;
+    font: 12px/1.5 'Lucida Grande',tahoma,arial,ËÎÌו;
+}
+#top-panel a{ 
+    text-decoration:none; 
+    color:#333;
+}
+#top-panel a:visited {
+    color: #52687e;
+    text-decoration: none;
+}
+#top-panel a:link {
+    color: #122E67;
+    text-decoration: none;
+}
+#top-panel a:hover, #top-panel a:active, #top-panel a:focus {
+    color: #ff8400;
+    text-decoration: underline;
+}
+/* Header */ 
+#header{
+    zoom:1;
+    width:1003px;
+    margin:0 auto;
+    content: "";
+    display: table;
+}
+#header .logoer{
+    background: url("images/menu_assets/kminindex.gif") no-repeat scroll 0 -33px transparent;
+    margin-top:10px;
+    height:50px;
+    width:224px;
+    display:block;
+    float:left;
+}
+.clear {
+    clear:both;
+}
+.mt10 {
+    margin-top:10px;
+}
+.mb10 {
+    margin-bottom:10px;
+}
+#header:after,#header:before,.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+    overflow: hidden;
+}
+.clearfix:after {
+    clear: both;
+    display: block;
+    height: 0;
+}
+#top-panel{
+    min-width:1003px;
+    height: 41px;
+    border-top: 3px solid #ff8500;
+    border-bottom: 1px solid #EDEEF0;
+    background-color: #FCFCFC;
+    margin-bottom:10px;
+}
+#top-panel .top-panel-content{
+    width:1003px;
+    margin:0 auto;
+}
+#top-panel .top-panel-content span{
+    margin-right:15px;
+}
+#top-panel .top-panel-content-left{
+    float:left;
+    display: block;
+    height:41px;
+    font:100 20px/41px 'Microsoft Yahei';
+}
+#top-panel .top-panel-content-right{
+    float:right;
+    display:block;
+    height:41px;
+    font:100 13px/41px 'Microsoft Yahei';
+}
+#header #search-panel{
+    height:85px;
+    padding-top:10px;
+    display:block;
+}
+#header .data-search {
+    float:right;
+    padding-top: 16px;
+    width: 600px;
+}
+#header .data-search fieldset {
+    padding:0;
+    margin:0;
+    position: relative;
+}
+#header .data-search fieldset, img {
+    border: 0 none;
+}
+#header .data-search legend {
+    display: none;
+}
+legend {
+    color: #000000;
+}
+#header .data-search .search-box{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 2px 2px 2px 2px;
+    position: relative;
+}
+.data-search .search-box #searchText {
+    border: 1px solid #00709D;
+    border-radius: 2px 0 0 2px;
+    color: #000000;
+    font-weight: 900;
+    height: 30px;
+    left: 70px;
+    line-height: 20px;
+    margin: 0;
+    padding: 4px 3px 4px 5px;
+    width: 440px;
+    position:absolute;
+}
+.styled-select {
+   width: 240px;
+   height: 34px;
+   overflow: hidden;
+   background: url(/20130424/down_arrow_select.jpg) no-repeat right #ddd;
+   border: 1px solid #ccc;
+}
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+}
+#searchType {
+    width: 70px;
+    z-index:9;
+    position:absolute;
+    zoom:1;
+}
+#selType{
+    border:1px solid #006B98;
+    cursor:pointer;
+    background-color:#fff;
+    background: url(/20130424/down_arrow_select.png) no-repeat top right transparent;
+    width:71px;
+    height:30px;
+    letter-spacing:2px;
+    font:500 14px/30px 'ËÎÌו';
+    text-align:left;
+    padding-left:7px;
+}
+#searchType ul {
+    background-color:#fff;
+    width:69px;
+    zoom:1;
+    position:absolute;
+    z-index:99;
+}
+#searchType ul li {
+    padding-left:10px;
+    height:24px;
+    letter-spacing:2px;
+    font:500 14px/24px 'ËÎÌו';
+    cursor:pointer;
+    display:none;
+}
+#searchType ul li:hover{
+    background-color:rgba(235, 201, 7, 0.08);
+}
+.data-search .search-box #searchBtn {
+    background-color: #666666;
+    background-position:0 -115px;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size:14px;
+    height: 30px;
+    letter-spacing: 4px;
+    line-height: 30px;
+    overflow: hidden;
+    width: 80px;
+}
+
+#hotwordsUL{ width:600px; display:block; clear:both; margin:0; padding:0; } 
+#hotwordsUL li{float:left;margin:10px 10px 0px 0px;text-overflow:ellipsis; overflow:hidden; word-break:break-all; white-space:nowrap;  padding:0px 0px 10px 0px;list-style-type:none;}
+#hotwordsUL li a{margin:5px 20px 0px 0px; max-width:106px; text-overflow:ellipsis; overflow:hidden; word-break:break-all; white-space:nowrap;  padding:0px 0px 10px 0px;}

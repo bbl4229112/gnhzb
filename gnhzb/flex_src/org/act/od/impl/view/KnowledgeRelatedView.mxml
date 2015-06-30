@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+		   initialize="knowledgeRelatedCanvas_initializeHandler(event)" resize="related_resizeHandler(event)" 
+		   xmlns:view="org.act.od.impl.view.*">	
+	<mx:Script>
+		<![CDATA[
+			import com.adobe.serialization.json.*;
+			
+			import flash.events.Event;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.controls.LinkButton;
+			import mx.controls.List;
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.RemoteObject;
+			
+			import org.act.od.framework.view.ViewLocator;
+			import org.act.od.impl.events.KnowledgeViewAppEvent;
+			import org.act.od.impl.figure.AbstractFigure;
+			import org.act.od.impl.model.FigureEditorModel;
+			import org.act.od.impl.model.KnowledgeViewModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.viewhelper.FigureAttributeNavigatorVH;
+			
+			[Bindable]
+			private var knowledgeViewModel:KnowledgeViewModel = OrDesignerModelLocator.getInstance().getKnowledgeViewModel();
+
+			private var currentFigure:AbstractFigure;
+			
+			private var knowledgeAddCanvas:KnowledgeAddCanvas;
+			
+			protected function deleteRecord_handler(event:Event):void {
+				if(knowledgeRelated.selectedItem == null) {
+					Alert.show("请选择要移除的的记录！", "提示");
+				} else {
+					Alert.show("您确认删除这条记录？", "提示", Alert.YES|Alert.NO,this,function(event:CloseEvent):void{
+						if(event.detail == Alert.YES) {
+							var col:DataGridColumn = knowledgeRelated.columns[0];
+							var krId:int = knowledgeRelated.selectedItem[col.dataField];
+							var remote:RemoteObject = new RemoteObject();
+							remote.destination = "knowledgeSource";
+							remote.deleteRecord(krId);
+							remote.addEventListener(ResultEvent.RESULT, deleteRecordResult_handler);
+						}
+					});
+				}
+			}
+			
+			protected function deleteRecordResult_handler(event:ResultEvent):void {
+				var result:String = event.result as String;
+				if(result == "删除成功！") {
+					currentFigure = OrDesignerModelLocator.getInstance().getKnowledgeInputModel().editedFigure;
+					new KnowledgeViewAppEvent(KnowledgeViewAppEvent.KNOWLEDGEVIEW_UPDATE,
+						{selectedFigure:currentFigure}).dispatch();				
+				} else {
+					Alert.show("删除失败！", "提示");
+				}
+			}
+			
+			private function RowNum(item:Object, column:DataGridColumn):String {
+				var index:int=this.knowledgeRelated.dataProvider.getItemIndex(item) + 1;
+				return String(index);
+			}					
+			
+			public function knowledgeView_handler(data:Object, linkButton:LinkButton):void
+			{
+//				if(data.knowledgeType != "问题") {
+//					var url:String = "../caltks/knowledge/viewfile!download.action?id=" + data.knowledgeId;
+//					var downloadURL:URLRequest = new URLRequest(url);
+//					var downloadFile:FileReference = new FileReference();
+//					downloadFile.download(downloadURL, data.titleName + data.knowledgeFilePath);
+//				} else {
+//					linkButton.setStyle("color", null);  //由于知识资源的显示问题，我这个人性化的设计是否成功也得不到测试，╮(╯_╰)╭，20120912.
+//				}
+				if(ExternalInterface.available == true) {
+					var func:String = "flexShowKnowledgeDetail";
+					var s:String = ExternalInterface.call(func, data.knowledgeId,data.titleName);
+					//Alert.show(s);
+				} else {
+					Alert.show("当前浏览器环境不支持此项操作，请联系管理员。");
+				}
+			}
+			
+			protected function knowledgeRelatedCanvas_initializeHandler(event:FlexEvent):void
+			{
+				knowledgeAddCanvas = new KnowledgeAddCanvas();
+				knowledgeAddCanvas.height = this.height;
+				this.addChild(knowledgeAddCanvas);
+				knowledgeAddCanvas.x = 520;
+				knowledgeAddCanvas.y = 0;			
+			}
+			
+			protected function related_resizeHandler(event:ResizeEvent):void
+			{
+				knowledgeAddCanvas.height = this.height;
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Label x="10" y="0" id="knowledgeRelatedLabel" width="250" height="23"  
+			  fontWeight="bold" text="该节点当前的支撑知识共【{knowledgeViewModel.knowledgeRelated.length}】条:"/>
+	<mx:DataGrid id="knowledgeRelated" x="10" y="26" width="500" height="{this.height-43}" variableRowHeight="true"
+				 dataProvider="{knowledgeViewModel.knowledgeRelated}">
+		<mx:columns>
+			<mx:DataGridColumn visible="false" dataField="id" headerText="id" textAlign="center" width="45"/>
+			<mx:DataGridColumn labelFunction="RowNum" headerText="序号" textAlign="center" width="45"/>
+			<mx:DataGridColumn headerText="知识标题" textAlign="center" width="220">
+				<mx:itemRenderer>
+					<mx:Component>
+						<mx:LinkButton label="{data.titleName}"
+									   click="outerDocument.knowledgeView_handler(data,this)" color="blue">						
+						</mx:LinkButton>
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn dataField="uploader" headerText="上传者" textAlign="center" width="50"/>
+			<mx:DataGridColumn dataField="uploadTime" headerText="上传时间" textAlign="center" width="125"/>
+			<mx:DataGridColumn dataField="knowledgeType" headerText="知识类型" textAlign="center" width="60"/>
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:Button id="deleteRecord" x="350" y="0" label="从该节点移除此记录" click="deleteRecord_handler(event)"
+			   icon="@Embed('../assets/icon/container/delete.png')"/>
+	<mx:Label x="15" y="0" text="该节点当前没有支撑知识。" fontSize="13" fontWeight="bold"/>
+</mx:Canvas>

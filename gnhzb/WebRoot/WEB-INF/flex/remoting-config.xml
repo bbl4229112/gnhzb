@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service" 
+    class="flex.messaging.services.RemotingService">
+
+    <adapters>
+        <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter" default="true"/>
+    </adapters>
+
+    <default-channels>
+        <channel ref="my-amf"/>
+    </default-channels> 
+    
+    <destination id="navigator">
+    	<properties>
+    		<source>server.Navigator</source>
+    	</properties>
+    </destination>
+
+    <destination id="wsdl">
+    	<properties>
+    		<source>wsdl.Wsdl</source>
+    	</properties>
+    </destination>  
+    
+ 
+	<destination id="knowledgeSource">
+		<properties>
+			<factory>flexFactory</factory>
+			<source>knowledgeSource</source>
+			<scope>application</scope>
+		</properties>
+	</destination>
+	
+	<destination id="positionFile">
+		<properties>
+			<factory>flexFactory</factory>
+			<source>positionFile</source>
+			<scope>application</scope>
+		</properties>
+	</destination>
+   
+</service>

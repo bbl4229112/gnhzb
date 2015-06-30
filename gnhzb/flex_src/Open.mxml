@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel x="220"
+		  y="121"
+		  width="540"
+		  height="328"
+		  xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			public var functioncall:Function;
+
+			public function closebtn():void
+			{
+				functioncall.call();
+				PopUpManager.removePopUp(this);
+			}
+		]]>
+	</mx:Script>
+	<mx:Button x="396"
+			   y="226"
+			   label="按钮"
+			   click="closebtn()"/>
+</mx:Panel>

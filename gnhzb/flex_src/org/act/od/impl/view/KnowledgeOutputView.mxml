@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" height="300" initialize="output_initializeHandler(event)">
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.controls.LinkButton;
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.RemoteObject;
+			
+			import org.act.od.framework.view.ViewLocator;
+			import org.act.od.impl.events.KnowledgeViewAppEvent;
+			import org.act.od.impl.figure.AbstractFigure;
+			import org.act.od.impl.model.FigureEditorModel;
+			import org.act.od.impl.model.KnowledgeOutputModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.viewhelper.FigureAttributeNavigatorVH;
+			
+			[Bindable]
+			private var knowledgeOutputModel:KnowledgeOutputModel = OrDesignerModelLocator.getInstance().getKnowledgeOutputModel();
+			
+			private var currentFigure:AbstractFigure;				
+			
+			protected function deleteOutputRecord_handler(event:Event):void {
+				if(knowledgeOutput.selectedItem == null) {
+					Alert.show("请选择要移除的的记录！", "提示");
+				} else {
+					Alert.show("您确认删除这条记录？", "提示", Alert.YES|Alert.NO,this,function(event:CloseEvent):void{
+						if(event.detail == Alert.YES) {
+							var col:DataGridColumn = knowledgeOutput.columns[0];
+							var krId:int = knowledgeOutput.selectedItem[col.dataField];
+							var remote:RemoteObject = new RemoteObject();
+							remote.destination = "knowledgeSource";
+							remote.deleteRecord(krId);
+							remote.addEventListener(ResultEvent.RESULT, deleteOutputRecordResult_handler);
+						}
+					});
+				}
+			}
+			
+			protected function deleteOutputRecordResult_handler(event:ResultEvent):void {
+				var result:String = event.result as String;
+				if(result == "删除成功！") {
+					currentFigure = OrDesignerModelLocator.getInstance().getKnowledgeOutputModel().editedFigure;
+					new KnowledgeViewAppEvent(KnowledgeViewAppEvent.KNOWLEDGEOUTPUT_UPDATE,
+						{selectedFigure:currentFigure}).dispatch();				
+				} else {
+					Alert.show("删除失败！", "提示");
+				}
+			}
+			
+			public function knowledgeOutputDownload_handler(data:Object, linkButton:LinkButton):void
+			{
+				if(data.knowledgeType != "问题") {
+					var url:String = "../caltks/knowledge/viewfile!download.action?id=" + data.knowledgeId;
+					var downloadURL:URLRequest = new URLRequest(url);
+					var downloadFile:FileReference = new FileReference();
+					downloadFile.download(downloadURL, data.titleName + data.knowledgeFilePath);
+				} else {
+					linkButton.setStyle("color", null);  //由于知识资源的显示问题，我这个人性化的设计是否成功也得不到测试，╮(╯_╰)╭，20120912.
+				}
+			}
+			
+			private function RowNum(item:Object, column:DataGridColumn):String {
+				var index:int=this.knowledgeOutput.dataProvider.getItemIndex(item) + 1;
+				return String(index);
+			}
+			
+			protected function output_initializeHandler(event:FlexEvent):void
+			{
+				var knowledgeAddCanvasForOutput:KnowledgeAddCanvasForOutput = new KnowledgeAddCanvasForOutput();
+				this.addChild(knowledgeAddCanvasForOutput);
+				knowledgeAddCanvasForOutput.x = 536;
+				knowledgeAddCanvasForOutput.y = 0;
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Label x="15" y="0" id="knowledgeOutputLabel" width="180" height="23"  
+			  fontWeight="bold" text="该节点的输出文档列表:"/>
+	<mx:DataGrid id="knowledgeOutput" x="15" y="26" width="500" height="135" variableRowHeight="true"
+				 dataProvider="{knowledgeOutputModel.knowledgeOutput}" dropEnabled="true">
+		<mx:columns>
+			<mx:DataGridColumn visible="false" dataField="id" headerText="id" textAlign="center" width="45"/>
+			<mx:DataGridColumn labelFunction="RowNum" headerText="序号" textAlign="center" width="45"/>
+			<mx:DataGridColumn headerText="知识标题" textAlign="center" width="220">
+				<mx:itemRenderer>
+					<mx:Component>
+						<mx:LinkButton label="{data.titleName}"
+									   click="outerDocument.knowledgeOutputDownload_handler(data,this)" color="blue">						
+						</mx:LinkButton>
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn dataField="uploader" headerText="上传者" textAlign="center" width="50"/>
+			<mx:DataGridColumn dataField="uploadTime" headerText="上传时间" textAlign="center" width="125"/>
+			<mx:DataGridColumn dataField="knowledgeType" headerText="知识类型" textAlign="center" width="60"/>
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:Button id="deleteOutputRecord" x="355" y="0" label="从该节点移除此记录" click="deleteOutputRecord_handler(event)"
+			   icon="@Embed('../assets/icon/container/delete.png')"/>
+	<mx:Label x="15" y="0" text="该节点当前没有输出文档。" fontSize="13" fontWeight="bold"/>
+</mx:Canvas>

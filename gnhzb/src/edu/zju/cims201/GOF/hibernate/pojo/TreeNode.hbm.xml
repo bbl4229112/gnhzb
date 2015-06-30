@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.TreeNode root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.TreeNode" table="caltks.TreeNode" 
+        discriminator-value="null">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <discriminator column="treeNodeType"  type="string" length="50"/>
+                
+                <property name="nodeDescription" column="nodeDescription" type="string"/>
+                <property name="code" column="code" type="string" unique="true" />
+                <property name="nodeName" column="nodeName" type="string"/>
+                <property name="orderId" column="orderId" type="java.lang.Long"/>
+                <property name="parentId" column="parentId" type="java.lang.Long"/>
+                <set name="subNodes" table="caltks.TreeNode" lazy="false" cascade="all">
+                        <key column="parentId"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.TreeNode"/>
+                </set>
+                
+                <set name="adminPrivilegeTriples" table="caltks.AdminPrivilegeTriple" lazy="true" cascade="all">
+                        <key column="treeNodeID"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.AdminPrivilegeTriple"/>
+                </set>
+                
+                
+                 <set name="empowerments" table="caltks.Empowerment" lazy="true" inverse="true">
+                        <key column="belongedNodeID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Empowerment"/>
+                </set>
+                
+                 <set name="experts" table="caltks.ExpertNode" lazy="false" cascade="all">
+                        <key column="treeNodeID"/>
+                        
+                        <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Expert">
+                        	<column name="expertID"></column>
+                        </many-to-many>
+                </set>
+                
+                
+                
+                
+                <subclass name="edu.zju.cims201.GOF.hibernate.pojo.CategoryTreeNode" discriminator-value="categoryTree">
+                
+                	<set name="knowledges" table="caltks.KnowledgeCategories" lazy="true" cascade="none">
+                        <key column="categoryTreeNodeID"/>
+                        
+                        <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge">
+                        	<column name="knowledgeID"></column>
+                        </many-to-many>
+                	</set>
+                	<set name="rolePrivilegeTriples" table="caltks.RolePrivilegeTriple" lazy="true" cascade="all">
+                        <key column="cdTreeNodeID"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.RolePrivilegeTriple"/>
+               		</set>
+               		               		
+                </subclass>
+                
+                
+                <subclass name="edu.zju.cims201.GOF.hibernate.pojo.DomainTreeNode" discriminator-value="domainTreeNode">
+                
+                	<set name="knowledges" table="caltks.MetaKnowledge" lazy="true" cascade="none">
+                        <key column="domainNodeID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"/>
+                	</set>
+                	
+                	 <set name="rolePrivilegeTriples" table="caltks.RolePrivilegeTriple" lazy="true" cascade="all">
+                        <key column="cdTreeNodeID"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.RolePrivilegeTriple"/>
+               		 </set>               		                		
+               		
+                </subclass>
+               <subclass name="edu.zju.cims201.GOF.hibernate.pojo.RoleTreeNode" discriminator-value="roleTree">
+                	<set name="rolePrivilegeTriples" table="caltks.RolePrivilegeTriple" lazy="true" cascade="all">
+                        <key column="roleTreeNodeID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.RolePrivilegeTriple"/>
+                	</set>
+                	<set name="users" table="caltks.UserRoleNodes" lazy="true"  cascade="none">
+                        <key column="roleTreeNodeID"/>
+                        <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+                        	<column name="userID"/>
+                        </many-to-many>
+                	</set>
+
+                	<set name="associations" table="caltks.UserRoleNodes" lazy="true" cascade="all">
+                        <key column="roleTreeNodeID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.UserRoleAssociation"/>
+                	</set>
+                	
+                </subclass>
+                
+        </class>
+</hibernate-mapping>

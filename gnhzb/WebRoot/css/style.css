@@ -1,0 +1,219 @@
+/****************************************
+| Theme Name: That Game Company
+| Theme URI: http://wordpress.org/
+| Description: The WordPress theme created by Adam Foster and for use by That Game Company Only.
+| Author: Adam Foster
+| Author URI: http://www.codefor.com
+| Tags: CSS, custom header, fixed width, blue, game, clean
+| Date Created: 01-08-2009
+| Copyright 2009 Fully Illustrated
+|
+****************************************/
+
+/* CSS RESET */
+* {	margin: 0px; padding: 0px; text-indent: 0px; }
+img { border: none; padding: 0px; }
+ol, ul { list-style: none; }
+#chromeFix { display: block; position: absolute; width: 1px; height: 100%; top: 0px; left: 0px; }
+/* GLOBAL STYLES */
+a, a:visited { color: #347E94; outline: none; }
+a:hover { color: #1d3238; outline: none; }
+a:active { border: none!important; outline: none; }
+.left { float: left!important}
+.right { float: right!important}
+.clear { clear: both!important}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+.last { margin-bottom: 0px!important; }
+.end { margin-right: 0px!important; }
+.blank { background: none!important; }
+.relative { position: relative!important; }
+
+/* headers */
+h1 { font-size: 24px; line-height: 22px; color: #2a444c; font-weight: normal; }
+h2 { font-size: 18px; line-height: 18px; color: #2a444c; }
+h3 { font-size: 12px; line-height: 18px; color: #2a444c; padding-bottom: 12px; }
+
+/* sizes */
+.width448 { width: 448px!important; }
+.width416 { width: 416px!important; }
+.box-height565 {min-height:842px;background:#ffffff;}
+.width402 { width: 402px!important; }
+.width612 { width: 612px!important; }
+.width550 { width: 550px!important; }
+.width291 { width: 291px!important; }
+.width259 { width: 259px!important; }
+.width851 { width: 851px; }
+
+/* LAYOUT */
+body { background-image: url(login/background.jpg); background-repeat: no-repeat; background-position: top; background-color: #57d3f9; color:#347e94; font-family:"Arial",sans-serif; font-size:12px; line-height:14px; }
+#wrapper { width: 913px; padding: 70px 40px 0; margin: 0 auto 0; }
+#main { width: 913px; }
+
+/* HEADER */
+#header { width: 913px; height: 60px; }
+#logo { float: left; height:200px; width:430px; overflow: hidden; }
+#logo h1 span { height:29px; width:278px; overflow: hidden; text-indent: -3000px; display: block; }
+
+
+/* FOOTER */
+#footer { width: 913px; background: url(login/background-footer.gif) top right no-repeat; position: relative; right: -15px; }
+#footer #secondnav { margin: 13px 15px 13px 0; width: 898px;  }
+#footer li { float: left; padding-left: 10px; height: 17px; position: relative; }
+#footer a, #footer a:visited { color: #c7f1ff; text-decoration: none; font-size: 10px; }
+#footer a:hover { color: #1287ab; }
+#footer span { padding-left: 5px; color: #c7f1ff; font-size: 10px; }
+#footer a.fullyIllustrated, #footer a.fullyIllustrated:visited { padding: 2px 40px 2px 10px;  background-position: right 0; background-repeat: no-repeat; display: block; float: right; position: relative; top: -1px; line-height: 13px; }
+#footer a.fullyIllustrated:hover { background-position: right -17px; }
+
+
+.loginbaner{
+color: white;
+display: inline;
+float: none;
+font-family: Arial, sans-serif;
+font-size: 18px;
+font-weight: bold;
+padding-bottom: 20px;
+}
+
+
+/* BOX PAGE */
+.box-page { width: 913px; background: url(login/box-page-background.png) repeat-x bottom; position: relative; margin: 2px 0 32px;}
+.box-top { position: absolute; top: -2px; left: 0; height: 5px; width: 100%; }
+.box-mid { border-left: 1px solid #fff; border-right: 1px solid #fff; padding: 25px 30px 30px; position: relative; }
+.box-bot { position: absolute; bottom: -2px; left: 0; height: 5px; width: 100%; }
+.box-tr, .box-tl, .box-br, .box-bl { width: 50%; height: 5px; background-image: url(login/box-curves.gif); background-repeat: no-repeat; position: absolute; top: 0px; }
+.box-tl { left: 0px; background-position: 0 0; }
+.box-tr { right: 0px; background-position: right -5px; }
+.box-bl { left: 0px; background-position: 0 -10px; }
+.box-br { right: 0px; background-position: right -15px; }
+.box-page p, #contact-page p, #news-page p { padding-bottom: 12px; }
+.box-header { border-bottom: 1px solid #c6f0fe; margin-bottom: 12px; }
+
+/* BOX */
+.box { background: url(login/box-background.gif) repeat-x bottom #ffffff;  position: relative;  margin: 2px 5px 10px 5px;}
+.box .box-mid { padding: 14px 15px 7px; }
+
+/* HOME PAGE */
+
+.box-home { float: right; width: 261px; margin-bottom: 40px; clear: right; background: url(login/background-home-box.png) center left no-repeat; padding: 10px 15px 15px; font-size: 11px; line-height: 14px; }
+.home-top { margin: 0px 0 20px 0; }
+.box-home h3 { color: #fff;  font-size: 18px; line-height: 35px;  }
+.box-home p, .box-home a, .box-home a:visited { color: #1287ab; text-decoration: none; }
+.box-home .date { padding-bottom: 3px; }
+.box-home a:hover p, .box-home a:hover { color: #feffff; }
+
+
+
+/** SIFR **/
+
+@media screen {
+ 
+  .sIFR-replaced, .sIFR-ignore { visibility: visible !important; }
+  .sIFR-alternate { position: absolute; left: 0; top: 0; width: 0; height: 0; display: block; overflow: hidden; 
+   }
+  .sIFR-replaced div.sIFR-fixfocus { margin: 0pt; padding: 0pt; overflow: auto; letter-spacing: 0px; float: none; }
+}
+
+.box-home-left { float: left; width: 400px; margin-bottom: 40px; clear: left; padding: 10px 15px 15px; font-size: 11px; line-height: 14px; }
+.home-top-left { margin: 60px 0 20px 10px; }
+
+	pre{
+		display:block;
+		font:12px "Courier New", Courier, monospace;
+		padding:10px;
+		border:1px solid #bae2f0;
+		background:#e3f4f9;	
+		margin:.5em 0;
+		width:674px;
+		}	
+			
+    /* image replacement */
+        .graphic, #prevBtn, #nextBtn, #slider1prev, #slider1next{
+            margin:0;
+            padding:0;
+            display:block;
+            overflow:hidden;
+            text-indent:-8000px;
+            }
+    /* // image replacement */
+			
+	
+
+/* Easy Slider */
+
+	#slider ul, #slider li,
+	#slider2 ul, #slider2 li{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	#slider2{margin-top:1em;}
+	#slider li, #slider2 li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+		width:580px;
+		height:200px;
+		overflow:hidden; 
+		}	
+	#prevBtn, #nextBtn,
+	#slider1next, #slider1prev{ 
+		display:block;
+		width:30px;
+		height:77px;
+		position:absolute;
+		left:-30px;
+		top:71px;
+		z-index:1000;
+		}	
+	#nextBtn, #slider1next{ 
+		left:696px;
+		}														
+	#prevBtn a, #nextBtn a,
+	#slider1next a, #slider1prev a{  
+		display:block;
+		position:relative;
+		width:30px;
+		height:77px;
+		background:url(../images/btn_prev.gif) no-repeat 0 0;	
+		}	
+	#nextBtn a, #slider1next a{ 
+		background:url(../images/btn_next.gif) no-repeat 0 0;	
+		}	
+		
+	/* numeric controls */	
+
+	ol#controls{
+		margin:1em 0;
+		padding:0;
+		height:28px;	
+		}
+	ol#controls li{
+		margin:0 10px 0 0; 
+		padding:0;
+		float:left;
+		list-style:none;
+		height:28px;
+		line-height:28px;
+		}
+	ol#controls li a{
+		float:left;
+		height:28px;
+		line-height:28px;
+		border:1px solid #ccc;
+		background:#DAF3F8;
+		color:#555;
+		padding:0 10px;
+		text-decoration:none;
+		}
+	ol#controls li.current a{
+		background:#5DC9E1;
+		color:#fff;
+		}
+	ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
+	
+/* // Easy Slider */
+

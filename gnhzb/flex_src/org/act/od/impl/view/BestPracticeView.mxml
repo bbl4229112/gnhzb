@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" height="300">
+	<mx:Label fontSize="15" text="提问院方：此功能是否需要？另外，输入文档和输出文档、支撑知识是否归为一类，如果归为一类，取名叫“知识资源”？" x="50" y="30"
+			  color="red" fontWeight="bold"/>
+</mx:Canvas>

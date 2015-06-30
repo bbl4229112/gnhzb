@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.KeepTreeNode root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.KeepTreeNode" table="caltks.KeepTreeNode" 
+        discriminator-value="null">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="nodeDescription" column="nodeDescription" type="string"/>
+                <property name="keepTreeNodeType" column="keepTreeNodeType" type="string"/>
+                <property name="code" column="code" type="string" unique="true" />
+                <property name="nodeName" column="nodeName" type="string"/>
+                <property name="orderId" column="orderId" type="java.lang.Long"/>
+                <property name="knowledgeId" column="knoeledgeId" type="java.lang.Long"/>
+                <property name="parentId" column="parentId" type="java.lang.Long"/>
+                <property name="keepTime" column="keepTime" type="timestamp"/>
+                <set name="subNodes" table="caltks.KeepTreeNode" lazy="false">
+                        <key column="parentId"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.KeepTreeNode"/>
+                </set>
+                
+        </class>
+</hibernate-mapping>

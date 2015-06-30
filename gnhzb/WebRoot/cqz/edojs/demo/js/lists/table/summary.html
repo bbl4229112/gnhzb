@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+   <h1>汇总合计:其实就是用renderer对一些行的数据做加法</h1>
+</body>
+</html>
+<script src="../../../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="../../UIComponents.js" type="text/javascript"></script>
+
+<link href="../../../../ide/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var dataTree = new Edo.data.DataTree(UIComponents);
+
+
+var tree = new Edo.lists.Tree();
+tree.set({
+    cls: 'e-tree-allow',
+    width: 300,
+    height: 200,
+    autoColumns: true,    
+    
+    summaryRowVisible: true,
+    summaryRowPosition: 'top',
+    
+    columns: [
+        {
+            header: '组件名称',
+            dataIndex: 'name',
+            editor: {
+                type: 'text'
+            }
+        },
+        {
+            header: '类名',
+            dataIndex: 'className',
+            editor: {
+                type: 'text'
+            },
+            renderer: function(v, r){
+                if(r.children && r.children.length > 0){
+                    return r.children.length;
+                }
+            },
+            summary: function(c, data, table){              
+                return '总计:'+data.source.length+"个";
+            }
+        }
+    ],
+    data: dataTree
+});
+tree.render(document.body);
+</script>    

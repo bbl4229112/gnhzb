@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+   
+</body>
+</html>
+<script src="../../../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="../../UIComponents.js" type="text/javascript"></script>
+
+<link href="../../../../ide/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var dataTree = new Edo.data.DataTree(UIComponents);
+
+var tree = new Edo.lists.Tree();
+tree.set({
+    cls: 'e-tree-allow',
+    width: 150,
+    height: 200,
+    headerVisible:false,
+    autoColumns: true,
+    horizontalLine: false,
+    columns: [
+        {
+            header: '组件名称',
+            dataIndex: 'name',
+            editor: {
+                type: 'text'
+            }
+        }
+    ],
+    data: dataTree
+});
+tree.render(document.body);
+</script>    

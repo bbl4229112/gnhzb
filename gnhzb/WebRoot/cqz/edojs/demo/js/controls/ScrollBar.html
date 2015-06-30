@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+Edo.build({
+    id: 'text',
+    type: 'text',
+    render: document.body
+});
+new Edo.controls.ScrollBar()
+.set({    
+    width: 200,
+    maxValue: 500,
+    onscroll: function(e){
+        text.set('text', e.value);
+    },
+    render: document.body
+});
+
+Edo.util.Dom.append(document.body, '<br/>');
+
+Edo.build({
+    id: 'text2',
+    type: 'text',
+    render: document.body
+});
+new Edo.controls.VScrollBar()
+.set({    
+    maxValue: 200,
+    height: 80,
+    onscroll: function(e){
+        text2.set('text', e.value);
+    },
+    render: document.body
+});
+
+</script>

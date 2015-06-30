@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    Space作为布局中的空白占位，是EdoJS布局中不可缺少的一个基本组件<br /><br />
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.containers.Box()
+.set({
+    layout: 'horizontal',
+    width: 400,
+    render: document.body,
+    children: [
+        {type: 'button', text: '按钮'},
+        {type: 'space', width: '100%'}, //将date控件向右推至右侧
+        {type: 'date'}
+    ]
+});
+</script>

@@ -1,0 +1,2511 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.owl-ontologies.com/unnamed.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="理论力学">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="原理"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="协会分会">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="供应商"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="传动机构">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="结构"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="焊接">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="工艺"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="气缸体总成">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="黑色金属">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="材料成分"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="标准">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="文件"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="机油热交换器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="松脱漏堵">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="故障与维护"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="声学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="专业"/>
+  <owl:Class rdf:ID="损坏损伤">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="电子设备">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="输油泵">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="热处理">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="其它工艺">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="发动机支承">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="地区">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="辅助"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="零部件试验">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="试验"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="喷油泵安装">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="东北">
+    <rdfs:subClassOf rdf:resource="#地区"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机油导管">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="其它文件">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="大纲">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="包装与配全">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="燃油滤清器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="燃油滤安装">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="中冷器安装">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="科研院所">
+    <rdfs:subClassOf rdf:resource="#供应商"/>
+  </owl:Class>
+  <owl:Class rdf:ID="目录及明细">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="材料"/>
+  <owl:Class rdf:ID="中冷器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="使用"/>
+  <owl:Class rdf:ID="商家">
+    <rdfs:subClassOf rdf:resource="#供应商"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机体">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="喷油泵">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="原因分类">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="故障辅助"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="曲轴">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="燃油管">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="电子控制系统">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="起动电机及其安装">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="过程"/>
+  <owl:Class rdf:ID="故障等级">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#故障辅助"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="空气起动导管">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="下曲轴箱总成">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="规范">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="退化变质">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="增压器安装">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:about="#材料成分">
+    <rdfs:subClassOf rdf:resource="#材料"/>
+  </owl:Class>
+  <owl:Class rdf:ID="西北">
+    <rdfs:subClassOf rdf:resource="#地区"/>
+  </owl:Class>
+  <owl:Class rdf:ID="空气分配器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="装配与包装">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:about="#故障辅助">
+    <rdfs:subClassOf rdf:resource="#辅助"/>
+  </owl:Class>
+  <owl:Class rdf:ID="电工学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="任务书">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="报告">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="材料外形">
+    <rdfs:subClassOf rdf:resource="#材料"/>
+  </owl:Class>
+  <owl:Class rdf:ID="发电机及传动联轴器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="华北">
+    <rdfs:subClassOf rdf:resource="#地区"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机械学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="进气管">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="铸造">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="切削加工">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="有色金属及合金">
+    <rdfs:subClassOf rdf:resource="#材料成分"/>
+  </owl:Class>
+  <owl:Class rdf:ID="定量油泵及其安装">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="推挺摇机构">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="研制阶段">
+    <rdfs:subClassOf rdf:resource="#故障辅助"/>
+  </owl:Class>
+  <owl:Class rdf:ID="干涉">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="辅助材料">
+    <rdfs:subClassOf rdf:resource="#材料成分"/>
+  </owl:Class>
+  <owl:Class rdf:ID="热工学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机油滤清器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="材料力学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="涡轮增压器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="覆盖层">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="模型">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="故障类型">
+    <rdfs:subClassOf rdf:resource="#故障辅助"/>
+  </owl:Class>
+  <owl:Class rdf:ID="工程图样">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="图样"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="产品"/>
+  <owl:Class rdf:ID="流体力学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="线缆及电子元器件">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="摩檫学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="华南">
+    <rdfs:subClassOf rdf:resource="#地区"/>
+  </owl:Class>
+  <owl:Class rdf:ID="需求"/>
+  <owl:Class rdf:ID="产品层次">
+    <rdfs:subClassOf rdf:resource="#产品"/>
+  </owl:Class>
+  <owl:Class rdf:ID="工程更改单">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="喷油器">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="橡胶件">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:about="#图样">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机油泵">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="特种加工">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="概念设计">
+    <rdfs:subClassOf rdf:resource="#过程"/>
+  </owl:Class>
+  <owl:Class rdf:ID="水泵">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="华东">
+    <rdfs:subClassOf rdf:resource="#地区"/>
+  </owl:Class>
+  <owl:Class rdf:ID="化学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="西南">
+    <rdfs:subClassOf rdf:resource="#地区"/>
+  </owl:Class>
+  <owl:Class rdf:ID="专利">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="电磁学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="说明">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="方案设计">
+    <rdfs:subClassOf rdf:resource="#过程"/>
+  </owl:Class>
+  <owl:Class rdf:ID="整机试验">
+    <rdfs:subClassOf rdf:resource="#试验"/>
+  </owl:Class>
+  <owl:Class rdf:ID="活塞和连杆">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="气缸盖">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="其它故障">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="压力加工">
+    <rdfs:subClassOf rdf:resource="#工艺"/>
+  </owl:Class>
+  <owl:Class rdf:ID="排气管">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="指导书">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="密级">
+    <rdfs:subClassOf rdf:resource="#辅助"/>
+  </owl:Class>
+  <owl:Class rdf:ID="电气图样">
+    <rdfs:subClassOf rdf:resource="#图样"/>
+  </owl:Class>
+  <owl:Class rdf:ID="故障发生时机">
+    <rdfs:subClassOf rdf:resource="#故障辅助"/>
+  </owl:Class>
+  <owl:Class rdf:ID="工程设计">
+    <rdfs:subClassOf rdf:resource="#过程"/>
+  </owl:Class>
+  <owl:Class rdf:ID="细则">
+    <rdfs:subClassOf rdf:resource="#文件"/>
+  </owl:Class>
+  <owl:Class rdf:ID="非金属">
+    <rdfs:subClassOf rdf:resource="#材料成分"/>
+  </owl:Class>
+  <owl:Class rdf:ID="水管">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:Class rdf:ID="光学">
+    <rdfs:subClassOf rdf:resource="#原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="产品组成部分的特征">
+    <rdfs:subClassOf rdf:resource="#产品"/>
+  </owl:Class>
+  <owl:Class rdf:ID="性能功能">
+    <rdfs:subClassOf rdf:resource="#故障与维护"/>
+  </owl:Class>
+  <owl:Class rdf:ID="随机工具">
+    <rdfs:subClassOf rdf:resource="#结构"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="OP自制外购">
+    <rdfs:domain rdf:resource="#结构"/>
+    <rdfs:range rdf:resource="#产品组成部分的特征"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="OP产品层次">
+    <rdfs:range rdf:resource="#产品层次"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#结构"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="OP实验对象">
+    <rdfs:range rdf:resource="#结构"/>
+    <rdfs:domain rdf:resource="#试验"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="OP业务范围">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#产品"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#科研院所"/>
+          <owl:Class rdf:about="#商家"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="S">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="F"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="OP故障件名称">
+    <rdfs:domain rdf:resource="#故障与维护"/>
+    <rdfs:range rdf:resource="#结构"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Y">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="D"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="OP所用材料">
+    <rdfs:range rdf:resource="#材料"/>
+    <rdfs:domain rdf:resource="#结构"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="OP所属专业">
+    <rdfs:range rdf:resource="#专业"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#供应商"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#文件"/>
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#过程"/>
+          <owl:Class rdf:about="#原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="办公单位">
+    <rdfs:domain rdf:resource="#协会分会"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="网址">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#科研院所"/>
+          <owl:Class rdf:about="#商家"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="故障描述">
+    <rdfs:domain rdf:resource="#故障与维护"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="是否标准件">
+    <rdfs:domain rdf:resource="#结构"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="材料上标">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#材料"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="材料全称">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#材料"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="电子邮箱">
+    <rdfs:domain rdf:resource="#供应商"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="传真">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#科研院所"/>
+          <owl:Class rdf:about="#商家"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="秘书长">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#协会分会"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="解决措施">
+    <rdfs:domain rdf:resource="#故障与维护"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="法人">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#科研院所"/>
+          <owl:Class rdf:about="#商家"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="地址">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#供应商"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="邮编">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#供应商"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="电话">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#供应商"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="故障原因">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#故障与维护"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="材料下标">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#材料"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="编号">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#供应商"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#文件"/>
+          <owl:Class rdf:about="#结构"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="设计者">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#结构"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="OP故障等级">
+    <rdfs:range rdf:resource="#故障等级"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#故障与维护"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="OP原因分类">
+    <rdfs:domain rdf:resource="#故障与维护"/>
+    <rdfs:range rdf:resource="#原因分类"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="OP故障发生时机">
+    <rdfs:domain rdf:resource="#故障与维护"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#故障发生时机"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="英文">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="版本">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#文件"/>
+          <owl:Class rdf:about="#结构"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="创建日期">
+    <rdfs:domain rdf:resource="#文件"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="结束时间">
+    <rdfs:domain rdf:resource="#试验"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="创建者">
+    <rdfs:domain rdf:resource="#文件"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="OP故障类型">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#故障类型"/>
+    <rdfs:domain rdf:resource="#故障与维护"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="OP地区">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#地区"/>
+    <rdfs:domain rdf:resource="#供应商"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="被试件型号">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#试验"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="OP研制阶段">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#故障与维护"/>
+    <rdfs:range rdf:resource="#研制阶段"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="修改日期">
+    <rdfs:domain rdf:resource="#文件"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="序列">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#文件"/>
+          <owl:Class rdf:about="#结构"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="OP密级">
+    <rdfs:range rdf:resource="#密级"/>
+    <rdfs:domain rdf:resource="#文件"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="人员">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#试验"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="定义">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#文件"/>
+          <owl:Class rdf:about="#密级"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+          <owl:Class rdf:about="#需求"/>
+          <owl:Class rdf:about="#专业"/>
+          <owl:Class rdf:about="#使用"/>
+          <owl:Class rdf:about="#故障辅助"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="试验设备">
+    <rdfs:domain rdf:resource="#试验"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="起始时间">
+    <rdfs:domain rdf:resource="#试验"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="要求">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#需求"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="地点">
+    <rdfs:domain rdf:resource="#试验"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="项目名称">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#文件"/>
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#D">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#Y"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#F">
+    <owl:inverseOf rdf:resource="#S"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#结构"/>
+          <owl:Class rdf:about="#故障与维护"/>
+          <owl:Class rdf:about="#试验"/>
+          <owl:Class rdf:about="#材料"/>
+          <owl:Class rdf:about="#产品"/>
+          <owl:Class rdf:about="#工艺"/>
+          <owl:Class rdf:about="#原理"/>
+          <owl:Class rdf:about="#过程"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <研制阶段 rdf:ID="批量样机"/>
+  <华东 rdf:ID="福建"/>
+  <其它工艺 rdf:ID="表面处理"/>
+  <大纲 rdf:ID="测试性大纲"/>
+  <专业 rdf:ID="燃油系统专业"/>
+  <松脱漏堵 rdf:ID="渗油"/>
+  <产品组成部分的特征 rdf:ID="标准件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >经优化、简化、统一，并给与标准编号的零件、部件、组件</定义>
+  </产品组成部分的特征>
+  <电子控制系统 rdf:ID="断油电磁阀接线表"/>
+  <机油导管 rdf:ID="滴油泵右缸排进油管"/>
+  <流体力学 rdf:ID="流体动力学"/>
+  <损坏损伤 rdf:ID="剥落">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </损坏损伤>
+  <水管 rdf:ID="左出水管"/>
+  <压力加工 rdf:ID="锻造"/>
+  <规范 rdf:ID="制造与验收规范"/>
+  <研制阶段 rdf:ID="原理样机"/>
+  <专业 rdf:ID="润滑系统专业"/>
+  <密级 rdf:ID="机密">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >一旦泄密会使公司利益遭受严重的损害</定义>
+  </密级>
+  <概念设计 rdf:ID="任务书编制">
+    <rdf:type rdf:resource="#方案设计"/>
+  </概念设计>
+  <电子设备 rdf:ID="不能调节"/>
+  <大纲 rdf:ID="质量保证大纲"/>
+  <专业 rdf:ID="冷却系统专业"/>
+  <输油泵 rdf:ID="被动齿轮">
+    <rdf:type rdf:resource="#机油泵"/>
+  </输油泵>
+  <故障发生时机 rdf:ID="部件试验"/>
+  <机械学 rdf:ID="螺旋传动"/>
+  <目录及明细 rdf:ID="汇总表"/>
+  <损坏损伤 rdf:ID="烧损"/>
+  <研制阶段 rdf:ID="初样机"/>
+  <使用 rdf:ID="维修性"/>
+  <排气管 rdf:ID="右排排气管"/>
+  <工程更改单 rdf:ID="电子更改单"/>
+  <原因分类 rdf:ID="设计问题"/>
+  <报告 rdf:ID="计算报告"/>
+  <整机试验 rdf:ID="功能调整试验"/>
+  <零部件试验 rdf:ID="增压总效率试验">
+    <OP所属专业>
+      <专业 rdf:ID="增压系统专业"/>
+    </OP所属专业>
+  </零部件试验>
+  <电磁学 rdf:ID="电磁学的单位制"/>
+  <水管 rdf:ID="引射管"/>
+  <需求 rdf:ID="环境盐度"/>
+  <使用 rdf:ID="可靠性"/>
+  <报告 rdf:ID="申请报告"/>
+  <机油导管 rdf:ID="机油压力测量座"/>
+  <喷油泵安装 rdf:ID="螺母M20x1.5-8-Ep_Zn"/>
+  <整机试验 rdf:ID="磨合试验"/>
+  <专业 rdf:ID="进排气机构专业"/>
+  <覆盖层 rdf:ID="热浸镀"/>
+  <说明 rdf:ID="技术说明"/>
+  <概念设计 rdf:ID="总体性能设计"/>
+  <工程更改单 rdf:ID="非晒蓝文件更改单"/>
+  <辅助材料 rdf:ID="燃料"/>
+  <机械学 rdf:ID="齿轮传动"/>
+  <机油导管 rdf:ID="滴油泵左缸排进油管"/>
+  <大纲 rdf:ID="可靠性维修性保障性大纲"/>
+  <方案设计 rdf:ID="方案设计总结"/>
+  <增压器安装 rdf:ID="三通管"/>
+  <电子控制系统 rdf:ID="系统电缆II接线表"/>
+  <电工学 rdf:ID="三相电路"/>
+  <水泵 rdf:ID="蜗壳"/>
+  <电气图样 rdf:ID="电控联接图"/>
+  <其它工艺 rdf:ID="缠绕"/>
+  <声学 rdf:ID="线性声学"/>
+  <机油导管 rdf:ID="增压器右进油管"/>
+  <西南 rdf:ID="贵州"/>
+  <机油导管 rdf:ID="P型喷油泵进油管"/>
+  <电工学 rdf:ID="基本放大电路"/>
+  <热工学 rdf:ID="热力学第三定律"/>
+  <中冷器 rdf:ID="出气罩"/>
+  <机油导管 rdf:ID="增压器左下回油管"/>
+  <模型 rdf:ID="工程设计模型"/>
+  <声学 rdf:ID="声辐射"/>
+  <工程设计 rdf:ID="整机三维模型设计"/>
+  <涡轮增压器 rdf:ID="轴承体"/>
+  <铸造 rdf:ID="特种铸造"/>
+  <零部件试验 rdf:ID="压气机特性试验">
+    <OP所属专业 rdf:resource="#增压系统专业"/>
+  </零部件试验>
+  <工程图样 rdf:ID="装配图"/>
+  <材料外形 rdf:ID="线丝材"/>
+  <西北 rdf:ID="陕西"/>
+  <目录及明细 rdf:ID="图幅目录"/>
+  <机油导管 rdf:ID="喷油泵润滑进油管"/>
+  <流体力学 rdf:ID="湍流"/>
+  <机油导管 rdf:ID="空气滴泵进油管"/>
+  <专业 rdf:ID="电子控制系统专业"/>
+  <干涉 rdf:ID="间隙超差"/>
+  <有色金属及合金 rdf:ID="轴承合金"/>
+  <热处理 rdf:ID="表面热处理"/>
+  <输油泵 rdf:ID="主动轴"/>
+  <指导书 rdf:ID="设计指导书"/>
+  <焊接 rdf:ID="钎焊"/>
+  <指导书 rdf:ID="计算指导书"/>
+  <电子控制系统 rdf:ID="系统电缆I接线表"/>
+  <装配与包装 rdf:ID="试验与检验"/>
+  <标准 rdf:ID="兵器行业标准"/>
+  <损坏损伤 rdf:ID="碎裂"/>
+  <工程图样 rdf:ID="简图"/>
+  <机械学 rdf:ID="弹性元件"/>
+  <机体 rdf:ID="中夹件"/>
+  <有色金属及合金 rdf:ID="铜及铜合金"/>
+  <工程图样 rdf:ID="表格图"/>
+  <电工学 rdf:ID="触发器和时序逻辑电路"/>
+  <整机试验 rdf:ID="不同海拔等负荷试验"/>
+  <华北 rdf:ID="山西"/>
+  <机体 rdf:ID="凸轮轴左端盖"/>
+  <热工学 rdf:ID="热力学第二定律"/>
+  <损坏损伤 rdf:ID="压痕"/>
+  <电工学 rdf:ID="电子电路中的反馈"/>
+  <声学 rdf:ID="动态类比"/>
+  <其它文件 rdf:ID="方案"/>
+  <故障类型 rdf:ID="ANB">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >并联非任务故障</定义>
+  </故障类型>
+  <中冷器 rdf:ID="进气罩"/>
+  <工程更改单 rdf:ID="更改许可书"/>
+  <空气起动导管 rdf:ID="左1缸空气起动导管"/>
+  <机油泵 rdf:ID="后泵体"/>
+  <电工学 rdf:ID="模拟量和数字量的转换"/>
+  <其它工艺 rdf:ID="冷作"/>
+  <机油导管 rdf:ID="缸盖进油管"/>
+  <性能功能 rdf:ID="性能衰退"/>
+  <机油导管 rdf:ID="增压器右上回油管"/>
+  <水管 rdf:ID="右排蒸汽管"/>
+  <电工学 rdf:ID="直流稳压电源"/>
+  <机油导管 rdf:ID="右增压器进油管"/>
+  <辅助材料 rdf:ID="密封材料"/>
+  <水泵 rdf:ID="泵座"/>
+  <排气管 rdf:ID="右排连接管"/>
+  <西北 rdf:ID="甘肃"/>
+  <装配与包装 rdf:ID="装配"/>
+  <电工学 rdf:ID="控制电机"/>
+  <机械学 rdf:ID="带传动"/>
+  <故障发生时机 rdf:ID="整机台架考核试验"/>
+  <机械学 rdf:ID="结构设计"/>
+  <电子控制系统 rdf:ID="接线盒接线图"/>
+  <空气起动导管 rdf:ID="右5缸空气起动导管"/>
+  <机油导管 rdf:ID="右增压器润滑进油管"/>
+  <机械学 rdf:ID="联接"/>
+  <机油导管 rdf:ID="发电机进油管"/>
+  <损坏损伤 rdf:ID="磨损"/>
+  <电工学 rdf:ID="存储器和可编程逻辑器件"/>
+  <华北 rdf:ID="河北"/>
+  <松脱漏堵 rdf:ID="脱落"/>
+  <机油导管 rdf:ID="发电机回油管"/>
+  <空气起动导管 rdf:ID="起动阀"/>
+  <热工学 rdf:ID="辐射换热"/>
+  <覆盖层 rdf:ID="真空沉积"/>
+  <燃油滤清器 rdf:ID="滤盖"/>
+  <增压器安装 rdf:ID="左增压器大支架"/>
+  <光学 rdf:ID="全息术"/>
+  <热工学 rdf:ID="热力学第一定律"/>
+  <焊接 rdf:ID="电弧焊"/>
+  <其它文件 rdf:ID="技术条件"/>
+  <声学 rdf:ID="吸声材料"/>
+  <喷油泵 rdf:ID="带执行器的喷油泵"/>
+  <电工学 rdf:ID="半导体器件"/>
+  <其它工艺 rdf:ID="防锈"/>
+  <试验 rdf:ID="测试工程"/>
+  <光学 rdf:ID="光学干涉"/>
+  <华南 rdf:ID="广东"/>
+  <华东 rdf:ID="安徽"/>
+  <概念设计 rdf:ID="概念设计输出"/>
+  <压力加工 rdf:ID="拉拔"/>
+  <有色金属及合金 rdf:ID="铝及铝合金"/>
+  <电工学 rdf:ID="集成运算放大器"/>
+  <专业 rdf:ID="气缸套专业"/>
+  <说明 rdf:ID="使用维护说明"/>
+  <产品组成部分的特征 rdf:ID="外购件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >产品的组成部分中，采购其他企事业非研制的零件、部件、组件</定义>
+  </产品组成部分的特征>
+  <热工学 rdf:ID="气体的热力性质和热力过程"/>
+  <热工学 rdf:ID="压气机工作原理"/>
+  <试验 rdf:ID="试验工程"/>
+  <工程设计 rdf:ID="柴油机设计工作总结"/>
+  <中冷器安装 rdf:ID="右出气联通管"/>
+  <故障发生时机 rdf:ID="整机台架性能是试验"/>
+  <规范 rdf:ID="设计规范"/>
+  <报告 rdf:ID="分析报告"/>
+  <热工学 rdf:ID="化学热力学基础"/>
+  <水管 rdf:ID="蒸汽管"/>
+  <压力加工 rdf:ID="旋压"/>
+  <推挺摇机构 rdf:ID="右排气凸轮轴齿轮"/>
+  <产品组成部分的特征 rdf:ID="通用件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >两个以上产品中使用的具有互换性的零件、部件、组件</定义>
+  </产品组成部分的特征>
+  <涡轮增压器 rdf:ID="J90增压器"/>
+  <下曲轴箱总成 rdf:ID="放液阀"/>
+  <黑色金属 rdf:ID="铸钢"/>
+  <切削加工 rdf:ID="钳加工"/>
+  <专业 rdf:ID="活塞组专业"/>
+  <机体 rdf:ID="凸轮轴右端盖"/>
+  <下曲轴箱总成 rdf:ID="油底壳"/>
+  <电磁学 rdf:ID="交流电"/>
+  <下曲轴箱总成 rdf:ID="端盖"/>
+  <整机试验 rdf:ID="增压匹配试验"/>
+  <工程设计 rdf:ID="虚拟样机设计"/>
+  <化学 rdf:ID="生物化学"/>
+  <压力加工 rdf:ID="冲压"/>
+  <排气管 rdf:ID="左排气支管"/>
+  <空气起动导管 rdf:ID="右1缸空气起动导管"/>
+  <机油导管 rdf:ID="缸盖回油管"/>
+  <覆盖层 rdf:ID="热喷涂"/>
+  <机械学 rdf:ID="轴与联轴器"/>
+  <试验 rdf:ID="测试技术"/>
+  <说明 rdf:ID="手册"/>
+  <东北 rdf:ID="辽宁"/>
+  <方案设计 rdf:ID="方案设计参数输出"/>
+  <排气管 rdf:ID="右排气支管"/>
+  <压力加工 rdf:ID="轧制"/>
+  <流体力学 rdf:ID="流体机械原理"/>
+  <线缆及电子元器件 rdf:ID="性能退化"/>
+  <专利 rdf:ID="实用新型专利"/>
+  <空气起动导管 rdf:ID="右4缸空气起动导管"/>
+  <规范 rdf:ID="选型规范"/>
+  <目录及明细 rdf:ID="明细表"/>
+  <机油导管 rdf:ID="机油热交换器出油管"/>
+  <水管 rdf:ID="水泵出水管"/>
+  <工程图样 rdf:ID="安装图"/>
+  <需求 rdf:ID="相对湿度"/>
+  <空气起动导管 rdf:ID="右2缸空气起动导管"/>
+  <材料外形 rdf:ID="带材"/>
+  <辅助材料 rdf:ID="其它辅料"/>
+  <涡轮增压器 rdf:ID="H10涡轮增压器"/>
+  <推挺摇机构 rdf:ID="左旋凸轮轴齿轮"/>
+  <活塞和连杆 rdf:ID="活塞"/>
+  <退化变质 rdf:ID="积碳"/>
+  <喷油器 rdf:ID="弹性密封圈"/>
+  <任务书 rdf:ID="研制任务书"/>
+  <声学 rdf:ID="声的主观评价"/>
+  <机械学 rdf:ID="机械工程材料"/>
+  <规范 rdf:ID="建模规范"/>
+  <喷油器 rdf:ID="喷油嘴针阀偶件"/>
+  <机体 rdf:ID="止推轴承盖"/>
+  <覆盖层 rdf:ID="涂装"/>
+  <机油导管 rdf:ID="增压器左上回油管"/>
+  <原因分类 rdf:ID="原材料问题"/>
+  <机械学 rdf:ID="平面连杆机构"/>
+  <声学 rdf:ID="声线和导波"/>
+  <辅助材料 rdf:ID="润滑材料"/>
+  <推挺摇机构 rdf:ID="进气摇臂"/>
+  <报告 rdf:ID="设计报告"/>
+  <机体 rdf:ID="前密封盖"/>
+  <材料力学 rdf:ID="强度"/>
+  <下曲轴箱总成 rdf:ID="起动电机安装"/>
+  <机械学 rdf:ID="凸轮与间歇运动机构"/>
+  <电子设备 rdf:ID="不能工作"/>
+  <排气管 rdf:ID="左排连接管"/>
+  <故障发生时机 rdf:ID="用户使用"/>
+  <工程设计 rdf:ID="工程设计结构接收"/>
+  <机油导管 rdf:ID="离心滤回油管"/>
+  <工程设计 rdf:ID="技术文件编制"/>
+  <需求 rdf:ID="海拔高度"/>
+  <热工学 rdf:ID="导热"/>
+  <概念设计 rdf:ID="总体参数设计"/>
+  <使用 rdf:ID="测试性"/>
+  <电工学 rdf:ID="门电路与组合逻辑电路"/>
+  <有色金属及合金 rdf:ID="镍及镍合金"/>
+  <活塞和连杆 rdf:ID="连杆"/>
+  <空气分配器 rdf:ID="空气分配器体"/>
+  <光学 rdf:ID="物理光学"/>
+  <特种加工 rdf:ID="复合加工"/>
+  <中冷器 rdf:ID="中冷器出气罩"/>
+  <机体 rdf:ID="发电机前轴承盖"/>
+  <排气管 rdf:ID="卡箍"/>
+  <随机工具 rdf:ID="随车工具"/>
+  <电子控制系统 rdf:ID="应急电源"/>
+  <规范 rdf:ID="评估规范"/>
+  <电子控制系统 rdf:ID="系统电缆III"/>
+  <整机试验 rdf:ID="热平衡试验"/>
+  <零部件试验 rdf:ID="电测试验"/>
+  <专业 rdf:ID="配气机构专业"/>
+  <零部件试验 rdf:ID="温度试验"/>
+  <任务书 rdf:ID="拆检任务书"/>
+  <空气起动导管 rdf:ID="左3缸空气起动导管"/>
+  <光学 rdf:ID="几何光学"/>
+  <产品组成部分的特征 rdf:ID="进口件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >产品的组成部分中，由国外生产制造的零件、部件、组件</定义>
+  </产品组成部分的特征>
+  <随机工具 rdf:ID="工具袋"/>
+  <空气起动导管 rdf:ID="右6缸空气起动导管"/>
+  <原因分类 rdf:ID="外协件问题"/>
+  <气缸盖 rdf:ID="左排气缸盖"/>
+  <其它文件 rdf:ID="参数"/>
+  <电子控制系统 rdf:ID="断油电磁阀"/>
+  <目录及明细 rdf:ID="物料清单"/>
+  <焊接 rdf:ID="压焊"/>
+  <水管 rdf:ID="左排蒸汽管"/>
+  <光学 rdf:ID="散射"/>
+  <燃油管 rdf:ID="油嘴泄油管"/>
+  <其它工艺 rdf:ID="编织"/>
+  <原因分类 rdf:ID="其它原因"/>
+  <辅助材料 rdf:ID="绝缘材料"/>
+  <喷油泵安装 rdf:ID="传动套"/>
+  <其它文件 rdf:ID="卡片"/>
+  <零部件试验 rdf:ID="疲劳试验"/>
+  <特种加工 rdf:ID="电物理加工"/>
+  <机油导管 rdf:ID="发电机冷却进油管"/>
+  <密级 rdf:ID="秘密">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >一旦泄密会使公司利益遭受较大的损害</定义>
+  </密级>
+  <切削加工 rdf:ID="磨削"/>
+  <电子控制系统 rdf:ID="控制器接线图"/>
+  <性能功能 rdf:ID="功能失效"/>
+  <研制阶段 rdf:ID="正样机"/>
+  <电子控制系统 rdf:ID="电源内部电缆接线表"/>
+  <机体 rdf:ID="发电机卡箍"/>
+  <西北 rdf:ID="宁夏"/>
+  <辅助材料 rdf:ID="表面涂覆材料"/>
+  <专业 rdf:ID="机体专业"/>
+  <西南 rdf:ID="四川"/>
+  <排气管 rdf:ID="右排过渡管"/>
+  <科研院所 rdf:ID="浙江大学动力机械及车辆工程研究所">
+    <编号 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1992</编号>
+    <邮编 rdf:datatype="http://www.w3.org/2001/XMLSchema#int">310027</邮编>
+    <法人 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >俞小莉</法人>
+    <电话 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0571-87951874</电话>
+    <OP地区>
+      <华东 rdf:ID="浙江"/>
+    </OP地区>
+    <电子邮箱 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yuxl@zju.edu.cn</电子邮箱>
+    <地址 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >杭州市浙大路38号（浙江大学玉泉校区）</地址>
+  </科研院所>
+  <推挺摇机构 rdf:ID="排气摇臂轴"/>
+  <切削加工 rdf:ID="刃具切削"/>
+  <标准 rdf:ID="国家标准"/>
+  <华北 rdf:ID="山东"/>
+  <光学 rdf:ID="色散"/>
+  <指导书 rdf:ID="分析指导书"/>
+  <干涉 rdf:ID="卡滞"/>
+  <声学 rdf:ID="换能器原理"/>
+  <目录及明细 rdf:ID="设计文件总目录"/>
+  <进气管 rdf:ID="右进气管"/>
+  <方案设计 rdf:ID="方案设计分析"/>
+  <电子控制系统 rdf:ID="系统电缆IV"/>
+  <机油导管 rdf:ID="喷油泵进油管"/>
+  <电气图样 rdf:ID="原理图"/>
+  <试验 rdf:ID="试验技术"/>
+  <细则 rdf:ID="产品调试细则"/>
+  <辅助材料 rdf:ID="粘接材料"/>
+  <声学 rdf:ID="气流声学"/>
+  <报告 rdf:ID="复装报告"/>
+  <材料外形 rdf:ID="棒材"/>
+  <覆盖层 rdf:ID="转化膜"/>
+  <输油泵 rdf:ID="传动轴"/>
+  <增压器安装 rdf:ID="右增压器大支架"/>
+  <热工学 rdf:ID="对流换热"/>
+  <喷油泵安装 rdf:ID="垫圈20-65Mn-Ct_0"/>
+  <工程设计 rdf:ID="柴油机性能分析"/>
+  <损坏损伤 rdf:ID="变形">
+    <rdf:type rdf:resource="#材料力学"/>
+  </损坏损伤>
+  <机体 rdf:ID="顶盖"/>
+  <推挺摇机构 rdf:ID="左排配气机构"/>
+  <光学 rdf:ID="光阑及像差"/>
+  <任务书 rdf:ID="复装任务书"/>
+  <专业 rdf:ID="燃烧系统专业"/>
+  <华南 rdf:ID="湖南"/>
+  <电子控制系统 rdf:ID="接线盒固定板"/>
+  <其它文件 rdf:ID="合同"/>
+  <空气起动导管 rdf:ID="右3缸空气起动导管"/>
+  <松脱漏堵 rdf:ID="堵塞"/>
+  <材料外形 rdf:ID="管材"/>
+  <大纲 rdf:ID="标准化大纲"/>
+  <电子控制系统 rdf:ID="控制器框图"/>
+  <材料力学 rdf:ID="刚度"/>
+  <线缆及电子元器件 rdf:ID="短路"/>
+  <报告 rdf:ID="拆装报告"/>
+  <电子控制系统 rdf:ID="油量限止器"/>
+  <任务书 rdf:ID="试验任务书"/>
+  <规范 rdf:ID="计算规范"/>
+  <华东 rdf:ID="江西"/>
+  <工程图样 rdf:ID="包装箱图"/>
+  <电子控制系统 rdf:ID="支线架"/>
+  <机油导管 rdf:ID="左增压器进油管"/>
+  <气缸盖 rdf:ID="凸轮轴轴承体"/>
+  <电磁学 rdf:ID="静电场中的导体和电介质"/>
+  <电气图样 rdf:ID="电路图"/>
+  <标准 rdf:ID="国家军用标准"/>
+  <报告 rdf:ID="总结报告"/>
+  <电磁学 rdf:ID="磁介质"/>
+  <华东 rdf:ID="上海"/>
+  <燃油管 rdf:ID="泵嘴回油管"/>
+  <铸造 rdf:ID="砂型铸造"/>
+  <水管 rdf:ID="连通管"/>
+  <电气图样 rdf:ID="印刷板图"/>
+  <产品组成部分的特征 rdf:ID="附件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >供用户安装、拆卸、调整和使用时，所必须的工具和检测仪表，或为了使产品完成多种功能（或用途）所必须的而又不属于产品结构范畴的零件、部件</定义>
+  </产品组成部分的特征>
+  <机体 rdf:ID="上油管"/>
+  <喷油泵 rdf:ID="出油阀接头"/>
+  <商家 rdf:ID="北京吉普汽车有限公司发动机厂">
+    <传真 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >010-67721283</传真>
+    <网址 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >www.Beijing-jeep.com</网址>
+    <电话 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >010-67721283</电话>
+    <OP业务范围>
+      <产品 rdf:ID="汽油机"/>
+    </OP业务范围>
+    <电子邮箱 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lichunpei@bjc.com.cn</电子邮箱>
+    <法人 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >安庆衡</法人>
+    <OP地区>
+      <华北 rdf:ID="北京"/>
+    </OP地区>
+    <邮编 rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100022</邮编>
+    <地址 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >北京市朝阳区广渠路36号</地址>
+    <编号 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</编号>
+  </商家>
+  <西南 rdf:ID="云南"/>
+  <电子设备 rdf:ID="输出异常"/>
+  <机油导管 rdf:ID="主油道连接管"/>
+  <方案设计 rdf:ID="总体方案设计"/>
+  <电工学 rdf:ID="正弦交流电路"/>
+  <概念设计 rdf:ID="概念设计集成"/>
+  <电工学 rdf:ID="继电接触器"/>
+  <光学 rdf:ID="傅里叶光学"/>
+  <电子控制系统 rdf:ID="系统电缆IV接线表"/>
+  <指导书 rdf:ID="选型指导书"/>
+  <特种加工 rdf:ID="化学加工"/>
+  <整机试验 rdf:ID="订货方验收试验"/>
+  <电工学 rdf:ID="交流电动机"/>
+  <损坏损伤 rdf:ID="点蚀"/>
+  <大纲 rdf:ID="试验大纲"/>
+  <故障发生时机 rdf:ID="其它发生时机"/>
+  <热工学 rdf:ID="传质"/>
+  <任务书 rdf:ID="设计技术规格书"/>
+  <热工学 rdf:ID="湿空气"/>
+  <细则 rdf:ID="产品试验细则"/>
+  <电子控制系统 rdf:ID="系统电缆III接线表"/>
+  <机油导管 rdf:ID="机油压力测量油管"/>
+  <热工学 rdf:ID="传热和换热器"/>
+  <规范 rdf:ID="软件产品规范"/>
+  <热处理 rdf:ID="化学热处理"/>
+  <中冷器 rdf:ID="垫片II"/>
+  <电工学 rdf:ID="电路的暂态分析"/>
+  <材料力学 rdf:ID="应力"/>
+  <水管 rdf:ID="右出水管"/>
+  <机油导管 rdf:ID="增压器右下回油管"/>
+  <流体力学 rdf:ID="流体运动学"/>
+  <产品组成部分的特征 rdf:ID="借用件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >在采用隶属编号的产品中，使用以设计定型（鉴定）产品的零件、部件、组件</定义>
+  </产品组成部分的特征>
+  <流体力学 rdf:ID="气体运动"/>
+  <松脱漏堵 rdf:ID="漏水"/>
+  <光学 rdf:ID="吸收"/>
+  <整机试验 rdf:ID="负荷特性试验"/>
+  <机体 rdf:ID="推子插管"/>
+  <线缆及电子元器件 rdf:ID="失效"/>
+  <空气起动导管 rdf:ID="左6缸空气起动导管"/>
+  <电工学 rdf:ID="直流电动机"/>
+  <电子控制系统 rdf:ID="系统电缆II"/>
+  <机油滤清器 rdf:ID="转子总成"/>
+  <使用 rdf:ID="安全性"/>
+  <辅助材料 rdf:ID="焊接材料"/>
+  <其它文件 rdf:ID="记录"/>
+  <覆盖层 rdf:ID="电镀"/>
+  <规范 rdf:ID="仿真规范"/>
+  <燃油滤安装 rdf:ID="燃油滤清器安装"/>
+  <水管 rdf:ID="右下进水管"/>
+  <概念设计 rdf:ID="确定研制目标"/>
+  <密级 rdf:ID="公开资料">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >公开有助于公司利益</定义>
+  </密级>
+  <涡轮增压器 rdf:ID="压气机蜗壳"/>
+  <水泵 rdf:ID="泵座总成"/>
+  <推挺摇机构 rdf:ID="右排凸轮轴"/>
+  <水管 rdf:ID="右排缸套回水管"/>
+  <概念设计 rdf:ID="概念设计总结"/>
+  <输油泵 rdf:ID="被动轴"/>
+  <华南 rdf:ID="广西"/>
+  <损坏损伤 rdf:ID="抱轴"/>
+  <专业 rdf:ID="曲轴组专业"/>
+  <压力加工 rdf:ID="挤压"/>
+  <专业 rdf:ID="连杆组专业"/>
+  <线缆及电子元器件 rdf:ID="开路"/>
+  <燃油管 rdf:ID="喷油器回油管"/>
+  <推挺摇机构 rdf:ID="左排气凸轮轴齿轮"/>
+  <流体力学 rdf:ID="流体静力学"/>
+  <机体 rdf:ID="通油管"/>
+  <整机试验 rdf:ID="变海拔试验"/>
+  <焊接 rdf:ID="气焊"/>
+  <材料外形 rdf:ID="薄膜"/>
+  <覆盖层 rdf:ID="化学镀"/>
+  <需求 rdf:ID="环境温度"/>
+  <涡轮增压器 rdf:ID="涡轮转轴"/>
+  <任务书 rdf:ID="装配任务书"/>
+  <材料力学 rdf:ID="稳定性"/>
+  <有色金属及合金 rdf:ID="专用合金"/>
+  <中冷器安装 rdf:ID="左出气联通管"/>
+  <原因分类 rdf:ID="装配问题"/>
+  <使用 rdf:ID="环境适应性"/>
+  <黑色金属 rdf:ID="铸铁"/>
+  <气缸盖 rdf:ID="凸轮轴止推轴承体"/>
+  <水管 rdf:ID="左排缸套回水管"/>
+  <工程更改单 rdf:ID="技术指令"/>
+  <声学 rdf:ID="驻波"/>
+  <性能功能 rdf:ID="非预期现象"/>
+  <机油泵 rdf:ID="前泵体"/>
+  <随机工具 rdf:ID="拆喷油器工具"/>
+  <零部件试验 rdf:ID="涡轮流通特性试验">
+    <OP所属专业 rdf:resource="#增压系统专业"/>
+  </零部件试验>
+  <声学 rdf:ID="有源噪声和振动控制"/>
+  <报告 rdf:ID="试车报告"/>
+  <产品 rdf:ID="柴油机"/>
+  <机体 rdf:ID="后密封盖"/>
+  <报告 rdf:ID="评估报告"/>
+  <整机试验 rdf:ID="压力波测试试验"/>
+  <机体 rdf:ID="清沙口盖"/>
+  <机械学 rdf:ID="支承"/>
+  <光学 rdf:ID="衍射"/>
+  <电磁学 rdf:ID="麦克斯韦电磁理论和电磁波"/>
+  <机油导管 rdf:ID="离心滤进油管"/>
+  <规范 rdf:ID="调试规范"/>
+  <零部件试验 rdf:ID="应力试验">
+    <结束时间 rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+    >2014-05-14</结束时间>
+  </零部件试验>
+  <中冷器 rdf:ID="垫片I"/>
+  <机油导管 rdf:ID="右增压器直回油管"/>
+  <水管 rdf:ID="出水短管"/>
+  <流体力学 rdf:ID="粘性流体运动学"/>
+  <中冷器 rdf:ID="蒸汽管接头"/>
+  <气缸盖 rdf:ID="凸轮轴第一轴承体"/>
+  <其它文件 rdf:ID="性能指标"/>
+  <热工学 rdf:ID="制冷原理"/>
+  <黑色金属 rdf:ID="合金钢"/>
+  <专业 rdf:ID="供油系统专业"/>
+  <水管 rdf:ID="水泵进水管"/>
+  <概念设计 rdf:ID="概念设计分配"/>
+  <机油导管 rdf:ID="出油弯管"/>
+  <松脱漏堵 rdf:ID="漏油"/>
+  <水泵 rdf:ID="水泵体"/>
+  <材料力学 rdf:ID="内力"/>
+  <材料外形 rdf:ID="型材"/>
+  <专业 rdf:ID="起动系统专业"/>
+  <装配与包装 rdf:ID="包装"/>
+  <材料外形 rdf:ID="箔材"/>
+  <线缆及电子元器件 rdf:ID="接触不良"/>
+  <机油导管 rdf:ID="缸盖空分器润滑进油管"/>
+  <损坏损伤 rdf:ID="裂纹"/>
+  <其它文件 rdf:ID="计划"/>
+  <排气管 rdf:ID="左排过渡管"/>
+  <机油导管 rdf:ID="右增压器弯回油管"/>
+  <报告 rdf:ID="试验报告"/>
+  <热处理 rdf:ID="整体热处理"/>
+  <细则 rdf:ID="车间分工细则"/>
+  <方案设计 rdf:ID="任务书下达"/>
+  <电子控制系统 rdf:ID="执行器接线图"/>
+  <增压器安装 rdf:ID="增压器小支架"/>
+  <燃油管 rdf:ID="泄油联通管"/>
+  <电工学 rdf:ID="可编程控制器"/>
+  <整机试验 rdf:ID="部分负荷试验"/>
+  <光学 rdf:ID="光的度量"/>
+  <进气管 rdf:ID="左进气管"/>
+  <专业 rdf:ID="传动系统专业"/>
+  <输油泵 rdf:ID="法兰"/>
+  <水管 rdf:ID="进水管"/>
+  <电磁学 rdf:ID="静电场"/>
+  <华南 rdf:ID="海南"/>
+  <电气图样 rdf:ID="线缆联接图"/>
+  <空气起动导管 rdf:ID="左2缸空气起动导管"/>
+  <水管 rdf:ID="补充进水管"/>
+  <东北 rdf:ID="黑龙江"/>
+  <喷油泵安装 rdf:ID="挡圈72-65Mn-Ct_0"/>
+  <细则 rdf:ID="工装选择细则"/>
+  <活塞和连杆 rdf:ID="组合油环"/>
+  <性能功能 rdf:ID="功能衰退"/>
+  <电工学 rdf:ID="电工测量"/>
+  <专利 rdf:ID="外观设计专利"/>
+  <机油导管 rdf:ID="左增压器润滑进油管"/>
+  <华北 rdf:ID="天津"/>
+  <下曲轴箱总成 rdf:ID="回油管"/>
+  <增压器安装 rdf:ID="右排增压器支架"/>
+  <华北 rdf:ID="内蒙古"/>
+  <喷油器 rdf:ID="喷油器体"/>
+  <黑色金属 rdf:ID="粉末冶金">
+    <rdf:type rdf:resource="#其它工艺"/>
+  </黑色金属>
+  <使用 rdf:ID="保障性"/>
+  <空气起动导管 rdf:ID="左5缸空气起动导管"/>
+  <输油泵 rdf:ID="主动齿轮"/>
+  <零部件试验 rdf:ID="扭振试验"/>
+  <华南 rdf:ID="湖北"/>
+  <非金属 rdf:ID="塑料及其制品"/>
+  <推挺摇机构 rdf:ID="排气门"/>
+  <故障等级 rdf:ID="致命性故障"/>
+  <故障类型 rdf:ID="NANB">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >非关联非任务故障</定义>
+  </故障类型>
+  <产品组成部分的特征 rdf:ID="自制件"/>
+  <电磁学 rdf:ID="恒定磁场"/>
+  <排气管 rdf:ID="左排排气管"/>
+  <产品组成部分的特征 rdf:ID="备件">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >为保证产品的使用和维修，供给用户备用的零件、部件</定义>
+  </产品组成部分的特征>
+  <损坏损伤 rdf:ID="断裂"/>
+  <东北 rdf:ID="吉林"/>
+  <声学 rdf:ID="调制气流生源"/>
+  <喷油泵 rdf:ID="出油阀及紧压空心螺栓"/>
+  <声学 rdf:ID="热声学"/>
+  <燃油管 rdf:ID="油嘴回油管"/>
+  <任务书 rdf:ID="拆装任务书"/>
+  <机械学 rdf:ID="导轨"/>
+  <增压器安装 rdf:ID="左排增压器支架"/>
+  <故障等级 rdf:ID="灾难性故障"/>
+  <密级 rdf:ID="绝密">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >一旦泄密会使公司利益遭受特别严重的损害</定义>
+  </密级>
+  <西北 rdf:ID="新疆"/>
+  <报告 rdf:ID="验收报告"/>
+  <非金属 rdf:ID="橡胶及其制品"/>
+  <燃油管 rdf:ID="泄油连通管"/>
+  <整机试验 rdf:ID="排气管试验"/>
+  <概念设计 rdf:ID="数据发布"/>
+  <机油导管 rdf:ID="离心滤滴油泵进油管"/>
+  <中冷器 rdf:ID="中冷器进气罩"/>
+  <说明 rdf:ID="需求规格说明"/>
+  <机械学 rdf:ID="构件受力变形"/>
+  <机油导管 rdf:ID="滴油管"/>
+  <电工学 rdf:ID="电力电子技术"/>
+  <规范 rdf:ID="测试规范"/>
+  <松脱漏堵 rdf:ID="松动"/>
+  <指导书 rdf:ID="使用指导书"/>
+  <损坏损伤 rdf:ID="损伤"/>
+  <报告 rdf:ID="拆检报告"/>
+  <电气图样 rdf:ID="逻辑图"/>
+  <整机试验 rdf:ID="外特性试验"/>
+  <工程图样 rdf:ID="包装图"/>
+  <工程更改单 rdf:ID="更改申请书"/>
+  <方案设计 rdf:ID="方案集成与优化"/>
+  <电磁学 rdf:ID="电磁感应和暂态过程"/>
+  <电子控制系统 rdf:ID="系统电缆I"/>
+  <故障类型 rdf:ID="AC">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >不记为故障的事件式状态</定义>
+  </故障类型>
+  <焊接 rdf:ID="电阻焊"/>
+  <标准 rdf:ID="企业标准"/>
+  <电工学 rdf:ID="磁路与铁芯线圈电路"/>
+  <密级 rdf:ID="内部资料">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >一旦泄密会使公司利益遭受较大的损害</定义>
+  </密级>
+  <机油导管 rdf:ID="发电机冷却回油管"/>
+  <西南 rdf:ID="重庆"/>
+  <声学 rdf:ID="平面波的传播"/>
+  <指导书 rdf:ID="仿真指导书"/>
+  <原因分类 rdf:ID="制造问题"/>
+  <空气起动导管 rdf:ID="左4缸空气起动导管"/>
+  <说明 rdf:ID="设计说明"/>
+  <机油导管 rdf:ID="左排缸盖后端回油管"/>
+  <华北 rdf:ID="河南"/>
+  <协会分会 rdf:ID="单缸柴油机分会">
+    <秘书长 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >邵仁恩</秘书长>
+    <OP地区>
+      <华东 rdf:ID="江苏"/>
+    </OP地区>
+    <邮编 rdf:datatype="http://www.w3.org/2001/XMLSchema#int">213002</邮编>
+    <编号 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</编号>
+    <电话 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0519-6685891;13032506511</电话>
+    <地址 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >常州市怀德中路123号</地址>
+    <办公单位 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >常柴股份有限公司</办公单位>
+  </协会分会>
+  <西北 rdf:ID="青海"/>
+  <故障类型 rdf:ID="AB">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >关联任务故障</定义>
+  </故障类型>
+  <电磁学 rdf:ID="恒定电流"/>
+  <热工学 rdf:ID="水蒸汽"/>
+  <电子控制系统 rdf:ID="电控系统_137"/>
+  <特种加工 rdf:ID="电化学加工"/>
+  <专利 rdf:ID="发明专利"/>
+  <松脱漏堵 rdf:ID="渗水"/>
+  <焊接 rdf:ID="特种焊接"/>
+  <机体 rdf:ID="导向销"/>
+  <声学 rdf:ID="非线性声学"/>
+  <工程图样 rdf:ID="零件图"/>
+  <机体 rdf:ID="长通气管"/>
+  <排气管 rdf:ID="排气波纹管组合件"/>
+  <其它工艺 rdf:ID="非金属材料成形"/>
+  <光学 rdf:ID="光的偏振与晶体光学"/>
+  <材料外形 rdf:ID="板材"/>
+  <故障等级 rdf:ID="轻度故障"/>
+  <模型 rdf:ID="仿真设计模型"/>
+  <工程图样 rdf:ID="外形图"/>
+  <规范 rdf:ID="文件规范"/>
+  <整机试验 rdf:ID="准交试验"/>
+  <包装与配全 rdf:ID="包装箱">
+    <F>
+      <包装与配全 rdf:ID="护帽">
+        <S rdf:resource="#包装箱"/>
+      </包装与配全>
+    </F>
+    <F>
+      <包装与配全 rdf:ID="分配器堵盖">
+        <S rdf:resource="#包装箱"/>
+      </包装与配全>
+    </F>
+  </包装与配全>
+  <喷油泵 rdf:ID="挺柱">
+    <S>
+      <喷油泵 rdf:ID="调节齿套">
+        <S>
+          <喷油泵 rdf:ID="喷油泵凸轮轴">
+            <F rdf:resource="#调节齿套"/>
+          </喷油泵>
+        </S>
+        <F>
+          <喷油泵 rdf:ID="中间体">
+            <S>
+              <电子控制系统 rdf:ID="执行器装置">
+                <F>
+                  <电子控制系统 rdf:ID="执行器">
+                    <S rdf:resource="#执行器装置"/>
+                  </电子控制系统>
+                </F>
+                <F rdf:resource="#中间体"/>
+              </电子控制系统>
+            </S>
+            <S rdf:resource="#调节齿套"/>
+          </喷油泵>
+        </F>
+        <F>
+          <喷油泵 rdf:ID="凸轮轴">
+            <S rdf:resource="#调节齿套"/>
+          </喷油泵>
+        </F>
+        <F rdf:resource="#挺柱"/>
+      </喷油泵>
+    </S>
+    <F>
+      <喷油泵 rdf:ID="柱塞偶件">
+        <S rdf:resource="#挺柱"/>
+      </喷油泵>
+    </F>
+    <F>
+      <喷油泵 rdf:ID="轴承座">
+        <S rdf:resource="#挺柱"/>
+      </喷油泵>
+    </F>
+  </喷油泵>
+  <化学 rdf:ID="无机化学">
+    <F>
+      <化学 rdf:ID="配位化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="无机高分子化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="金属酶化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="无机固体化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="金属有机化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="同位素化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="元素化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="生物无机化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="无机合成化学">
+        <S rdf:resource="#无机化学"/>
+      </化学>
+    </F>
+  </化学>
+  <电子控制系统 rdf:ID="上线路板">
+    <F>
+      <电子控制系统 rdf:ID="位移调理板">
+        <S rdf:resource="#上线路板"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="压力调理板">
+        <S rdf:resource="#上线路板"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="脚踏板调理板">
+        <S rdf:resource="#上线路板"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="冷端温度调理板">
+        <S rdf:resource="#上线路板"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="热电偶调理板">
+        <S rdf:resource="#上线路板"/>
+      </电子控制系统>
+    </F>
+    <S>
+      <电子控制系统 rdf:ID="上板">
+        <F rdf:resource="#上线路板"/>
+        <S>
+          <电子控制系统 rdf:ID="控制器">
+            <F>
+              <电子控制系统 rdf:ID="电感">
+                <S>
+                  <电子控制系统 rdf:ID="下线路板">
+                    <S>
+                      <电子控制系统 rdf:ID="下板">
+                        <S rdf:resource="#控制器"/>
+                        <F>
+                          <电子控制系统 rdf:ID="信号转接板">
+                            <S rdf:resource="#下板"/>
+                          </电子控制系统>
+                        </F>
+                        <F rdf:resource="#下线路板"/>
+                      </电子控制系统>
+                    </S>
+                    <F rdf:resource="#电感"/>
+                  </电子控制系统>
+                </S>
+                <S rdf:resource="#控制器"/>
+                <F>
+                  <电子控制系统 rdf:ID="电感II">
+                    <S rdf:resource="#电感"/>
+                  </电子控制系统>
+                </F>
+                <F>
+                  <电子控制系统 rdf:ID="电感I">
+                    <S rdf:resource="#电感"/>
+                  </电子控制系统>
+                </F>
+              </电子控制系统>
+            </F>
+            <F rdf:resource="#下板"/>
+            <F rdf:resource="#上板"/>
+            <F>
+              <电子控制系统 rdf:ID="端板">
+                <F>
+                  <电子控制系统 rdf:ID="电源内部电缆">
+                    <S rdf:resource="#端板"/>
+                  </电子控制系统>
+                </F>
+                <F>
+                  <电子控制系统 rdf:ID="插板III">
+                    <S rdf:resource="#端板"/>
+                    <F>
+                      <电子控制系统 rdf:ID="扁平电缆III">
+                        <S rdf:resource="#插板III"/>
+                      </电子控制系统>
+                    </F>
+                  </电子控制系统>
+                </F>
+                <F>
+                  <电子控制系统 rdf:ID="插板II">
+                    <F>
+                      <电子控制系统 rdf:ID="插板II线缆束">
+                        <S rdf:resource="#插板II"/>
+                      </电子控制系统>
+                    </F>
+                    <F>
+                      <电子控制系统 rdf:ID="扁平电缆II">
+                        <S rdf:resource="#插板II"/>
+                      </电子控制系统>
+                    </F>
+                    <S rdf:resource="#端板"/>
+                  </电子控制系统>
+                </F>
+                <F>
+                  <电子控制系统 rdf:ID="插板I">
+                    <F>
+                      <电子控制系统 rdf:ID="扁平电缆I">
+                        <S rdf:resource="#插板I"/>
+                      </电子控制系统>
+                    </F>
+                    <S rdf:resource="#端板"/>
+                  </电子控制系统>
+                </F>
+                <S rdf:resource="#控制器"/>
+              </电子控制系统>
+            </F>
+            <F>
+              <电子控制系统 rdf:ID="控制器下体">
+                <S rdf:resource="#控制器"/>
+              </电子控制系统>
+            </F>
+            <F>
+              <电子控制系统 rdf:ID="固定板">
+                <S rdf:resource="#控制器"/>
+              </电子控制系统>
+            </F>
+          </电子控制系统>
+        </S>
+      </电子控制系统>
+    </S>
+  </电子控制系统>
+  <摩檫学 rdf:ID="润滑理论与润滑设计">
+    <F>
+      <摩檫学 rdf:ID="润滑膜流变特性">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="流体润滑理论基础">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="润滑计算的数值解法">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="典型机械零件的润滑设计">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="特殊流体介质润滑">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="边界润滑与添加剂">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="润滑状态转化与薄膜润滑">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="润滑失效与混合润滑">
+        <S rdf:resource="#润滑理论与润滑设计"/>
+      </摩檫学>
+    </F>
+  </摩檫学>
+  <中冷器 rdf:ID="中冷器芯子元件">
+    <S rdf:resource="#中冷器芯子元件"/>
+    <F rdf:resource="#中冷器芯子元件"/>
+  </中冷器>
+  <化学 rdf:ID="有机化学">
+    <F>
+      <化学 rdf:ID="普通有机化学">
+        <S rdf:resource="#有机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="有机合成化学">
+        <S rdf:resource="#有机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="金属和非金属有机化学">
+        <S rdf:resource="#有机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="物理有机化学">
+        <S rdf:resource="#有机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="生物有机化学">
+        <S rdf:resource="#有机化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="有机分析化学">
+        <S rdf:resource="#有机化学"/>
+      </化学>
+    </F>
+  </化学>
+  <推挺摇机构 rdf:ID="气门旋转机构">
+    <F>
+      <推挺摇机构 rdf:ID="排气摇臂">
+        <S rdf:resource="#气门旋转机构"/>
+      </推挺摇机构>
+    </F>
+    <F>
+      <推挺摇机构 rdf:ID="排气推杆">
+        <S rdf:resource="#气门旋转机构"/>
+      </推挺摇机构>
+    </F>
+  </推挺摇机构>
+  <产品层次 rdf:ID="部件">
+    <S>
+      <产品层次 rdf:ID="组件">
+        <F rdf:resource="#部件"/>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >由部件和零件经装配所构成的产品的具有独立结构和（或）独立用途的部分</定义>
+      </产品层次>
+    </S>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >由两个或两个以上的零件，以可拆或不可拆的形式组成的部分</定义>
+    <F>
+      <产品层次 rdf:ID="零件">
+        <S rdf:resource="#部件"/>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >不采用任何装配工序制成的单一制品</定义>
+        <F>
+          <产品层次 rdf:ID="结构单元">
+            <S rdf:resource="#零件"/>
+          </产品层次>
+        </F>
+      </产品层次>
+    </F>
+  </产品层次>
+  <机油滤清器 rdf:ID="离心式机油滤清器">
+    <F>
+      <燃油滤清器 rdf:ID="滤座">
+        <S rdf:resource="#离心式机油滤清器"/>
+        <rdf:type rdf:resource="#机油滤清器"/>
+      </燃油滤清器>
+    </F>
+    <F>
+      <机油滤清器 rdf:ID="下转子体">
+        <S rdf:resource="#离心式机油滤清器"/>
+      </机油滤清器>
+    </F>
+  </机油滤清器>
+  <中冷器 rdf:ID="中冷器芯子">
+    <S rdf:resource="#中冷器芯子"/>
+    <F>
+      <中冷器 rdf:ID="外侧水罩">
+        <S rdf:resource="#中冷器芯子"/>
+      </中冷器>
+    </F>
+    <F>
+      <中冷器 rdf:ID="内侧水罩">
+        <S rdf:resource="#中冷器芯子"/>
+      </中冷器>
+    </F>
+    <F rdf:resource="#中冷器芯子"/>
+  </中冷器>
+  <喷油泵 rdf:ID="出油阀偶件">
+    <F>
+      <喷油泵 rdf:ID="喷油泵体">
+        <S rdf:resource="#出油阀偶件"/>
+      </喷油泵>
+    </F>
+    <F>
+      <喷油泵 rdf:ID="进机油接块">
+        <S rdf:resource="#出油阀偶件"/>
+      </喷油泵>
+    </F>
+    <F>
+      <喷油泵 rdf:ID="回油阀">
+        <S rdf:resource="#出油阀偶件"/>
+      </喷油泵>
+    </F>
+    <F>
+      <喷油泵 rdf:ID="供油组件">
+        <S rdf:resource="#出油阀偶件"/>
+      </喷油泵>
+    </F>
+    <F>
+      <机油滤清器 rdf:ID="单向阀">
+        <S rdf:resource="#出油阀偶件"/>
+        <S>
+          <机油滤清器 rdf:ID="离心滤座">
+            <F rdf:resource="#单向阀"/>
+          </机油滤清器>
+        </S>
+      </机油滤清器>
+    </F>
+  </喷油泵>
+  <化学 rdf:ID="物理化学">
+    <F>
+      <化学 rdf:ID="电化学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="热化学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="化学热力学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="量子化学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="界面化学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="结构化学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="溶液理论">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="胶体化学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="化学动力学">
+        <S rdf:resource="#物理化学"/>
+      </化学>
+    </F>
+  </化学>
+  <理论力学 rdf:ID="动力学">
+    <F>
+      <理论力学 rdf:ID="动力学基础">
+        <S rdf:resource="#动力学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="动能定理">
+        <S rdf:resource="#动力学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="动量原理">
+        <S rdf:resource="#动力学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="达朗伯原理">
+        <S rdf:resource="#动力学"/>
+      </理论力学>
+    </F>
+  </理论力学>
+  <输油泵 rdf:ID="限压阀">
+    <S>
+      <输油泵 rdf:ID="泵盖">
+        <rdf:type rdf:resource="#机油泵"/>
+        <F rdf:resource="#限压阀"/>
+        <S>
+          <输油泵 rdf:ID="泵体">
+            <F rdf:resource="#泵盖"/>
+            <rdf:type rdf:resource="#水泵"/>
+          </输油泵>
+        </S>
+      </输油泵>
+    </S>
+    <S>
+      <机体 rdf:ID="呼吸器">
+        <F rdf:resource="#限压阀"/>
+        <F>
+          <机体 rdf:ID="通气管">
+            <S rdf:resource="#呼吸器"/>
+          </机体>
+        </F>
+        <F>
+          <机体 rdf:ID="引导管">
+            <S rdf:resource="#呼吸器"/>
+          </机体>
+        </F>
+        <F>
+          <机体 rdf:ID="滤芯">
+            <S rdf:resource="#呼吸器"/>
+          </机体>
+        </F>
+        <F>
+          <机体 rdf:ID="呼吸器体">
+            <S rdf:resource="#呼吸器"/>
+          </机体>
+        </F>
+        <F>
+          <机体 rdf:ID="呼吸器盖">
+            <S rdf:resource="#呼吸器"/>
+          </机体>
+        </F>
+      </机体>
+    </S>
+    <F>
+      <机体 rdf:ID="阀体">
+        <S rdf:resource="#限压阀"/>
+      </机体>
+    </F>
+    <rdf:type rdf:resource="#机油热交换器"/>
+    <rdf:type rdf:resource="#机体"/>
+  </输油泵>
+  <摩檫学 rdf:ID="摩擦磨损机理与控制">
+    <F>
+      <摩檫学 rdf:ID="表面形态与表面接触">
+        <S rdf:resource="#摩擦磨损机理与控制"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="固体摩擦与控制">
+        <S rdf:resource="#摩擦磨损机理与控制"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="磨损特征与机理">
+        <S rdf:resource="#摩擦磨损机理与控制"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="宏观磨损规律与磨损理论">
+        <S rdf:resource="#摩擦磨损机理与控制"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="抗磨损设计与表面涂层">
+        <S rdf:resource="#摩擦磨损机理与控制"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="摩擦磨损试验与状态监测">
+        <S rdf:resource="#摩擦磨损机理与控制"/>
+      </摩檫学>
+    </F>
+  </摩檫学>
+  <中冷器 rdf:ID="右中冷器">
+    <F>
+      <中冷器 rdf:ID="右中冷器进气罩">
+        <S rdf:resource="#右中冷器"/>
+      </中冷器>
+    </F>
+    <F>
+      <中冷器 rdf:ID="右中冷器出气罩">
+        <S rdf:resource="#右中冷器"/>
+      </中冷器>
+    </F>
+    <F>
+      <中冷器 rdf:ID="水管接头">
+        <S rdf:resource="#右中冷器"/>
+      </中冷器>
+    </F>
+    <F>
+      <中冷器 rdf:ID="中冷器芯子总成">
+        <S rdf:resource="#右中冷器"/>
+      </中冷器>
+    </F>
+  </中冷器>
+  <电子控制系统 rdf:ID="齿壁扇">
+    <F>
+      <电子控制系统 rdf:ID="齿扇">
+        <S rdf:resource="#齿壁扇"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="齿臂">
+        <S rdf:resource="#齿壁扇"/>
+      </电子控制系统>
+    </F>
+    <S>
+      <电子控制系统 rdf:ID="脚踏板">
+        <F>
+          <电子控制系统 rdf:ID="脚踏板线缆束II">
+            <S rdf:resource="#脚踏板"/>
+          </电子控制系统>
+        </F>
+        <F>
+          <电子控制系统 rdf:ID="脚踏板线缆束I">
+            <S rdf:resource="#脚踏板"/>
+          </电子控制系统>
+        </F>
+        <F>
+          <电子控制系统 rdf:ID="脚踏板滤波板">
+            <S rdf:resource="#脚踏板"/>
+          </电子控制系统>
+        </F>
+        <F>
+          <电子控制系统 rdf:ID="齿轮电位器">
+            <S rdf:resource="#脚踏板"/>
+          </电子控制系统>
+        </F>
+        <F>
+          <电子控制系统 rdf:ID="脚踏板盒盖">
+            <S rdf:resource="#脚踏板"/>
+          </电子控制系统>
+        </F>
+        <F rdf:resource="#齿壁扇"/>
+        <F>
+          <电子控制系统 rdf:ID="弹簧轴套">
+            <F>
+              <电子控制系统 rdf:ID="轴套">
+                <S rdf:resource="#弹簧轴套"/>
+              </电子控制系统>
+            </F>
+            <S rdf:resource="#脚踏板"/>
+          </电子控制系统>
+        </F>
+      </电子控制系统>
+    </S>
+  </电子控制系统>
+  <化学 rdf:ID="核化学">
+    <F>
+      <化学 rdf:ID="放射性元素化学">
+        <S rdf:resource="#核化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="放射分析化学">
+        <S rdf:resource="#核化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="辐射化学">
+        <S rdf:resource="#核化学"/>
+      </化学>
+    </F>
+  </化学>
+  <电子控制系统 rdf:ID="接线盒">
+    <F>
+      <电子控制系统 rdf:ID="冷端补偿端子">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="内线缆II">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="执行器电缆">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="油压传感器电缆">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="水温传感器">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="排温传感器">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="内线缆I">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="转速传感器II电缆">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="接线盒下体">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+    <F>
+      <电子控制系统 rdf:ID="转速传感器I电缆">
+        <S rdf:resource="#接线盒"/>
+      </电子控制系统>
+    </F>
+  </电子控制系统>
+  <化学 rdf:ID="高分子化学">
+    <F>
+      <化学 rdf:ID="天然高分子化学">
+        <S rdf:resource="#高分子化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="高分子合成化学">
+        <S rdf:resource="#高分子化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="高分子物理化学">
+        <S rdf:resource="#高分子化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="高聚物应用">
+        <S rdf:resource="#高分子化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="高分子物理">
+        <S rdf:resource="#高分子化学"/>
+      </化学>
+    </F>
+  </化学>
+  <中冷器 rdf:ID="左中冷器">
+    <F>
+      <中冷器 rdf:ID="左中冷器进气罩">
+        <S rdf:resource="#左中冷器"/>
+      </中冷器>
+    </F>
+    <F>
+      <中冷器 rdf:ID="左中冷器出气罩">
+        <S rdf:resource="#左中冷器"/>
+      </中冷器>
+    </F>
+  </中冷器>
+  <摩檫学 rdf:ID="应用摩擦学">
+    <F>
+      <摩檫学 rdf:ID="微观摩擦学">
+        <S rdf:resource="#应用摩擦学"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="金属成型摩擦学">
+        <S rdf:resource="#应用摩擦学"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="生物摩擦学">
+        <S rdf:resource="#应用摩擦学"/>
+      </摩檫学>
+    </F>
+    <F>
+      <摩檫学 rdf:ID="生态摩擦学">
+        <S rdf:resource="#应用摩擦学"/>
+      </摩檫学>
+    </F>
+  </摩檫学>
+  <理论力学 rdf:ID="静力学">
+    <F>
+      <理论力学 rdf:ID="静力学基础">
+        <S rdf:resource="#静力学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="平面力系">
+        <S rdf:resource="#静力学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="空间力系">
+        <S rdf:resource="#静力学"/>
+      </理论力学>
+    </F>
+  </理论力学>
+  <理论力学 rdf:ID="运动学">
+    <F>
+      <理论力学 rdf:ID="运动学基础">
+        <S rdf:resource="#运动学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="点的合成运动">
+        <S rdf:resource="#运动学"/>
+      </理论力学>
+    </F>
+    <F>
+      <理论力学 rdf:ID="刚体的平面运动">
+        <S rdf:resource="#运动学"/>
+      </理论力学>
+    </F>
+  </理论力学>
+  <化学 rdf:ID="分析化学">
+    <F>
+      <化学 rdf:ID="化学分析">
+        <S rdf:resource="#分析化学"/>
+      </化学>
+    </F>
+    <F>
+      <化学 rdf:ID="仪器和新技术分析">
+        <S rdf:resource="#分析化学"/>
+      </化学>
+    </F>
+  </化学>
+  <发动机支承 rdf:ID="安装支座">
+    <F>
+      <发动机支承 rdf:ID="发动机后支撑">
+        <S rdf:resource="#安装支座"/>
+      </发动机支承>
+    </F>
+    <F>
+      <发动机支承 rdf:ID="发动机前支撑">
+        <S rdf:resource="#安装支座"/>
+      </发动机支承>
+    </F>
+  </发动机支承>
+  <气缸盖 rdf:ID="右排气缸盖">
+    <S>
+      <气缸盖 rdf:ID="气门室罩">
+        <F rdf:resource="#右排气缸盖"/>
+      </气缸盖>
+    </S>
+  </气缸盖>
+  <机油导管 rdf:ID="增压器总进油管">
+    <F>
+      <机油导管 rdf:ID="增压器左进油管">
+        <S rdf:resource="#增压器总进油管"/>
+      </机油导管>
+    </F>
+  </机油导管>
+  <电子控制系统 rdf:ID="线包">
+    <S>
+      <电子控制系统 rdf:ID="转速传感器">
+        <F rdf:resource="#线包"/>
+      </电子控制系统>
+    </S>
+  </电子控制系统>
+  <下曲轴箱总成 rdf:ID="旁通阀">
+    <S>
+      <下曲轴箱总成 rdf:ID="下曲轴箱">
+        <F rdf:resource="#旁通阀"/>
+      </下曲轴箱总成>
+    </S>
+  </下曲轴箱总成>
+  <电子设备 rdf:ID="工作异常">
+    <F>
+      <电子设备 rdf:ID="执行器故障">
+        <OP故障类型>
+          <故障类型 rdf:ID="NAB">
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >非关联任务故障</定义>
+          </故障类型>
+        </OP故障类型>
+        <故障原因 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >执行器进水</故障原因>
+        <OP原因分类>
+          <原因分类 rdf:ID="使用问题"/>
+        </OP原因分类>
+        <S rdf:resource="#工作异常"/>
+        <故障描述 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >执行器故障，车辆冒白烟</故障描述>
+        <解决措施 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >更换一台新执行器</解决措施>
+        <OP故障发生时机>
+          <故障发生时机 rdf:ID="装车试验"/>
+        </OP故障发生时机>
+        <OP故障等级>
+          <故障等级 rdf:ID="一般故障"/>
+        </OP故障等级>
+      </电子设备>
+    </F>
+  </电子设备>
+  <机油热交换器 rdf:ID="换热器座">
+    <S>
+      <机油热交换器 rdf:ID="换热器壳">
+        <F rdf:resource="#换热器座"/>
+      </机油热交换器>
+    </S>
+  </机油热交换器>
+  <机体 rdf:ID="喷油管">
+    <S>
+      <机体 rdf:ID="冷却喷嘴">
+        <F rdf:resource="#喷油管"/>
+      </机体>
+    </S>
+  </机体>
+  <机油热交换器 rdf:ID="换热器体">
+    <F>
+      <机油热交换器 rdf:ID="机油热交换器体">
+        <S rdf:resource="#换热器体"/>
+      </机油热交换器>
+    </F>
+  </机油热交换器>
+  <机油泵 rdf:ID="机油泵体">
+    <S>
+      <机油泵 rdf:ID="中泵体">
+        <F rdf:resource="#机油泵体"/>
+      </机油泵>
+    </S>
+  </机油泵>
+  <随机工具 rdf:ID="棘轮扳手">
+    <S>
+      <随机工具 rdf:ID="盘车扳手">
+        <F rdf:resource="#棘轮扳手"/>
+      </随机工具>
+    </S>
+  </随机工具>
+  <黑色金属 rdf:ID="碳素钢10-GB">
+    <材料全称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10-GB/T699-1999</材料全称>
+    <材料下标 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >T599-1999</材料下标>
+    <S>
+      <黑色金属 rdf:ID="碳素钢">
+        <F rdf:resource="#碳素钢10-GB"/>
+      </黑色金属>
+    </S>
+    <材料上标 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10-GB</材料上标>
+  </黑色金属>
+  <零部件试验 rdf:ID="模态试验">
+    <F>
+      <零部件试验 rdf:ID="SG150柴油机缸盖自由模态测试分析">
+        <人员 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >温世杰、曾壮、邵得志、辛花、张晓静</人员>
+        <编号 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SG150-MTSY</编号>
+        <OP所属专业>
+          <专业 rdf:ID="气缸盖专业"/>
+        </OP所属专业>
+        <试验设备 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >DELL计算机一台；DIFA；SCADAS；313DC数采前端一台；ModelImpact模态测试软件；三向加速度传感器四个；力传感器一个，力锤一把；联接线若干；蜂蜡，丙酮</试验设备>
+        <S rdf:resource="#模态试验"/>
+        <地点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >基本发动机室试验装配间</地点>
+        <被试件型号 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SG150柴油机</被试件型号>
+        <起始时间 rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2006-06-29</起始时间>
+      </零部件试验>
+    </F>
+  </零部件试验>
+  <推挺摇机构 rdf:ID="进气摇臂轴">
+    <S>
+      <推挺摇机构 rdf:ID="右排配气机构">
+        <F rdf:resource="#进气摇臂轴"/>
+      </推挺摇机构>
+    </S>
+  </推挺摇机构>
+  <推挺摇机构 rdf:ID="左排凸轮轴">
+    <F>
+      <推挺摇机构 rdf:ID="进气凸轮轴齿轮">
+        <S rdf:resource="#左排凸轮轴"/>
+      </推挺摇机构>
+    </F>
+  </推挺摇机构>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

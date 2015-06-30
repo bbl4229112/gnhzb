@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    CheckBox一般用在单独的"是或否"的选项中，如果有多个选项，请使用<a href="CheckGroup.html">CheckGroup</a>。
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+Edo.build({
+    id: 'publish',
+    type: 'check',
+    text: '是否发布',
+    render: document.body
+});
+new Edo.controls.Button()
+.set({   
+    text: '获取选中',
+    render: document.body,
+    onclick: function(e){
+        alert(publish.checked);
+    }
+});
+</script>

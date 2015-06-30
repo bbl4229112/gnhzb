@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Author root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.Author" table="caltks.Author">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="authorName" column="authorName" type="string"/>
+                
+                <set name="knowledges" table="caltks.KnowledgesAuthors" inverse="true" lazy="true">
+                        <key column="authorID"/>   
+                  
+                        <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge">
+                        	<column name="knowledgeID"></column>
+                        </many-to-many>
+                </set>
+                
+        </class>
+</hibernate-mapping>

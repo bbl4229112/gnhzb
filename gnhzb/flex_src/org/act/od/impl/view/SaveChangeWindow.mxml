@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns="org.act.od.impl.view.*" xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" width="336" height="156" title="保存更改" >
+	
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.events.FigureEditorNavigatorAppEvent;
+			import org.act.od.impl.figure.Voiceow2Figure;
+			import mx.events.CloseEvent;
+			import mx.managers.PopUpManager;
+			import org.act.od.impl.model.*;
+			
+			private var doSave:Boolean = true;
+			
+			[Bindable]
+			private var labelName:String;
+			
+//			private var savedFEModel : FigureEditorModel = null;
+			
+			private var closedFE : FigureEditor = null;
+			private var closedBE :BpelEditor = null;
+			
+			public function setFileName(fileName:String):void{
+				labelName = "确定保存    " + fileName + "    吗?";
+			}
+			
+			public function setClosedFE(closedFE : FigureEditor) : void {
+				this.closedFE = closedFE;
+			}
+			public function setClosedBE(closedBE :BpelEditor):void{
+				this.closedBE = closedBE;
+			}
+			private function onNoHandle(event :MouseEvent):void {
+				if(this.closedFE != null)
+					closedFE.figureEditorModel.unsaveCanvasXML();
+				PopUpManager.removePopUp(this);
+			}
+			
+			private function onYesHandle(event :MouseEvent):void {
+				
+				this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+				PopUpManager.removePopUp(this);
+			}
+			
+			private function onCancleHandle(event :MouseEvent):void {
+				
+				//set figure editor to the state before close, which is the canvasXML is simultaneous with the 
+				//existed figures on canvas and the back up canvasXML is still after last save
+				if(this.closedFE != null){
+					closedFE.figureEditorModel.updateCanvasXML();
+					new FigureEditorNavigatorAppEvent(FigureEditorNavigatorAppEvent.CANCLE_CLOSE_FIGURE_EDITOR,
+						{closedFigureEditor:closedFE}).dispatch();
+				}else if(this.closedBE != null){
+					closedBE.bpelEditorModel.updateBpelContent(closedBE.getBpelContent());
+					new FigureEditorNavigatorAppEvent(FigureEditorNavigatorAppEvent.CANCLE_CLOSE_BPEL_EDITOR,
+						{closedBPELEditor :closedBE}).dispatch();
+				}
+				PopUpManager.removePopUp(this);
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:HRule x="0" y="79" width="316"/>
+	<mx:Button label="保存" x="22" y="89" click="onYesHandle(event)"  width="71"/>
+	<mx:Button label="不保存" x="122.5" y="89" click="onNoHandle(event)"  width="71" height="22"/>
+	<mx:Label text="{labelName}" x="40" y="31" width="254" height="40" fontWeight="normal" fontSize="12"/>
+	<mx:Button label="取消" x="223" y="89" click="onCancleHandle(event)"  width="71"/>
+	
+</mx:TitleWindow>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp codebase="http://localhost:8080/gdksp"
+	href="ontofile/kmap.jnlp">
+	<information>
+		<title>caltkms</title>
+		<vendor>Nzju</vendor>
+		<homepage href="http://localhost:8080/gdksp" />
+		<description>CALT KNOWLEDDGE　MAP</description>
+		<description kind="short">CALT KNOWLEDDGE　MAP</description>
+		<offline-allowed />
+	</information>
+	<security>
+		<all-permissions />
+	</security>
+	<resources os="Windows">
+		<property name="sun.java2d.noddraw" value="true" />
+	</resources>
+	<resources>
+		<j2se href="http://java.sun.com/products/autodl/j2se "
+			version="1.6+" initial-heap-size="512m" max-heap-size="512m" />
+		<property name="sun.java2d.noddraw" value="true" />
+		<jar href="ontofile/prefuse.jar" main="true" />
+	</resources>
+	<applet-desc name="Ontology" main-class="prefuse.rocketon"
+		width="800" height="600">
+		<param name="separate_jvm" value="true" />
+	</applet-desc>
+</jnlp>

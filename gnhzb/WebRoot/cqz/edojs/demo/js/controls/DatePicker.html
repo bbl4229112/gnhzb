@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+var text = Edo.build({
+    weekStartDay: 0,        //一周开始日
+    type: 'datepicker',
+    width: 289,
+    height: 250,    
+    //viewdate: new Date(2009, 8, 2),
+    viewdate: new Date(),
+    render: document.body,
+    onbeforedatechange: function(e){
+        alert(e.date.format('Y-m-d'));
+        //return false;
+    }
+});
+
+
+//Edo.build({
+//    weekStartDay: 0,
+//    type: 'datepicker',    
+//    viewdate: new Date(),
+//    render: document.body,
+//    dateRenderer: function(v, r, c){
+//        var day = v.date.getDay();
+//        if(day == 0 || day == 6){
+//            return '<div style="background:red;">'+v.date.getDate()+'</div>';
+//        }else{
+//            return '<div style="">'+v.date.getDate()+'</div>';
+//        }        
+//    }
+//});
+</script>

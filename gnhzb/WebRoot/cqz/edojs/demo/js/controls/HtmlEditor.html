@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+
+    <input type="button" value="设置Html" onclick="setHtml()"/>
+    <input type="button" value="获取Html" onclick="getHtml()"/>
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<!--需要引用第三方编辑器: ckeditor-->
+<script src="../../../scripts/thirdlib/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.HtmlEditor()
+.set({
+    id: 'htmleditor1',    
+    width: 500,
+    height:300,
+    render: document.body
+});    
+
+function getHtml(){
+    alert(htmleditor1.get('text'));
+}
+function setHtml(){
+    htmleditor1.set('text', '<b>设置了HTML</b><br/>你可以使用htmleditor1.editor对象,就是ckeditor对象');
+}
+</script>

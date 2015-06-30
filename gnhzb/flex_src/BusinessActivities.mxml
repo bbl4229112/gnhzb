@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute"
+	xmlns:local="*"
+	width="100%" height="100%" historyManagementEnabled="false"
+	backgroundColor="#FFFFFF" borderColor="#000000" color="#000000"
+	xmlns:designer="org.act.od.impl.view.*" creationComplete="application_creationCompleteHandler(event)"
+	>
+
+	<mx:Style>
+		Application{
+			fontSize: 12pt;	
+		}
+	</mx:Style>
+	
+	<designer:OrchestraDesigner/>
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.containers.VDividedBox;
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			
+			import org.act.od.framework.view.ViewHelper;
+			import org.act.od.framework.view.ViewLocator;
+			import org.act.od.impl.events.PositionKnowledgeAppEvent;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.view.KnowledgeAddCanvas;
+			import org.act.od.impl.view.KnowledgeInputView;
+			import org.act.od.impl.view.KnowledgeOutputView;
+			import org.act.od.impl.view.KnowledgeRelatedView;
+			import org.act.od.impl.viewhelper.FileNavigatorVH;
+			
+			private var xmlFileId:String;
+			private var xmlFileName:String;
+			
+			protected function application_creationCompleteHandler(event:FlexEvent):void
+			{
+//				flash.system.Security.allowDomain("../user!contentpage.action");
+				xmlFileId = Application.application.parameters.xmlFileId + "";
+				xmlFileName = Application.application.parameters.xmlFileName;
+				if(xmlFileId != null && xmlFileName != null) {
+					OrDesignerModelLocator.getInstance().getOrchestraDesigner().bottomHDBox.removeChildAt(0);
+					var midVDBox :VDividedBox = OrDesignerModelLocator.getInstance().getOrchestraDesigner().bottomHDBox.getChildAt(0) as VDividedBox;
+					midVDBox.removeChildAt(1);
+//					var knowledgeRelatedView:KnowledgeRelatedView = OrDesignerModelLocator.getInstance().getOrchestraDesigner().getfigureAttributeNavigator().
+//							knowledgeRelatedBox.getChildAt(0) as KnowledgeRelatedView;
+//					knowledgeRelatedView.getChildAt(2).visible = false;
+//					knowledgeRelatedView.getChildAt(4).visible = false;
+//					var knowledgeInputView:KnowledgeInputView = OrDesignerModelLocator.getInstance().getOrchestraDesigner().getfigureAttributeNavigator().
+//							knowledgeInputBox.getChildAt(0) as KnowledgeInputView;
+//					knowledgeInputView.getChildAt(2).visible = false;
+//					knowledgeInputView.getChildAt(4).visible = false;
+//					var knowledgeOutputView:KnowledgeOutputView = OrDesignerModelLocator.getInstance().getOrchestraDesigner().getfigureAttributeNavigator().
+//							knowledgeOutputBox.getChildAt(0) as KnowledgeOutputView;
+//					knowledgeOutputView.getChildAt(2).visible = false;
+//					knowledgeOutputView.getChildAt(4).visible = false;
+					new PositionKnowledgeAppEvent(PositionKnowledgeAppEvent.POSITIONKNOWLEDGEVIEW,
+						{xmlFileId:this.xmlFileId, xmlFileName:this.xmlFileName}).dispatch();
+				}
+			}
+			
+		]]>
+	</mx:Script>
+
+</mx:Application>

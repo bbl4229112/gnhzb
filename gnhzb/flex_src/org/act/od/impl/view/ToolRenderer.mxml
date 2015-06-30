@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="20" horizontalScrollPolicy="off" verticalScrollPolicy="off" initialize="init()">
+
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.other.Resource;
+			import org.act.od.impl.view.ToolPanel;
+
+			[Bindable]
+			public var start :Class = Resource.getInstance().icon_tool_start;
+
+			[Bindable]
+			public var end :Class = Resource.getInstance().icon_tool_end;
+
+			[Bindable]
+			public var Switch :Class = Resource.getInstance().icon_tool_switch;
+
+			[Bindable]
+			public var link :Class = Resource.getInstance().icon_tool_link;
+
+			[Bindable]
+			public var activity :Class = Resource.getInstance().icon_tool_activity;
+
+			[Bindable]
+			public var subProcess :Class = Resource.getInstance().icon_tool_subprocess;
+
+			[Bindable]
+			public var email :Class = Resource.getInstance().icon_tool_email;
+
+			[Bindable]
+			public var fax :Class = Resource.getInstance().icon_tool_fax;
+
+			[Bindable]
+			public var pager :Class = Resource.getInstance().icon_tool_pager;
+
+			[Bindable]
+			public var sms :Class = Resource.getInstance().icon_tool_sms;
+
+			[Bindable]
+			public var voice :Class = Resource.getInstance().icon_tool_voice;
+
+			[Bindable]
+			public var invoke :Class = Resource.getInstance().icon_tool_invoke;
+
+			[Bindable]
+			public var receive :Class = Resource.getInstance().icon_tool_receive;
+
+			[Bindable]
+			public var reply :Class = Resource.getInstance().icon_tool_reply;
+
+			[Bindable]
+			public var wait :Class = Resource.getInstance().icon_tool_wait;
+
+			[Bindable]
+			public var assign :Class = Resource.getInstance().icon_tool_assign;
+			
+			//qu
+			[Bindable] 
+			public var circuit :Class = Resource.getInstance().icon_tool_circuit;
+			
+			[Bindable]
+			public var inter_face :Class = Resource.getInstance().icon_tool_interface;
+			
+			[Bindable]
+			public var datastore :Class = Resource.getInstance().icon_tool_datastore;
+			
+			[Bindable]
+			public var dataprocess :Class = Resource.getInstance().icon_tool_dataprocess;
+			
+			[Bindable]
+			public var pack_age :Class = Resource.getInstance().icon_tool_package;
+			
+			[Bindable]
+			public var cl_ass :Class = Resource.getInstance().icon_tool_class;
+			
+			[Bindable]
+			public var ob_ject :Class = Resource.getInstance().icon_tool_object;
+			
+			[Bindable]
+			public var port :Class = Resource.getInstance().icon_tool_port;
+			
+			[Bindable]
+			public var subsystem :Class = Resource.getInstance().icon_tool_subsystem;
+			
+			[Bindable]
+			public var dataclass :Class = Resource.getInstance().icon_tool_dataclass;
+			
+			[Bindable]
+			public var bosses :Class = Resource.getInstance().icon_tool_bosses;
+			
+			[Bindable]
+			public var custom :Class = Resource.getInstance().icon_tool_custom;
+			
+			[Bindable]
+			public var procurement :Class = Resource.getInstance().icon_tool_procurement;
+			
+			[Bindable]
+			public var sales :Class = Resource.getInstance().icon_tool_sales;
+			
+			[Bindable]
+			public var production :Class = Resource.getInstance().icon_tool_production;
+			
+			[Bindable]
+			public var workers :Class = Resource.getInstance().icon_tool_workers;
+			
+			[Bindable]
+			public var finance :Class = Resource.getInstance().icon_tool_finance;
+			
+			[Bindable]
+			public var boss :Class = Resource.getInstance().icon_tool_boss;
+			
+			[Bindable]
+			public var manager :Class = Resource.getInstance().icon_tool_manager;
+			
+			[Bindable]
+			public var consultant :Class = Resource.getInstance().icon_tool_consultant;
+			
+			[Bindable]
+			public var vacancy :Class = Resource.getInstance().icon_tool_vacancy;
+			
+			[Bindable]
+			public var assistant :Class = Resource.getInstance().icon_tool_assistant;
+			
+			[Bindable]
+			public var staff :Class = Resource.getInstance().icon_tool_staff;
+			[Bindable]
+			public var position :Class = Resource.getInstance().icon_tool_position;
+			
+			[Bindable]
+			public var servers :Class = Resource.getInstance().icon_tool_servers;
+			
+			[Bindable]
+			public var ringNetwork :Class = Resource.getInstance().icon_tool_ringNetwork;
+			
+			[Bindable]
+			public var superComputer :Class = Resource.getInstance().icon_tool_superComputer;
+			
+			[Bindable]
+			public var printer :Class = Resource.getInstance().icon_tool_printer;
+			
+			[Bindable]
+			public var tax :Class = Resource.getInstance().icon_tool_tax;
+			
+			[Bindable]
+			public var projector :Class = Resource.getInstance().icon_tool_projector;
+			
+			[Bindable]
+			public var scr_een :Class = Resource.getInstance().icon_tool_screen;
+			
+			[Bindable]
+			public var router :Class = Resource.getInstance().icon_tool_router;
+			
+			[Bindable]
+			public var modem :Class = Resource.getInstance().icon_tool_modem;
+			
+			[Bindable]
+			public var phone :Class = Resource.getInstance().icon_tool_phone;
+			
+			[Bindable]
+			public var wirelessNetwork :Class = Resource.getInstance().icon_tool_wirelessNetwork;
+			
+			[Bindable]
+			public var firewall :Class = Resource.getInstance().icon_tool_firewall;
+			
+			[Bindable]
+			public var users :Class = Resource.getInstance().icon_tool_users;
+			
+			[Bindable]
+			public var func_tion :Class = Resource.getInstance().icon_tool_function;
+			
+			[Bindable]
+			public var processDesign :Class = Resource.getInstance().icon_tool_processDesign;
+			
+			[Bindable]
+			public var functionCall :Class = Resource.getInstance().icon_tool_functionCall;
+			
+			[Bindable]
+			public var button :Class = Resource.getInstance().icon_tool_button;
+			
+			[Bindable]
+			public var cloud :Class = Resource.getInstance().icon_tool_cloud;
+			
+			[Bindable]
+			public var vocabulary :Class = Resource.getInstance().icon_tool_vocabulary;
+
+			[Bindable]
+			private var iconClass :Class;
+
+			[Bindable]
+			private var iconName :String;
+
+			public function init() :void{
+				this.iconName = lab.text;
+				initToolPic(iconName);
+			}
+
+			private function initToolPic(label :String) :void{
+
+				if(label.localeCompare("Start") == 0) {
+					iconClass = start;
+				}
+				else if(label.localeCompare("End") == 0) {
+					iconClass = end;
+				}
+				else if (label.localeCompare("Activity") == 0) {
+					iconClass = activity;
+				}
+				else if(label.localeCompare("Switch") == 0) {
+					iconClass = Switch;
+				}
+				else if(label.localeCompare("Link") == 0) {
+					iconClass = link;
+				}
+				else if(label.localeCompare("SubProcess") == 0) {
+					iconClass = subProcess;
+				}
+				else if(label.localeCompare("Email") == 0) {
+					iconClass = email;
+				}
+				else if(label.localeCompare("Fax") == 0) {
+					iconClass = fax;
+				}
+				else if(label.localeCompare("Pager") == 0) {
+					iconClass = pager;
+				}
+				else if(label.localeCompare("SMS") == 0) {
+					iconClass = sms;
+				}
+				else if(label.localeCompare("Voice") == 0) {
+					iconClass = voice;
+				}
+				else if(label.localeCompare("Invoke") == 0) {
+					iconClass = invoke;
+				}
+				else if(label.localeCompare("Receive") == 0) {
+					iconClass = receive;
+				}
+				else if(label.localeCompare("Reply") == 0) {
+					iconClass = reply;
+				}
+				else if(label.localeCompare("Wait") == 0) {
+					iconClass = wait;
+				}
+				else if(label.localeCompare("Assign") == 0) {
+					iconClass = assign;
+				}
+				//qu
+				else if(label.localeCompare("Circuit") == 0) {
+					iconClass = circuit;
+				}
+				else if(label.localeCompare("Interface") == 0) {
+					iconClass = inter_face;
+				}
+				else if(label.localeCompare("Datastore") == 0) {
+					iconClass = datastore;
+				}
+				else if(label.localeCompare("Dataprocess") == 0) {
+					iconClass = dataprocess;
+				}
+				else if(label.localeCompare("Package") == 0) {
+					iconClass = pack_age;
+				}
+				else if(label.localeCompare("Class") == 0) {
+					iconClass = cl_ass;
+				}
+				else if(label.localeCompare("Object") == 0) {
+					iconClass = ob_ject;
+				}
+				else if(label.localeCompare("Port") == 0) {
+					iconClass = port;
+				}
+				else if(label.localeCompare("Subsystem") == 0) {
+					iconClass = subsystem;
+				}
+				else if(label.localeCompare("Dataclass") == 0) {
+					iconClass = dataclass;
+				}
+				else if(label.localeCompare("Bosses") == 0) {
+					iconClass = bosses;
+				}
+				else if(label.localeCompare("Custom") == 0) {
+					iconClass = custom;
+				}
+				else if(label.localeCompare("Procurement") == 0) {
+					iconClass = procurement;
+				}
+				else if(label.localeCompare("Sales") == 0) {
+					iconClass = sales;
+				}
+				else if(label.localeCompare("Production") == 0) {
+					iconClass = production;
+				}
+				else if(label.localeCompare("Workers") == 0) {
+					iconClass = workers;
+				}
+				else if(label.localeCompare("Finance") == 0) {
+					iconClass = finance;
+				}
+					
+				else if(label.localeCompare("Boss") == 0) {
+					iconClass = boss;
+				}
+				else if(label.localeCompare("Manager") == 0) {
+					iconClass = manager;
+				}
+				else if(label.localeCompare("Consultant") == 0) {
+					iconClass = consultant;
+				}
+				else if(label.localeCompare("Vacancy") == 0) {
+					iconClass = vacancy;
+				}
+				else if(label.localeCompare("Assistant") == 0) {
+					iconClass = assistant;
+				}
+				else if(label.localeCompare("Staff") == 0) {
+					iconClass = staff;
+				}
+				else if(label.localeCompare("Position") == 0) {
+					iconClass = position;
+				}
+					
+				else if(label.localeCompare("Servers") == 0) {
+					iconClass = servers;
+				}
+				else if(label.localeCompare("RingNetwork") == 0) {
+					iconClass = ringNetwork;
+				}
+				else if(label.localeCompare("SuperComputer") == 0) {
+					iconClass = superComputer;
+				}
+				else if(label.localeCompare("Printer") == 0) {
+					iconClass = printer;
+				}
+				else if(label.localeCompare("Tax") == 0) {
+					iconClass = tax;
+				}
+				else if(label.localeCompare("Projector") == 0) {
+					iconClass = projector;
+				}
+				else if(label.localeCompare("Screen") == 0) {
+					iconClass = scr_een;
+				}
+				else if(label.localeCompare("Router") == 0) {
+					iconClass = router;
+				}
+				else if(label.localeCompare("Modem") == 0) {
+					iconClass = modem;
+				}
+				else if(label.localeCompare("Phone") == 0) {
+					iconClass = phone;
+				}
+				else if(label.localeCompare("WirelessNetwork") == 0) {
+					iconClass = wirelessNetwork;
+				}
+				else if(label.localeCompare("Firewall") == 0) {
+					iconClass = firewall;
+				}
+					
+				else if(label.localeCompare("Users") == 0) {
+					iconClass = users;
+				}
+				else if(label.localeCompare("Function") == 0) {
+					iconClass = func_tion;
+				}
+				else if(label.localeCompare("ProcessDesign") == 0) {
+					iconClass = processDesign;
+				}
+				else if(label.localeCompare("FunctionCall") == 0) {
+					iconClass = functionCall;
+				}
+				else if(label.localeCompare("Button") == 0) {
+					iconClass = button;
+				}
+				else if(label.localeCompare("Cloud") == 0) {
+					iconClass = cloud;
+				}
+				else if(label.localeCompare("Vocabulary") == 0) {
+					iconClass = vocabulary;
+				}
+				else {
+
+				}
+			}
+
+		]]>
+	</mx:Script>
+
+	<mx:LinkButton id="btn" icon="{iconClass}" width="20" height="20" buttonMode="false" />
+
+	<mx:Label id="lab" text="{data.label}" textAlign="center" height="100%" buttonMode="true"/>
+
+
+</mx:HBox>
+
+

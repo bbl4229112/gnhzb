@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var employeeData = new Edo.data.DataTable().set('data', Employees);
+    Edo.create(
+        {
+            id: 'table1',
+            type: 'table',
+            width: 200,
+            height: 400,
+            render: document.body,
+            columns: [
+                 
+                {
+                    headerText: '薪水',
+                    dataIndex: 'salary',
+                    headerAlign: 'center',
+                    align: 'center',
+                    width: 150,
+                    renderer: function(v){
+                        if(v > 10000) return '<span style="color:blue;">'+v+'</span>';
+                        else return '<span style="color:red;">'+v+'</span>';
+                    }
+                }
+            ],
+            data: employeeData
+        }
+    );          
+    
+    Edo.managers.ResizeManager.reg({target: table1});
+
+</script>

@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    Container是透明的容器，这里用灰色背景色表示容器的范围
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+Edo.build({
+    id: 'ct',    
+    type: 'ct',                 
+    layout: 'horizontal',
+    style: 'background:gray;',  //用背景色表示容器的范围
+    children: [
+        {
+            type: 'button',
+            text: '按钮'
+        },
+        {
+            type: 'text',
+            text: '文本框'
+        },
+        {
+            type: 'combo',
+            readOnly: true,
+            onselectionchange: function(e){
+                if(this.selectedItem) ct.set('layout', this.selectedItem.text);
+            },
+            data: [
+                {text: 'vertical'},
+                {text: 'horizontal'}
+            ]
+        }
+    ],
+    render: document.body
+});
+
+</script>

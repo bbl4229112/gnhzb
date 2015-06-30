@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EdoJS - Easy, But Powerful Javascript Framework</title>    
+    <ASPxInclude src="~/templates/toplinks.html" />
+    <style type="text/css">
+.code
+{
+	border:dashed 1px #a0a0a0;border-left:solid 3px #6CE26C;
+	padding:5px;padding-bottom:15px;
+	margin:5px;
+	margin-left:0px;
+	margin-right:15px;	
+	margin-bottom:15px;
+	line-height:18px;
+	overflow:auto;width:750px;overflow-y:hidden;
+	font-weight:400;
+}    
+    </style>    
+</head>
+<body>
+<div class="ct">
+    <ASPxInclude src="~/templates/header.html" />
+    <div class="bd">
+    <ASPxInclude src="~/templates/tutorialnav.html" />
+        <div id="viewcontent">
+        <h1 class="vtitle">容器篇</h1>             
+    <div class="desc-content">
+<p>EdoJS提供了8种不同外观的容器，如下图所示：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/container.png" /></p>
+<p>从前面的教程，我们知道，EdoJS的容器可以容纳子组件和子容器（容器也是组件），但是容器本身不具备排布子组件的能力，必须依赖于一个布局器，才能排布子组件。</p>
+<p>在布局能力上，8种容器没有不同之处，他们之间的不同，在于容器的外观区别，如基础容器Container是个透明的容器，边框容器Box有边框线和边距，面板容器Panel有标题栏等。</p>
+<p>8种容器的功能作用如下：</p>
+<div class="code">
+<p>Container：容器基类。透明。具备容纳子元素组件的能力。基本属性children，有一套子组件操作方法。</p>
+<p>Box：边框容器，从Container继承。具备边框border和边距padding。</p>
+<p>Group：圆角容器，从Container继承。具备圆角边框和边距padding。</p>
+<p>Panel ：面板容器，从Box继承。具备标题title、标题图标titleIcon、标题工具栏toolbar。</p>
+<p>Dialog：圆角面板容器，从Group继承。具备标题title、标题图标titleIcon、标题工具栏toolbar。</p>
+<p>FormItem：表单项容器，从Box继承。具备label,labelAlign,labelWidth,labelCls,labelStyle等属性。</p>
+<p>Application：系统容器。撑满页面，自适应浏览器大小而改变。一个页面有且只能有一个Application容器。</p>
+</div>
+<p>&nbsp;</p>
+<p>下面我们来一一演示8种容器的示例代码和界面效果</p>
+<h1>1. <strong>Container</strong></h1><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'ct'</span>,
+    style: <span style="color: #a31515">'background-color:blue;'</span>,
+    children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'按钮'
+        </span>}
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下:</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct1.png" /></p>
+<p>Container是一个透明的容器,它没有任何的外观效果,这里通过设置它的style=”background-color:blue”代码,来绘制出它的尺寸范围.</p>
+<fieldset style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 5px; padding-top: 3px; font-family: verdana"><legend>说明</legend>
+<p>容器具备children属性,这是"容器"的基本属性,是子组件的集合对象.</p>
+<p>Container提供了如下的方法来操作子组件: setChildren, getChildren, numChildren, addChild,addChildAt,removeChild,removeChildAt,getChildAt,removeAllChild,setChildIndex等,具体请参阅<a href="/api/#Edo.containers.Container" target="_blank">Api文档</a>,查看Container的具体属性/方法和事件.</p></fieldset> 
+<h1>2. <strong>Box</strong></h1>
+<p>Box是一个边框容器,支持边框border和内边距padding的设置,来看一个例子:</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'box'</span>,        
+    border: [1,1,1,1],
+    padding: [10,10,10,10],
+    children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'按钮'
+        </span>}
+    ],
+    render: document.body
+});</pre>
+<p>效果图如下: </p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct2.png" /></p>
+<fieldset style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 5px; padding-top: 3px; font-family: verdana"><legend>说明</legend>
+<p>border和padding数组设置的顺序分别是:left, top, right, bottom</p>
+<p>不同的值决定不同的边框粗细和内边距大小.</p></fieldset> 
+<h1>3. <span style="font-weight: bold">Group</span></h1>
+<p>Group从Container继承,目的是提供一种带圆角的边框容器。一般我们用<span style="font-weight: bold">Group</span>来作为按钮工具栏：</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'group'</span>,    
+    layout: <span style="color: #a31515">'horizontal'</span>,
+    horizontalGap: 0,   <span style="color: green">//设置按钮之间横向间距为0
+    </span>cls: <span style="color: #a31515">'e-toolbar'</span>,   <span style="color: green">//设置此样式,消除按钮的边框,鼠标以上才出现按钮边框
+    </span>children: [
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'new'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'save'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'delete'
+        </span>}
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct3.png" /></p>
+<h1>4. <strong>Panel</strong></h1>
+<p>Panel从Box继承,因此直接就具备了Box的border和padding属性。</p>
+<p>与Box不同的是,Panel另外增加了一个表现：标题栏。</p>
+<p>标题栏涉及的相关属性是：title，titleCls，toolbar。</p>
+<p>来看一段代码:</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'panel'</span>,        
+    title: <span style="color: #a31515">'标题'</span>,              <span style="color: green">//标题
+    </span>titleIcon: <span style="color: #a31515">'e-tree-folder'</span>, <span style="color: green">//标题图标    
+    </span>enableCollapse: <span style="color: blue">true</span>,       <span style="color: green">//允许折叠面板
+    </span>border: 1,                  <span style="color: green">//边框线
+    </span>padding: 10,                <span style="color: green">//内边距
+    </span>titlebar:[                  <span style="color: green">//标题栏按钮
+        </span>{
+            cls:<span style="color: #a31515">'e-titlebar-toggle'</span>,
+            onclick: <span style="color: blue">function</span>(e){
+                <span style="color: blue">this</span>.parent.owner.toggle();
+            }
+        }
+    ],
+    children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'按钮'
+        </span>}
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下:</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct4.png" /></p>
+<fieldset style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 5px; padding-top: 3px; font-family: verdana">
+    <legend>说明</legend>
+    <p>border和padding可以直接设置数值,这样默认所有的方位都是这个值.</p>
+</fieldset> 
+<h1>5. <span style="font-weight: bold">Dialog</span></h1>
+<p>Dialog从Group继承,跟Panel类似,都有标题栏，Dialog的外观是圆角面板。</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'dialog'</span>,        
+    title: <span style="color: #a31515">'标题'</span>,              <span style="color: green">//标题
+    </span>titleIcon: <span style="color: #a31515">'e-tree-folder'</span>, <span style="color: green">//标题图标        
+    </span>children: [
+        {
+            type: <span style="color: #a31515">'box'</span>,
+            children: [
+                {
+                    type: <span style="color: #a31515">'text'
+                </span>},
+                {
+                    type: <span style="color: #a31515">'button'</span>,
+                    text: <span style="color: #a31515">'按钮'
+                </span>}
+            ]
+        }        
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct5.png" /></p>
+<h1>6. <strong>FormItem</strong></h1>
+<p>FormItem是表单项容器,它的设计目标就是为了在表单界面中,简化"label: input”界面模式的开发.</p>
+<p>FormItem从Container继承,因此它没有继承到任何外观属性,它自己有一些扩展,都是基于label方面的:</p>
+<p>label,labelWidth,labelAlign,labelCls,labelStyle.</p>
+<p>示例代码如下：</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'formitem'</span>,
+    label: <span style="color: #a31515">'用户名: '</span>,
+    labelAlign: <span style="color: #a31515">'right'</span>,
+    style: <span style="color: #a31515">'background:#ccc;'</span>,
+    children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>}
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下:</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct8.png" /></p>
+<fieldset style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 5px; padding-top: 3px; font-family: verdana">
+<legend>说明</legend>
+<p>FormItem就是为了表单制作而设计的,目的是简化"label: input"模式.</p>
+<p>它的应用场合,一般是加在某个Box或Panel/Form之内,作为一个表单项.</p></fieldset> 
+<h1>7. <span style="font-weight: bold">FieldSet</span></h1>
+<p>FieldSet是一个可折叠的容器.它一般适用在"更多选项","高级选项"之类的场合,里面的内容不是必填的,不是必须要做的.</p>
+<p>FieldSet从Container继承，增加了legend属性。</p>
+<p>示例代码如下：</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'fieldset'</span>,
+    legend: <span style="color: #a31515">'高级设置 '</span>,
+    enableCollapse: <span style="color: blue">true</span>,
+    children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'按钮'
+        </span>}
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct6.png" /></p>
+<p>当点击"高级设置"时,FieldSet容器的内容将折叠或显示，效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/ct7.png" /></p>
+<fieldset style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 5px; padding-top: 3px; font-family: verdana">
+<legend>说明</legend>
+<p>FieldSet如果需要折叠效果,请将enableCollapse属性置为true,表明此容器是可折叠的.</p>
+<p>enableCollapse是Container的属性,因此,所有的容器都具备此属性,都可以是可折叠的.</p>
+</fieldset> 
+<h1>8. <span style="font-weight: bold">Application</span></h1>
+<p>Application是一个系统容器,从Box继承.它的设计目的,是作为界面的顶级容器,具备自适应浏览器大小而改变自身尺寸的能力.一个EdoJS界面系统,有且只能有一个Application容器,而且必须是顶级容器。</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'app'</span>,
+    verticalAlign: <span style="color: #a31515">'middle'</span>,
+    horizontalAlign: <span style="color: #a31515">'center'</span>,
+    children: [
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'app必须是顶级容器且只有一个!'
+        </span>}
+    ],
+    render: document.body
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<fieldset style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 5px; padding-top: 3px; font-family: verdana">
+<legend>说明</legend>
+<p>EdoJS组件是可以嵌入到任何DOM元素内的,作为一个网页部件使用,如cmp.render(DOM);</p>
+<p>当您使用Application容器时,EdoJS对界面是独占式的,将覆盖整个页面可视区,并随之浏览器调整而改变大小.</p></fieldset>
+</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <ASPxInclude src="~/templates/footer.html" />
+</div>
+</body>
+</html>
+<ASPxInclude src="~/templates/bottomlinks.html" />
+<script type="text/javascript">
+togglemenu({menu:'getstarted'});
+addCls('container', 'sel');
+</script>

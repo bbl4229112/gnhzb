@@ -1,0 +1,78 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+   
+</body>
+</html>
+<script src="../../../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="../../UIComponents.js" type="text/javascript"></script>
+
+<link href="../../../../ide/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+Edo.util.Dom.on(window, 'domload', function(e){   
+    var tree = Edo.build({
+        type: 'tree',
+        onbeforetoggle: function(e){
+            var row = e.record;
+            var dataTree = this.data;                        
+           
+            if(!row.children || row.children.length == 0){
+                //显示树形节点的loading图标,表示正在加载
+                this.addItemCls(row, 'tree-node-loading');
+                Edo.util.Ajax.request({
+                    //url: 'nodes.txt',
+                    url: 'treenode.txt',
+                    params: {
+                        pid: row.name   //传递父节点的Name(也可以是ID)
+                    },
+                    defer: 200,
+                    onSuccess: function(text){
+                        var data = Edo.util.Json.decode(text);
+                        
+                        dataTree.beginChange();
+                        if(!(data instanceof Array)) data = [data]; //必定是数组
+                        data.each(function(o){
+                            dataTree.insert(0, o, row);    
+                        });                    
+                        dataTree.endChange();    
+                    }
+                });
+            }
+            return !!row.children;
+        },
+        //verticalLine: false,
+        
+        //data: tree,
+        enabelCellSelect: false,
+        autoColumns: true,
+        enableDragDrop: true,
+        showHeader: false,
+        columns:[
+            {
+                id: "name",
+                width: 200,
+                enableDragDrop: true,
+                headerText: "名称",                
+                dataIndex: "name"
+            }
+        ],
+        width: 300,
+        height: 400,
+        render: document.body
+    });
+    
+    
+    Edo.util.Ajax.request({
+        type: 'get',        
+        url: 'treenode.txt',
+        onSuccess: function(text){
+            var data = Edo.util.Json.decode(text);
+            tree.set('data', data);
+        }
+    });
+});  
+</script>    

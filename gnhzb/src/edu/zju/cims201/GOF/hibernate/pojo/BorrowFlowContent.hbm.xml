@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.BorrowResult root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.BorrowFlowContent" table="caltks.BorrowFlowContents" >
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+               <property name="borrowTime" type="java.util.Date">
+						<column name="borrowTime"></column>
+			   </property>
+			   
+			   <property name="times" type="java.lang.Integer">
+						<column name="times"></column>
+			   </property>
+			   
+			   <property name="limited" type="java.lang.Boolean">
+						<column name="limited"></column>
+			   </property>
+			   
+			   <property name="download" type="java.lang.Boolean">
+						<column name="download"></column>
+			   </property>
+			   
+			   <one-to-one name="borrowFlow" class="edu.zju.cims201.GOF.hibernate.pojo.BorrowFlow"></one-to-one>
+               
+        </class>
+</hibernate-mapping>

@@ -1,0 +1,100 @@
+
+/**************************************************************
+
+	Image Menu
+	v 2.2
+
+**************************************************************/
+
+
+#imageMenu {
+	position: relative;
+	width: 885px;
+	height: 375px;
+	overflow: hidden;
+}
+
+
+
+#imageMenu ul {
+	list-style: none;
+	margin: 0 0 0 0px;
+	display: block;
+	height: 375px;
+	width: 1000px;
+	
+	}
+
+#imageMenu ul li {
+	float: left;
+}
+
+#imageMenu ul li a {
+	text-indent: -1000px;
+	background:#FFFFFF none repeat scroll 0%;
+	border-right: 8px solid #fff;
+	cursor:pointer;
+	display:block;
+	overflow:hidden;
+	width:142px;
+	height: 375px;
+}
+
+#imageMenu ul li.landscapes a {
+	background: url(images/landscapes.jpg) repeat scroll 0%;
+}
+
+#imageMenu ul li.people a {
+	background: url(images/people.jpg) repeat scroll 0%;
+}
+
+
+#imageMenu ul li.resource a {
+	background: url(images/resource.jpg) repeat scroll 0%;
+}
+
+#imageMenu ul li.modular a {
+	background: url(images/modular.jpg) repeat scroll 0%;
+}
+
+#imageMenu ul li.lcc a {
+	background: url(images/lcc.jpg) repeat scroll 0%;
+}
+
+#imageMenu ul li.lca a {
+	background: url(images/lca.jpg) repeat scroll 0%;
+}
+
+#imageMenu ul li.nature a {
+	background: url(images/nature.jpg) repeat scroll 0%;
+}
+
+#imageMenu ul li.kn a {
+	background: url(images/kn.jpg) repeat scroll 0%;
+}
+#imageMenu ul li.standard a {
+	background: url(images/standard.jpg) repeat scroll 0%;
+}
+#imageMenu ul li.knowledge a {
+	background: url(images/knowledge.jpg) repeat scroll 0%;
+}
+#imageMenu ul li.news a {
+	background: url(images/news.jpg) repeat scroll 0%;
+}
+#imageMenu ul li.patent a {
+	background: url(images/patent.jpg) repeat scroll 0%;
+}
+#imageMenu ul li.paper a {
+	background: url(images/paper.jpg) repeat scroll 0%;
+}
+#imageMenu ul li.abstract a {
+	background: url(images/abstract.jpg) repeat scroll 0%;
+	width: 298px;
+}
+
+.clear {
+	clear: both;
+}
+
+/*************************************************************/
+

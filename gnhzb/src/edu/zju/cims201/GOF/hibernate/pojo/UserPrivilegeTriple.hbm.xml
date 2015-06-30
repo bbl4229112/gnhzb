@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.UserPrivilegeTriple root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.UserPrivilegeTriple" table="caltks.UserPrivilegeTriple">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <many-to-one name="user" column="userID"
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser"
+                not-null="false">
+                </many-to-one>
+                
+                
+                <many-to-one name="operationRight" column="operationRightID"
+                class="edu.zju.cims201.GOF.hibernate.pojo.OperationRight"
+                not-null="false">
+                </many-to-one>
+               
+              
+                
+                 <many-to-one name="cdTreeNode" column="cdTreeNodeID"  
+                class="edu.zju.cims201.GOF.hibernate.pojo.TreeNode"
+                not-null="true">
+                </many-to-one>
+                
+                
+                <many-to-one name="empowerment" column="empowermentID"  
+                class="edu.zju.cims201.GOF.hibernate.pojo.Empowerment"
+                not-null="true" >
+                </many-to-one>
+                
+                
+        </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.InterestModel root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.InterestModel" table="caltks.InterestModel">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                
+                
+                <many-to-one name="user" column="userID" not-null="true" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+                </many-to-one>
+                
+                
+                <property name="interestItemType" column="interestItemType" type="string"/>
+                <property name="interestItem" column="interestItem" type="string"/>
+                <property name="createtime" column="createTime" type="timestamp" />
+                <property name="unRead" column="unRead" type="integer"/>               
+                <property name="isParent" column="isParent" type="integer"/>
+                
+                
+                <set name="knowledges" table="caltks.InterestKnowledges" lazy="false" cascade="none">
+                        <key column="InterestModelID"/>
+                        <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge">
+                        	<column name="KnowledgeID"></column>
+                        </many-to-many>
+                        
+                </set>
+        </class>
+</hibernate-mapping>

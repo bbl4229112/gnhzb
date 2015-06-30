@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+var ct1 = Edo.build({
+    onmousedown: function(e){
+        if(e.within(this.headerCt)){        //如果点在头部
+            //启动托拽器
+            Edo.managers.DragManager.startDrag({
+                event: e,
+                dragObject: this
+            });            
+        }
+        this.focus();
+    },
+    
+    type: 'panel',    
+    title: '面板',
+    titleIcon: 'e-tree-folder',    
+    cls: 'e-drag-title',
+       
+    minWidth: 200,
+    expanded: false,
+    
+    padding: 5,
+    
+    render: document.body
+    ,
+    children: [
+        {
+            type: 'box',
+            width: '100%',
+            children: [
+                {
+                    type: 'button'
+                },
+                {
+                    type: 'text'
+                }
+            ]
+        }        
+    ]
+});
+</script>

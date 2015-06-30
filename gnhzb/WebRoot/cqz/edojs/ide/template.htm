@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>    
+</head>
+<body>
+
+</body>
+</html>
+<link href="../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+
+<script src="../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+Edo.util.Dom.on(window, 'domload', function(e){
+    var text = window.location.hash.substr(1);    
+    var o = Edo.util.Json.decode(text);    
+    Edo.create(o);
+});       
+</script>
+

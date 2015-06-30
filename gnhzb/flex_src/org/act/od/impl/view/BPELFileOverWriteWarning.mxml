@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="336" height="156">
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.vo.VoiceAttribute;
+			import mx.managers.PopUpManager;
+			import mx.events.CloseEvent;
+			
+			[Bindable]
+			private var message:String;
+			
+			internal function onConfirmHandle(event :MouseEvent) :void {
+				this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+				PopUpManager.removePopUp(this);
+			}
+			internal function onCancleHandle(event :MouseEvent) :void {
+				PopUpManager.removePopUp(this);
+			}
+			/**
+			 * Set message property given in parametor.
+			 * 
+			 * @param message.
+			*/
+			public function setText(message :String) :void{
+				this.message = "Do you want to overwrite " + message;
+			}
+			]]>
+	</mx:Script>
+	<!---  label a text's zone -->
+	
+	<mx:Label text="{message}" x="40" y="31" width="254" height="40" fontWeight="normal" fontSize="10"/>
+	<!---  Separator line -->
+	
+	<mx:HRule x="0" y="79" width="316"/>
+	
+	<!---  Button to confirm action -->
+	
+	<mx:Button label="Confirm" x="64" y="89" click="onConfirmHandle(event)" />
+	<!---  Button to cancel  -->
+	<mx:Button label="Cancel" x="186" y="89" click="onCancleHandle(event)" />
+</mx:TitleWindow>

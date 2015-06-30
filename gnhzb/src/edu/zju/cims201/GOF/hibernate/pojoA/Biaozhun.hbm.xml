@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Message root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojoA.Biaozhun" table="biaozhun">
+                <id name="id" type="java.lang.Integer" column="id">
+                        <generator class="native"/>
+                </id>
+                <property name="biaoZhunCode" column="标准号" type="string"/>
+                <property name="titleNameChi" column="中文名称" type="string"/>
+                <property name="titleNameEng" column="外文名称" type="text"/>
+                <property name="abstractString" column="摘要" type="text"/>
+                <property name="biaozhunStatus" column="标准状态" type="string"/>
+                <property name="publishDate" column="发布日期" type="string"/>
+                <property name="implDate" column="实施日期" type="string"/>
+                <property name="beyondedIndustry" column="所属行业" type="string"/>
+                <property name="pdfname" column="pdffilename" type="string"/>
+            
+               
+        </class>
+</hibernate-mapping>

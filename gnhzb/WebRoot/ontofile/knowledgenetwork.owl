@@ -1,0 +1,1600 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.owl-ontologies.com/unnamed.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="概念"/>
+  <owl:ObjectProperty rdf:ID="下位词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="参考词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="同义词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="上位词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="构建">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="作用">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="英文缩写">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="存在问题">
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="发展方向">
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="背景">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="其他">
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="分类">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="应用">
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="研究现状">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="技术">
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="定义">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="英文名称">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="特点">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <概念 rdf:ID="知识">
+    <下位词>
+      <概念 rdf:ID="知识共享">
+        <参考词>
+          <概念 rdf:ID="博弈论">
+            <同义词>
+              <概念 rdf:ID="对策论"/>
+            </同义词>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >所谓互动决策，即各行动方（即局中人[player]）的决策是相互影响的，每个人在决策的时候必须将他人的决策纳入自己的决策考虑之中，当然也需要把别人对于自己的考虑也要纳入考虑之中……在如此迭代考虑情形进行决策，选择最有利于自己的战略(strategy)。</定义>
+          </概念>
+        </参考词>
+      </概念>
+    </下位词>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >在新世纪里，推动人类社会发展过程中起主要作用的已不再是有形的物质财富，而是无形的知识。一个国家、一个民族，其对知识的占有量，生产和转化新知识的能力将决定这个国家和民族在世界上的地位与命运。</作用>
+    <下位词>
+      <概念 rdf:ID="个人知识">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指个人的记忆和能力。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="知识获取"/>
+    </下位词>
+    <参考词>
+      <概念 rdf:ID="信息"/>
+    </参考词>
+    <下位词>
+      <概念 rdf:ID="知识发现">
+        <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >工具：WIDAS （WWW Information Discovery Assistant System）</技术>
+        <参考词>
+          <概念 rdf:ID="文本挖掘">
+            <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >信息抽取、信息检索、自然语言处理、数据挖掘技术</技术>
+            <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >自动分类、自动文摘、自动排重、自动聚类、信息抽取</作用>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >从大量的、无结构的文本信息中发现潜在的、可能的数据模式、内在联系、规律、发展趋势等,抽取有效、新颖、有用、可理解的、散布在文本文件中的有价值知识,并且利用这些知识更好地组织信息。</定义>
+          </概念>
+        </参考词>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是先前未被发现的客观规律的揭示。</定义>
+        <下位词>
+          <概念 rdf:ID="横向知识发现">
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >把知识在本领域内推向更深处</特点>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="纵向知识发现">
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >在不同领域之间发现跨学科的知识</特点>
+          </概念>
+        </下位词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="隐性知识">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指那些不能很清楚地表达出来的知识，这类知识只能存在于人们的手中和头脑中，只能通过行动表达出来。德鲁克认为，隐性知识(如某种技能)不能用语言来解释，它只能被演示，以证明它是存在的，学习这种技能的唯一方法是领悟和练习。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="显性知识">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是指那些已经被获取的，并被编写成册、程序和规则的，易于传播的知识。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="组织知识"/>
+    </下位词>
+    <参考词>
+      <概念 rdf:ID="数据"/>
+    </参考词>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nonaka(1994)和Huber(1991)认为，知识是一种得到了证明的、能够提高个人行为有效性的信念。</定义>
+    <下位词>
+      <概念 rdf:ID="知识利用"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="知识生产">
+        <下位词>
+          <概念 rdf:ID="知识生产管理">
+            <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >各类咨询公司服务收费很高却效益不佳，好不容易培养出一两个能干事的咨询师又会另立山头成为原公司的竞争对手的主要原因。因为这些咨询公司仅仅是一个个“专家”的集合，顶多算是“独立知识生产者联合体”</研究现状>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >通过组织化的知识生产手段，利用知识生产的设施、技术、工具、人力（脑力），为了将原始的知识、数据等知识生产的“原料”稳定、高效地转化为能够解决客户问题、能够为客户所接受并为此付费的知识产品，而建立起来的管理体系以及以通过这个管理体系对知识生产过程所进行的各项管理活动。</定义>
+          </概念>
+        </下位词>
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1知识生产活动是一种极其复杂的知识活动；2知识的投入和产出呈现随机概率关系，这种关系使得知识生产人员无法准确预测何时产生何种“知识成品”；3知识生产上不存在彻底的失败。</特点>
+      </概念>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="BI2.0"/>
+  <概念 rdf:ID="开放存取">
+    <下位词>
+      <概念 rdf:ID="OA仓储"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="OA期刊"/>
+    </下位词>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Open Access</英文名称>
+    <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OA</英文缩写>
+  </概念>
+  <概念 rdf:ID="服务2.0">
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >可复制性</特点>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >案例：如海尔集团的平板服务。</应用>
+  </概念>
+  <概念 rdf:ID="通信2.0"/>
+  <概念 rdf:ID="本体">
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >应用领域：知识发现、人工智能、知识工程和图书情报领域</应用>
+    <下位词>
+      <概念 rdf:ID="顶层本体"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="领域本体"/>
+    </下位词>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >知识表示能将已知世界进行程序化建模,而应用于Web的本体(Ontology)可解决信息异质性,并实现信息的结构化。</作用>
+    <构建 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >构建方法1自顶向下设计方法；2自底向上设计方法；3是自顶向下设计方法和自底向上设计方法的结合。</构建>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >本体是一个共享概念化的形式化、明确的说明。</定义>
+    <参考词>
+      <概念 rdf:ID="语义网">
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >能理解人类语言。</特点>
+        <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >语义网无疑是迷人的。按照Berners-Lee的预想,它不仅能理解词语和概念,而且还能理解其中的逻辑关系,具有不可估量的潜力。</发展方向>
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >实现基于内容的检索，使用语义网搜索引擎搜索的结果也将比万维网更为精确。</作用>
+        <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >关键技术：可扩展标记语言(XML)和资源描述框架(RDF)。</技术>
+        <参考词>
+          <概念 rdf:ID="资源描述框架">
+            <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >RDF</英文缩写>
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Resource Description Framework</英文名称>
+          </概念>
+        </参考词>
+        <参考词>
+          <概念 rdf:ID="可扩展标记语言">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Extensible Markup Language</英文名称>
+            <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >XML</英文缩写>
+          </概念>
+        </参考词>
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Semantic Web</英文名称>
+      </概念>
+    </参考词>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ontolog</英文名称>
+  </概念>
+  <概念 rdf:ID="H指数">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >引文数大于等于h 的h 篇论文数量，即一个人的h 指数是指他至多有h 篇论文分别被引用了至少h 次</定义>
+  </概念>
+  <概念 rdf:ID="小世界网络理论">
+    <参考词>
+      <概念 rdf:ID="无比例网络理论"/>
+    </参考词>
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1959年，Erdös 和Rényi将概率理论应用到图论中提出了著名的随机图模型—Erdös-Rényi模型。</背景>
+  </概念>
+  <概念 rdf:ID="知识元">
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CNKI中的知识元。</应用>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >对相关文献、专利、标准等资源中的知识整理后的提炼，以最精炼的内容让用户快速掌握相关知识。</定义>
+  </概念>
+  <概念 rdf:ID="信息系统">
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1注重平台无关性，减少自己对底层系统的依赖，增加了系统自身的独立性；2采用方便交互标准交换格式和标准协议，为与第三方的系统集成或互操作提供方便，从而增强与其他信息系统之间的协作能力</发展方向>
+  </概念>
+  <概念 rdf:ID="被引频次">
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cited number of journal</英文名称>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >可定义为自期刊创刊以来全部论文在某一年被引用的总次数。</定义>
+  </概念>
+  <概念 rdf:ID="PLM2.0">
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >实现交互。</特点>
+  </概念>
+  <概念 rdf:ID="影响因子">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >指在二年时间内，某一期刊上发表的所有文章被引用的总次数与这二年内该期刊上所发表文章数量的总和的比值</定义>
+    <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >但是，对于影响因子是否能够完全反映期刊的档次，科学界还存在一些争议。即使能够反映，也不能把期刊的影响力和具体一篇论文的影响力等同起来。统计表明，一篇发表在影响因子高的期刊上的论文可能很少被人引用，而一篇发表在影响因子低的期刊上的论文则有可能被高度引用。</存在问题>
+  </概念>
+  <概念 rdf:ID="学习2.0"/>
+  <概念 rdf:ID="激励措施">
+    <下位词>
+      <概念 rdf:ID="长期激励"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="短期激励"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="精神激励"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="物质激励">
+        <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >可能存在的问题：重赏会使大家彼此孤立，影响工作的正常开展</存在问题>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="情感激励"/>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="引用半衰期">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >就是某期刊现尚在被引用的全部论文中较新的一半的年代跨度。</定义>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >可测度期刊文献老化的速度</作用>
+  </概念>
+  <概念 rdf:ID="社交网站">
+    <参考词>
+      <概念 rdf:ID="社会化书签网站">
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >新浪ViVi收藏夹、百度搜藏、和讯部落、Digg、Teein帖易中文聚合门户、抓虾、共享书签、新摄影、乐收 快乐收藏家、365Key、Diglog、收客网、趣摘网、人人网、协客、网络书签。</应用>
+      </概念>
+    </参考词>
+    <参考词>
+      <概念 rdf:ID="六度分隔理论">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Six Degrees of Separation</英文名称>
+      </概念>
+    </参考词>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MySpace聚友网、Facebook。</应用>
+  </概念>
+  <概念 rdf:ID="e-Learning2.0">
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >提供互联互动的网络学习环境。</特点>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AM公司已成立了一个全球SAP e-learning系统；易中创业。</应用>
+  </概念>
+  <概念 rdf:ID="计量学">
+    <下位词>
+      <概念 rdf:ID="知识计量学">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是把以人类整个知识体系作为研究对象,将知识的生产创造、扩散传播以及运用作为一个统一的过程,着重于在“知识单元”的层次上考察知识的投入与产出、流量与存量、生产与应用、传播与分配等方面。</定义>
+        <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >从对知识的间接计量与评价过渡到对知识的直接计量与评价成为发展的必然趋势</发展方向>
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >创立原因：创建知识计量学这一相对独立的交叉学科,便可以集中各门计量学的优秀研究成果,从“知识单元”这一共同的角度入手,对不同领域、不同形态的知识进行系统的研究和分析,从而在更深的层次上解决知识计量的难题。</背景>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="经济计量学">
+        <同义词>
+          <概念 rdf:ID="数量计量学"/>
+        </同义词>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是建立在数学、统计学、计算机科学和经济学基础上的综合学科,运用数学和数理统计的方法研究经济现象中计量变化的学科。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="网络计量学">
+        <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1有取代文献计量学和信息计量学的趋势；2有研究日渐成熟和规范化的趋势；3有加强网络信息的控制和管理的趋势；4有促进各学科交流和发展的趋势。</发展方向>
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >全面统计、方便计量、结果准确。</特点>
+        <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >研究方法：1运用统计方法对数据进行统计分析2运用图论的方法对数据进行可视化研究4运用解释和模拟网络结构和增长理论工具进行模拟研究</技术>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是指在电子网络环境中，运用文献计量学、科学计量学、信息计量学的方法，对网上各种信息的组织、存储、分布、传递、相互引证及其功能和开发利用等做出定量描述并进行统计分析和研究，以揭示其数量特征和内在规律的一门新兴分支学科。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="文献计量学">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >对核心期刊和学科核心主题的测定以及信息计量学对网络上信息流量的计量</定义>
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1具有比较强的科学性、客观性；2兼具宏观推论与微观描述的功能；3既有科学精确性，又有模糊不确定性。</特点>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="科学计量学">
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >发现科学共同体和隐性学术群体。</作用>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是对科研绩效的评价，是建立在数学、统计学、计算机科学、图书馆学、情报学等基础上的交叉学科。</定义>
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >奠基人是普赖斯。</背景>
+        <同义词>
+          <概念 rdf:ID="技术计量学"/>
+        </同义词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="情报计量学"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="信息计量学"/>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="Web2.0">
+    <参考词>
+      <概念 rdf:ID="Web1.0"/>
+    </参考词>
+    <下位词>
+      <概念 rdf:ID="P2P"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="播客"/>
+    </下位词>
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >集体智慧、平等主义、社会化、人人参与、由下而上、开放、信息的充分共享、去中心化、群智组织、自组织。</特点>
+    <下位词>
+      <概念 rdf:ID="网络电话"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="闪客"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="博客">
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >应用于博客网络营销。</应用>
+        <参考词>
+          <概念 rdf:ID="微博客">
+            <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >讲述工作中的故事 ，与日常生活联系起来。</作用>
+          </概念>
+        </参考词>
+        <下位词>
+          <概念 rdf:ID="产品博客"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="个人博客"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="学校博客">
+            <下位词>
+              <概念 rdf:ID="学生博客"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="教师博客"/>
+            </下位词>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="企业博客">
+            <下位词>
+              <概念 rdf:ID="企业内部博客"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="企业外部博客"/>
+            </下位词>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="主题博客"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="网络电视"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="视频"/>
+    </下位词>
+    <参考词>
+      <概念 rdf:ID="自组织">
+        <下位词>
+          <概念 rdf:ID="自组织理论">
+            <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >提出者：普利高津。</背景>
+            <同义词>
+              <概念 rdf:ID="耗散结构理论">
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >一个远离平衡态的非线性的开放系统(不管是物理的、化学的、生物的乃至社会的、经济的系统)通过不断地与外界交换物质和能量，在系统内部某个参量的变化达到一定的阈值时，通过涨落，系统可能发生突变即非平衡相变，由原来的混沌无序状态转变为一种在时间上、空间上或功能上的有序状态。这种在远离平衡的非线性区形成的新的稳定的宏观有序结构，由于需要不断与外界交换物质或能量才能维持，因此称之为“耗散结构”(dissipative structure)。</定义>
+              </概念>
+            </同义词>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >系统在一定的外界条件下,通过系统内部的非线性相互作用,经过突变而形成一种新的稳定有序的结构状态,也就是系统有序状态的自我形成和完善。</定义>
+          </概念>
+        </下位词>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >如果不存在外部指令，系统按照相互默契的某种规则，各尽其责而又协调地自动地形成有序结构，就是自组织</定义>
+        <参考词>
+          <概念 rdf:ID="他组织">
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >如果一个系统靠外部指令而形成组织。</定义>
+            <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1信息收集和整理工作量大；2不能按照用户需求调整资源内容和结构，进而不能较好满足用户需求；3许多资源时效性较强，随着时间延续，产生垃圾数据冗余问题，难以及时淘汰无用数据；4对环境变化的适应性较差，容易导致系统被淘汰。</存在问题>
+          </概念>
+        </参考词>
+      </概念>
+    </参考词>
+    <下位词>
+      <概念 rdf:ID="电子杂志"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="社会化书签">
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >随着互联网上信息的逐渐增多，用户迫切的需要对个人知识库进行管理。</背景>
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Social Bookmark</英文名称>
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >新浪ViVi收藏夹、百度搜藏、和讯部落、Digg、Teein帖易中文聚合门户、抓虾、共享书签、新摄影、乐收 快乐收藏家、365Key、Diglog、收客网、趣摘网、人人网、协客、网络书签。</应用>
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1阅读进展定位；2网址定位。</作用>
+        <下位词 rdf:resource="#社会化书签网站"/>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="维基">
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >建立类似百科全书的网络知识库</作用>
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >平等、自由、协作、共享、全球运作、人人贡献 人人受益</特点>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="掘客"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="维客"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="社会化批注">
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >在书面阅读过程中，批注是一种非常有效的学习手段。多数阅读者习惯于在书本的空白处写下自己的体会或评语，以帮助记忆或理解文章。进入信息化时代，随着网络阅读率的快速提高，实现对网络文档的在线批注显得尤为必要，特别是在E-Leaning领域，学习者的大部分时间是在进行在线阅读，对网络课程的内容和其他网络参考资源进行在线批注非常有必要。人们广泛使用电子文档，常常需要批注电子文档，国外研究者开发了大量的批注电子文档的软件。</背景>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是一种基于中间代理对第三方的只读网络资源添加批注，并且可以再现或分享批注及其上下文的web2.0应用。</定义>
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >网页批注工具iMarkup。</应用>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="威客">
+        <下位词>
+          <概念 rdf:ID="企业外部威客"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="B型威客">
+            <同义词>
+              <概念 rdf:ID="悬赏型威客"/>
+            </同义词>
+          </概念>
+        </下位词>
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >来源于电子公告牌系统BBS中的智力互动问答类网站</背景>
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >K68、任务中国、创意网、威客中国、猪八戒威客、专业的威客网站</应用>
+        <下位词>
+          <概念 rdf:ID="C型威客">
+            <同义词>
+              <概念 rdf:ID="点对点威客"/>
+            </同义词>
+          </概念>
+        </下位词>
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >隐性知识显性化过程</作用>
+        <下位词>
+          <概念 rdf:ID="企业内部威客"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="M型威客">
+            <同义词>
+              <概念 rdf:ID="威客地图"/>
+            </同义词>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="A型威客">
+            <同义词>
+              <概念 rdf:ID="知道型威客"/>
+            </同义词>
+          </概念>
+        </下位词>
+      </概念>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="搜索引擎优化">
+    <下位词>
+      <概念 rdf:ID="绿帽SEO">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Green SEO或Green SEO或</英文名称>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="黑帽SEO">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指作弊手法。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="站内SEO"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="白帽SEO">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指正规合理的运作。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="站外SEO"/>
+    </下位词>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Search Engine Optimization</英文名称>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SEO是一种让网站在百度，谷歌，雅虎等搜索引擎获得较好的排名从而赢得更多潜在客户一种的网络营销方式，也是SEM（搜索引擎营销）的一种方式。</定义>
+    <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SEO</英文缩写>
+  </概念>
+  <概念 rdf:ID="大众化分类">
+    <同义词>
+      <概念 rdf:ID="分众分类法"/>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="通俗分类法"/>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="开放分类法"/>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="民众分类法"/>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="标签">
+        <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >存在标签冗余的问题。</存在问题>
+        <下位词>
+          <概念 rdf:ID="社会性标签">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Social Tags</英文名称>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="自由标签">
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >针对单个用户。</特点>
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Free Tags</英文名称>
+          </概念>
+        </下位词>
+        <参考词>
+          <概念 rdf:ID="元数据">
+            <参考词>
+              <概念 rdf:ID="批注">
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >学习者在阅读过程中在直接文档上添加额外的信息的一种创造性活动</定义>
+              </概念>
+            </参考词>
+            <下位词>
+              <概念 rdf:ID="元数据模型">
+                <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >国内的元数据模型的标准建设已从研究探索进入实际应用与发展阶段，在DC本地化方面做了大量的工作，部分数字图书馆以DC为基础提出了相应的规范。</研究现状>
+              </概念>
+            </下位词>
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >标准化、灵活性、大众化</特点>
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Metadata</英文名称>
+            <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >起源于计算机科学，是随着网络化和数字化的发展，为有效地解决网络资源检索的问题而产生的。</背景>
+          </概念>
+        </参考词>
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1有助于知识自组织的优化关联；2改善了系统内信息的组织结构；3用户决定而非计算机算法决定；4增加内容相关性。</作用>
+      </概念>
+    </同义词>
+  </概念>
+  <概念 rdf:ID="企业2.0">
+    <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >面向服务的体系结构（Service-Oriented Architecture，SOA）</技术>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Enterprise2.0</英文名称>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 2.0在企业中的应用</定义>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >北京环宇通软信息技术有限公司的智汇通i-Enterprise2.0</应用>
+    <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >麦肯锡询问了2847名IT主管之后发现，只有不到32%的北美公司计划使用博客等Web 2.0技术，仅有20%计划使用维基这样的Web 2.0工具。企业2.0还未能大规模应用。</研究现状>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1提高个人工作效率和协同工作效率的提升2帮助工作流上的每个节点增加决策的背景信息3降低企业的网络开销，提高信息共享的效率</作用>
+    <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >国内存在问题：文化上的差异，尤其是中国的文化；对Web2.0认识理念上的不足。</存在问题>
+  </概念>
+  <概念 rdf:ID="CRM2.0">
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >新兴、高效</特点>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >案例：如迪奥(Dior)</应用>
+  </概念>
+  <概念 rdf:ID="同行">
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >peer communities</英文名称>
+    <下位词>
+      <概念 rdf:ID="同行评议">
+        <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >人情网、权威主义、马太效应、剽窃和泄密等等</存在问题>
+        <同义词>
+          <概念 rdf:ID="同行判断">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Peer Judgment</英文名称>
+          </概念>
+        </同义词>
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >起源：1416年，威尼斯共和国在对发明者提出的新发明、新技艺等进行审查，以确定是否授予发明者对其发明专利的垄断权时，就采用了邀请同一行业或最邻近行业的有一定影响的从业者帮助审查的方法。威尼斯共和国之所以邀请同行从业者帮助审查以便确定专利的归属，其内在的学理原因在于专利技术乃是科学发现之成果或运用，具有较高的学术性和专业性，外行人很难、也不可能予以评价。</背景>
+        <同义词>
+          <概念 rdf:ID="同行评价">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Peer Evaluation</英文名称>
+          </概念>
+        </同义词>
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Peer Review</英文名称>
+        <同义词>
+          <概念 rdf:ID="同行审查">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Peer Censorship</英文名称>
+          </概念>
+        </同义词>
+        <同义词>
+          <概念 rdf:ID="价值评议">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Merit Review</英文名称>
+          </概念>
+        </同义词>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指由从事某领域或接近该领域的专家来评定一项工作的价值或重要性的体制。</定义>
+        <同义词>
+          <概念 rdf:ID="专家鉴定">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Refereeing</英文名称>
+          </概念>
+        </同义词>
+        <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >美国国家自然科学基金、德意志研究联合会、英国研究理事会、加拿大自然科学与工程研究理事会等资助机构均采用同行评议确定立项。</研究现状>
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >在我国，1986年国家自然科学基金委员会成立后，依照“依靠专家、发扬民主、择优支持、公正合理”的评审原则，在分配国家科研拨款时采用的也是同行评议制，它为合理分配有限的科研基金、科学地支持基础性研究、培养优秀科研人才等工作的顺利完成起着非常重要的作用，也为科学基金项目资助的公开性和公正性提供了良好的保证。</作用>
+      </概念>
+    </下位词>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >化学家伦纳德.K纳什教授把“科学杂志的编辑和评议人”称之为科学的高尚品质的主要维护者；美国科学社会学之父默顿高度评价同行评议的意义和价值，把进行同行评议的专家同行看作科学界和学术界的“法官”。</作用>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >是行业相同，从事同一行业（或职业）的人</定义>
+  </概念>
+  <概念 rdf:ID="协同过滤"/>
+  <概念 rdf:ID="IT2.0"/>
+  <概念 rdf:ID="层次分析法">
+    <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >优点：充分利用人的经验与判断，其核心功能是对方案进行排序选优。缺点：得出的结果是粗略的方案排序。</其他>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >此法本质上是一种决策思维方式，它把复杂的问题分解为各个组成因素，将这些因素按支配关系分组形成有序的递阶层次结构，通过两两比较的方式确定层次中诸因素的相对重要性，然后综合人的判断以决定决策诸因素相对重要性总的顺序</定义>
+    <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AHP</英文缩写>
+  </概念>
+  <概念 rdf:ID="商业2.0"/>
+  <概念 rdf:ID="生态位">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >定生态环境里的某种生物在其入侵、定居、繁衍、发展以至衰退、消亡历程的每个时段上的全部生态学过程中所具有的功能地位，称为该物种在该生态环境中的生态位。</定义>
+    <下位词>
+      <概念 rdf:ID="生态位空缺">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是指一个独特的生态位各方面条件都已具足，但对应的物种却还没有产生出来的状态。</定义>
+      </概念>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="科学信息门户">
+    <同义词>
+      <概念 rdf:ID="基于学科的门户">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >subject-based gateways</英文名称>
+      </概念>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="学科索引门户">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >subject index gateways</英文名称>
+      </概念>
+    </同义词>
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >是一种在网上获取高质量信息资源的重要工具，面向专业研究人员，因此在信息资源选择、组织和服务上都要求具有较高的专业水平，在内容选择上不仅强调完备性，而且更强调一定的指导性，要能够反映学科热点和前沿，在信息服务上，要能够针对个人研究情况的转移提供个性化的服务。</特点>
+    <同义词>
+      <概念 rdf:ID="学科树">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >subject trees</英文名称>
+      </概念>
+    </同义词>
+    <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >研究深入的是英国等欧洲国家</研究现状>
+    <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1门户构件（Portlets）；2跨系统集成技术与标准，例如Z39.50；3OAI检索模式。</技术>
+    <同义词>
+      <概念 rdf:ID="信息交换所">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >clearing houses</英文名称>
+      </概念>
+    </同义词>
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >目前的学科信息门户正逐步从资源和集中服务为中心的专家建设模式转向以社区和个性化服务为中心的自组织模式</发展方向>
+    <同义词>
+      <概念 rdf:ID="寻路器">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >pathfinders</英文名称>
+      </概念>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="虚拟图书馆">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >virtual libraries</英文名称>
+      </概念>
+    </同义词>
+  </概念>
+  <概念 rdf:ID="软件重用">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >指充分利用过去软件开发中积累的成果、知识和经验，去开发新的软件系统，使人们在新系统的开发中着重于解决出现的新问题、满足新需求，从而避免或减少软件开发中的重复劳动。</定义>
+    <参考词>
+      <概念 rdf:ID="组件">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是指语义完整、语法正确和有可重用价值的单位软件，是软件重用过程中可以明确辩识的系统，可被用来构造其它软件，类似于机械工业中的零部件。</定义>
+        <下位词>
+          <概念 rdf:ID="不可重用组件"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="可重用组件"/>
+        </下位词>
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >component</英文名称>
+        <同义词>
+          <概念 rdf:ID="构件"/>
+        </同义词>
+      </概念>
+    </参考词>
+    <同义词>
+      <概念 rdf:ID="软件复用"/>
+    </同义词>
+    <同义词>
+      <概念 rdf:ID="软件再用"/>
+    </同义词>
+  </概念>
+  <概念 rdf:ID="仪器2.0"/>
+  <概念 rdf:ID="认知地图">
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1面向高校学生选课的认知地图；2面向企业员工职业生涯发展的认知地图；3面向学生学习的认知地图；4课件中的认知地图；5维修手册、产品说明书中的认知地图。</应用>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1有意义地表征主体的知识；2提供清晰审视历史的机会；3提示缺失环节,揭示逻辑漏洞；4把握重要元素和关键思想；5可以使组织高层和成功员工的认知结构得以可视化；6揭示认知的改变和差异。</作用>
+    <下位词>
+      <概念 rdf:ID="知识认知导航"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="概念图">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >最早是作为教育界的一种教学工具。</定义>
+        <同义词>
+          <概念 rdf:ID="概念构图"/>
+        </同义词>
+        <同义词>
+          <概念 rdf:ID="概念地图"/>
+        </同义词>
+        <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >工具有：Inspiration 、CmapTool、Decision Explorer、CoCoMap、Concept Connector、MindManager 、mindmapper</技术>
+        <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >建构具有良好层次结构的概念图是促进创造性思维的一种方法</作用>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="思维导图">
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >提出者托尼·巴赞。</背景>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="基于案例的推理">
+        <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CBR</英文缩写>
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >提出者：罗杰·尚克。</背景>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是一种基于经验知识进行推理的人工智能技术，它是用案例来表达知识并把问题求解和学习相融合的一种推理方法，它强调人在解决新问题时，常常回忆起过去积累下来的类似情况的处理（大量的经验知识，较大部分为隐性知识），并通过适当修改过去类似情况处理的方法来解决新问题。</定义>
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >医疗诊断、法律咨询、工程规划和设计以及故障诊断</应用>
+      </概念>
+    </下位词>
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >模型的随意性很大</特点>
+    <参考词>
+      <概念 rdf:ID="知识可视化">
+        <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >国内主要研究单位是北京师范大学知识科学与工程研究所</研究现状>
+        <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1二维到多维的转变；2静态向动态、交互的转变。总之，网络信息信息组织的可视化将成为现代信息资源管理的重要发展方向。</发展方向>
+        <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >工具有：思维导图、认知地图、语义网络、思维地图、概念图</技术>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指应用视觉表征手段促进群体知识的传播和创新，其实质是将人们的个体知识以图解的手段表示出来，形成能够直接作用于人感官的知识外在表现形式，从而促进知识的传播和创新。</定义>
+      </概念>
+    </参考词>
+  </概念>
+  <概念 rdf:ID="自主友邻功能">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >是指每个用户可以自主地把另外一些用户添加为自己的友邻，友邻的最新收藏、最近阅读等信息被推荐给用户，作为系统计算推荐的一个补充。</定义>
+  </概念>
+  <概念 rdf:ID="图书馆2.0">
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >在图书馆2.0 时代，每个人都是图书馆的主人和参与者，而图书馆门户网站将成为用户了解和熟悉图书馆的第一个指路人。</特点>
+  </概念>
+  <概念 rdf:ID="社会网络">
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >来源于声望分析</背景>
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >模糊性、复杂性、动态变化性、难以控制</特点>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >应用领域：发现区域经济的创新网络；分析图书销售模式来对新书进行市场定位；发现组织内各领域的知识专家；提高项目团队的绩效；帮助大型组织安排员工工作位置；通过电子邮件得出经理人的人际交往圈；定位技术工程组织中的技术专家和联系专家的途径；分析因特网的有用浏览模式；以研究出版物为基础揭示跨领域知识流动。 广泛应用于集体体育项目运动员管理、IT产业中的技术扩散、流行疾病传播、 基于Email系统的经理人员风险管理、区域经济中创新源发现和政策支持、企业中创新领袖（go-to people）的识别、博客管理和基于博客的知识发现、教授声誉分析、医学专家会诊、新的组织结构设计和部门办公室的安排、大学科研实力评估和基金支持、网上公共资源发现和获取等。</应用>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >social network</英文名称>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >用来描述人们之间的熟识程度的，可以从不同角度对人际网络进行描述。</定义>
+    <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >分析软件：SPSS、SAS或者RStata等大型统计软件中的线性相关分析、协方差分析等模块，系统动力学研究中的Cellular automata(CA)仿真来模拟系统以及一些相关的网络分析专业软件，比如UCINET、Orgnet、NetMiner、Sociometry Pro、NEGOPY、Blanch、SociometryPlus、SocioMetrica  Suite和Pajek等都具有很强的分析功能。</技术>
+    <同义词>
+      <概念 rdf:ID="人际网络"/>
+    </同义词>
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1社会知识网络嵌入； 2社会网络的互联性和信息传播管制； 3网络关联桥的研究。</发展方向>
+  </概念>
+  <概念 rdf:ID="深网">
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deep Web</英文名称>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >在互联网上可获得的, 但传统的搜索引擎由于技术限制不能, 或者经过慎重考虑后不作索引的那些本网页、文件或其他通常是高质量、权威的信息。</定义>
+    <同义词>
+      <概念 rdf:ID="隐形网络">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Invisible Web</英文名称>
+      </概念>
+    </同义词>
+  </概念>
+  <概念 rdf:ID="结构洞理论">
+    <参考词 rdf:resource="#生态位空缺"/>
+  </概念>
+  <概念 rdf:ID="人际情报网络">
+    <下位词>
+      <概念 rdf:ID="企业内部人际网络"/>
+    </下位词>
+    <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >我国目前处于探索阶段</研究现状>
+    <下位词>
+      <概念 rdf:ID="松散型人际情报网络"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="企业外部人际网络"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="正式人际情报网络">
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是结构化的人际情报网络形式</特点>
+      </概念>
+    </下位词>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >包昌火在《人际情报网络》一文中提出，人际情报网络是应情报活动的需要而构建的一种人际网络，是情报从业者获取、分析和传播非公开信息和隐性知识的重要平台。它是人际网络的一种表现形态，是人际网络理论在情报学领域中的应用。</定义>
+    <下位词>
+      <概念 rdf:ID="业缘关系网络">
+        <下位词>
+          <概念 rdf:ID="外部业缘关系"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="内部业缘关系"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="紧密型人际情报网络"/>
+    </下位词>
+    <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >算法包括：隐喻、最短路径、矩阵分析算法、网络图技术、结构洞和元矩阵分析。</技术>
+    <下位词>
+      <概念 rdf:ID="亲缘关系网络">
+        <下位词>
+          <概念 rdf:ID="家庭网络"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="宗族网络"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="姻亲网络"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >对于人际情报网络中重要情报和价值重大的隐性知识的挖掘、组织、管理和利用。</发展方向>
+    <构建 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >现有的构建方法有：学术领域人际网络和知识管理中的人际网络</构建>
+    <下位词>
+      <概念 rdf:ID="非正式人际情报网络">
+        <下位词>
+          <概念 rdf:ID="信任网络"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="沟通网络"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="咨询网络"/>
+        </下位词>
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >私底下、非正式的人际情报网络</特点>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="地缘关系网络">
+        <下位词>
+          <概念 rdf:ID="同乡网络"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <上位词 rdf:resource="#人际网络"/>
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >来源于：人际网络</背景>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Human Intelligence Network</英文名称>
+  </概念>
+  <概念 rdf:ID="网络">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >是用以描述行动主体之间关系的一种结构。</定义>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >network</英文名称>
+    <下位词>
+      <概念 rdf:ID="能源网络">
+        <下位词>
+          <概念 rdf:ID="智能能源网络"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="交通网络">
+        <下位词>
+          <概念 rdf:ID="智能交通网络"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="知识网络">
+        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >知识网络概念的出现绝非偶然，这一过程是渐进式的，并且又是一个由许多因素推动的自然演化过程。其蕴含的逻辑机理为：基于知识的视角，组织应该是一个动态开放的系统，每个组织均需与外界组织建立联系，实现知识在不同组织间的共享，从而构成集知识创新、知识整合和知识共享等功能于一体的网络结构体系。进一步考查知识网络的兴起背景，可以分为如下三个方面。 （1）全球化与竞争环境的加速动态演化 进人2l世纪，竞争的领域越来越全球化，经济全球化、技术的飞速变革和日益增强的消费能力都强烈要求企业对市场能够及时做出反应并能够保持其灵活性]。全球的竞争者都能参与许多技术的竞争，它们带来不同的假设和竞争模式，竞争的范畴不仅限于市场，而且还拓展到了组织范畴。在这种商业环境中，只有少数在生产、营销、创新、知识管理等领域效率最高的企业才能在市场中生存。实践中，人们逐渐意识到：企业内的知识，例如操作程序、各种程序或技能等被认为是企业最有价值的资产(Spender，1996)[31，企业员工之间、企业与顾客和商业伙伴之间的知识共享，对于提高客户服务水平，缩短交货周期和增强企业内部各部门之间及其与商业伙伴之间的协作，都具有巨大的潜在作用。因此，企业通过构建知识网络对环境的振荡做出快速响应就显得很有必要。 （2）不断提高的技术能力支持平台 企业在信息管理、技术、人工智能等应用领域取得的进展使企业构建知识网络在技术上具备了可行性。这些进展中，应用较为广泛的代表性技术主要有以下几种：①数据仓库(DataWarehouse)，从信息技术的角度，数据仓库的目标是组织好资料，在恰当的时间，将恰当的资料交给恰当的人，这是一种持续性的作业，区别于过去以交易为主(Transaction—oriented)的系统。②数据挖掘(Datamining)。数据挖掘看重的是数据库的再分析，包括模式的建构或是资料特征的判定，其主要目的就是要从数据库中发现先前关心却未曾获悉的有价值信息。③群件(Groupware)。由于计算机网络与通信技术的发展，使得许多人可以通过计算机系统在不同的地点工作，交流信息与知识。人们把群体工作的计算机硬件、软件系统称为群件，而把这个领域称为计算机支持协同工作(ComputerSuppoaedCooperative Work)。此外，还有知识编码技术、文本挖掘、绩效支持系统(PerformanceSuppo~Systems)、自然语言理解(NaturallanguageUnderstnading)等等(Kurtzman，1999)[41。由此可知，知识网络技术层面包含的内容异常繁多，是一个技术体系，覆盖了知识生产、分享、应用以及创新的各个环节。 （3）知识管理实践的复杂性、多态性、非线性等是内部驱动因素 知识管理实践的复杂性、多态性、非线性等导致传统的知识管理范式已经无法合理解释或解决某些现象和问题，企业迫切需要从新的网络视角重新审视知识管理的系统运作模式，在更大的思维空间和时域空间进行知识资源的优化配置。正是基于这一背景，20世纪90年代中期，瑞典工业界最早提出了知识网络的概念。这一概念认为，知识管理系统具有典型的网络形态特性，即各种类型的企业间存在广泛的互动关系，同时它也具备网络的三个基本要素：行为主体、资源和活动。换言之，知识管理系统是一个由诸因素交互作用的复杂网络构成的非线性系统，处于非均衡状态，系统内各要素的联系方式，系统与环境的关系都是在不断变化的，这样就导致知识管理的不确定性。在网络中，还存在着可观测到的复归现象，每个环节都反馈作用于它前面的环节。实践表明：复杂网络关联的观点可以在一定程度上解释知识管理的衍生、演化。</背景>
+        <下位词>
+          <概念 rdf:ID="技术路线图">
+            <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1知识网络与技术路线图的相互融合相互促进是技术路线图甚至是知识网络主要的发展趋势。2以技术路线图为导向的知识网络将取代当前以文献引用关系为基础的知识网络。</发展方向>
+            <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >最早出现在美国汽车行业</背景>
+            <构建 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >建立方法1专家调查法；2德尔菲法，又叫专家意见法；3头脑风暴法。</构建>
+            <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >我国现状处于概念引入阶段，其重要性和价值意义尚未得到应有的关注，在政府科技管理中的应用刚刚起步</研究现状>
+          </概念>
+        </下位词>
+        <参考词>
+          <概念 rdf:ID="知识管理">
+            <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >大连虚拟知识城、青岛啤酒的知识频道</应用>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >知识管理是企业通过在战略、组织结构、文化、业务过程、人员、技术等多方面的支持下，对企业各种不同类型的知识进行持续地管理，促进和提升知识的产生创造、组织存储和获取应用等知识过程的实现，确保在需要的时间将需要的知识传送给需要的人，促进知识的共享与重用，提高企业的应变和创新能力，提高企业业绩和核心竞争力。</定义>
+            <参考词>
+              <概念 rdf:ID="流程管理">
+                <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >让知识在流动中增值。</作用>
+                <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >BPM</英文缩写>
+              </概念>
+            </参考词>
+            <参考词>
+              <概念 rdf:ID="内容管理"/>
+            </参考词>
+            <参考词>
+              <概念 rdf:ID="知识治理">
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >指选择正式和非正式的组织机制和组织结构，以最优化选择、创造、共享和利用知识。</定义>
+                <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >1知识管理和流程管理的融合；2知识管理和内容管理的融合</发展方向>
+                <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >美国斯隆管理学院教授Mulen认为：必须首先对知识管理重新定义，“管理”一词是一种伤害，管理意味着一切的控制，而真正要做的是通过信息或知识的自由流动去创造知识，必须用知识治理来代替知识管理。</背景>
+              </概念>
+            </参考词>
+          </概念>
+        </参考词>
+        <下位词>
+          <概念 rdf:ID="知识地图">
+            <下位词>
+              <概念 rdf:ID="概念性知识地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="知识开发地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="静态知识地图"/>
+            </下位词>
+            <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >布鲁克斯提出知识地图。</背景>
+            <下位词>
+              <概念 rdf:ID="知识应用地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="知识资源地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="流程知识地图"/>
+            </下位词>
+            <参考词>
+              <概念 rdf:ID="知识历程图">
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >描述的是人，知识，流程之间的关系。</定义>
+              </概念>
+            </参考词>
+            <构建 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >构建过程1定义组织中的知识；2提取组织中的知识并确定其所处位置；3形成元知识，并用元知识对组织知识进行描述；4建立知识链接，形成知识网络5确认知识地图的有效性。</构建>
+            <下位词>
+              <概念 rdf:ID="能力知识地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="知识结构地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="动态知识地图"/>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="知识资产地图"/>
+            </下位词>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="社会化知识网络"/>
+        </下位词>
+        <构建 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1构建目标（building target） 一项对日内瓦知识论坛成员的调查表明，在组织中构建知识网络主要能带来三个方面的收益：提高效率，增加创新，提升雇员满意度【20】。李丹等人（2002）指出从知识缺口的角度看，知识网络的构建目标是通过共享的知识在组织间的转移，有效克服组织知识缺口，利用知识网络的运作，最终实现知识网络中各组织的共同收益【11】。李姝兰（2005）将知识网络的构建目标归结为：促进跨学科、跨语言和跨文化的交流；提高不同知识源、不同领域和非媒体类型的知识处理和集成；提高团队、组织或社区有效率、跨地区或跨时间的工作；理解这种新链接的伦理、法律和社会隐含意义【23】。刘红丽认为：组织通过构建知识网络，可促使网络中的行为主体最大限度地发挥各自所长，弥补各自所短，有效促进知识共享和知识创新，提高网络中行为主体的整体竞争力。 2构建原则（building principle） 李丹等人认为，知识网络的构建目标是通过共享的知识在组织间的转移，有效克服组织知识缺口，利用知识网络的运作，最终实现知识网络中各组织的共同收益。为实现这一构建目标，严格意义上的知识网络应遵循以下构建原则： （1）互惠互利原则。知识网络实质上是一种知识资源的共享机制，它应通过知识资源的共享与转移，使各参与组织从中获得收益。这是知识网络构建的前提条件，也是知识网络运作的内在动力。 （2）集中优势原则。参与知识网络运作的组织应具备为其他组织提供相应豁缺知识的能力，实现组织间知识领域的优势互补J。 （3）风险最小化原则。知识网络的构建应该建立在相互信任的基础上，以最大程度回避或减少由于核心能力外泄、丧失知识、技术产权等情况给各合作组织以及知识网络整体运行所带来的风险。 （4）动态性原则。知识网络的构建是一个动态协调过程。核心组织必须依据外部竞争环境的变化及运行中存在的问题，及时调整知识网络的成员构成及合作模式，以提高知识网络的运作成效。 3构建方法（building method） Büchel，Raub(2002）提出构建知识网络的四个步骤：①聚焦知识网络：围绕业务核心问题建立潜在网络成员之间的联接，确保管理层的支持；②创造网络环境：建立公共知识，选择恰当的交流方式，在组织中培养信任文化；③使网络活动惯例化：定义网络中的角色（协调者，支持者，编辑者，监管者），建立网络结构；④有效利用网络成果【20】。 李丹等人（2002）认为，构建知识网络实质上是建立核心组织与各个从属组织之间基于知识管理的合作关系，其构建方法在有些方面类似于联盟型企业的构建方法。整个构建过程包括：确定知识网络构建的具体目标；选择网络从属组织；组织合作模式的详细设计；知识网络运作反馈【11】。马德辉，包昌火（2008）提出，企业应当根据自身实践情况构建知识网络，具体应包括以下几方面内容：①明确目标②建立核心层③识别知识活动家等关键联系④鼓励外部参与⑤建立交流空间⑥协调正式与非正式的网络联系【22】。 蒋恩尧,侯东(2002)指出，组建企业知识网络所依存的平台是MIS（管理信息系统），它从内源和外源两个方面向有关人员及时提供所需信息，为一个组织的计划、控制、作业等职能服务，并制定正确的决策，实现科学管理【24】。AMT企业管理研究中心指出绘制知识网络图的目的在于透明化公司现有的知识，并配备负责维护各类知识内容的人员；知识网络图的构建包括三个步骤：①确认中心知识内容；②分解卫星知识内容；③为每个卫星知识配备负责人【25】。 钟琦，汪克夷（2008）将社会网络分析法引入组织知识网络研究，分别从“自我中心社会网”和“整体社会网”的角度，对组织内部知识网络优化进行了研究，具体的优化方法包括：①发展网络中的潜在核心人物，使其成为知识网络的关键结点；②加强知识团体之间的联系，增加网络中桥的数量；③促进任务执行单元内部成员间的知识交流，使其形成知识团体；④识别网络中的孤立结点，找到其缺乏与他人知识交流的原因，对症下药【26】。 李久平，顾新（2008）将知识转移SECI模型引入知识网络的构建中，他们指出SECI模型中每个阶段对应于不同的场，分别是起源场（知识孵化器）、互动场（知识蓄水池）、系统化场（知识加速器）、实验场（知识充电器）。企业知识网络的构建方法如下：①在起源场中构建合作伙伴式的个人网络:在积极营造彼此信任的氛围的基础上，在知识个体之间建立可以方便共享感觉、情感、经验和智力模式的网络状交流通道；②在互动场中构建虚拟团队式的专家网络：有意识地建立相互影响的虚拟团队组成的专家网络，建立职能、责任清晰的管理团队；③在系统化场中构建信息网络：加强信息技术的使用，将内部信息用信息网络进行连接和整合，形成一个强大的企业信息网络和企业知识库；④在实验场中构建虚拟教室式的学习网络：充分利用网络技术，开展丰富多样的网络学习【27】。</构建>
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CNKI知识网络——知网节</应用>
+        <下位词>
+          <概念 rdf:ID="知识进化图"/>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="主题图">
+            <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >主题图和当前非常热门的Web2.0应用结合起来； 基于ISO的主题地图本身的标准和一系列相伴的标准的工作正在进行中。</发展方向>
+            <同义词>
+              <概念 rdf:ID="主题地图"/>
+            </同义词>
+          </概念>
+        </下位词>
+        <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >刘红丽等人认为，知识网络目前研究的主要问题在于：①知识网络尚无统一的定义，不同的学者从不同的理解和不同的应用领域，对知识网络的定义有非常大的差异②由于知识网络是资源性网络，必须依附于关系网络来运作，已有的知识网络研究大都通过社会网络区域网络、企业家网络或创业专家网络，以及创新网络等展开研究，知识网络的研究目前还缺乏较完整的理论支持；③知识网络的定量研究较少，知识网络中的知识存量等很难量化衡量，虽然目前国内学者已经开始通过使用一些软件工具来构建知识网络模型，但对知识网络的量化研究还不够深入。</存在问题>
+        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >张丽妮提出知识网络具有结构化、正式组织、通信机制完善和跨部门界限等特征。 李勇等从知识网络形成的路径依赖出发，提出知识网络具有植根性和动态性特征。 沈立新从虚拟企业角度出发，认为知识网络具有开放性、动态性和多维联系性，企业的知识网络边界是动态的。 詹勇飞在综合知识整合的因素后，提出由于知识整合与知识网络具有不可分割性，知识网络还有如下特征：(1)知识网络的形态模糊性．知识网络的形态可表现为松散、紧密、线性、星态、网络等状态．基于知识整合的知识网络形态具有灵活性，不区分某种形态的优劣．知识整合表现为谁拥有创新所需的知识资源，就与谁结网．有些学者提到知识网络的开放性和动态性，这与本文的形态模糊性具有相近的意义．形态的模糊性要求企业拥有很强的协调能力，既可以低成本维持某些稳定的网络关系，也可以在适当时机断开原有节点，寻找更具竞争力的知识节点。(2)知识网络的知识势能进阶性．知识势能的进阶性依赖于形态的模糊性，即企业可以灵活地选择知识节点并结网，当某一节点的知识势能不再对企业有帮助时，企业通过寻找更高阶知识势能的节点，学习、消化和吸收，提高自身的知识势能，并进入新一轮更高阶知识源的结网过程．如此不断进化，能够不断提高企业的创新能力，同时也提高了知识网络的整体知识势能，使企业长期保持竞争优势。(3)知识网络的整合记忆性．整合记忆性是指企业与原有知识节点成功整合知识的经验而能被双方所记忆，这种记忆能使双方的下一次结网过程更加顺利地进行．形态模糊性使得企业不一定长期维持与原有节点的网络关系，可能在某一阶段断开，但原有知识节点也是一个知识创造的实体，知识节点的知识势能也会不断提高，当达到企业的知识需求时，企业可以重新与该知识节点结网，双方的经验记忆能够降低结网成本，提高再次结网的成功性。 赵蓉英认为知识网络具有共享性、整体性和增值性等特征。如果从广义知识网络和狭义知识网络的角度讲，知识网络具有的特征如下： .1广义知识网络的特征 由于广义知识网络是由其成员社会性地构建的一种边界模糊的、宽散的、非正式结构的组织形式，因此它的边界难以确定。一些学者认为网络可以看作是除了金字塔式、扁平式之外的第三种组织形式。 这种形式赋予了一个广义知识网络需要具备的以下特征： （1）能够创建与传播新知识，促进创新。 （2）能给网络用户提供明显的、可识别的、直接的利益。 （3）是正式组织起来的，具有明确的管理结构。 （4）能够进行基于价值标准的合作。 （5）具有完善的通信机制。 （6）能够超越部门间界线进行可持续发展。 .2狭义知识网络的特征 狭义知识网络是分布于局域网或广域网上的知识资源的集合。从理论上讲它是一个数字化资源管理系统，其本质构造和运行机理是以网络技术为核心的数字化技术为支撑，建立以各种数字化资源为核心的知识资源体系，能使用户通过网络联机存取知识资源，知识信息实时更新且高度共享，因此狭义知识网络特征有以下几个方面。 （1）资源数字化：随着知识网络的问世，存储知识的载体也发生了翻天覆地的变化。与纸制出版物相比，数字化出版物有容量大、价格低、使用方便及阅读过程中的非独占性和无损害性等优势。尤其是近几年数字化出版物的数量与日俱增，网络信息日益丰富，极大地丰富了知识网络的知识信息来源。预计到2018年，书籍中的90％将以数字化的形式销售。数字化出版物已成为一种趋势，越来越多的图书报刊在出版印刷版的同时出电子版或直接在因特网上发行，不仅免去了扫描、图文转接的烦琐劳动，而且出版周期也大大缩短。出版物的数字化为读者提供了更新、更快、更丰富的知识信息，也为知识网络的发展提供了条件和便利。 （2）存取网络化：知识网络在知识资源数字化的基础上，通过计算机网络系统和高速数字通信网络，将世界各国的知识资源和无数台计算机联为一体。这样，知识网络将使知识信息的传递交流突破时间、空间包括国界和语言的限制，由于知识存取和传递的网络化，使成千上万的读者不受任何约束，随时随地地进人知识的海洋，使原本一个个封闭的图书馆面向公众打开，沉睡的文献由读者随意取阅，迷失的知识为人们便捷地获取和利用；由于知识存取和传递的网络化，使得信息的检索和获取之间不存在时间和空间的阻隔，读者可以在检索到某一知识的同时即可获得与该知识相关的全部相关信息，知识网络成为人人可以利用的知识资源，即所有的人在所有的地方能得到自己需要的所有知识，没有了纸质文献的局域性和局限性，缩短了信息传递的时间，加快了信息交流与反馈的速度。 （3）服务知识化：知识网络已经并正在实现由文献的提供向知识的提供的转变，它将图书、期刊、照片、声像资料、数据库、网页、多媒体资料等各类知识载体与知识来源在知识单元的基础上有机地组织和链接起来，并以动态分布式的方式为用户提供服务。同时，自动标引、元数据、知识检索、跨库检索等知识发现与组织的技术，已成为知识网络发展的技术关键。因此，知识网络服务的知识化将会为广大读者提供“知识宝库”、“学术银行”、“数据仓库”。 （4）利用共享化：由于有了数字化和网络化的坚实基础，网上的知识信息资源，只要是网络的用户，可以足不出户，轻点鼠标就可以得到所需要的珍贵资料，不必再为一本书、一篇文章奔波于各个图书馆，从而真正实现跨地域、跨国界的资源共享。充分体现了跨地域、跨行业、跨学科，共同利用不同的知识资源的特征，变限时服务为全天候服务，自由存取网上知识资源的简捷、便利优势，达到全人类全社会的知识共享。</特点>
+        <参考词>
+          <概念 rdf:ID="知识联盟"/>
+        </参考词>
+        <下位词>
+          <概念 rdf:ID="专利地图">
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1集科技信息、法律信息、经济信息于一体。2数量巨大，内容广泛。3时间延续，技术超前。4专利文献的格式统一规范，高度标准化，并且具有统一的分类体系国际专利分类法将全部技术领域科学地分为多个，便于检索、阅读和信息化。5专利文献对发明创造的揭示完整而详尽。</特点>
+            <下位词>
+              <概念 rdf:ID="专利技术图">
+                <下位词>
+                  <概念 rdf:ID="专利分析摘要表">
+                    <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >由技术人员将专利文献中的重要专利信息解读出来。</其他>
+                  </概念>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="IPC国际分类分析图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利技术领域累计图">
+                    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >看出每个技术领域上各竞争公司的专利数量，可知各竞争公司在该技术领域上的实力强弱及其主要技术分布，并依此进行技术追踪。</作用>
+                  </概念>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利技术功效矩阵图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="技术生命周期图">
+                    <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >发展阶段包括：步阶段、发展阶段、技术成熟阶段、衰退阶段、再发展阶段。</其他>
+                  </概念>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="主要公司技术分布分析表"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利技术分布鸟瞰表">
+                    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >可以看出该项技术的专利主要集中在哪些部分内，目前的科研投入主要集中在哪些技术方面。</作用>
+                  </概念>
+                </下位词>
+                <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >技术图锁定某项技术或公司进行地毯式搜索，主要显示技术演变、扩散状况、研发战略、回避设计、挖洞技术的可行性。</作用>
+              </概念>
+            </下位词>
+            <下位词>
+              <概念 rdf:ID="专利管理图">
+                <下位词>
+                  <概念 rdf:ID="主要竞争公司分析图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="公司专利件数消长图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="各国专利占有比例图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="公司专利平均年龄图">
+                    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >通过各公司专利平均年龄的大小，预测其专利未来可构成的威胁时间长短。</作用>
+                  </概念>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利排行榜"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="历年专利动向图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="公司专利件数分布图"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="公司定位综合分析表">
+                    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >可发现谁是技术的领导者，谁是技术的追随者。</作用>
+                  </概念>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="重要专利相互引用族谱图">
+                    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >通过公司之间专利相互引用关系发现其在技术研发上的主从关系。</作用>
+                  </概念>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="发明人专利件数分布图"/>
+                </下位词>
+                <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >主要显示了技术的发展趋势，进行竞争企业的实力剖析和动向预测。</作用>
+                <下位词>
+                  <概念 rdf:ID="公司发明阵容比较图">
+                    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >可以衡量研发的投入情况。</作用>
+                  </概念>
+                </下位词>
+              </概念>
+            </下位词>
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Patent Map</英文名称>
+            <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >应用较好的地区，例如中国台湾、新加坡和韩国</应用>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >是一种定量分析方法。</定义>
+            <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >我国目前处于起步阶段。</研究现状>
+            <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >专利地图是一种专利情报研究方法和表现形式，它将包括科技情报、经济情报、法律情报在内的各类专利情报进行加工，填密精细地加以剖析整理，制成各种可分析、解读的视觉直观的图表形式，使其具有类似地图的指向功能，透过对专利分析指标及其组合的可视化表现反映蕴涵在大量专利数据内的错综复杂的信息，指明技术发展方向，分析技术分布态势，为决策提供更直观的情报支持，特别可以用于对竞争对手(国家地区、科研机构、公司企业等)专利技术分布情况进行监视，做到知彼知己。它是指导政府部门、科研机构、高新企业进行专利战略布局的有效分析手段。 不能在任何领域都搞自主创新，不要把全国的精力都集中在没有前途的创新领域，而创新的方向和领域正是需要从“专利地图”中寻找。</作用>
+            <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >发源于日本。</背景>
+            <参考词>
+              <概念 rdf:ID="专利战">
+                <下位词>
+                  <概念 rdf:ID="专利地雷"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利圈地"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利陷阱"/>
+                </下位词>
+                <下位词>
+                  <概念 rdf:ID="专利烟雾"/>
+                </下位词>
+              </概念>
+            </参考词>
+          </概念>
+        </下位词>
+        <下位词 rdf:resource="#思维导图"/>
+        <下位词>
+          <概念 rdf:ID="知识图谱">
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >是科学计量学的一种工具</特点>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >可视化的描述人类随时间拥有的知识资源及其载体,绘制、挖掘、分析和显示科学技术知识以及它们之间的相互联系,在组织内创造知识共享的环境以促进科学技术研究的合作和深入。</定义>
+            <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1对学术共同体及其网络的研究；2学科领域的发展及演进；3研究课题的扩散与传播；4作者或机构间的关系。</应用>
+            <同义词>
+              <概念 rdf:ID="科学图谱"/>
+            </同义词>
+          </概念>
+        </下位词>
+        <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >刘红丽等人认为，知识网络的未来研究应该聚焦于在知识网络应用建模的实践中，不断丰富和完善知识网络的内涵在此基础上，进一步形成完善的知识网络构建的方法论。同时要不断探索借用其他学科的理论和方法如组织资源理论、社会网络理论、系统动力学理论等，形成完善的知识网络理论体系。</发展方向>
+        <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >目前国外关于知识网络的最新研究动向主要是管理学领域对知识网络概念的引入，关于知识网络的要素、性质、类型、构建，以及对知识网络在知识管理和知识经济中的作用进行了一些分析和研究，同时也有一些关于“K-NET”的网站开始出现。此外，Serafind．Talisayon“以知识和人——知识网络”为题在(BusinessWolrd)刊物上分6次连载介绍分析了数种基于组织知识共享的知识网络社团，如“communitiesofpractice”、“S&amp;T communities(Online Scienceand Technology Communities)”和“the online corporateuniversity”，对美国1998年由国家科学基金会(theNationalScienceFoundation，NSF)资助6200万美元经费用于扩展知识网络领域的研发项目也作了介绍。该项目的目的就是要建立一个集人、组织和社会之间信息知识的交流达到新水平的科学基础。 国内关于知识网络的文献调研结果显示，出现“知识网络”的最早文献是郭其旭在1989年《福建图书馆学刊》第1期“漫谈知识网络：——例举杜甫研究图书资料在《中图法》中的分布状况”一文，表明是图书情报领域最早引入“知识网络”这一概念的。 1990年我国情报学者刘植惠提出，借助超文本技术可构架某一领域的机读知识网络库，并认为超文本的这种动态知识网络，就是知识基因理论研究的极好素材。随后，在1994年我国教育领域分别有3人在不同的文献中提出了基于“知识网络”概念的教学方法，这个概念的出现是教育学对人的知识学习过程在教与学的方法中总结的产物。这种方法一经提出，就受到各科教师和学生的普遍欢迎。“知识网络”教学法是指各科老师通过帮助和教学生用联系的方法将已学知识联系并构建成一个“知识网络图”。通过构建知识网络图来帮助学生把所学知识点融为一体，铸成一个有机整体，而不再是一盘散沙或零星的知识，使学生用联系的方法进行记忆，从而达到以巩固和加强记忆的目的。（已拷贝）这种方法便于学生记得住、想得起，把知识网络刻印在大脑中。 1996年计算机科学人工智能领域和管理学领域开始关注并进行“知识网络”的研究，出现的早期文献是：赵勇、杨明忠在《武汉汽车工业大学学报》1996年第5期“智能并行设计的知识状态研究”一文；随后有黄波、倪重匡等的“故障诊断专家系统的新型知识网络推理模型”、“故障诊断专家系统的知识网络设计”；韩国的申光龙(1999)在《南开管理评论》“知识管理时代的知识信息网络”一文中将知识网络概念应用于经济学和管理学领域，以及张作荣的“知识网络在推动风险投资产业化过程中的作用”，肖宏文、黄瑞华的“陕西省信息产业的现状分析及知识网络发展模式初探”。慕继丰，冯宗宪等(2001)“知识管理和知识管理网络”一文在分析和说明了学习和组织学习、知识和组织知识、知识管理的概念，概括了有关文献对知识的分类，分析了知识交流的模式和知识管理的目的，并提出了建立组织知识管理网络的基本思路。 从文献的研究内容上看，在检索到的60余篇文献中，近40篇是教育学工作者对采用知识网络化的教学方法在语、数、外、理、化、生、史、地、政各科的研究和实际运用的经验总结。其余多数是对知识网络的描述、介绍以及在人工智能研究和经济管理方面的应用。在理论研究方面，王铮等的“知识网络动态与政策控制(I)：模型的建立”和“知识网络动态与政策控制(Ⅱ)——中国国家创新体系调控模拟”对组织体系形成的知识网络进行了动力学行为分析，研究了对组织知识网络投资的知识产出效率；李丹、俞竹超等在“知识网络的构建过程分析”一文中提出了知识网络构建过程中的构成要素、构建原则和构建方法。最新的研究有叶鹏、樊孝忠在“动态语义知识网络构建研究”中基于目前语义知识库研究现状提出的一种新的语义知识结构模型——以Ontology(本体)概念为理论基础，将现有的中文信息库和离散型神经元网络结构相结合，构建了一个具有自学习、自适应能力的神经语义知识网络模型。张丽妮在“基于Know-Net的知识管理研究”中对欧洲知识管理顾问与工具开发者联盟创建的一种集成“过程”和“产品”两种知识管理途径的知识网络(Know-Net)进行了介绍。盛小平在“基于知识网络的知识管理研究”中从微观与宏观动态层次探讨基于知识网络的知识管理框架。 综上所述，国内外关于知识网络的研究大多是描述、介绍和分析基于组织知识管理、知识共享的知识网络类型、模式以及构建的研究。总之，对于知识网络的研究还处于起步阶段，目前还没有形成比较全面、系统的研究理论和研究方法。</研究现状>
+        <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1Know-Net Know-Net工具由知识导航器、知识管理过程/应用、知识服务器三部分组成。 （1）知识导航器(Knowledge Navigators) 知识导航器是应用Know-Net的首要工具,它能被标准的网页浏览器访问。Know-Net为知识工作者开发了知识工作者导航器(knowledge worker navigator),为知识管理系统管理员研制了知识系统管理员导航器(knowledge systems administrators navigator),为知识主管设计了战略知识导航器(strategic knowledge navigator)。 （2）知识管理过程/应用 Know-Net知识管理过程/应用的重要性是:①能从知识库或知识服务器自动读写知识对象;②能支持企业商业流程和知识过程循环管理;③能支持从人员开发到项目与技术管理的不同商业领域。④具有文件分类的集中管理、高级的检索能力、合作、用户通知机制、知识入口等功能。 （3）知识服务器(knowledge server) Know-Net是以集中知识对象存贮为基础的,知识对象及其最重要关系只能存贮一次。它启用Know-Net本体编辑器(Know-Net Ontology Editor)来处理异构知识与信息,它由与描述知识对象相关的各种元数据组成。基于这些元数据,Know-Net工具提供了一种浏览与检索相结合的统一检索界面,由此界面可访问系统内的所有知识库。</技术>
+        <分类 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >人类从蒙昧走向文明的过程，实际上是一个不断认识自然，认识社会、认识自我的过程，而分类正是这个过程中最基本，也是最重要的思维方式。分类是把一个属概念划分为若干种概念的思维过程，分类既是科学认识和研究的起点和基础，也是知识信息整序的主要手段。世界上的一切事物都可以按其属性区分开来，并归入一定的类。 知识网络分类是以比较为基础的，通过比较不同类型的知识网络，揭示其之间属性的异同，根据共同点将知识网络归并为较大的类型，再根据差异点将较大的类划分为较小的知识网络类型。 从知识网络演化的角度来看，Seufert等人（1999）将其分为两类，一类是自然形成的，对于这类知识网络所需要做的是怎么提供一定的外界环境对其加以培育以提高其绩效；另外一类则是人为形成的，这类知识网络被看作是人为构建的网络。 从构成知识网络的结点形态来看，知识网络主要分为以下三类【15】：①人、企业等知识主体之间的网络，其实质是知识在不同的主体之间流动或传播的网络，研究的比较多的是科研工作者之间、科研团体之间、或企业之间的知识合作网络；②知识与人之间的网络，这个可以用美国学者Carley（2002）的观点来解释，即知识网络就是将人和观念、知识、信仰等联结起来的网络，这个网络定义了谁知道什么知识，并随着主体的学习、交互而动态变化【16】；③知识与知识之间的网络，即以知识为结点，以知识分类或语义分类为基础而建立的知识之间的分类网络【17】。 从知识网络结点之间的关系来看，席运江（2006）指出组织中存在三种类型的知识网络：K－K知识网络（知识与知识之间的网络）；P－P知识网络（组织成员之间的网络）；M－M知识网络（存储知识的物质载体之间的网络），这三类网络属于同质节点网络。这三种类型的知识网络集成而成的“网络之网络”即KSN网络，属于异质节点网络【18】。 Seufert等人（2003）根据知识在隐性和显性之间流动过程的不同，将知识网络分为四种类型：①经验网络Experiencing Network），主要目的在于促进隐性知识从一个知识主体向另一个知识主体的流动，本质上是一个促进知识创造者之间交流和沟通的网络；②具体化网络（Materializing Network），主要目的在于促进隐性知识向显性知识的转化，这是一个知识内容的生产网络；③系统化网络（Systematizing Network），主要目的在于促进显性知识的流动，是一个显性知识的存储和利用网络；④学习网络（Learning Network），主要目的在于促进显性知识向隐性知识的转换，是一个最具动态特色的网络【19】。 Büchel和Raub（2002）根据知识网络聚焦的受益（个人收益、组织收益），以及知识网络的管理模式（自我管理、管理层支持）两个维度，将知识网络划分为四种类型：业余爱好网络，专业学习网络，最佳实践网络，商业机遇网络【20】。 对于跨组织的知识网络，Mentzas等人（2006）根据网络社区的特征（开放、封闭），及知识交换的特征（交易、共享）两个维度，将知识网络划分为知识社区、知识链、知识供给、知识市场四种类型【21】。 赵蓉英（2007）将知识网络分为广义知识网络和狭义知识网络。广义知识网络：基于人脑细胞或基于人脑细胞和各种媒介载体而存在的知识网络称为广义知识网络，即存在于人的脑细胞中或存在于人的脑细胞和依附和记录于各种媒介载体(即脑外载体，如纸张、胶片、磁盘、光盘等)的知识网络称为广义知识网络。狭义知识网络：基于各种文献载体(即脑外载体，如纸张、胶片、磁盘、光盘等)而客观存在的知识网络称为狭义知识网络，即依附和记录于各种文献载体(即脑外载体，如纸张、胶片、磁盘、光盘等)而客观存在的知识网络称为狭义知识网络，或称客观知识网络、显性知识网络。进一步将其归纳为三种类型：①个体知识网络，是指个体大脑中所构成的知识网络图；②组织知识网络，包括群体和公司这两个层次；③社会知识网络，包括企业联盟与商业和职业协会组织这两个层次【1】。</分类>
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Knowledge Network</英文名称>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >一直以来学术界对于知识网络尚无一个明确和统一的定义。不同时代、不同领域和不同学科的人，也就是说处在不同时空的人对“知识网络”概念的内涵和外延具有不同的认识。 1国外定义 随着对知识网络研究的不断深入，一些机构和学者从不同角度对知识网络下了定义。以下是国外几种具有代表性的观点： 现代认知心理学家E．加涅(1985)在对知识本质的研究中这样描述“知识网络”：陈述性知识和程序性知识两大类型知识的关系是产生式镶嵌在命题网络之中，共同构成“知识网络”；知识网络是作为两类知识在人的大脑内系统化地存储方式。加涅是从知识网络的构成内容和知识网络的作用描述知识网络。 Latour(1987)从资源的角度认为，“知识网络资源”的含义是一个“相互联结(inter-1inked)”的“结点和节点”(knots and nodes)之网，装载了分散在一个较大的空间中的资源集(concentration of resources)，而这个空间就组成了这个学科的研究领域。知识网络被看作是一个存储包含了各个部分的大量的、复杂的专业技术、经验和知识积累的知识库，内部和外部的人员都可以使用这个知识库。因此，知识网络这样形成：①“结点和节点”(knotsand nodes)中装载了知识资源，②当需求产生时，这些“结点和节点”(knotsandnodes)间开始产生交叉联系cross．cuttingties)和链接(1inkages)(Podolnyeta1．，1996)，③这些联系(ties)使得知识资源相互补充和丰富，反过来，不管是对每个网络成员还是整个网络来说，这种联系使得每个功能更加强大、广泛和深化。 Beckmann（1995）将知识网络描述为进行科学知识生产和传播的机构和活动。 Verna Allee认为知识网络是通过内部群体或共同兴趣者相互关联构成，这里“群体”可能是一群共享工作经验或技术知识的职业同行；并强调知识网络具有“流动性”：“我认为知识网络也是不定群，人们在知识群中整合的时间也仅能维持至完成某一特定任务。然后，他们解散并转移到其他项目和知识群中。这种关系不能被‘结构化’，也不能被设计。他们作为操作系统的某一项特征出现，同时，他们是不断流动的。” Andreas（1999）[8]则认为，知识网络是知识参与者间的一种社会网络，通过个人、团体、组织与内部等层次上的知识创造与传递，实现价值创造。 	美国科学基金会(NSF)(1999)给知识网络的定义是：知识网络是一个社会网络，该网络提供知识、信息的利用等。即知识网络是这样一个概念，由学术专家、信息、知识组成的复合集被聚集成成一个“凝聚集体”，用来分析一些特定的问题。知识网络关注跨越时间空间的知识整体。在这种背景下，一个知识网络可以被定义为是对生产、共享和利用一个共同知识仓库的这些个体的合作。其构成要素有：硬件、软件、人、过程。 Seufert等人（1999）对知识网络进行了比较全面的论述，他们认为知识网络是一个动态框架，该框架由以下三个要素组成：一是行为主体（包括个人、团队、组织）；二是行为主体之间的关系（这些关系可以按照形式、内容及强度分类）；三是各行为主体在它们的关系中所运用的资源和制度特性（包括结构维度和文化维度，例如控制机制、标准处理程序、范式和规则、交流模式等）。这些要素被组合在一起，通过知识创造和转移过程积累和使用知识，最终实现价值创造。 Verna（2003）的价值网络观，他把知识网络作为价值网络的亚范畴，认为从系统思考的观点看，可把组织视为价值网络，该价值网络是通过两（多）个个人、团队、组织之间复杂的、动态的交易而产生经济价值和其他收益的关系网。从事有形和无形交易的任何组织或组织内的小组，无论是行业、政府或公共部门，都可视为一个价值网络。而实质上，知识是价值网络的交易媒介，知识网络即价值网络的亚范畴。 Jarvenpaa等人（2003）认为知识网络是人、企业等知识主体之间相互连接构成的网络【8】。许多学者基于该定义研究科研工作之间、科研团体之间、企业之间的知识合作网络，以及知识在不同主体间的流动与传播【9】。 Melissa等认为知识网络是由能够接受、存储、处理或信息转移的节点相互连接形成的网络[2]。 K.Kobayashi认为，知识网络是这样一种由结点的集合以及结点间的联系所组成的系统。它的结点代表人类居住区的离散形式，如乡镇，城市和都市区，这些结点都具有知识的集中生产能力和永久的活动能力，都具有知识生产的基础设施，都拥有较高的人力资本水平；结点间的联系通过利用基础设施、交通网络和电讯网络促使知识和信息在结点间流动[纪慧生，2007]。 	国外从事知识管理研究的学者对知识网络的定义大致是：知识网络指的是一批人、资源和他们之间的关系，为了知识的积累和利用，通过知识创造、知识转移，促进新的知识利用。此定义主要是针对企业内部及企业外部知识的创造、利用和传播。 2国内定义 目前国内学者对于知识网络也没有一个统一的定义，根据其研究视角的不同，以下是几种主要的观点： 从“知识缺口”角度，李丹等人（2002）认为，知识网络是组织为适应知识管理的需要，有效弥补知识管理运作中存在的知识缺口，而基于组织知识链中的知识管理环节与能为其提供所缺知识的外部组织进行合作所相应构成的网络体系。同时提出了知识网络的构成要素包括网络核心组织、网络从属组织（包括企业、企业群体、科研院所、大学及咨询机构等）、知识管理活动、共享知识资源、信息网络平台等，为组织构建知识网络提供了指导性的建议【11】。 从产业集群角度，姜照华，隆连堂，张米尔（2004）认为，知识网络是由若干单元（子系统）构成的相互之间进行知识交流、知识供应的网络结构体系【12】。刘晓（2003）针对软件业提出了集群知识网络的概念，认为软件业集群知识网络是指以软件产业集群内的行为主体为主导，通过正式或非正式的途径，借助各种资源的流动，所形成的旨在促进知识在集群内部创造、储存、转移和应用的关系总和【13】。 从企业内部知识管理角度，马德辉，包昌火（2007）认为，知识网络既是企业的一种宝贵的、具有战略价值的知识资源，同时它更是企业挖掘其自身拥有的社会网络中的知识，特别是隐性知识的一项基本能力。他们将知识网络界定为，知识网络是一种获取、共享嵌入在企业内外社会网络中的知识资源，以创造新知识为目的的网络。其本质是，利用企业内外社会网络挖掘寓于人的头脑中的丰富并具有价值的隐性知识资源【14】。 	从情报学定量化观点和知识组织的角度，赵蓉英（2007）认为知识网络可以抽象为由知识结点和知识关联（知识链）构成的网络的知识体系，该体系的大小和构成方式可有所不同。知识网络也可具体表述为：以知识元素、知识点、知识单元、知识库作为“结点”，以知识间的关联作为“边”或“链”而构成的网络【1】。 蒋恩尧等（2002）[9]从技术层面将知识网络视为一个用于解释大量资料与信息，记录、包装并传递专业知识给有需求员工、业务伙伴、顾客及供应商，从而简化专业知识在供应链中传递，用于管理知识的网络系统； 	张丽妮（2004）认为，知识网络(knowledge networks),在广义上讲是指一种知识参与者实现知识在个人、团体、组织和组织间等级层次上的创造与传递的社会网络;在狭义上讲是促进组织内知识有序流动的软件。 	肖冬平认为，知识网络是指由多条知识链构成的，集知识共享与知识创造等功能于一体的网络体系。其中，知识链是指以企业为创新的核心主体，以实现知识共享和知识创造为目的，通过知识在参与创新活动的不同组织之间流动而形成的链式结构。[12]  	刘向认为，知识网络是一个集合概念，指的是与知识、信息及知识间联系有关的一类网络。在知识网络中，节点（Vertex）一般代表知识单元的存储单位，由考察的粒度不同，可以取为书刊、论文、专利、情报片段或词等；边（Edge）即表示知识单元之间的连接关系，在引证网络、词网络中即是引证关系，在共现网络（共词、合著、合作等网络）中即是共现关系。 	王晓红，综合国内外学者的观点，界定知识网络的定义为：一个能够完成组织内外知识传递、知识流动的社会网络，由节点（个人、组织、资源等知识主体）和节点间的连线（知识主体之间的关系）构成，知识网络能够扩大知识流动的范围和速度，进而促进知识的共享和创造。 	汪涛认为，通常，知识网络是由创造、转移、吸收和应用知识的行为主体（企业、组织和机构等）在知识的传播与交流过程中彼此联结而形成的网络结构，属于一种社会网络，各行为主体构成了网络的节点，行为主体间的知识流动构成了网络中的线条。 李姝兰的定义是[2005]：（1）知识网络是一个社会网络，在这个网络中，每个人获取知识、信息的机会是均等的。人人都有自由选取知识与信息的权力；（2）知识网络是一个跨越地区、国际性的交流网络。它涵盖了不同语言、不同学科的知识，是一个知识的海洋；（3）知识网络强调知识的处理和集成，需要较强的技术支持，不仅是信息技术和网络技术，知识组织、知识重组、知识发现等技术也是同样重要的。在对知识进行处理的基础上进行集成和管理，通过知识传播提高其利用率；（4）在知识网络的构建中会出现信息伦理、信息安全、知识产权等方面的问题。知识网络的发展中需要首先解决这些问题，以促进知识在社会中的流传。 国内部分学者认为知识网络是一种社会关系网络；能够实现个人、团队之间层次上的知识传递和创造[7-9]。 3不同学科对知识网络的定义（不同学科的定义） 教育学家早就发现以知识为内容的神经网络是一种知识网络，它是各种知识在脑内系统化的储存方式。学习就是一个逐步建构和不断完善知识系统网络图的过程。这种知识网络又称为认识地图[赵蓉英、2007]。 管理学家所研究的知识网络可分为：①以人的集成和知识交流为主的社会网络[纪慧生、2007]，如春兰集团知识网络 [李丹，2002]；②实现知识管理的软件工具和主要平台[赵蓉英. 2007]，如科研成果管理中知识地图集的研究[刘芳莉. 2007]。（知识网络案例） 计算机科学家则追求高度智能化和集成化的知识网络。在21世纪初提出了知识网格（knowledge grid）的概念：基于互联网环境，实现不同知识的高度共享，从大量在线数据集中抽取和合成知识，使搜索引擎能够智能地进行推理和问题回答 [F Bermanl. 2001][楼靖华. 2007]。国内外已经围绕知识网格以及基于知识网格的数字图书馆、知识管理等开展了大量的研究[Zhuge，Hai. 2007][Cannataro，Mario. 2006][顾洁、钱昆. 2007]。中国知网（CNKI）被认为具有知识网格的基本特征，如虚拟化、分布化协同工作、统一管理等[张宏伟、张振海. 2005]。但离理想的知识网络还有很大距离。 情报学领域则将知识网络看作是文献之间的有机联系组成的网络，如科学论文的引用网络[18]、科学知识图谱[19]、技术路线图[20][21][22][23][24]、知识地图[25]、语义网[26]等。2001年正式提出语义网 （semantic web）的概念，其方向是成为一个能够理解人类语言的智能网络，它将可识别信息的意义，并自动对信息进行解释、交换和处理[27]。已经开展基于语义网的企业知识集成方法的研究[28]。文献[29]认为这方面的发展方向是：Web环境→语义Web环境→网格环境→语义网格环境。所谓语义网格是网格和语义网的结合[30]。 前苏联科学家提出的TRIZ（发明问题的解决理论）所研究的进化模式和进化路线也是一种知识网络[31][32]。 数字图书馆被看作是一种知识网络型全文数据库，其突出代表是清华中国知网（北京）技术有限公司开发的CNKI，其目标是按照知识本来的内在联系和人们获取知识的本质需求，将庞杂无序的知识资源整合为有效、有序的标准化内容产品进行传播[33]。美国国家科学基金会（NSF）在2003年6月召开的“后数字图书馆的未来”研讨会中提出泛在知识环境（Ubiquitous Knowledge Environment），其要实现的是个人知识无所不在的存取、信息能够自然交流的知识社会化模式[34][35]。 互联网的理论家则总结了博客（Blog）、维客（Wiki）、掘客（Digg）、播客、威客（WITKEY）等一类自下而上的、由用户集体智慧和力量主导的自组织的互联网应用系统，称之为Web2.0技术和系统。论文[34]提出一种基于Web2.0数字知识服务知识网络建构模型。目前，基于Web2.0的知识管理的研究已经开展，如基于 Wiki的组织内部知识共享[36]、基于博客的知识管理[37]、基于Wiki的开放本体导航工具[38]等。</定义>
+        <下位词>
+          <概念 rdf:ID="引文网络">
+            <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >科学引文索引（Science Citation Index）简称SCI、中国科学引文数据库（Chinese Science Citation Database）简称CSCD</应用>
+          </概念>
+        </下位词>
+        <下位词 rdf:resource="#语义网"/>
+        <参考词>
+          <概念 rdf:ID="创新网络"/>
+        </参考词>
+      </概念>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="打印2.0">
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >案例：如惠普公司的Snapfish(咔嚓鱼)网站的在线打印业务。</应用>
+  </概念>
+  <概念 rdf:ID="文献引用">
+    <下位词>
+      <概念 rdf:ID="漏引">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指同伪引相反，有些论文作者实际上引用了别人的文章，但他们在自己的论文中，只列出曾经引用过的部分参考文献，这种现象就是漏引。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="曲引">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >根据自己的需要，对他人的论文或者著作进行不公正的歪曲性的评价与引用称为“曲引”。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="伪引">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指作者在写作过程中及在引文标引过程中所采用的引文与引文基本假设不一致的引文现象。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="崇引">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指为吹捧自己或吹捧别人，有些论文作者忽视引证文献与论文主题内容的相关性和必要性，盲目引用名人文献、权威名著、外文文献，以烘托自己论文质量。</定义>
+        <同义词>
+          <概念 rdf:ID="饰引"/>
+        </同义词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="自引">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >指具有相对稳定性和文献生产连续性的科学主体，在其后期产出文献引用自身前期产出文献的文献引用形式。</定义>
+      </概念>
+    </下位词>
+    <参考词 rdf:resource="#引文网络"/>
+  </概念>
+  <概念 rdf:ID="技术进化图">
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1定性技术预测；2提高产品创新的成功率；3缩短发明周期。</作用>
+    <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >代表性和科学性仍然是个值得商榷的问题</存在问题>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Technology Evolution Map</英文名称>
+    <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TEM</英文缩写>
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >向非技术系统（如组织系统）应用的扩展</发展方向>
+    <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >软件包括计算机辅助创新CAI软件和计算机辅助创新设计平台</技术>
+  </概念>
+  <概念 rdf:ID="叙词表">
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >电子叙词表。</发展方向>
+    <同义词>
+      <概念 rdf:ID="主题词表"/>
+    </同义词>
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >最早出现在美国20世纪50年代末。</背景>
+  </概念>
+  <概念 rdf:ID="管理2.0">
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >丰田管理模式。</应用>
+  </概念>
+  <概念 rdf:ID="创新思维">
+    <同义词>
+      <概念 rdf:ID="分散性思维"/>
+    </同义词>
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >创新思维之父爱德华·德·波诺。</背景>
+  </概念>
+  <概念 rdf:ID="知识组织">
+    <下位词>
+      <概念 rdf:ID="知识重组"/>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="叙词">
+    <下位词>
+      <概念 rdf:ID="非正式叙词"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="正式叙词"/>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="搜索引擎">
+    <下位词>
+      <概念 rdf:ID="搜索引擎营销">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Search Engine Marketing</英文名称>
+        <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SEM</英文缩写>
+        <参考词>
+          <概念 rdf:ID="蜘蛛体验">
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >SEO Experience</英文名称>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >是搜索引擎算法对网站的评价，算法对网站评价好排名好。</定义>
+            <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >SE</英文缩写>
+          </概念>
+        </参考词>
+        <参考词>
+          <概念 rdf:ID="用户体验">
+            <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >UE</英文缩写>
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >User Experience</英文名称>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >是一种纯主观的在用户使用一个产品（服务）的过程中建立起来的心理感受</定义>
+          </概念>
+        </参考词>
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >是一种新的网络营销形式。SEM所做的就是全面而有效的利用搜索引擎来进行网络营销和推广。</定义>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="搜索引擎技术">
+        <下位词>
+          <概念 rdf:ID="全文检索技术">
+            <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >保证了查全率，但其查准率却较差</存在问题>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="数据检索技术">
+            <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >语义检索能力较差</存在问题>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="知识检索技术"/>
+        </下位词>
+      </概念>
+    </下位词>
+    <参考词>
+      <概念 rdf:ID="PageRank"/>
+    </参考词>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >案例：百度搜索推广系统、WA系统的新“知识”搜索引擎和Google 搜索引擎</应用>
+  </概念>
+  <概念 rdf:ID="创新2.0">
+    <参考词>
+      <概念 rdf:ID="创新1.0">
+        <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >创意来源少、成功概率低、落地周期长和知识支撑少。</存在问题>
+      </概念>
+    </参考词>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >案例：Living Lab、FAB LAB、保洁公司和IBM。</应用>
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >大众创新、共同创新和开放创新；以人为本、以服务为导向。</特点>
+  </概念>
+  <概念 rdf:ID="长尾理论">
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >“长尾”理论彻底颠覆了我们视为金科玉律的80/20法则，互联网等技术的出现，使生产、流通的成本急剧下降，使原本被我们忽视的小商品也有了出头之日。只要存储和流通的渠道足够大，需求不旺的产品也同样能够带来丰厚的利润；众多的小市场也可汇聚成与主流大市场相抗衡的市场力量。</作用>
+    <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >基本原理：只要存储和流通的渠道足够大，需求不旺或销量不佳的产品所共同占据的市场份额可以和那些少数热销产品所占据的市场份额相匹敌甚至更大，即众多小市场汇聚成可与主流大市场相匹敌的市场能量。</其他>
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >例如：亚马逊为窄众群体提供了个性化的选择机会，对需求量小的商品进行了精细的划分，从而延展了渠道。这种“无物不销，无时不售”的模式为消费者提供了无限制的多样性选择。相对于传统的人为界定的有限选择，这种无限制性的选择更侧重于从客户的需求出发，注重客户的体验。</应用>
+  </概念>
+  <概念 rdf:ID="营销2.0">
+    <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >案例：如海尔集团的身心体验。</应用>
+  </概念>
+  <概念 rdf:ID="社群网络分析">
+    <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SNA</英文缩写>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Network Analysis</英文名称>
+    <作用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1识别孤立无援的人和远离权力中心的人；2研究在知识创造和传播中非正规网络的重要性。</作用>
+    <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >软件：UCINET 软件。</技术>
+  </概念>
+  <概念 rdf:ID="复杂系统">
+    <下位词>
+      <概念 rdf:ID="复杂适应系统">
+        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Complex Adaptive System</英文名称>
+        <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CAS</英文缩写>
+        <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >基本思想：系统中的成员称为具有适应性的主体(AdaptiveAgent)，简称主体。所谓具有适应性，就是指它能够与环境以及其他主体进行交流，在这种交流的过程中‘学习’或‘积累经验’，并且根据学到的经验改变自身的结构和行为方式。整个系统的演变或进化，包括新层次的产生、分化和多样性的出现，新的、聚合而成的、更大的主体的出现等等，都是在这个基础上出现的。</其他>
+        <应用 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >在信息系统 方面的应用：虽然CAS理论在许多学科中都有成功的应用，在信息系统设计领域内的研究却不多。Munnecke曾提出过复杂适应信息系统（CAIS:Complex adaptive information system）的概念</应用>
+        <下位词>
+          <概念 rdf:ID="复杂适应信息系统">
+            <英文缩写 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >CAIS</英文缩写>
+          </概念>
+        </下位词>
+      </概念>
+    </下位词>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >是指具有大量组分、组分间存在着非线性关系、各个组分能自主地按照一定的行为规则相互交互、从而自底向上地形成不同层级的自组织的系统。那种虽然具有结构复杂性，但系统组分间不存在非线性关系，组分不具有自主性、不能灵活地调整彼此关联的系统，称为复杂的系统（Complicated system）；如飞机、钟表等。复杂的系统不具有动态复杂性，不属于复杂科学的研究范畴。</定义>
+  </概念>
+  <概念 rdf:ID="云计算">
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >分布式处理(Distributed Computing)、并行处理(Parallel Computing)和网格计算(Grid Computing)的发展，或者说是这些计算机科学概念的商业实现</定义>
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >出现原因：现在社会和家庭拥有的个人计算机就是PC，只有30%的计算能力被利用，甚至更低，而其余70%的实际上是被闲置的，这些闲置的计算机资源和计算能力只有通过分布式系统才能得到有效的利用，这样可以大大提高一个国家的计算能力，而计算能力是衡量一个国家国力和科学研究能力的指标，这一点现在还没有被国人充分认识到。一个国家和地区的计算能力现在已经成为一种重要的战略资源，不亚于石油和其他战略物资的重要性。云计算就是把普通的服务器或者个人计算机连接起来以获得超级计算机也叫高性能和高可用性计算机的功能，但是成本更低。</背景>
+    <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >安全性问题。例如，2008年2月中旬，亚马逊的网络主机服务—简易存储(Simple Storage Service,S3)出现故障，持续时间约4小时。</存在问题>
+  </概念>
+  <概念 rdf:ID="维基经济学"/>
+  <概念 rdf:ID="主题法">
+    <下位词>
+      <概念 rdf:ID="非控主题法"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="受控主题法"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="后组式主题法"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="先组式主题法"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="叙词法">
+        <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >我国使用最广泛的是《汉语主题词表》。</研究现状>
+        <同义词>
+          <概念 rdf:ID="主题词法"/>
+        </同义词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="元词法">
+        <研究现状 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >元词法目前已为叙词法所取代，我国现在主要使用叙词法</研究现状>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="关键词法"/>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="标题法"/>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="知识网络技术">
+    <下位词>
+      <概念 rdf:ID="软件重构技术"/>
+    </下位词>
+  </概念>
+  <概念 rdf:ID="e-Learning1.0"/>
+  <概念 rdf:ID="推荐系统">
+    <下位词>
+      <概念 rdf:ID="协同推荐">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >通过分析用户的历史检索记录，对用户和信息进行聚类，然后根据聚类得到的用户相关性和信息相关性实现用户之间的协同，让具有相近检索需求的用户能借鉴彼此的经验。</定义>
+        <下位词>
+          <概念 rdf:ID="个性化推荐系统">
+            <技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >文本挖掘技术</技术>
+            <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >基于假设：假设人与人之间的行为具有某种程度的相似性，即购买行为类似的顾客，会购买向类似的产品</其他>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="自动推荐系统">
+            <其他 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >基于假设：假设是项目与项目间具有某种程度的关连，即顾客在购买时，其所购买的产品通常具有关连性</其他>
+          </概念>
+        </下位词>
+        <同义词 rdf:resource="#推荐系统"/>
+      </概念>
+    </下位词>
+    <发展方向 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >协同过滤在推荐系统中的应用研究。</发展方向>
+    <存在问题 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1缺乏个性化的推荐；2推荐的自动化程度低；3建立在当前客户会话基础上，不能利用客户以前的会话信息，推荐的持久性程度非常低；4推荐方法单一；5不能在线推荐，即推荐不及时。</存在问题>
+  </概念>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

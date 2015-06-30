@@ -1,0 +1,156 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+<script type="text/javascript">
+var employeeData = new Edo.data.DataTable().set('data', Employees);
+var positionData = new Edo.data.DataTree(Positions);
+
+//列渲染器 renderers
+function educationalRenderer(v){
+    for(var i=0,l=Educationals.length; i<l; i++){
+        var o = Educationals[i];
+        if(o.id == v) return o.name;
+    }
+}
+function departmentRenderer(v){
+    for(var i=0,l=Departments.length; i<l; i++){
+        var o = Departments[i];
+        if(o.id == v) return o.name;
+    }
+}
+function countryRenderer(v){
+    for(var i=0,l=Countrys.length; i<l; i++){
+        var o = Countrys[i];
+        if(o.id == v) return o.name;
+    }
+}
+function interestRenderer(v){
+    if(!v) return;
+    var vs = v.split(',');
+    var sb = [];
+    for(var i=0,l=Interests.length; i<l; i++){
+        var o = Interests[i];
+        vs.each(function(id){
+            if(o.id == id) sb.push(o.name);
+        });
+    }
+    return sb.join(',');
+}
+
+function positionRenderer(v){
+    var o = positionData.find({id: v});
+    return o ? o.name : '';
+}
+    Edo.create({
+        type: 'box',
+        render: document.body,
+        layout: 'horizontal',
+        children: [
+            {
+                type: 'button',
+                text: '新增',
+                onclick: function(e){
+                    table1.data.insert(0, {
+                        name: '<新增的记录>'
+                    });
+                }                
+                
+            } ,
+            {
+                type: 'button',
+                text: '修改',
+                onclick: function(e){
+                    var r = table1.getSelected();
+                    if(r){
+                        table1.data.update(r, 'name', new Date());
+                    }else{
+                        alert("请选择行");
+                    }
+                }                
+                
+            } ,
+            {
+                type: 'button',
+                text: '删除',
+                onclick: function(e){
+                    var r = table1.getSelected();
+                    if(r){
+                        table1.data.remove(r);
+                    }else{
+                        alert("请选择行");
+                    }
+                }                
+                
+            },
+            {
+                type: 'split'                
+            },{
+                type: 'button',
+                text: '排序',
+                onclick: function(e){
+                    table1.data.sort(function(pre, next){                        
+                        return !!(pre.salary > next.salary);
+                    }, this);  
+                }                
+                
+            },
+            {
+                type: 'button',
+                text: '过滤',
+                onclick: function(e){
+                    table1.data.filter(function(o, i){
+                        if(o.salary < 10000) return true;
+                        return false;
+                    });     
+                }                
+                
+            },
+            {
+                type: 'button',
+                text: '清除过滤',
+                onclick: function(e){
+                    table1.data.clearFilter();
+                }                
+                
+            }
+        ]        
+    });
+    Edo.create(
+        {
+            id: 'table1',
+            type: 'table',
+            width: 600,
+            height: 400,
+            editAction: 'click',
+            render: document.body,
+            data: employeeData,
+            columns:[
+                Edo.lists.Table.createMultiColumn(),
+                {header: '员工账号', dataIndex: 'ID'},        
+                {header: '姓名', dataIndex: 'name', editor: 'text'},                        
+                Edo.lists.Table.createRadioColumn({header: '性别', dataIndex: 'gender', data: Genders, valueField: 'id', displayField: 'name'}),       
+                Edo.lists.Table.createCheckColumn({
+                    header: '婚否',trueValue: '1', falseValue: '2', dataIndex: 'married'
+                }),
+                {header: '薪水', dataIndex: 'salary', type: 'text'},
+                
+                {header: '出生日期', dataIndex: 'birthday', editor: {type: 'date', valueFormat: true}},
+                {header: '年龄', dataIndex: 'age', editor: 'spinner'},     
+                {header: '兴趣', dataIndex: 'interest',
+                    renderer: interestRenderer,
+                    editor:{type:'multicombo', data: Interests, valueField: 'id', displayField: 'name'}
+                }
+            ]
+        }
+    );          
+
+</script>

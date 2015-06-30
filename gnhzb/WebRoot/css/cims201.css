@@ -1,0 +1,961 @@
+@CHARSET "utf-8";
+
+/*css style for index page  */
+body
+{
+background-color: white;
+}
+.cims201_leftbar_font{
+	font-size:13px;
+	font-weight: bolder;
+}
+
+.cims201_tab_font{
+	font-size:11px;
+	font-weight: bolder;
+}
+.cims201_con_font{
+	font-size:13px;
+	font-weight: bolder;
+	color:olive;
+}
+.cims201_notice_icon{
+	background-image: url(images/activitysmall.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_template_icon{
+	background-image: url(txt.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_notice_title{
+	padding-left: 20px;
+	background-image: url(images/notice_title.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_template_title{
+	padding-left: 50px;
+	background-repeat: no-repeat;
+}
+.cims201_search_title{
+	padding-left: 20px;
+	background-image: url(images/Tree_Search.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_search_body{
+	padding-left: 100px;
+	background-image: url(images/win_head_logo.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_statistic_title{
+	background-image: url(images/cat.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_rank_title{
+	background-image: url(images/rank.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.e-title-collapse .e-panel-header
+{
+ cursor:pointer;
+}
+
+/*css style for top bar*/
+.cims201_topbar_bg{
+	background-image: url(images/banner1.png) !important;
+	background-repeat: no-repeat;
+}
+.cims201_topbar_bg1{
+	background-image: url(images/banner1.png) !important;
+	background-repeat: repeat-x;
+}
+.cims201_topbar_bg9{
+	background-image: url(images/banner9.png) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon{
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 1px;
+	margin-top:1px;
+	backgroud-color: silver;
+	font-size: 11px;
+	font-weight:bolder;
+	font-style:inherit;
+	color: black;
+}
+
+.cims201_topbar_icon_homepage{	
+	background-image: url(images/home.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon_homepage_small{	
+	background-image: url(images/homepage_small.png) !important;
+	background-repeat: no-repeat;
+}
+
+
+.cims201_topbar_icon_user{
+	background-image: url(images/user.png) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon_knowledge{
+	background-image: url(images/kbase.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon_system{
+	background-image: url(images/system.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon_kmap{
+	background-image: url(images/kmap.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon_plus{
+	background-image: url(images/Plus.gif) !important;
+	background-repeat: no-repeat;
+}
+
+
+.cims201_topbar_icon_logout{
+	background-image: url(images/logout.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_topbar_icon_statistics{
+	background-image: url(images/statistics.gif) !important;
+	background-repeat: no-repeat;
+}
+
+/*css style for nav tree 左边栏样式*/ 
+.cims201_navtree{
+	margin-top: 10px;
+	margin-left: 50px;
+	padding-left: 0px;
+	padding-right: 3px;
+	padding-top: 50px;
+	font-size: 13px;
+	color:menutext;
+	font-weight: 700;
+}
+
+/*系统左侧图标样式定义 之前的可能作废，完全定义好了后再修改*/
+/*用户中心部分 各图标*/
+
+
+.cims201_myinfor_icon_myinforcard_small{
+   
+	background-image: url(images/myinforcard_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_myinfor_icon_myinforfriend_small{
+	background-image: url(images/myinforfriend_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_myinfor_icon_myinformessage_small{
+   
+	background-image: url(images/myinformessage_small.gif) !important;
+	background-repeat: no-repeat;
+}
+	
+.cims201_myinfor_icon_myinforcard{
+   
+	background-image: url(images/myinforcard.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_myinfor_icon_myinforfriend{
+
+	background-image: url(images/myinforfriend.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_myinfor_icon_myinformessage{
+   
+	background-image: url(images/myinformessage.gif) !important;
+	background-repeat: no-repeat;
+}
+
+	
+.cims201_myknowledgebase_icon_knowledgeupload
+	{
+		background-image: url(images/knowledgesimpupload.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_myknowledgebase_icon_knowledgeupload_small
+	{
+		background-image: url(images/knowledgesimpupload_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_myknowledgebase_icon_creatkgroup
+	{
+		background-image: url(images/creatkgroup.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_myknowledgebase_icon_creatkgroup_small
+	{
+		background-image: url(images/creatkgroup_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+	
+/*江丁丁 发布文章*/
+.cims201_myknowledgebase_icon_expert
+	{
+		background-image: url(images/askmanage.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_myknowledgebase_icon_expert_small
+	{
+		background-image: url(images/askmanage_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_knowledgeapproval_icon_getUnApprovalKnowledges
+	{
+		background-image: url(images/getUnApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_knowledgeapproval_icon_getUnApprovalKnowledges_small
+	{
+		background-image: url(images/getUnApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getPendingApprovalKnowledges
+	{
+		background-image: url(images/getPendingApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_knowledgeapproval_icon_getPendingApprovalKnowledges_small
+	{
+		background-image: url(images/getPendingApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getPassApprovalKnowledges
+	{
+		background-image: url(images/getPassApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_knowledgeapproval_icon_getPassApprovalKnowledges_small
+	{
+		background-image: url(images/getPassApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getEndApprovalKnowledges
+	{
+		background-image: url(images/getEndApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getEndApprovalKnowledges
+	{
+		background-image: url(images/getEndApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getEndApprovalKnowledges_small
+	{
+		background-image: url(images/getEndApprovalKnowledge_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getPendingBorrowApprovalKnowledges
+	{
+		background-image: url(images/getPendingBorrowApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_knowledgeapproval_icon_getPendingBorrowApprovalKnowledges_small
+	{
+		background-image: url(images/getPendingBorrowApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getPassBorrowApprovalKnowledges
+	{
+		background-image: url(images/getPassBorrowApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_knowledgeapproval_icon_getPassBorrowApprovalKnowledges_small
+	{
+		background-image: url(images/getPassBorrowApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_knowledgeapproval_icon_getEndBorrowApprovalKnowledges
+	{
+		background-image: url(images/getEndBorrowApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}		
+.cims201_knowledgeapproval_icon_getEndBorrowApprovalKnowledgess_small
+	{
+		background-image: url(images/getEndBorrowApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mytask_icon_getNeedBorrowApprovalKnowledgesAdmin
+	{
+		background-image: url(images/getNeedBorrowApprovalKnowledgesAdmin.gif) !important;
+     	background-repeat: no-repeat;
+	}
+		
+.cims201_mytask_icon_getNeedBorrowApprovalKnowledgesAdmin_small
+	{
+		background-image: url(images/getNeedBorrowApprovalKnowledgesAdmin_small.gif) !important;
+     	background-repeat: no-repeat;
+	}		
+.cims201_mytask_icon_getNeedBorrowApprovalKnowledges
+	{
+		background-image: url(images/getNeedBorrowApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_mytask_icon_getNeedBorrowApprovalKnowledges_small
+	{
+		background-image: url(images/getNeedBorrowApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mytask_icon_getNeededApprovalKnowledges
+	{
+		background-image: url(images/pendingApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_getNeededApprovalKnowledges_small
+	{
+		background-image: url(images/pendingApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mytask_icon_passApprovalKnowledges
+	{
+		background-image: url(images/passApprovalKnowledges.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_passApprovalKnowledges_small
+	{
+		background-image: url(images/passApprovalKnowledges_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_knowledgeapproval_icon_getMyAVIDMKnowledges
+	{
+		background-image: url(images/integratepic.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_knowledgeapproval_icon_getMyAVIDMKnowledges_small
+	{
+		background-image: url(images/integratepic_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_mytask_icon_getNeedDomainAVIDMKnowledges
+	{
+		background-image: url(images/integratepic.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_getNeedDomainAVIDMKnowledges_small
+	{
+		background-image: url(images/integratepic_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+	
+	
+.cims201_knowledgeapproval_icon_getMyQualityKnowledges
+	{
+		background-image: url(images/integratepic.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_knowledgeapproval_icon_getMyQualityKnowledges_small
+	{
+		background-image: url(images/integratepic_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_mytask_icon_getNeedDomainQualityKnowledges
+	{
+		background-image: url(images/integratepic.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_getNeedDomainQualityKnowledges_small
+	{
+		background-image: url(images/integratepic_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+	
+	
+.cims201_mytask_icon_pendingBorrowApproval
+	{
+		background-image: url(images/pendingBorrowApproval.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_pendingBorrowApproval_small
+	{
+		background-image: url(images/pendingBorrowApproval_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mytask_icon_passBorrowApproval
+	{
+		background-image: url(images/passBorrowApproval.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_passBorrowApproval_small
+	{
+		background-image: url(images/passBorrowApproval_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mytask_icon_pendingAnswer
+	{
+		background-image: url(images/pendingAnswer.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_pendingAnswer_small
+	{
+		background-image: url(images/pendingAnswer_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mytask_icon_answered
+	{
+		background-image: url(images/answered.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mytask_icon_answered_small
+	{
+		background-image: url(images/answered_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mykbase_icon_myBusiness
+	{
+		background-image: url(images/myBusiness.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mykbase_icon_myBusiness_small
+	{
+		background-image: url(images/myBusiness_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mykbase_icon_getKnowledgeKeep
+	{
+		background-image: url(images/getKnowledgeKeep.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mykbase_icon_getKnowledgeKeep_small
+	{
+		background-image: url(images/getKnowledgeKeep_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mykbase_icon_getFriendRecommend
+	{
+		background-image: url(images/getFriendRecommend.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mykbase_icon_getFriendRecommend_small
+	{
+		background-image: url(images/getFriendRecommend_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mykbase_icon_getKnowledgesSubscription
+	{
+		background-image: url(images/getKnowledgesSubscription.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mykbase_icon_getKnowledgesSubscription_small
+	{
+		background-image: url(images/getKnowledgesSubscription_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mykbase_icon_getKnowledgesSubscriptionList
+	{
+		background-image: url(images/getKnowledgesSubscriptionList.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mykbase_icon_getKnowledgesSubscriptionList_small
+	{
+		background-image: url(images/getKnowledgesSubscriptionList_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mykbase_icon_mySubscription
+	{
+		background-image: url(images/mySubscription.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mykbase_icon_mySubscription_small
+	{
+		background-image: url(images/mySubscription_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+	/*知识库部分左侧小图标*/
+.cims201_myknowledgebase_icon_knowledgesearch
+	{
+		background-image: url(images/knowledgesearch.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_myknowledgebase_icon_knowledgesearch_small
+	{
+		background-image: url(images/knowledgesearch_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_myknowledgebase_icon_knowledgesearchindex
+	{
+		background-image: url(images/knowledgesearchindex.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_myknowledgebase_icon_knowledgesearchindex_small
+	{
+		background-image: url(images/knowledgesearchindex_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_myknowledgebase_icon_knowledgesearchonto
+	{
+		background-image: url(images/knowledgesearchonto.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_myknowledgebase_icon_knowledgesearchtag
+	{
+		background-image: url(images/knowledgesearchtag.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_myknowledgebase_icon_knowledgesearchtag_small
+	{
+		background-image: url(images/knowledgesearchtag_small.gif) !important;
+     	background-repeat: no-repeat;
+	}		
+.cims201_catagoryTree_icon{
+	background-image: url(images/category.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_catagoryTree_icon_small{
+	background-image: url(images/category_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_domainTree_icon{
+	background-image: url(images/domain.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_domainTree_icon_small{
+	background-image: url(images/domain_small.gif) !important;
+	background-repeat: no-repeat;
+}
+
+
+/*标准 江丁丁添加 2013-5-12*/
+.cims201_mypatent_icon_patentchinesesearch
+	{
+		background-image: url(images/ksearch.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mypatent_icon_patentchinesesearch_small
+	{
+		background-image: url(images/ksearch2.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mypatent_icon_patentussearch
+	{
+		background-image: url(images/knowledgesearchtag.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mypatent_icon_patentussearch_small
+	{
+		background-image: url(images/knowledgesearchtag_small.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mypatent_icon_patenteuropeansearch
+	{
+		background-image: url(images/ksearch.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mypatent_icon_patenteuropeansearch_small
+	{
+		background-image: url(images/ksearch2.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mypatent_icon_patentjapansearch
+	{
+		background-image: url(images/ksearch.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mypatent_icon_patentjapansearch_small
+	{
+		background-image: url(images/ksearch2.gif) !important;
+     	background-repeat: no-repeat;
+	}
+.cims201_mypatent_icon_patentlocalsearch
+	{
+		background-image: url(images/kbase.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_mypatent_icon_patentlocalsearch_small
+	{
+		background-image: url(images/kbase1.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+
+/*名人专栏  江丁丁添加 2013-6-5*/
+.cims201_expert_icon_experthome
+	{
+		background-image: url(images/expertpaihang.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_expert_icon_experthome_small
+	{
+		background-image: url(images/expertpaihang_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+.cims201_expert_icon_publisharticle
+	{
+		background-image: url(images/askmanage.gif) !important;
+     	background-repeat: no-repeat;
+	}
+
+.cims201_expert_icon_publisharticle_small
+	{
+		background-image: url(images/askmanage_small.gif) !important;
+     	background-repeat: no-repeat;
+	}	
+	
+.cims201_article_topbar_addarticle{
+	background-image: url(images/askmanage.gif) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+	
+/*知识地图部分*/
+.cims201_knowledgemap_icon_kmap
+	{
+	background-image: url(images/knowledgemap.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_knowledgemap_icon_kmap_small
+	{
+	background-image: url(images/knowledgemap_small.gif) !important;
+	background-repeat: no-repeat;
+	}	
+	.cims201_knowledgemap_icon_itemlist
+	{
+	background-image: url(images/itemlist.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_knowledgemap_icon_itemlist_small
+	{
+	background-image: url(images/itemlist_small.gif) !important;
+	background-repeat: no-repeat;
+	}	
+.cims201_knowledgemap_icon_ontolist
+	{
+	background-image: url(images/ontolist.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_knowledgemap_icon_ontolist_small
+	{
+	background-image: url(images/ontolist_small.gif) !important;
+	background-repeat: no-repeat;
+	}	
+.cims201_knowledgemap_icon_itemedit
+	{
+	background-image: url(images/itemedit.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_knowledgemap_icon_itemedit_small
+	{
+	background-image: url(images/itemedit_small.gif) !important;
+	background-repeat: no-repeat;
+	}	
+/*知识问答部分*/
+.cims201_qanda_icon_equestiondaohang
+	{
+	background-image: url(images/equestiondaohang.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_equestiondaohang_small
+	{
+	background-image: url(images/equestiondaohang_small.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_qcategorydaohang
+	{
+	background-image: url(images/qcategorydaohang.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_qcategorydaohang_small
+	{
+	background-image: url(images/qcategorydaohang_small.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_questionsearch
+	{
+	background-image: url(images/questionsearch.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_questionsearch_small
+	{
+	background-image: url(images/questionsearch_small.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_askpublish
+	{
+	background-image: url(images/askpublish.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_askpublish_small
+	{
+	background-image: url(images/askpublish_small.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_myquestionlist
+	{
+	background-image: url(images/myquestionlist.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_myquestionlist_small
+	{
+	background-image: url(images/myquestionlist_small.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_waitedquestion
+	{
+	background-image: url(images/waitedquestion.gif) !important;
+	background-repeat: no-repeat;
+	}
+.cims201_qanda_icon_waitedquestion_small
+	{
+	background-image: url(images/waitedquestion_small.gif) !important;
+	background-repeat: no-repeat;
+	}
+	
+/*系统管理*/
+/*分类树、域树、角色树*/
+
+.cims201_system_icon_assignmanager{
+	background-image: url(images/assignmanager.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_assignmanager_small{
+	background-image: url(images/assignmanager2.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree{
+	background-image: url(images/edittree.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree_role{
+	background-image: url(images/editroletree.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree_role_small{
+	background-image: url(images/editroletree_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree_category{
+	background-image: url(images/editcategorytree.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree_category_small{
+	background-image: url(images/editcategorytree2.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree_domain{
+	background-image: url(images/editdomaintree.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_edittree_domain_small{
+	background-image: url(images/editdomaintree2.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_adduser{
+	background-image: url(images/adduser.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_adduser_small{
+	background-image: url(images/adduser2.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_addpermission{
+	background-image: url(images/addpermission.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_addpermission_small{
+	background-image: url(images/addpermission_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_userlist{
+	background-image: url(images/userlist.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_userlist_small{
+	background-image: url(images/userlist_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_behaviorlist{
+	background-image: url(images/behaviorlist.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_behaviorlist_small{
+	background-image: url(images/behaviorlist_small.gif) !important;
+	background-repeat: no-repeat;
+}
+
+/*知识类型配置*/
+.cims201_system_icon_configktype{
+	background-image: url(images/configktype.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_system_icon_configktype_small{
+	background-image: url(images/configktype_small.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_system_icon_configproperty{
+	background-image: url(images/configproperty.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_system_icon_configproperty_small{
+	background-image: url(images/configproperty_small.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_system_icon_ktypelist{
+	background-image: url(images/ktypelist.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_system_icon_ktypelist_small{
+	background-image: url(images/ktypelist_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_ontology{
+	background-image: url(images/index.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_ontology_small{
+	background-image: url(images/index2.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_indexall{
+	background-image: url(images/index.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_indexall_small{
+	background-image: url(images/index2.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_inituser{
+	background-image: url(images/inituser.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_inituser_small{
+	background-image: url(images/initusersmall.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_expertmaintain{
+	background-image: url(images/expertweihu.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_expertmaintain_small{
+	background-image: url(images/expertweihu_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_expertset{
+	background-image: url(images/expertset.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_system_icon_expertset_small{
+	background-image: url(images/expertset_small.gif) !important;
+	background-repeat: no-repeat;
+}
+/*系统集成*/
+.cims201_integrate_icon_integratetemp{
+	background-image: url(images/integratepic.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_integrate_icon_integratetemp_small{
+	background-image: url(images/integratepic_small.gif) !important;
+	background-repeat: no-repeat;
+}
+/*统计*/
+.cims201_statistics_icon_khotlist{
+	background-image: url(images/khotlist.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_khotlist_small{
+	background-image: url(images/khotlist_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_userrank{
+	background-image: url(images/userrank.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_userrank_small{
+	background-image: url(images/userrank_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_statisticswhole{
+	background-image: url(images/statisticswhole.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_statisticswhole_small{
+	background-image: url(images/statisticswhole_small.gif) !important;
+	background-repeat: no-repeat;
+}
+/*文化动态*/
+.cims201_statistics_icon_hforum{
+	background-image: url(images/hforum.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_hforum_small{
+	background-image: url(images/hforum_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_themeactive{
+	background-image: url(images/themeactive.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_themeactive_small{
+	background-image: url(images/themeactive_small.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_theory{
+	background-image: url(images/theory.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_statistics_icon_theory_small{
+	background-image: url(images/theory_small.gif) !important;
+	background-repeat: no-repeat;
+}
+
+/*江丁丁添加  2013-8-14 LCA MDE*/
+.cims201_lca_icon_small{
+	background-image: url(images/design.png) !important;
+	background-repeat: no-repeat;
+}
+.cims201_mde_icon_small{
+	background-image: url(images/creatkgroup_small.gif) !important;
+	background-repeat: no-repeat;
+}
+	

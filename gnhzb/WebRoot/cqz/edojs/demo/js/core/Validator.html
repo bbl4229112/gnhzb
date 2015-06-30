@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    Validator用于单个组件信息验证, 并能结合表单整体验证<br /><br />
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+Edo.build({
+    id: 'loginForm',
+    title: '用户登录',    
+    type: 'panel',    
+    children: [
+        {type: 'formitem', label: '账号：',
+            children: [
+                {type: 'text', id: 'ID', valid: noEmpty}            
+            ]
+        },
+        {type: 'formitem', label: '密码：', layout: 'horizontal',
+            children: [
+                {type: 'text', id: 'PWD', valid: must5, 
+                    showValid: false,   //禁止自动显示错误样式, 可以监听验证事件进行自定义提示
+                    onvalid: function(e){
+                        //alert("密码正确");
+                    },
+                    oninvalid: function(e){
+                        alert(e.errorMsg);
+                    }
+                }                
+            ]
+        },
+        {type: 'formitem', 
+            children: [
+                {type: 'button', text: '登录', id: 'loginBtn'}
+            ]
+        }        
+    ],
+    render: document.body
+});
+
+loginBtn.on('click', function(e){
+    if(loginForm.valid()){
+        alert("验证通过, 提交中...");
+    }
+});
+
+function noEmpty(v){
+    if(!v) return "账号不能为空"
+}
+function must5(v){
+    if(v.length != 5) return "密码必须是5位"
+}
+</script>

@@ -1,0 +1,16 @@
+@CHARSET "utf-8";
+
+/*css style for index page  */
+.index_topbar_icon{
+	padding-left: 15px;
+    float:right;
+	padding-top: 1px;
+	margin-top:1px;
+	backgroud-color: silver;
+	font-size: 13px;
+	font-weight:bolder;
+	font-style:inherit;
+  	color: black;
+    display: inline;
+    text-decoration: none;
+}

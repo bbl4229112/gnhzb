@@ -1,0 +1,794 @@
+2013-07-18 12:03:01,046 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add patent_id varchar2(100 char) not null
+2013-07-18 12:03:01,046 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,062 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_code varchar2(100 char) not null
+2013-07-18 12:03:01,062 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,062 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_date timestamp
+2013-07-18 12:03:01,062 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_code varchar2(60 char)
+2013-07-18 12:03:01,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_date timestamp
+2013-07-18 12:03:01,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc varchar2(400 char)
+2013-07-18 12:03:01,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,093 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cat_code varchar2(400 char)
+2013-07-18 12:03:01,093 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add priory varchar2(400 char)
+2013-07-18 12:03:01,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_address varchar2(400 char)
+2013-07-18 12:03:01,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add inv_person varchar2(500 char)
+2013-07-18 12:03:01,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ent_nation_date varchar2(200 char)
+2013-07-18 12:03:01,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_person varchar2(400 char)
+2013-07-18 12:03:01,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_agent varchar2(400 char)
+2013-07-18 12:03:01,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pat_abstract varchar2(4000 char)
+2013-07-18 12:03:01,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:01,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add main_power varchar2(4000 char)
+2013-07-18 12:03:01,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:02,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_nation varchar2(200 char)
+2013-07-18 12:03:02,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:02,609 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_area varchar2(200 char)
+2013-07-18 12:03:02,609 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:02,609 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cer_date timestamp
+2013-07-18 12:03:02,609 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:03,500 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_pub varchar2(200 char)
+2013-07-18 12:03:03,500 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:03,500 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_app varchar2(200 char)
+2013-07-18 12:03:03,500 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:03,796 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cn_type varchar2(20 char)
+2013-07-18 12:03:03,796 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:04,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_part varchar2(20 char)
+2013-07-18 12:03:04,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:04,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_lclass varchar2(50 char)
+2013-07-18 12:03:04,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:04,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_sclass varchar2(50 char)
+2013-07-18 12:03:04,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_olclass varchar2(50 char)
+2013-07-18 12:03:06,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_osclass varchar2(50 char)
+2013-07-18 12:03:06,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurl varchar2(2000 char)
+2013-07-18 12:03:06,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredurl varchar2(400 char)
+2013-07-18 12:03:06,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ispowered varchar2(10 char)
+2013-07-18 12:03:06,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add category varchar2(200 char)
+2013-07-18 12:03:06,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurltmp varchar2(2000 char)
+2013-07-18 12:03:06,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pagenumber varchar2(300 char)
+2013-07-18 12:03:06,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,468 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredfullurl varchar2(500 char)
+2013-07-18 12:03:06,468 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:03:06,468 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredpagenumber varchar2(45 char)
+2013-07-18 12:03:06,468 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:05,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add patent_id varchar2(100 char) not null
+2013-07-18 12:45:05,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:05,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_code varchar2(100 char) not null
+2013-07-18 12:45:05,390 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:05,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_date timestamp
+2013-07-18 12:45:05,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:05,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_code varchar2(60 char)
+2013-07-18 12:45:05,406 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:05,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_date timestamp
+2013-07-18 12:45:05,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:05,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc varchar2(400 char)
+2013-07-18 12:45:05,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:14,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cat_code varchar2(400 char)
+2013-07-18 12:45:14,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add priory varchar2(400 char)
+2013-07-18 12:45:15,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_address varchar2(400 char)
+2013-07-18 12:45:15,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add inv_person varchar2(500 char)
+2013-07-18 12:45:15,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ent_nation_date varchar2(200 char)
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_person varchar2(400 char)
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_agent varchar2(400 char)
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pat_abstract varchar2(4000 char)
+2013-07-18 12:45:15,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add main_power varchar2(4000 char)
+2013-07-18 12:45:15,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:15,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_nation varchar2(200 char)
+2013-07-18 12:45:15,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:16,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_area varchar2(200 char)
+2013-07-18 12:45:16,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:16,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cer_date timestamp
+2013-07-18 12:45:16,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:16,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_pub varchar2(200 char)
+2013-07-18 12:45:16,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_app varchar2(200 char)
+2013-07-18 12:45:17,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cn_type varchar2(20 char)
+2013-07-18 12:45:17,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_part varchar2(20 char)
+2013-07-18 12:45:17,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_lclass varchar2(50 char)
+2013-07-18 12:45:17,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_sclass varchar2(50 char)
+2013-07-18 12:45:17,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_olclass varchar2(50 char)
+2013-07-18 12:45:17,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_osclass varchar2(50 char)
+2013-07-18 12:45:17,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurl varchar2(2000 char)
+2013-07-18 12:45:17,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,187 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredurl varchar2(400 char)
+2013-07-18 12:45:17,187 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ispowered varchar2(10 char)
+2013-07-18 12:45:17,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add category varchar2(200 char)
+2013-07-18 12:45:17,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurltmp varchar2(2000 char)
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pagenumber varchar2(300 char)
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredfullurl varchar2(500 char)
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredpagenumber varchar2(45 char)
+2013-07-18 12:45:17,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add patent_id varchar2(100 char) not null
+2013-07-18 12:48:38,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_code varchar2(100 char) not null
+2013-07-18 12:48:38,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,718 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_date timestamp
+2013-07-18 12:48:38,718 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,906 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_code varchar2(60 char)
+2013-07-18 12:48:38,906 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,921 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_date timestamp
+2013-07-18 12:48:38,921 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,921 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc varchar2(400 char)
+2013-07-18 12:48:38,921 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cat_code varchar2(400 char)
+2013-07-18 12:48:38,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add priory varchar2(400 char)
+2013-07-18 12:48:38,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_address varchar2(400 char)
+2013-07-18 12:48:38,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add inv_person varchar2(500 char)
+2013-07-18 12:48:38,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ent_nation_date varchar2(200 char)
+2013-07-18 12:48:38,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_person varchar2(400 char)
+2013-07-18 12:48:38,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,968 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_agent varchar2(400 char)
+2013-07-18 12:48:38,968 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,968 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pat_abstract varchar2(4000 char)
+2013-07-18 12:48:38,968 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add main_power varchar2(4000 char)
+2013-07-18 12:48:38,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_nation varchar2(200 char)
+2013-07-18 12:48:38,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:38,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_area varchar2(200 char)
+2013-07-18 12:48:38,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cer_date timestamp
+2013-07-18 12:48:39,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_pub varchar2(200 char)
+2013-07-18 12:48:39,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_app varchar2(200 char)
+2013-07-18 12:48:39,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cn_type varchar2(20 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_part varchar2(20 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_lclass varchar2(50 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_sclass varchar2(50 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_olclass varchar2(50 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_osclass varchar2(50 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurl varchar2(2000 char)
+2013-07-18 12:48:39,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredurl varchar2(400 char)
+2013-07-18 12:48:39,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ispowered varchar2(10 char)
+2013-07-18 12:48:39,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:39,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add category varchar2(200 char)
+2013-07-18 12:48:39,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:41,265 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurltmp varchar2(2000 char)
+2013-07-18 12:48:41,265 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:41,265 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pagenumber varchar2(300 char)
+2013-07-18 12:48:41,265 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:41,281 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredfullurl varchar2(500 char)
+2013-07-18 12:48:41,281 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:48:41,281 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredpagenumber varchar2(45 char)
+2013-07-18 12:48:41,281 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:50:34,671 [main] WARN  [org.hibernate.util.JDBCExceptionReporter] - SQL Error: 17002, SQLState: 08006
+2013-07-18 12:50:34,671 [main] ERROR [org.hibernate.util.JDBCExceptionReporter] - Io 异常: Connection reset
+2013-07-18 12:50:34,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - could not complete schema update
+org.hibernate.exception.JDBCConnectionException: could not get table metadata: caltks_dk_simpleknowledge
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:99)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:128)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScript(Configuration.java:1030)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:187)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:386)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:855)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:774)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1477)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:435)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:409)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:541)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:147)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:84)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:297)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1074)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:190)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1075)
+	at edu.zju.cims201.spider.commontool.UrlRule.<init>(UrlRule.java:23)
+	at edu.zju.cims201.spider.grabnews.uggdqy.rule.QyUrlRule.<init>(QyUrlRule.java:7)
+	at edu.zju.cims201.spider.grabnews.uggdqy.QySpider.<init>(QySpider.java:65)
+	at edu.zju.cims201.spider.grabnews.uggdqy.QySpider.main(QySpider.java:343)
+Caused by: java.sql.SQLRecoverableException: Io 异常: Connection reset
+	at oracle.jdbc.driver.SQLStateMapping.newSQLException(SQLStateMapping.java:101)
+	at oracle.jdbc.driver.DatabaseError.newSQLException(DatabaseError.java:133)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:199)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:263)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:521)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:802)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeMaybeDescribe(T4CPreparedStatement.java:866)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1186)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3387)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3431)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at oracle.jdbc.driver.OracleDatabaseMetaData.getColumnsWithWildcards(OracleDatabaseMetaData.java:342)
+	at oracle.jdbc.driver.OracleDatabaseMetaData.getColumns(OracleDatabaseMetaData.java:143)
+	at org.apache.commons.dbcp.DelegatingDatabaseMetaData.getColumns(DelegatingDatabaseMetaData.java:218)
+	at org.hibernate.tool.hbm2ddl.TableMetadata.initColumns(TableMetadata.java:197)
+	at org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:58)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:113)
+	... 34 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at oracle.net.ns.Packet.receive(Packet.java:240)
+	at oracle.net.ns.DataPacket.receive(DataPacket.java:92)
+	at oracle.net.ns.NetInputStream.getNextPacket(NetInputStream.java:172)
+	at oracle.net.ns.NetInputStream.read(NetInputStream.java:117)
+	at oracle.net.ns.NetInputStream.read(NetInputStream.java:92)
+	at oracle.net.ns.NetInputStream.read(NetInputStream.java:77)
+	at oracle.jdbc.driver.T4CMAREngine.unmarshalUB1(T4CMAREngine.java:1034)
+	at oracle.jdbc.driver.T4CMAREngine.unmarshalSB1(T4CMAREngine.java:1010)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:588)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:194)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:791)
+	... 45 more
+2013-07-18 12:50:34,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Error closing connection
+java.sql.SQLException: 关闭的连接
+	at oracle.jdbc.driver.SQLStateMapping.newSQLException(SQLStateMapping.java:70)
+	at oracle.jdbc.driver.DatabaseError.newSQLException(DatabaseError.java:133)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:199)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:263)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:271)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:445)
+	at oracle.jdbc.driver.PhysicalConnection.setAutoCommit(PhysicalConnection.java:3310)
+	at org.apache.commons.dbcp.DelegatingConnection.setAutoCommit(DelegatingConnection.java:371)
+	at org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.setAutoCommit(PoolingDataSource.java:328)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.release(SuppliedConnectionProviderConnectionHelper.java:73)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:230)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:386)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:855)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:774)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1477)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:435)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:409)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:541)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:147)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:84)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:297)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1074)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:190)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1075)
+	at edu.zju.cims201.spider.commontool.UrlRule.<init>(UrlRule.java:23)
+	at edu.zju.cims201.spider.grabnews.uggdqy.rule.QyUrlRule.<init>(QyUrlRule.java:7)
+	at edu.zju.cims201.spider.grabnews.uggdqy.QySpider.<init>(QySpider.java:65)
+	at edu.zju.cims201.spider.grabnews.uggdqy.QySpider.main(QySpider.java:343)
+2013-07-18 12:53:56,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add patent_id varchar2(100 char) not null
+2013-07-18 12:53:56,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_code varchar2(100 char) not null
+2013-07-18 12:53:56,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_date timestamp
+2013-07-18 12:53:56,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_code varchar2(60 char)
+2013-07-18 12:53:56,156 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_date timestamp
+2013-07-18 12:53:56,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc varchar2(400 char)
+2013-07-18 12:53:56,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,187 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cat_code varchar2(400 char)
+2013-07-18 12:53:56,187 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,187 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add priory varchar2(400 char)
+2013-07-18 12:53:56,187 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,203 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_address varchar2(400 char)
+2013-07-18 12:53:56,203 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,203 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add inv_person varchar2(500 char)
+2013-07-18 12:53:56,203 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,203 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ent_nation_date varchar2(200 char)
+2013-07-18 12:53:56,203 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:56,218 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_person varchar2(400 char)
+2013-07-18 12:53:56,218 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,109 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_agent varchar2(400 char)
+2013-07-18 12:53:57,109 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,125 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pat_abstract varchar2(4000 char)
+2013-07-18 12:53:57,125 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,125 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add main_power varchar2(4000 char)
+2013-07-18 12:53:57,125 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_nation varchar2(200 char)
+2013-07-18 12:53:57,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_area varchar2(200 char)
+2013-07-18 12:53:57,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cer_date timestamp
+2013-07-18 12:53:57,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,718 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_pub varchar2(200 char)
+2013-07-18 12:53:57,718 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_app varchar2(200 char)
+2013-07-18 12:53:57,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:57,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cn_type varchar2(20 char)
+2013-07-18 12:53:57,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_part varchar2(20 char)
+2013-07-18 12:53:58,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_lclass varchar2(50 char)
+2013-07-18 12:53:58,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,046 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_sclass varchar2(50 char)
+2013-07-18 12:53:58,046 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,921 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_olclass varchar2(50 char)
+2013-07-18 12:53:58,921 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_osclass varchar2(50 char)
+2013-07-18 12:53:58,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurl varchar2(2000 char)
+2013-07-18 12:53:58,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredurl varchar2(400 char)
+2013-07-18 12:53:58,937 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ispowered varchar2(10 char)
+2013-07-18 12:53:58,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:58,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add category varchar2(200 char)
+2013-07-18 12:53:58,953 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:59,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurltmp varchar2(2000 char)
+2013-07-18 12:53:59,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:59,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pagenumber varchar2(300 char)
+2013-07-18 12:53:59,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:53:59,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredfullurl varchar2(500 char)
+2013-07-18 12:53:59,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:54:00,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredpagenumber varchar2(45 char)
+2013-07-18 12:54:00,140 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:55,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add patent_id varchar2(100 char) not null
+2013-07-18 12:58:55,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_code varchar2(100 char) not null
+2013-07-18 12:58:56,000 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_date timestamp
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_code varchar2(60 char)
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_date timestamp
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc varchar2(400 char)
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cat_code varchar2(400 char)
+2013-07-18 12:58:56,015 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add priory varchar2(400 char)
+2013-07-18 12:58:56,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_address varchar2(400 char)
+2013-07-18 12:58:56,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add inv_person varchar2(500 char)
+2013-07-18 12:58:56,031 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ent_nation_date varchar2(200 char)
+2013-07-18 12:58:56,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_person varchar2(400 char)
+2013-07-18 12:58:56,312 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_agent varchar2(400 char)
+2013-07-18 12:58:56,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pat_abstract varchar2(4000 char)
+2013-07-18 12:58:56,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add main_power varchar2(4000 char)
+2013-07-18 12:58:56,328 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,343 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_nation varchar2(200 char)
+2013-07-18 12:58:56,343 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,343 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_area varchar2(200 char)
+2013-07-18 12:58:56,343 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cer_date timestamp
+2013-07-18 12:58:56,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_pub varchar2(200 char)
+2013-07-18 12:58:56,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_app varchar2(200 char)
+2013-07-18 12:58:56,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,375 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cn_type varchar2(20 char)
+2013-07-18 12:58:56,375 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_part varchar2(20 char)
+2013-07-18 12:58:56,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_lclass varchar2(50 char)
+2013-07-18 12:58:56,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_sclass varchar2(50 char)
+2013-07-18 12:58:56,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_olclass varchar2(50 char)
+2013-07-18 12:58:56,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_osclass varchar2(50 char)
+2013-07-18 12:58:56,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurl varchar2(2000 char)
+2013-07-18 12:58:56,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredurl varchar2(400 char)
+2013-07-18 12:58:56,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ispowered varchar2(10 char)
+2013-07-18 12:58:56,671 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add category varchar2(200 char)
+2013-07-18 12:58:56,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurltmp varchar2(2000 char)
+2013-07-18 12:58:56,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pagenumber varchar2(300 char)
+2013-07-18 12:58:56,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredfullurl varchar2(500 char)
+2013-07-18 12:58:56,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 12:58:56,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredpagenumber varchar2(45 char)
+2013-07-18 12:58:56,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:10:58,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add patent_id varchar2(100 char) not null
+2013-07-18 13:10:58,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:10:58,828 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_code varchar2(100 char) not null
+2013-07-18 13:10:58,828 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:10:59,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_date timestamp
+2013-07-18 13:10:59,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:00,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_code varchar2(60 char)
+2013-07-18 13:11:00,359 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:02,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pub_date timestamp
+2013-07-18 13:11:02,453 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:02,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc varchar2(400 char)
+2013-07-18 13:11:02,656 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:02,859 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cat_code varchar2(400 char)
+2013-07-18 13:11:02,859 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:03,875 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add priory varchar2(400 char)
+2013-07-18 13:11:03,875 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:04,062 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_address varchar2(400 char)
+2013-07-18 13:11:04,062 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:04,578 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add inv_person varchar2(500 char)
+2013-07-18 13:11:04,578 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:04,765 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ent_nation_date varchar2(200 char)
+2013-07-18 13:11:04,765 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:05,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_person varchar2(400 char)
+2013-07-18 13:11:05,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:05,765 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add sub_agent varchar2(400 char)
+2013-07-18 13:11:05,765 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:06,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pat_abstract varchar2(4000 char)
+2013-07-18 13:11:06,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:07,296 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add main_power varchar2(4000 char)
+2013-07-18 13:11:07,296 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:07,781 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_nation varchar2(200 char)
+2013-07-18 13:11:07,781 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:07,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add app_person_area varchar2(200 char)
+2013-07-18 13:11:07,984 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:08,296 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cer_date timestamp
+2013-07-18 13:11:08,296 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:09,109 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_pub varchar2(200 char)
+2013-07-18 13:11:09,109 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:09,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add int_app varchar2(200 char)
+2013-07-18 13:11:09,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:10,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add cn_type varchar2(20 char)
+2013-07-18 13:11:10,593 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:13,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_part varchar2(20 char)
+2013-07-18 13:11:13,234 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:13,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_lclass varchar2(50 char)
+2013-07-18 13:11:13,421 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:13,609 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ipc_sclass varchar2(50 char)
+2013-07-18 13:11:13,609 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:14,546 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_olclass varchar2(50 char)
+2013-07-18 13:11:14,546 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:17,250 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add outer_osclass varchar2(50 char)
+2013-07-18 13:11:17,250 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:17,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurl varchar2(2000 char)
+2013-07-18 13:11:17,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:17,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredurl varchar2(400 char)
+2013-07-18 13:11:17,640 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:18,562 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add ispowered varchar2(10 char)
+2013-07-18 13:11:18,562 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:18,750 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add category varchar2(200 char)
+2013-07-18 13:11:18,750 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:19,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add fullurltmp varchar2(2000 char)
+2013-07-18 13:11:19,171 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:21,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add pagenumber varchar2(300 char)
+2013-07-18 13:11:21,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:21,562 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredfullurl varchar2(500 char)
+2013-07-18 13:11:21,562 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:11:23,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table caltks_dk_patent add poweredpagenumber varchar2(45 char)
+2013-07-18 13:11:23,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-01430: 表中已存在要添加的列
+
+2013-07-18 13:18:29,078 [main] WARN  [org.hibernate.util.JDBCExceptionReporter] - SQL Error: 17410, SQLState: 08000
+2013-07-18 13:18:29,078 [main] ERROR [org.hibernate.util.JDBCExceptionReporter] - 无法从套接字读取更多的数据
+2013-07-18 13:18:29,078 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - could not complete schema update
+org.hibernate.exception.JDBCConnectionException: could not get table metadata: caltks_attachment
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:99)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:128)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScript(Configuration.java:1030)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:187)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:386)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:855)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:774)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1477)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:435)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:409)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:541)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:147)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:84)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:297)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1074)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:190)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1075)
+	at edu.zju.cims201.spider.commontool.UrlRule.<init>(UrlRule.java:23)
+	at edu.zju.cims201.spider.heaton.bot.SpiderWorker.<init>(SpiderWorker.java:69)
+	at edu.zju.cims201.spider.heaton.bot.Spider.<init>(Spider.java:64)
+	at edu.zju.cims201.spider.grabnews.uggdqy.QySpider.init(QySpider.java:330)
+	at edu.zju.cims201.spider.grabnews.uggdqy.QySpider.main(QySpider.java:344)
+Caused by: java.sql.SQLRecoverableException: 无法从套接字读取更多的数据
+	at oracle.jdbc.driver.SQLStateMapping.newSQLException(SQLStateMapping.java:101)
+	at oracle.jdbc.driver.DatabaseError.newSQLException(DatabaseError.java:133)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:199)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:263)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:271)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:445)
+	at oracle.jdbc.driver.T4CMAREngine.unmarshalUB1(T4CMAREngine.java:1053)
+	at oracle.jdbc.driver.T4CMAREngine.unmarshalSB1(T4CMAREngine.java:1010)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:588)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:194)
+	at oracle.jdbc.driver.T4CPreparedStatement.fetch(T4CPreparedStatement.java:1017)
+	at oracle.jdbc.driver.OracleResultSetImpl.close_or_fetch_from_next(OracleResultSetImpl.java:314)
+	at oracle.jdbc.driver.OracleResultSetImpl.next(OracleResultSetImpl.java:228)
+	at org.apache.commons.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+	at org.hibernate.tool.hbm2ddl.TableMetadata.initColumns(TableMetadata.java:198)
+	at org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:58)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:113)
+	... 35 more

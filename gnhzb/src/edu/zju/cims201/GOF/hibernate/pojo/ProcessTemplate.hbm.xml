@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- edu.zju.cims201.GOF.hibernate.pojo.Author root -->
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.ProcessTemplate" table="ProcessTemplate">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+	    <property name="name" column="name" type="string"/>
+	     <property name="note" column="note" type="string"/>
+	    <property name="processid" column="processid" type="string"/>
+		<property name="starttime" column="starttime" type="timestamp"/>
+		<property name="endtime" column="endtime" type="timestamp"/>
+		<many-to-one name="node" class="edu.zju.cims201.GOF.hibernate.pojo.Node" column="nodeid"></many-to-one>
+	    <joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.LcaProcessTemplate" table="LcaProcessTemplate">
+			<key column="id"/>
+			<property name="stage" column="stage" type="string"/>
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.PdmProcessTemplate" table="PdmProcessTemplate">
+			<key column="id"/>
+			<many-to-one name="module" column="moduleid"
+			class="edu.zju.cims201.GOF.hibernate.pojo.PdmModule">
+			</many-to-one>
+			<many-to-one name="tasktreenode" class="edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskTreeNode" column="tasktreenodeid"></many-to-one>
+			<property name="input" column="input" type="string"/>
+			<property name="output" column="output" type="string"/>
+			<property name="orderid" column="orderid" type="int"/>
+			<set name="relatedmodels" table="caltks.RelatedModel" lazy="false" cascade="save-update,persist" inverse="false">
+            <key column="pdmprocessTemplateid"/>
+            <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.RelatedModel" />
+         </set>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>
+
+	

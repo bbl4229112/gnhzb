@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.RelatedModel root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.RelatedModel" table="caltks.RelatedModel">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                
+               <many-to-one name="pdmprocessTemplate" column="pdmprocessTemplateid"
+			class="edu.zju.cims201.GOF.hibernate.pojo.PdmProcessTemplate">
+			</many-to-one>
+                <property name="domainNodeId" column="domainNodeId" type="long"/>
+
+        </class>
+</hibernate-mapping>

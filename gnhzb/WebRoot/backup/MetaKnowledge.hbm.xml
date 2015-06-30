@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-cascade="none"
+	default-access="property" default-lazy="true" auto-import="true"><!-- edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge 
+		root -->
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"
+		table="caltks.MetaKnowledge" mutable="true" polymorphism="implicit"
+		dynamic-update="false" dynamic-insert="false" select-before-update="false"
+		optimistic-lock="version">
+		<id name="id" type="java.lang.Long" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="abstracttext" column="abstractText" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<property name="securitylevel" column="securityLevel" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<property name="knowledgesourcefilepath" column="knowledgeSourceFilePath"
+			type="string" unique="false" optimistic-lock="true" lazy="false"
+			generated="never" />
+		<many-to-one name="version" column="verID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.Version" not-null="true"
+			cascade="all" update="true" unique="true" insert="true"
+			optimistic-lock="true" not-found="exception" embed-xml="true" />
+		<many-to-one name="commentrecord" column="commentrecordID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.CommentRecord" cascade="all"
+			update="true" unique="true" insert="true" optimistic-lock="true"
+			not-found="exception" embed-xml="true" />
+		<many-to-one name="ktype" column="ktypeID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.Ktype" not-null="true"
+			unique="false" update="true" insert="true" optimistic-lock="true"
+			not-found="exception" embed-xml="true" />
+		<many-to-one name="domainnode" column="domainNodeID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.DomainTreeNode" not-null="false"
+			unique="false" update="true" insert="true" optimistic-lock="true"
+			not-found="exception" embed-xml="true" />
+		<idbag name="citationknowledges" table="caltks.CitationKnowledges"
+			cascade="none" mutable="true" optimistic-lock="true" embed-xml="true">
+			<collection-id column="id" type="java.lang.Long">
+				<generator class="increment" />
+			</collection-id>
+			<key column="cited_FK" on-delete="noaction" />
+			<many-to-many column="citaion_FK"
+				class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge" embed-xml="true"
+				not-found="exception" unique="false" />
+		</idbag>
+		<property name="uploadtime" column="uploadTime" type="timestamp"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<many-to-one name="uploader" column="uploaderID" not-null="true"
+			class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser" unique="false"
+			update="true" insert="true" optimistic-lock="true" not-found="exception"
+			embed-xml="true" />
+		<many-to-one name="knowledgetype" column="knowledgetypeId"
+			not-null="false" class="edu.zju.cims201.GOF.hibernate.pojo.Knowledgetype"
+			unique="false" update="true" insert="true" optimistic-lock="true"
+			not-found="exception" embed-xml="true" />
+		<set name="categories" table="caltks.KnowledgeCategories" sort="unsorted"
+			inverse="false" mutable="true" optimistic-lock="true" embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.CategoryTreeNode"
+				embed-xml="true" not-found="exception" unique="false">
+				<column name="categoryTreeNodeID" />
+			</many-to-many>
+		</set>
+		<property name="isvisible" column="isVisible" type="boolean"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<property name="status" column="status" type="string" unique="false"
+			optimistic-lock="true" lazy="false" generated="never" />
+		<property name="identifier" column="identifier" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<set name="keywords" table="caltks.KnowledgesKeywords" cascade="none"
+			sort="unsorted" inverse="false" mutable="true" optimistic-lock="true"
+			embed-xml="true">
+			<key column="knowledgeID" not-null="true" on-delete="noaction" />
+			<many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Keyword"
+				embed-xml="true" not-found="exception" unique="false">
+				<column name="keywordID" not-null="true" />
+			</many-to-many>
+		</set>
+		<list name="kauthors" table="caltks.KnowledgesAuthors" cascade="all"
+			inverse="false" mutable="true" optimistic-lock="true" embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<list-index column="orderID" base="0" />
+			<many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Author"
+				embed-xml="true" not-found="exception" unique="false">
+				<column name="authorID" />
+			</many-to-many>
+		</list>
+		<set name="attachments" table="caltks.Attachments" lazy="true"
+			cascade="all-delete-orphan" sort="unsorted" inverse="false" mutable="true"
+			optimistic-lock="true" embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Attachment"
+				not-found="exception" embed-xml="true" />
+		</set>
+		<set name="comments" table="caltks.Comment" lazy="true" sort="unsorted"
+			inverse="false" mutable="true" optimistic-lock="true" embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Comment"
+				not-found="exception" embed-xml="true" />
+		</set>
+		<property name="flashfilepath" column="flashFilePath" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<property name="titlename" column="titleName" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<set name="userknowledgetags" table="caltks.UserKnowledgeTag"
+			inverse="true" sort="unsorted" mutable="true" optimistic-lock="true"
+			embed-xml="true">
+			<key on-delete="noaction">
+				<column name="knowledgeID" not-null="true" />
+			</key>
+			<one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.UserKnowledgeTag"
+				not-found="exception" embed-xml="true" />
+		</set>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Simpleknowledge"
+			table="CALTKS_DK_Simpleknowledge" dynamic-update="false"
+			dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Avidmknowledge"
+			table="CALTKS_DK_Avidmknowledge" dynamic-update="false"
+			dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="avidmtype" not-null="true" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmdocumentiid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmfileiid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmversioniid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmproductiid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmglobledocumentid" not-null="false"
+				length="100" type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="avidmhost" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Paper"
+			table="CALTKS_DK_Paper" dynamic-update="false" dynamic-insert="false"
+			select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="tecfield" not-null="false" length="600"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="pubdate" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="teccategory" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Qualityknowledge"
+			table="CALTKS_DK_Qualityknowledge" dynamic-update="false"
+			dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="amount" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="creat_sso_code" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="appr_conc" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="appr_date" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="appr_levelid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="appr_levelnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="archnum" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="article" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="article_content" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="author" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bill_num" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bodycd" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classid1" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classid2" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classid3" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classid4" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classnm1" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classnm2" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classnm3" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_classnm4" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_degreeid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="bug_degreenm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="card_id" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="classid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="classnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="collate" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="correct_effectid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="correct_effectnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="correct_measure" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="correct_orgid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="correct_orgnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="cost" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="createrid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="createtime" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="creaternm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="data_levelid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="data_levelnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="delsubsystem" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="dept_collate" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="design_orgid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="design_orgnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="design_value" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="detect_date" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="detect_orgid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="detect_orgnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="detect_situs" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="dev_stageid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="dev_stagenm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="duty_orgid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="duty_orgnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="exptime" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="fact_value" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="fill_date" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="hdept_collate" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="headcd" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="indepbatch" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="indepcd" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="indepid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="indepnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="indepserial" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="input_date" not-null="false" type="timestamp"
+				unique="false" optimistic-lock="true" lazy="false" generated="never" />
+			<property name="input_orgid" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="input_orgnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Longtype"
+			table="CALTKS_DK_Longtype" dynamic-update="false" dynamic-insert="false"
+			select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="longtest" not-null="false" length="10000"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Longtestt"
+			table="CALTKS_DK_Longtestt" dynamic-update="false" dynamic-insert="false"
+			select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="longtest" not-null="false" length="10000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never">
+				<column name="longtest" />
+			</property>
+			<property name="longtoclob" not-null="false" length="2000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Testclob"
+			table="CALTKS_DK_Testclob" dynamic-update="false" dynamic-insert="false"
+			select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="longtest" not-null="false" length="10000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass
+			name="edu.zju.cims201.GOF.hibernate.pojo.Dandianfujianthree" table="CALTKS_DK_Dandianfujianthree"
+			dynamic-update="false" dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="productname" not-null="false" length="1000"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="productnum" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="dandianmodel" not-null="false" length="2000"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="dandianreason" not-null="false" length="5000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="dandianeffect" not-null="false" length="5000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="seriouslevel" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="frequency" not-null="false" length="200"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="designmeasures" not-null="false" length="5000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="recommendedmeasures" not-null="false"
+				length="5000" type="text" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="specnm" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="htmltext" not-null="false" length="5000"
+				type="text" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass
+			name="edu.zju.cims201.GOF.hibernate.pojo.Dandianfujianfour" table="CALTKS_DK_Dandianfujianfour">
+			<key column="id" />
+			<property name="zujianname" not-null="false" length="400"
+				type="java.lang.String" />
+			<property name="anaydate" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="productdescription" not-null="false" length="2000"
+				type="java.lang.String" />
+			<property name="dandianversion" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="effectsystem" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="anyuser" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="effectmodel" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="checker" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="partname" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="functiondemond" not-null="false" length="5000"
+				type="text" />
+			<property name="potguzhang" not-null="false" length="5000"
+				type="text" />
+			<property name="porreason" not-null="false" length="5000"
+				type="text" />
+			<property name="poreffect" not-null="false" length="5000"
+				type="text" />
+			<property name="partimportant" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="recentmeasure" not-null="false" length="5000"
+				type="text" />
+			<property name="recentfrequence" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="recentseriouselevel" not-null="false"
+				length="200" type="java.lang.String" />
+			<property name="recentchecklevel" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="recentrisk" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="recommendedmeasures" not-null="false"
+				length="5000" type="text" />
+			<property name="caiqumeasure" not-null="false" length="5000"
+				type="text" />
+			<property name="gaijinfrequence" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="gaijinseriouselevel" not-null="false"
+				length="100" type="java.lang.String" />
+			<property name="gaijinchecklevel" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="gaijinrisklevel" not-null="false" length="100"
+				type="java.lang.String" />
+			<property name="reuseranddate" not-null="false" length="200"
+				type="java.lang.String" />
+			<property name="htmltext" not-null="false" length="5000"
+				type="text" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

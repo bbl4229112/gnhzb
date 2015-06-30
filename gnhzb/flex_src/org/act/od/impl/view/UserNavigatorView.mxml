@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:DataGrid xmlns:mx="http://www.adobe.com/2006/mxml" >
+
+<mx:Script>
+	<![CDATA[
+		import org.act.od.impl.viewhelper.UserNavigatorViewVH;
+	
+		private var userNavigatorViewVH :UserNavigatorViewVH = new UserNavigatorViewVH( this, UserNavigatorViewVH.VH_KEY );
+
+	]]>
+</mx:Script>
+	<mx:columns>
+		<mx:DataGridColumn id="serNameCol" sortable="false" headerText="User Name" dataField="name" editable="false"/>
+		<mx:DataGridColumn id="serLoceCol" sortable="false" headerText="Token" dataField="token" itemRenderer="mx.controls.Image"  editable="false" width="40">
+		</mx:DataGridColumn>
+	</mx:columns>
+</mx:DataGrid>

@@ -1,0 +1,529 @@
+@CHARSET "utf-8";
+body
+{
+background-color: white;
+}
+/*左边面板的背景颜色*/
+.cims201_leftpanel_bg{
+	background-color: #96beef;
+}
+
+.cims201_download{
+	background-image: url(download.png) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_add{
+	font-size: 12px;
+	padding-left: 16px;
+	background-image: url(add.png) !important;
+	background-repeat: no-repeat;
+}
+
+.cims201_select{
+	font-size: 12px;
+	padding-left: 16px;
+	background-image: url(images/select.png) !important;
+	background-repeat: no-repeat;
+}
+
+a{
+	cursor: pointer;
+}
+
+
+a:link, a:visited {
+    color: #014A8F;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+} 
+
+.little_start_full{
+	padding-left: 16px;
+	background-image: url(wenduicons.gif) !important;
+	background-repeat: no-repeat;
+	background-position: -86px -120px;
+}
+
+.little_start_half{
+	padding-left: 16px;
+	background-image: url(wenduicons.gif) !important;
+	background-repeat: no-repeat;
+	background-position: -104px -120px;
+}
+
+.little_start_null{
+	padding-left: 16px;
+	background-image: url(wenduicons.gif) !important;
+	background-repeat: no-repeat;
+	background-position: -68px -120px;
+}
+
+
+
+.cims201_little_star_full{
+	padding-left: 14px;
+	padding-bottom: 14px;
+	float:left;
+	background-image: url(little_star_full.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.big_start_full{
+	padding-left: 17px;
+	padding-bottom: 17px;
+	float:left;
+	background-image: url(2.gif) !important;
+	background-repeat: no-repeat;
+	
+}
+
+.big_start_null{
+	padding-left: 17px;
+	padding-bottom: 17px;
+	float:left;
+	background-image: url(1.gif) !important;
+	background-repeat: no-repeat;
+	
+}
+
+.big_start_half{
+	padding-left: 17px;
+	padding-bottom: 17px;
+	float:left;
+	background-image: url(3.gif) !important;
+	background-repeat: no-repeat;
+	
+}
+
+.knowledge_view{
+	padding-left: 12px;
+	padding-top: 12px;	
+	text-align: left;
+}
+
+.knowledge_view_title{
+    font-weight: bold;
+}
+
+.knowledge_view_bigscore{
+	color: rgb(247,166,0);
+	font-style: italic;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;	
+    padding-right: 2px;
+}
+
+.knowledge_view_general{
+	font-family: Arial;
+    font-size: 12px;	
+}
+
+.knowledge_view_relate_word{
+	padding-left: 20px;
+	
+	background-image: url(word.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.knowledge_view_relate_ppt{
+	padding-left: 20px;
+	
+	background-image: url(ppt.gif) !important;
+	background-repeat: no-repeat;
+}
+
+
+
+.cims201_little_star_null{
+	padding-left: 12px;
+	padding-bottom: 12px;
+	float:left;
+	background-image: url(little_star_null.gif) !important;
+	background-repeat: no-repeat;
+	
+}
+
+.cims201_little_star_half{
+	padding-left: 12px;
+	padding-bottom: 12px;
+	float:left;
+	background-image: url(little_star_half.gif) !important;
+	background-repeat: no-repeat;
+	
+}
+
+/*css style for more */
+.cims201_knowledge_view_more{
+	float: right;	
+}
+
+/*css style for top bar*/
+.cims201_knowledge_topbar_back{
+	background-color: rgb(243,248,252);	
+}
+.cims201_knowledge_topbar_title{
+	padding-left: 20px;
+	font-weight: bold;
+	background-image: url(word.gif) !important;
+	background-repeat: no-repeat;		
+}
+
+.cims201_knowledge_topbar_title1{
+	font-size: 21;	
+}
+
+.cims201_knowledge_topbar_title2{
+	font-size: 15;	
+}
+
+.cims201_knowledge_topbar_bt1{
+	font-size: 11;
+	position: absolute;
+    right: 220px;
+    top: 3px;
+    vertical-align: top;	
+}
+
+.cims201_knowledge_topbar_bt2{
+	font-size: 11;
+	position: absolute;
+    right: 153px;
+    top: 3px;
+    vertical-align: top;
+}
+.cims201_knowledge_topbar_bt3{
+	font-size: 11;
+	position: absolute;
+    right: 86px;
+    top: 3px;
+    vertical-align: top;
+}
+.cims201_knowledge_topbar_bt4{
+	font-size: 11;
+	position: absolute;
+    right: 19px;
+    top: 3px;
+    vertical-align: top;
+}
+/*借阅审批*/
+.cims201_knowledge_topbar_borrowflow{
+	background-image: url(images/index2.gif) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*修改域别*/
+.cims201_knowledge_topbar_modifydtree{
+	background-image: url(images/folder.gif) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*修改类别*/
+.cims201_knowledge_topbar_modifyctree{
+	background-image: url(images/modifyctree.gif) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*修改知识*/
+.cims201_knowledge_topbar_modifyknowledge{
+	background-image: url(images/modifyknowledge.gif) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*下载按钮*/
+.cims201_knowledge_topbar_download{
+	background-image: url(download.png) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*查看审批*/
+.cims201_knowledge_topbar_viewapproval{
+	background-image: url(images/cims201_knowledge_viewapproval.png) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*发起审批*/
+.cims201_knowledge_topbar_initiateapproval{
+	background-image: url(images/cims201_knowledge_initiateapproval.gif) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*审批知识*/
+.cims201_knowledge_topbar_approve{
+	background-image: url(images/cims201_knowledge_approve.png) !important;
+    background-repeat: no-repeat;
+    padding-left: 16px;	
+}
+/*css style for comment*/
+.cims201_comment_bg{
+	background-color: rgb(248,252,255);	
+	
+}
+.cims201_comment_topbar{
+	/*border-bottom: 1px solid #E5EEF8;*/
+}
+
+.cims201_comment_topbar_f1{
+	font-size: 18;
+	font-weight: bold;
+}
+
+.cims201_comment_topbar_f2{
+	font-size: 12;
+}
+
+.cims201_comment_focus{
+	color: #BA2636;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.cims201_comment_list{
+	/*border-bottom: 1px dotted #AFAFB0;*/
+}
+
+.cims201_comment_list_f1{
+	word-wrap:break-word; 
+	word-break:break-all;
+	display:block;
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+}
+
+.cims201_comment_title{
+	color: #1E50A2;
+    display: block;
+    
+    float: left;
+    vertical-align: top;  
+}
+
+.cims201_comment_date{
+	color: #666666;
+    padding-top: 3px;
+    padding-left: 5px;
+}
+
+.cims201_comment_reply_f1{
+	color: #1E50A2;
+    float: right;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+
+.cims201_comment_replyr_bg{
+	background-color: rgb(237,239,240);	
+}
+
+.cims201_comment_edit{
+	padding-left: 17px;
+	background-image: url(comment_edit.png) !important;
+	background-repeat: no-repeat;	
+}
+.cims201_comment_delete{
+	padding-left: 17px;
+	background-image: url(comment_delete.png) !important;
+	background-repeat: no-repeat;	
+}
+.icon-cims201-comment-agree{
+	background-image: url(agree.png) !important;
+	background-repeat: no-repeat;
+}
+.icon-cims201-comment-disagree{
+	background-image: url(disagree.png) !important;
+	background-repeat: no-repeat;
+}
+
+
+
+/*new message*/
+.cims201_message_bar{
+	background-image: url(bg_renren.png) !important;
+	bottom: 0;
+    left: 0px;
+    margin: 0 auto;
+    position: fixed;
+    right: 0px;
+    width: 100%;
+    z-index: 10000;
+    border-left: 1px solid #B4B4B4;
+    border-top: 1px solid #B4B4B4;  
+}
+
+.cims201_message_bar_ie{
+	background-image: url(bg_renren.png) !important;
+	position:absolute;
+	top:expression(eval(document.compatMode &&document.compatMode=='CSS1Compat')?documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight)-1: document.body.scrollTop+(document.body.clientHeight-this.clientHeight) - 1);
+    margin-top: 0px;  
+    width: 100%;
+    z-index: 10000;   
+    border-left: 1px solid #B4B4B4;
+    border-top: 1px solid #B4B4B4;    
+}
+.cims201_message_bar_bg{
+	float: right;
+	background-color: rgb(229,229,229);	
+}
+
+.cims201_message_bar_focus{
+	background-color: rgb(254,254,254);	
+}
+
+.cims201_message_message_icon{
+	background-image: url(message2.png) !important;
+	background-repeat: no-repeat;
+}
+.cims201_message_newmessage{
+	padding-left: 20px;
+	background-image: url(newmessage.gif) !important;
+	background-repeat: no-repeat;
+}
+.cims201_message_newmessage_f1{
+	margin-left: 5px;
+	margin-top: 5px;
+	color: rgb(0,94,172);
+}
+
+.cims201_message_onlineuser{
+	background-image: url(onlinegroup_mini.gif) !important;
+	background-repeat: no-repeat;
+}
+
+/*css style for key words*/
+.cims201_knowledge_keyword a{
+	
+    margin-right: 6px;
+}
+
+
+/*css style for knowledge list*/
+.knowledge_list{
+	font-size: 12px;
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+.knowledge_list a{
+	text-decoration: none;
+    text-transform: none;
+}
+
+.knowledge_list_title{
+	color:#0b8fc0;
+	font-size: 13px;
+	font-weight:bold;
+}
+.knowledge_list_unreadtitle{
+	color:#FF3300;
+	font-size: 13px;
+	font-weight:bold;
+}
+
+.knowledge_simplist_title{
+	background-image: url(application_view_detail1.png) !important;
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	color:#014A8F;
+	font-size: 13px;
+	
+}
+
+.knowledge_simplist_title_keyword{
+	padding-left: 16px;
+	background-image: url(tag1.gif) !important;
+	background-repeat: no-repeat;
+	color:#014A8F;
+	font-size: 13px;
+	
+}
+.knowledge_simplist_title_UserSelection{
+	padding-left: 16px;
+	background-image: url(radio_unchecked.gif) !important;
+	background-repeat: no-repeat;
+	color:#014A8F;
+	font-size: 13px;
+	
+}
+.knowledge_simplist_title_UserSelectioned{
+	padding-left: 16px;
+	background-image: url(radio_checked.gif) !important;
+	background-repeat: no-repeat;
+	color:#014A8F;
+	font-size: 13px;
+	
+}
+.knowledge_simplist_title_author{
+	padding-left: 16px;
+	background-image: url(person-child.gif) !important;
+	background-repeat: no-repeat;
+	color:#014A8F;
+	font-size: 13px;
+	
+}
+.knowledge_list_highlight{
+	color:red;
+}
+
+.knowledge_list_detail{
+	padding-left: 17px;
+	background-image: url(application_view_detail1.png) !important;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	color: #0000FF;
+}
+
+
+/*css style for tag*/
+.cims201_knowledge_topbar_tag{
+	padding-left: 17px;
+	font-size: 11;
+    color: red;
+    background-repeat: no-repeat;
+}
+.knowledge_tag_personal{
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.knowledge_tag_pop{
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+/*css style for search index*/
+.knowldge_search_action{
+	background-image: url(search.gif) !important;
+	background-repeat: no-repeat;
+}
+
+
+/*css style for approval flow*/
+.knowledge_approval{
+	font-size: 13px;
+}
+.knowledge_approval_title{
+	font-weight: bold;
+}
+.knowledge_approval_status_1{
+	font-weight: bold;
+	color: red;
+}
+.knowledge_approval_status_2{
+	font-weight: bold;
+	color: blue;
+}
+
+/*css style for chat*/
+.cims201_chat{
+	background-image: url(chat-icon.gif) !important;
+	background-repeat: no-repeat;
+}

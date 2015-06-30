@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Property root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.Property" table="caltks.Property">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="isVisible" column="isVisible" type="boolean"/>
+                <property name="isCommon" column="isCommon" type="boolean"/>
+                <property name="name" column="name" type="string"/>
+                <property name="propertyType" column="propertyType" type="string"/>
+                <property name="description" column="description" type="string"/>
+                <property name="length" column="length" type="integer"/>
+                <property name="isNotNull" column="isNotNull" type="boolean"/>
+                
+            
+        </class>
+</hibernate-mapping>

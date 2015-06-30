@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    Module用于加载子页面<br /><br />
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.Button()
+.set({
+    text: '加载子页面',
+    render: document.body,
+    onclick: function(e){        
+        module.set('src', 'Space.html');
+    }
+});
+new Edo.controls.Button()
+.set({
+    text: '(重复)加载子页面',
+    render: document.body,
+    onclick: function(e){
+        module.load('Space.html');
+    }
+});
+
+Edo.util.Dom.append(document.body, '<br/><br/>');
+
+//菜单
+var module = new Edo.core.Module()
+.set({            
+    width: 500,
+    height: 200,
+    render: document.body
+});
+</script>

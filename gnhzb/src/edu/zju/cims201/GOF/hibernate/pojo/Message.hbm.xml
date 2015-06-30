@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Message root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.Message" table="caltks.Message">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="sendTime" column="sendTime" type="timestamp"/>
+                
+                <many-to-one name="sender" column="senderID" not-null="true" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+                </many-to-one>
+                
+               
+                <property name="messageType" column="messageType" type="string"/>
+                <property name="content" column="content" type="string"/>
+                
+                 <many-to-one name="receiver" column="receiverID" not-null="true" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+                </many-to-one>
+                
+               
+                <property name="isRead" column="isRead" type="boolean"/>
+                <property name="isAnswered" column="isAnswered" type="boolean"/>
+                
+                <many-to-one name="knowledge" column="knowledgeID" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge">
+                </many-to-one>
+                
+               
+        </class>
+</hibernate-mapping>

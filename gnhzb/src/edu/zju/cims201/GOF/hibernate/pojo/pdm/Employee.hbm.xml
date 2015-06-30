@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee" table="Employee">
+		 <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                 <many-to-one name="user" column="userid" 
+					class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+				</many-to-one>
+                <many-to-one name="department" column="departmentID" 
+					class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Department">
+				</many-to-one>
+			    <many-to-one name="privilege" column="PrivilegeId" 
+					class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Privilege">
+				</many-to-one>
+	</class>
+</hibernate-mapping>

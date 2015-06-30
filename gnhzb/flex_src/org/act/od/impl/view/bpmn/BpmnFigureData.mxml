@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:DataGrid xmlns:mx="http://www.adobe.com/2006/mxml" editable="true" initialize="init()" itemEditEnd="save(event)" >
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.collections.ListCollectionView;
+			import mx.controls.Alert;
+			import mx.events.DataGridEvent;
+
+			import org.act.od.impl.viewhelper.AttributeViewVH;
+			import org.act.od.impl.figure.Startow2Figure;
+			import org.act.od.impl.view.DataAttributeItemTextRenderer;
+			import org.act.od.impl.vo.bpmn.BpmnDataComponent;
+
+			private var gestionVar :ContextMenuItem;
+
+			private var start:Startow2Figure = new Startow2Figure();
+
+			[Bindable]
+			private var handData : ArrayCollection ;
+
+			//[Bindable]
+			//private var dataAttriViewModel :AttributeViewModel = OrDesignerModelLocator.getInstance().getAttributeViewModel();
+
+			//private var attributeViewVH :AttributeViewVH = new AttributeViewVH(this, AttributeViewVH.VH_KEY);
+
+
+			/**
+			 * Add Item in DataGrid
+			 */
+			public function addItemInDataGrid(event:Event):void
+			{
+				//ListCollectionView(this.dataProvider).addItemAt(null,ListCollectionView(this.dataProvider).length);
+				//ListCollectionView(this.dataProvider).addItemAt(null,1);
+				if(handData==null)
+					handData = new ArrayCollection();
+				handData.addItem({variable:'cdcd',type:'cdcd', value:''});
+			}
+
+
+			private function init() : void {
+				typeDadagridColomn.itemRenderer = new ClassFactory(BpmndataTypeRenderer);
+				//valueDadagridColomn.itemRenderer = new ClassFactory(DataAttributeItemTextRenderer);
+
+				gestionVar  = new ContextMenuItem("Add Data");
+				var contextMenu: ContextMenu = new ContextMenu();
+				contextMenu.hideBuiltInItems();
+				var defaultItems : ContextMenuBuiltInItems = contextMenu.builtInItems;
+				defaultItems.print = false;
+				contextMenu.customItems.push(gestionVar);
+				this.contextMenu = contextMenu;
+				/* Add rigth clic event */
+				this.gestionVar.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, addItemInDataGrid);
+
+			}
+
+			public function save(event:DataGridEvent):void
+			{
+				//this.createItemEditor(3,3);
+				trace("_______________________________________cave()---------------------------")
+
+			}
+		]]>
+	</mx:Script>
+	<mx:columns>
+		<mx:DataGridColumn id="variable" dataField="variable" sortable="false" headerText="Variable" width="150"/>
+		<mx:DataGridColumn id="typeDadagridColomn"  sortable="false" headerText="Type" rendererIsEditor="true"
+						   editorDataField="result"  wordWrap="true" width="150"/>
+		<mx:DataGridColumn id="valueDadagridColomn" sortable="false"  dataField="value" headerText="Value" editable="false" width="150"/>
+		<mx:DataGridColumn sortable="false" editable="false"/>
+	</mx:columns>
+	<mx:dataProvider> {handData} </mx:dataProvider>
+
+</mx:DataGrid>

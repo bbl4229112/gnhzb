@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Version root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.Version" table="caltks.Version">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                
+                <property name="pid" column="pid" type="java.lang.Long"/>
+                <list name="subVersions" table="caltks.Version" lazy="true" cascade="all" >
+                      
+                        <key column="pid"/>
+                        <list-index column="orderID" />
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Version"/>
+                </list>
+                
+                <property name="versionNumber" column="versionNumber" type="string"/>
+                <one-to-one name="knowledge" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"
+                property-ref="version">
+                </one-to-one>
+                 <property name="versionTime" column="versionTime" type="timestamp"/>
+        </class>
+</hibernate-mapping>

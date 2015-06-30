@@ -1,0 +1,831 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.owl-ontologies.com/unnamed.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="概念"/>
+  <owl:ObjectProperty rdf:ID="下位词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="参考词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="同义词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="上位词">
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="国内法规和标准">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="法规和标准"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="指标体系">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="评价方法"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="环境化设计需求">
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="回收技术">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="设计技术"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="欧盟法规和标准">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="国外法规和标准"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="评价需求">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#评价方法"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="电子产品">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="案例"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#评价方法">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="设计原理">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#设计技术"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="特点"/>
+  <owl:DatatypeProperty rdf:ID="美国法规和标准">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#国外法规和标准"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="评价技术">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="管理方法"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="背景"/>
+  <owl:DatatypeProperty rdf:ID="管理标准">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="标准分类"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="信息技术">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#设计技术"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="知识网络的需求">
+    <rdfs:subPropertyOf rdf:resource="#环境化设计需求"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#法规和标准">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="日本公约和标准">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#国外法规和标准"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#设计技术">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#标准分类">
+    <rdfs:subPropertyOf rdf:resource="#法规和标准"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="节能低碳技术">
+    <rdfs:subPropertyOf rdf:resource="#设计技术"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#国外法规和标准">
+    <rdfs:subPropertyOf rdf:resource="#法规和标准"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ISO_14020系列标准">
+    <rdfs:subPropertyOf rdf:resource="#评价方法"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="评价工具">
+    <rdfs:subPropertyOf rdf:resource="#设计技术"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="本质需求">
+    <rdfs:subPropertyOf rdf:resource="#环境化设计需求"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="标准性质">
+    <rdfs:subPropertyOf rdf:resource="#标准分类"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="设计准则">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#设计技术"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="次生内部需求">
+    <rdfs:subPropertyOf rdf:resource="#环境化设计需求"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="工作标准">
+    <rdfs:subPropertyOf rdf:resource="#标准分类"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="标准内容">
+    <rdfs:subPropertyOf rdf:resource="#标准分类"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="定义">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="英文名称"/>
+  <owl:DatatypeProperty rdf:ID="汽车和工程机械">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#案例"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="其他行业">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#案例"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#案例">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#概念"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="产品服务方法">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#管理方法"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="服务技术">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#管理方法"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="次生外部需求">
+    <rdfs:subPropertyOf rdf:resource="#环境化设计需求"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#管理方法">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="技术标准">
+    <rdfs:subPropertyOf rdf:resource="#标准分类"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="工艺技术">
+    <rdfs:subPropertyOf rdf:resource="#设计技术"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="标准定义">
+    <rdfs:subPropertyOf rdf:resource="#法规和标准"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ISO_1404x系列标准">
+    <rdfs:subPropertyOf rdf:resource="#评价方法"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="需求">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#概念"/>
+  </owl:FunctionalProperty>
+  <概念 rdf:ID="绿色回收">
+    <上位词>
+      <概念 rdf:ID="绿色制造">
+        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >将综合预防的环境策略持续地应用于生产过程和产品中，以便减少对人类和环境的风险性。</定义>
+        <下位词>
+          <概念 rdf:ID="绿色设计">
+            <国外法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. ISO 9000质量管理系列标准 2．ISO14000环境管理系列标准 3. ISO/TR14062：2002</国外法规和标准>
+            <国内法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. GB/T 24256-2009《产品生态设计通则》2. GB/T21273-2007《环境意识设计——将环境因素引入电工产品的设计和开发》3. GB/T 24040-2008《生命周期评价原则与框架》</国内法规和标准>
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >绿色设计是指在产品及其寿命周期全过程的设计中，要充分考虑对资源和环境的影响，在充分考虑产品的功能、质量、开发周期和成本的同时，更要优化各种相关因素，使产品及其制造过程中对环境的总体负影响减少到最小。</定义>
+            <下位词>
+              <概念 rdf:ID="模块化设计">
+                <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >将绿色设计思想与模块化设计方法结合起来，可以同时满足产品的功能属性和环境属性，一方面可以缩短产品研发与制造周期，增加产品系列，提高产品质量，快速应对市场变化；另一方面，可以减少或消除对环境的不利影响，方便重用、升级、维修和产品废弃后的拆卸、回收和处理。</特点>
+                <设计原理 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >1.分解与组合原理2.相似性原理3.层次压缩原理4.最大凝聚性原理5.相对独立性原理</设计原理>
+                <上位词 rdf:resource="#绿色设计"/>
+                <上位词>
+                  <概念 rdf:ID="环境化设计">
+                    <下位词>
+                      <概念 rdf:ID="节能低碳设计">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >节能低碳设计是根据能源审计的结果为客户的能源系统提出如何使用成熟的技术来提高能源利用效率、降低能源成本的整体方案和建议</定义>
+                        <汽车和工程机械 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 汽车制造过程中的节能低碳技术（广汽本田、上海通用）2. 汽车使用过程中的节能低碳技术（大众汽车、奔驰公司）3.施耐德电气的EcoStruxure能效管理平台4.专用高效节能电机</汽车和工程机械>
+                        <下位词>
+                          <概念 rdf:ID="节能低碳制造过程设计"/>
+                        </下位词>
+                        <其他行业 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 高效节能破碎技术2. 液压系统的节能低碳设计3. 低碳船舶4. 加拿大纸浆和造纸公司(Catalyst Paper Corporation)5. 地温源公司开发的工业低温循环水余热回收供暖技术6. 注塑企业层的节能低碳技术</其他行业>
+                        <下位词>
+                          <概念 rdf:ID="节能低碳产品设计"/>
+                        </下位词>
+                        <日本公约和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.颁布实施了《节约能源法》(又称《合理用能法》)2.“面向2050年的日本低碳社会情景”研究计划3.“福田蓝图”；国会通过《推进地球温暖化对策法》</日本公约和标准>
+                        <上位词 rdf:resource="#环境化设计"/>
+                        <服务技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.数据输入输出管理技术2.标准数据库管理技术3.标准协同建设技术4.清单分析技术5.生命周期影响评价技术6.产品碳足迹计算技</服务技术>
+                        <产品服务方法 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 合同能源管理服务2. 产品共享服务3．全责绩效管理服务</产品服务方法>
+                        <下位词>
+                          <概念 rdf:ID="节能低碳产品服务设计"/>
+                        </下位词>
+                        <信息技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >利用信息技术帮助进行产品的轻量化设计、合理化设计、减少产品制造过程中的能耗及其它资源的消耗、提升能源利用效率</信息技术>
+                        <标准内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.节能低碳标准法案2.强制性的节能低碳标准3.推荐性的节能低碳标准</标准内容>
+                        <需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.能源是经济发展的最重要资源 2.低碳是社会和经济持续发展的最重要保证  3. 企业产品出口的需要 4. 用户的需求5.机电产品中的重点节能对象的需求 6.企业的需求</需求>
+                        <参考词>
+                          <概念 rdf:ID="低碳制造">
+                            <日本公约和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            ></日本公约和标准>
+                            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >低碳制造（Low Carbon Manufacturing，LCM）是一种以低耗能、低污染、低碳排放为特点的制造模式</定义>
+                            <美国法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1.《1987美国用能产品能源节约法案》NAECA 2.《国家能源综合战略》3.《美国清洁能源安全法案》4.美国能效标准</美国法规和标准>
+                            <欧盟法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1.《欧盟能效标签框架指令》（92/75/EEC）2.2005年7月6日正式颁布欧盟EuP指令《用能产品的生态设计框架指令（Eco-Design of Energy-using Products）》（92/42/EEC）3. 欧盟ErP(Energy-related Products)指令</欧盟法规和标准>
+                          </概念>
+                        </参考词>
+                        <国外法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.世界资源研究所发布《温室气体核算体系：产品寿命周期标准》2.世界资源研究所发布《温室气体核算体系企业价值链(范围三)标准》3.ISO 14065：2007《规范温室气体排放新工具》</国外法规和标准>
+                        <电子产品 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 家电中的节能技术（变频技术、先进的制冷循环技术、保温层结构优化技术、新的保温材料）2. 海信3. 海尔4. 科龙电器5. 美的</电子产品>
+                        <参考词>
+                          <概念 rdf:ID="低碳经济">
+                            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >低碳经济（Low-carbon economy）是指通过技术创新、制度创新、产业转型、新能源开发等多种手段，全方位地改造建立在化石燃料基础之上的现代工业文明，减少温室气体的排放，使其转向生态经济和生态文明。</定义>
+                          </概念>
+                        </参考词>
+                        <美国法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.《1987美国用能产品能源节约法案》NAECA 2.《国家能源综合战略》3.《美国清洁能源安全法案》4.美国能效标准</美国法规和标准>
+                        <标准性质 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.指令性标准2.最低能源性能标准3.平均能效限定值标准4.能效分级标准</标准性质>
+                        <节能低碳技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 节能低碳单元技术2. 节能低碳整体优化技术3. 基于信息反馈的节能低碳技术</节能低碳技术>
+                        <欧盟法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.《欧盟能效标签框架指令》（92/75/EEC）2.2005年7月6日正式颁布欧盟EuP指令《用能产品的生态设计框架指令（Eco-Design of Energy-using Products）》（92/42/EEC）3.欧盟ErP(Energy-related Products)指令</欧盟法规和标准>
+                        <评价技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >. “碳热图”（carbonheatmap）2、碳足迹分析3. 碳标识4. 碳管理</评价技术>
+                        <参考词>
+                          <概念 rdf:ID="低碳设计"/>
+                        </参考词>
+                        <国内法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.GB/T 23331-2009《能源管理体系要求》2.GB/T22336-2008《企业节能标准体系编制通则》3.GB/T25329-《企业节能规划编制通则》4.GB/T23688-2009《用能产品生态设计要求技术导则》</国内法规和标准>
+                        <上位词 rdf:resource="#绿色设计"/>
+                      </概念>
+                    </下位词>
+                    <下位词 rdf:resource="#模块化设计"/>
+                    <同义词 rdf:resource="#绿色设计"/>
+                    <知识网络的需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1.环境化设计面临的问题2.环境化设计知识网络3.环境化设计知识网络的建立方法</知识网络的需求>
+                    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >环境化设计（DFE）的概念起源于20世纪90年代初，主要是少数民营企业开始努力，试图在他们的产品中融入其环保意识。1992年美国国会技术评估办公室的报告首次描述DFE的战略重要性和DFE的实践。自那时以来，DFE成为企业环境管理的共同主题和污染防治方案。</背景>
+                    <本质需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1.可持续发展的需求2.节能的需求 3.环境保护的需求4.节约资源的需求</本质需求>
+                    <下位词>
+                      <概念 rdf:ID="生命周期评价">
+                        <评价方法 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 产品环境化设计的评价体系 2. 绿色评价理论体系3. 环境化设计评价指标的总体制定原则4. 环境化设计评价指标的具体制定原则目前，在一些发达国家，广大消费者热衷于购买环境无害产品的绿色消费的新动向，促进了绿色制造的发展。产品的绿色标志制度相继建立，凡产品标有“绿色标志”图形的，表明该产品从生产到使用以及回收的整个过程都符合环境保护的要求，对生态环境无害或危害极少，并利于资源的再生和回收，这为企业打开销路、参与国际市场竞争提供了条件。在世界市场的激烈竞争中，绿色标记的经济价值也越来越高。</评价方法>
+                        <上位词 rdf:resource="#绿色设计"/>
+                        <上位词 rdf:resource="#环境化设计"/>
+                        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >目前，在一些发达国家，广大消费者热衷于购买环境无害产品的绿色消费的新动向，促进了绿色制造的发展。产品的绿色标志制度相继建立，凡产品标有“绿色标志”图形的，表明该产品从生产到使用以及回收的整个过程都符合环境保护的要求，对生态环境无害或危害极少，并利于资源的再生和回收，这为企业打开销路、参与国际市场竞争提供了条件。在世界市场的激烈竞争中，绿色标记的经济价值也越来越高。</背景>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >生命周期评价(Life Cycle Assessment，LCA)是一种对产品、生产工艺以及活动对环境的压力进行评价的客观方法，其目的在于评估能源和物质利用以及由此造成的环境废物排放对环境的影响，寻求改善环境影响的机会以及如何利用这种机会</定义>
+                      </概念>
+                    </下位词>
+                    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >在产品设计阶段并行考虑产品生命周期全过程的资源消耗、环境影响、人的健康与安全危害，在充分考虑产品功能、质量、交货期和成本的同时，优化各有关设计因素，使得产品全生命周期对环境的总体负面影响极小，资源消耗极少，并符合健康与安全标准</定义>
+                    <下位词>
+                      <概念 rdf:ID="可回收设计">
+                        <电子产品 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.富士施乐公司2.佳能公司3.富士胶片</电子产品>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >可回收设计是指在产品设计初期充分考虑其零件材料的回收可能性、回收价值大小、回收处理方法、回收处理结构工艺性等与回收有关的一系列问题，达到零件材料资源、能源的最大利用，并对环境污染最小的一种设计思想方法。</定义>
+                        <下位词>
+                          <概念 rdf:ID="机电产品可回收设计的发展现状">
+                            <下位词>
+                              <概念 rdf:ID="国外可回收设计的发展现状">
+                                <上位词 rdf:resource="#机电产品可回收设计的发展现状"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="可回收设计的问题与对策">
+                                <上位词 rdf:resource="#机电产品可回收设计的发展现状"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="国内可回收设计的发展现状">
+                                <上位词 rdf:resource="#机电产品可回收设计的发展现状"/>
+                              </概念>
+                            </下位词>
+                            <上位词 rdf:resource="#可回收设计"/>
+                          </概念>
+                        </下位词>
+                        <下位词>
+                          <概念 rdf:ID="机电产品可回收设计相关知识">
+                            <下位词>
+                              <概念 rdf:ID="产品报废后的回收知识">
+                                <上位词 rdf:resource="#机电产品可回收设计相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="产品制造过程中的回收知识">
+                                <上位词 rdf:resource="#机电产品可回收设计相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="可回收设计的评价方法">
+                                <上位词 rdf:resource="#机电产品可回收设计相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="可回收设计标准体系">
+                                <上位词 rdf:resource="#机电产品可回收设计相关知识"/>
+                              </概念>
+                            </下位词>
+                            <上位词 rdf:resource="#可回收设计"/>
+                          </概念>
+                        </下位词>
+                        <下位词>
+                          <概念 rdf:ID="机电产品可回收设计基础知识">
+                            <下位词>
+                              <概念 rdf:ID="机电产品可回收设计的定义">
+                                <上位词 rdf:resource="#机电产品可回收设计基础知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="机电产品可回收设计的需求">
+                                <上位词 rdf:resource="#机电产品可回收设计基础知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="可回收设计知识本体网络">
+                                <上位词 rdf:resource="#机电产品可回收设计基础知识"/>
+                              </概念>
+                            </下位词>
+                            <上位词 rdf:resource="#可回收设计"/>
+                          </概念>
+                        </下位词>
+                        <国内法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.GB/T 16716-1996《包装废弃物的处理与利用通则》2.GB/T 19515-2004《道路车辆可再利用性和可回收利用性计算方法》3. 20083099-T-339《汽车产品回收利用 标识》</国内法规和标准>
+                        <其他行业 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 塑料材料回收利用2.船舶</其他行业>
+                        <设计准则 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.选择绿色材料2.减少材料种类和用量3.考虑材料的兼容性</设计准则>
+                        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Design For Recycle , DFR</英文名称>
+                        <下位词>
+                          <概念 rdf:ID="机电产品可回收设计法规和标准">
+                            <下位词>
+                              <概念 rdf:ID="中国可回收设计法规和标准">
+                                <上位词 rdf:resource="#机电产品可回收设计法规和标准"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="欧盟可回收设计的法规和标准">
+                                <上位词 rdf:resource="#机电产品可回收设计法规和标准"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="美国可回收设计的法规和标准">
+                                <上位词 rdf:resource="#机电产品可回收设计法规和标准"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="日本可回收设计的法规和标准">
+                                <上位词 rdf:resource="#机电产品可回收设计法规和标准"/>
+                              </概念>
+                            </下位词>
+                            <上位词 rdf:resource="#可回收设计"/>
+                          </概念>
+                        </下位词>
+                        <回收技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >杭州汽轮机股份有限公司的标准</回收技术>
+                        <欧盟法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.德国《避免和利用包装废弃物法令》即《包装条例》，2007年12月第5版 2.《电子垃圾处理法》开始实施 3.ErP指令《为规定能源相关产品的生态设计要求建立框架》（2009/125/EC） 4. WEEE指令</欧盟法规和标准>
+                        <上位词 rdf:resource="#绿色设计"/>
+                        <日本公约和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.《容器包装再生利用法》2.《汽车再生利用法》3.《循环型社会推进基本法》</日本公约和标准>
+                        <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >利用资源和环境容量实现生产活动的生态转变，通过提高产品零部件的可拆卸性、可回收性、可维护性、可重复利用性等一系列设计标准，延长产品的使用周期，提高零部件及材料的重复使用率，</特点>
+                        <下位词 rdf:resource="#低碳制造"/>
+                        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >目前，全球资源压力逐渐增加，资源供应日趋紧张，经济危机的影响也在持续。这种大环境下，致力于实现科学发展的中国，把“节约资源”当作一项基本国策，《循环经济促进法》的实施，进一步增强了全社会的节约资源意识，也使节约资源成为企业健康稳定发展的重要标志。</背景>
+                        <汽车和工程机械 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.奔驰汽车公司 2.大众汽车公司3.宝马汽车公司</汽车和工程机械>
+                        <评价技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.回收技术先进性评价2.回收经济可行性评价3.回收环境友好性评价</评价技术>
+                        <美国法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.《资源保护与回收利用法》2.《废纸回收标准》3.《未来报废汽车回收利用指南》</美国法规和标准>
+                        <上位词 rdf:resource="#环境化设计"/>
+                      </概念>
+                    </下位词>
+                    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Design For Environment , DFM </英文名称>
+                    <上位词 rdf:resource="#绿色制造"/>
+                    <次生外部需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1.绿色消费的需求2.企业社会责任的需要3.应对绿色贸易壁垒的需求4.应对碳关税的需要5.遵守国家法律、法规的需要6.绿色技术市场竞争的需要</次生外部需求>
+                    <次生内部需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1.降低产品生命周期成本的需求2.满足员工的多层次需要3.提高产品质量的需要4.激励创新的需要</次生内部需求>
+                    <下位词>
+                      <概念 rdf:ID="再制造设计">
+                        <国内法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.GB/T 19515-2004道路车辆可再利用性和可回收利用性计算方法3.20083100-Q-339汽车零部件再制造产品标志、标识规范3.GB/T 28618-2012 机械产品再制造 通用技术要求</国内法规和标准>
+                        <需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1.服务赢利的需求2.降低用户使用成本的需要3.节能的需要4.节约资源的需要5.减少“三废”排放的需要6.提高就业率 7.提升机电产品国际竞争力</需求>
+                        <美国法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1．美国机动车工程师学会（SAE）的再制造标准2. 美国制造工程师学会（SME）的再制造标准</美国法规和标准>
+                        <评价方法 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 再制造可行性评价2. 再制造加工零部件质量检测技术3. 寿命预测评估技术4. 再制造综合评价指标体系的主要内容</评价方法>
+                        <下位词 rdf:resource="#中国可回收设计法规和标准"/>
+                        <产品服务方法 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 再制造的旧机逆向物流管理2. 再制造企业生产管理3. 再制造供应链协同管理4. 再制造服务管理5. 再制造数据管理和分析6. 再制造商业模式</产品服务方法>
+                        <下位词>
+                          <概念 rdf:ID="机电产品再制造工程发展现状">
+                            <下位词>
+                              <概念 rdf:ID="国外再制造的发展现状">
+                                <上位词 rdf:resource="#机电产品再制造工程发展现状"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="国内再制造的发展现状">
+                                <上位词 rdf:resource="#机电产品再制造工程发展现状"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="再制造工程中的问题与对策">
+                                <上位词 rdf:resource="#机电产品再制造工程发展现状"/>
+                              </概念>
+                            </下位词>
+                            <上位词 rdf:resource="#再制造设计"/>
+                          </概念>
+                        </下位词>
+                        <下位词>
+                          <概念 rdf:ID="机电产品再制造标准">
+                            <上位词 rdf:resource="#再制造设计"/>
+                            <下位词>
+                              <概念 rdf:ID="美国再制造标准概况">
+                                <上位词 rdf:resource="#机电产品再制造标准"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="中过再制造标准概况">
+                                <上位词 rdf:resource="#机电产品再制造标准"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="其他国家再制造标准概况">
+                                <上位词 rdf:resource="#机电产品再制造标准"/>
+                              </概念>
+                            </下位词>
+                          </概念>
+                        </下位词>
+                        <上位词 rdf:resource="#环境化设计"/>
+                        <上位词 rdf:resource="#绿色设计"/>
+                        <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >目前，整个人类的生存环境面临日益增长的产品废弃物的压力，以及资源日益缺乏的问题。以汽车为例，每年全球报废的汽车就有2400万辆之多。为了缓解资源短缺与资源浪费的矛盾，减少大量的失效、报废产品对环境的危害，最大限度地利用废旧产品中的零部件，绿色再制造工程在国际上逐渐兴起，并成为迅速发展的新兴产业。</背景>
+                        <下位词>
+                          <概念 rdf:ID="机电产品再制造的定义和需求">
+                            <上位词 rdf:resource="#再制造设计"/>
+                            <下位词>
+                              <概念 rdf:ID="机电产品再制造的需求">
+                                <上位词 rdf:resource="#机电产品再制造的定义和需求"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="机电产品再制造的定义">
+                                <上位词 rdf:resource="#机电产品再制造的定义和需求"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="再制造知识本体网络">
+                                <上位词 rdf:resource="#机电产品再制造的定义和需求"/>
+                              </概念>
+                            </下位词>
+                          </概念>
+                        </下位词>
+                        <其他行业 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >1. 美军装备的再制造</其他行业>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >再制造是产品报废后对其重新加工形成可用产品的过程，这种可用产品包括加工处理后的原材料，也包括不破坏基本成型，经过再加工后性能良好的零部件。</定义>
+                        <下位词>
+                          <概念 rdf:ID="机电产品再制造相关知识">
+                            <下位词>
+                              <概念 rdf:ID="再制造管理知识">
+                                <上位词 rdf:resource="#机电产品再制造相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="再制造评价方法">
+                                <上位词 rdf:resource="#机电产品再制造相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="再制造设计知识">
+                                <上位词 rdf:resource="#机电产品再制造相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="再制造标准体系">
+                                <上位词 rdf:resource="#机电产品再制造相关知识"/>
+                              </概念>
+                            </下位词>
+                            <下位词>
+                              <概念 rdf:ID="再制造加工知识">
+                                <上位词 rdf:resource="#机电产品再制造相关知识"/>
+                              </概念>
+                            </下位词>
+                            <上位词 rdf:resource="#再制造设计"/>
+                          </概念>
+                        </下位词>
+                        <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Design For Remanufacturing,DFM</英文名称>
+                        <汽车和工程机械 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >. 德国奔驰2. 大众汽车3. 中国重汽集团4. 潍柴发动机5.美国卡特彼勒公司6.日本的工程机械企业7.中联重科的再制造</汽车和工程机械>
+                      </概念>
+                    </下位词>
+                    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1.面向生命周期全过程2.环境需求分析应在产品设计的初期阶段进行。3.实现多学科跨专业的合作设计开发。</特点>
+                  </概念>
+                </上位词>
+                <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >产品模块化是当前制造企业满足用户的产品低成本、高质量、快速响应和个性化需求的重要方法。并且该方法通过模块的重用、模块生产批量的增加、产品中标准件比例的提高，减少资源浪费，支持绿色制造。</背景>
+                <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Block-based Design ,BD</英文名称>
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >在产品开发中将新产品结构划分成可实施的模块，并进行标准模块设计；在按订单设计中选择和组合模块，获得满足用户需求的定制产品。</定义>
+              </概念>
+            </下位词>
+            <同义词 rdf:resource="#环境化设计"/>
+            <其他行业 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1.绿色船舶生命周期设计2. 宝钢的LCA</其他行业>
+            <指标体系 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. 能耗评价指标2.环境影响评价指标3. 资源利用评价指标4.成本评价指标</指标体系>
+            <电子产品 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. 海尔集团 2. 韩国的三星电子3. 爱立信的3G系统4. 日本的佳能（Canon）公司5. 松下公司6. Electrolux</电子产品>
+            <下位词 rdf:resource="#可回收设计"/>
+            <下位词 rdf:resource="#节能低碳设计"/>
+            <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Green Design，GD</英文名称>
+            <评价工具 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1.Boustead Model软件 2.SimaPro软件 3. Ecopro软件 4. GaBi软件  5.LCAiT</评价工具>
+            <技术标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >技术标准是一种或者一系列具有一定强制性要求或指导性功能，内容含有细节技术要求和有关技术方案的文件，其目的是让相关的产品或服务达到一定的安全要求或进入市场的要求。</技术标准>
+            <参考词>
+              <概念 rdf:ID="绿色文化">
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >环境化设计离不开人，需要设计者具有一种新的文化，具有前瞻的视野、广阔的胸，有强烈的环境保护意识和责任，追求人与自然、人与人的和谐。这就是绿色文化</定义>
+                <上位词>
+                  <概念 rdf:ID="绿色经济">
+                    <下位词>
+                      <概念 rdf:ID="绿色会计">
+                        <上位词 rdf:resource="#绿色经济"/>
+                      </概念>
+                    </下位词>
+                    <下位词>
+                      <概念 rdf:ID="绿色金融">
+                        <上位词 rdf:resource="#绿色经济"/>
+                      </概念>
+                    </下位词>
+                    <下位词>
+                      <概念 rdf:ID="绿色法规">
+                        <上位词 rdf:resource="#绿色经济"/>
+                      </概念>
+                    </下位词>
+                    <下位词 rdf:resource="#绿色文化"/>
+                    <下位词>
+                      <概念 rdf:ID="绿色组织">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >绿色组织是人们开展或管理绿色经济活动的组织</定义>
+                        <上位词 rdf:resource="#绿色经济"/>
+                      </概念>
+                    </下位词>
+                    <下位词 rdf:resource="#绿色制造"/>
+                    <下位词 rdf:resource="#中国可回收设计法规和标准"/>
+                    <下位词>
+                      <概念 rdf:ID="绿色消费">
+                        <上位词 rdf:resource="#绿色经济"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >绿色消费（green consumption）是人们追求洁净、美好环境，既满足生活需要，又不浪费资源和不污染环境的消费模式</定义>
+                      </概念>
+                    </下位词>
+                  </概念>
+                </上位词>
+              </概念>
+            </参考词>
+            <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >在漫长的人类设计史中，工业设计为人类创造了现代生活方式和生活环境的同时，也加速了资源，能源的消耗，并对地球的生态平衡造成了极大的破坏。特别是工业设计的过度商业化，使设计成了鼓励人们无节制的消费的重要介质，“有计划的商品废止制”就是这种现象的极端表现。无怪乎人们称“广告设计”和“工业设计”是鼓吹人们消费的罪魁祸首，招致了许多的批评和责难。</背景>
+            <标准定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >标准是经公认机构批准的、供通用或重复使用的规定了产品或相关过程和生产方法的规则、方针或特性的非强制执行文件。该文件还可包括或专门关于适用于产品、过程或生产方法的专门术语、符号、包装、标志或标签要求。</标准定义>
+            <ISO_14020系列标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >该标准由以下四个标准组成：（1）ISO14020《环境管理环境标志和声明通用原则》（2）ISO14024《环境管理环境标志和声明I型环境标志原则和程序》（3）ISO14021《环境管理环境标志和声明自我环境声明（Ⅱ型环境标志）》（4）ISO/TR14025《环境管理环境标志和声明Ⅲ型环境声明》。</ISO_14020系列标准>
+            <参考词 rdf:resource="#绿色会计"/>
+            <汽车和工程机械 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. 沃尔沃2. 柳工工程机械3. 工程机械的生命周期低碳化</汽车和工程机械>
+            <信息技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >利用信息技术帮助进行产品的轻量化设计、合理化设计、减少交易过程中的浪费、监管产品整个供应链</信息技术>
+            <参考词 rdf:resource="#绿色制造"/>
+            <工作标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >工作标准是指对工作的责任、权利、范围、质量要求、程序、效果、检查方法、考核办法所制定的标准。</工作标准>
+            <下位词 rdf:resource="#再制造设计"/>
+            <下位词 rdf:resource="#生命周期评价"/>
+            <参考词 rdf:resource="#绿色组织"/>
+            <参考词 rdf:resource="#绿色消费"/>
+            <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. 生态设计必须采用生态材料2.其生产材料应尽可能采用天然材料、大量使用废渣、垃圾、废液等废弃物3.采用低能耗制造工艺和无污染环境的生产技术。</特点>
+            <评价需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1. 社会的需求  2. 企业的需求  3．绿色GDP计算的需求</评价需求>
+            <管理标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >管理标准是指对标准化领域中需要协调统一的管理事项所制定的标准。管理标准体系应能保证技术标准体系的实施。</管理标准>
+            <参考词 rdf:resource="#绿色金融"/>
+            <上位词 rdf:resource="#绿色制造"/>
+            <ISO_1404x系列标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >LCA标准框架有以下4部分组成：目标和范围定义（Goal and scope definition）、清单分析（Invetory analysis）、影响评估（Impact assessment）和解释（Interpretation）。</ISO_1404x系列标准>
+            <参考词 rdf:resource="#绿色法规"/>
+          </概念>
+        </下位词>
+        <下位词 rdf:resource="#环境化设计"/>
+        <上位词 rdf:resource="#绿色经济"/>
+      </概念>
+    </上位词>
+  </概念>
+  <概念 rdf:ID="绿色营销">
+    <上位词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="绿色采购">
+    <上位词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="绿色使用">
+    <上位词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="绿色加工">
+    <上位词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="绿色产品">
+    <上位词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="清洁生产">
+    <上位词 rdf:resource="#绿色经济"/>
+    <同义词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="绿色运输">
+    <上位词 rdf:resource="#绿色制造"/>
+  </概念>
+  <概念 rdf:ID="环保型设计">
+    <上位词 rdf:resource="#绿色设计"/>
+    <下位词>
+      <概念 rdf:ID="机电产品环保型设计法规和标准">
+        <下位词>
+          <概念 rdf:ID="国际环保设计法规和标准">
+            <上位词 rdf:resource="#机电产品环保型设计法规和标准"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="美国环保型设计法规和标准">
+            <上位词 rdf:resource="#机电产品环保型设计法规和标准"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="欧盟环保型设计法国和标准">
+            <上位词 rdf:resource="#机电产品环保型设计法规和标准"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="我国环保型设计法规和标准">
+            <上位词 rdf:resource="#机电产品环保型设计法规和标准"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="日本环保型设计法规和标准">
+            <上位词 rdf:resource="#机电产品环保型设计法规和标准"/>
+          </概念>
+        </下位词>
+        <上位词 rdf:resource="#环保型设计"/>
+      </概念>
+    </下位词>
+    <产品服务方法 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.奎克公司为汽车企业的产品服务 2.汉斯公司的产品服务  3.洗涤剂送货上门服务</产品服务方法>
+    <美国法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.《空气污染控制法》2.美国制造工程学会（SME）发表关于《绿色制造的蓝皮书(Green Manufacturing)》</美国法规和标准>
+    <国内法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.GB/T23688-2009《用能产品生态设计要求技术导则》2.国务院发布《工业转型升级规划（2011-2015年）》</国内法规和标准>
+    <评价技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1. 环保型设计评价体系2. 绿色供应链评价</评价技术>
+    <上位词 rdf:resource="#环境化设计"/>
+    <电子产品 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1. 富士施乐公司复印机2. 佳能公司的摄影器材、扫描仪等</电子产品>
+    <特点 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >环保型设计从源头设计阶段寻求产品环境问题的解决方案，进而改进产品的设计或重新设计产品，减少并预防环境影响的出现</特点>
+    <需求 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1. 保护环境的需求2. 我国预防环境污染进一步严重化的需要3. 遵守法律的需求4. 满足用户绿色消费的需求</需求>
+    <英文名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Design for Environment Protection，DFEP</英文名称>
+    <设计准则 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.材料最佳利用率原则2.少量化设计原则3.能量损耗最少原则4.零污染原则</设计准则>
+    <日本公约和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.环境省公布《绿色经济与社会变革》的政策草案2.《环境基本法》</日本公约和标准>
+    <背景 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >伴随着工业化的进程，环境污染变得越来越触目惊心。传统制造业对环境的巨大破坏，使人们直接感受到需要进行产品的环保型设计及清洁生产。</背景>
+    <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >充分考虑尽可能减少“三废（废气、废水、废物）”排放，减少产品整个生命周期内对环境的污染的产品设计方法。</定义>
+    <下位词>
+      <概念 rdf:ID="机电产品环保型设计基础知识">
+        <下位词>
+          <概念 rdf:ID="机电产品环保型设计的需求">
+            <上位词 rdf:resource="#机电产品环保型设计基础知识"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="环保型设计知识本体网络">
+            <上位词 rdf:resource="#机电产品环保型设计基础知识"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="机电产品环保型设计的定义">
+            <上位词 rdf:resource="#机电产品环保型设计基础知识"/>
+          </概念>
+        </下位词>
+        <上位词 rdf:resource="#环保型设计"/>
+      </概念>
+    </下位词>
+    <欧盟法规和标准 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.RoHS指令《关于在电子设备中限制使用有害物质的指令（2002／95／EC）》生效2.REACH（化学品注册、评估、许可和限制）法规</欧盟法规和标准>
+    <汽车和工程机械 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1. 福特汽车公司 2. 上海通用</汽车和工程机械>
+    <其他行业 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1. 制造装备2. 家具</其他行业>
+    <下位词>
+      <概念 rdf:ID="机电产品环保型设计的历史">
+        <上位词 rdf:resource="#环保型设计"/>
+        <下位词>
+          <概念 rdf:ID="国内环保型设计的历史">
+            <上位词 rdf:resource="#机电产品环保型设计的历史"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="国外环保型设计的历史">
+            <上位词 rdf:resource="#机电产品环保型设计的历史"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="支持环保型设计的信息技术">
+            <上位词 rdf:resource="#机电产品环保型设计的历史"/>
+          </概念>
+        </下位词>
+      </概念>
+    </下位词>
+    <下位词>
+      <概念 rdf:ID="机电产品环保型设计知识">
+        <下位词>
+          <概念 rdf:ID="环保性材料的选择知识">
+            <上位词>
+              <概念 rdf:ID="环保型设计评价方法">
+                <上位词 rdf:resource="#环保型设计评价方法"/>
+              </概念>
+            </上位词>
+          </概念>
+        </下位词>
+        <下位词 rdf:resource="#环保型设计评价方法"/>
+        <下位词>
+          <概念 rdf:ID="环保型设计标准体系">
+            <上位词 rdf:resource="#环保型设计评价方法"/>
+          </概念>
+        </下位词>
+        <下位词>
+          <概念 rdf:ID="面向产品服务的环保型设计知识">
+            <上位词 rdf:resource="#环保型设计评价方法"/>
+          </概念>
+        </下位词>
+        <下位词 rdf:resource="#低碳制造"/>
+        <上位词 rdf:resource="#环保型设计"/>
+      </概念>
+    </下位词>
+    <工艺技术 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1. 刀具环保化技术2. 夹具环保化技术3. 绿色切削液技术4. 干式加工技术</工艺技术>
+  </概念>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

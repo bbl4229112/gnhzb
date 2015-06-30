@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		   xmlns:s="library://ns.adobe.com/flex/spark" cornerRadius="5"
+		   width="220" height="120" backgroundAlpha="0.0" backgroundColor="#FFFFFF" borderColor="#A6AAAC"
+		   borderStyle="solid" borderThickness="1" horizontalScrollPolicy="off" >
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Button;
+			import mx.controls.Label;
+			import mx.core.UIComponent;
+			import mx.events.FlexEvent;
+			import mx.controls.Alert;
+			import org.act.od.impl.model.FigureEditorModel;
+			import org.act.od.impl.model.FigureEditorNavigatorModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			
+			public var lineColor:uint = 0x000000;
+			public var lineThickness:int = 1;
+			public var gridFillColor:uint = 0xD8D8DB;
+			public var obj:UIComponent = new UIComponent();
+			public var levelwidth:Number = 180;
+			public var levelNum:int = 0;
+			public var xml:XML;
+			public var xmlArray:Array;
+			
+			/**
+			 * @author panlei
+			 * @parameter num,即从上往下第几层
+			 * 画出立体效果呈现模型的平行四边形
+			 * 
+			 * */
+			public function draw(num:Number,isLast:Boolean):void{
+				if(isLast == true){
+					lineColor = 0xff00fc;
+					lineThickness = 2;
+				}else{
+					lineColor = 0x000000;
+					lineThickness = 1;
+				}
+				
+				levelNum++;
+				var can:Canvas = new Canvas();
+				canvas.addChild(can);
+				canvas.setChildIndex(can,canvas.numChildren-1);
+				can.x = 0;
+				can.y = 20 + 100*(num-1);
+				can.width = levelwidth;
+				can.height = 100;
+				
+				can.graphics.lineStyle(lineThickness,lineColor,1);
+				can.graphics.beginFill(gridFillColor,1);
+				
+				can.graphics.moveTo(35,0);
+				can.graphics.lineTo(levelwidth,0);
+				can.graphics.lineTo(levelwidth-35,80);
+				can.graphics.lineTo(0,80);
+				can.graphics.lineTo(35,0);
+				
+				can.graphics.endFill();
+				obj.y = 100*num + 40;
+				
+				this.height = obj.y;
+			}
+	
+			public function canvas_initializeHandler():void
+			{
+				canvas.addChild(obj);
+				obj.x = 20;
+				obj.y = 140;
+			}
+
+			public function setXMLArray(xml:XML):void{
+				var arr:Array = new Array();
+				this.xmlArray = arr;
+			}
+			
+			public function setXML(value:XML):void{
+				this.xml = value;
+				setXMLArray(xml);
+			}
+
+		]]>
+	</mx:Script>
+	<mx:Label verticalCenter="{10*(this.height * 1.0 / 119 - 1)}" textAlign="center" id="labeltitle" x="0" y="0" 
+			  text="︻&#13;模&#13;型&#13;层&#13;次&#13;图&#13;︼" height="{this.height}"/>	
+	<mx:Canvas id="canvas" x="{labeltitle.width}" height="{this.height}" y="0" verticalScrollPolicy="off"
+			   width="{this.width-labeltitle.width}" initialize="canvas_initializeHandler()" left="{labeltitle.width+2}">
+	</mx:Canvas>
+</mx:Canvas>

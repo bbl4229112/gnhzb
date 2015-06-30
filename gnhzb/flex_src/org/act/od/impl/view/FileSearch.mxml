@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Form xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="300">
+	<mx:FormItem>
+		<mx:TextInput/>
+	</mx:FormItem>
+	<mx:FormItem>
+		<mx:Button label="搜索"/>
+	</mx:FormItem>
+</mx:Form>

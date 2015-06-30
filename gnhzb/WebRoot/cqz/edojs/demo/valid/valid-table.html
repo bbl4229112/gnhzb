@@ -1,0 +1,80 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    <p>表格验证：</p>
+    <ul style="list-style-type:circle;margin-left:35px;">
+        <li>列配置对象设置valid验证器函数。验证逻辑可以任意自定义实现。</li>
+        <li>表格：table.valid(records, validAll)方法验证所有单元格是否符合列的验证器条件。</li>        
+    </ul>
+    <br />
+    <b>本示例的要点：验证器函数valid必须设置到Column列配置对象上</b>
+    <br /><br />
+    
+    <input type="button" value="验证(单行)" onclick="valid1()" />
+    <input type="button" value="验证(多行)" onclick="valid2()" />
+    <input type="button" value="验证(全部)"  onclick="valid3()"/>
+        
+</body>
+</html>
+
+
+<script src="../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+var data = [
+    {name: '1', date: '2008-10-10', gender: 1, age: 10},
+    {name: 'a', date: '2009-07-10', gender: 2, age: -10},
+    {name: 'b', date: '2008-11-02', gender: 2, age: 1110},
+    {name: 'c', date: '2000-04-11', gender: 1, age: 30}
+];
+
+new Edo.lists.Table()
+.set({
+    id: 'table',
+    width: 400,height: 200,
+    rowSelectMode: 'multi',
+    columns: [
+        Edo.lists.Table.createMultiColumn(),
+        {header: '姓名', dataIndex: 'name', editor: 'text',
+            valid: function(v){
+                if(v !== 'abc') return '必须abc';
+                return true;
+            }
+        },
+        {header: '日期', dataIndex: 'DATE'},
+        {header: '性别', dataIndex: 'gender'},
+        {header: '年龄', dataIndex: 'age',
+            editor: 'spinner',
+            valid: function(value){     
+                if(value < 0) return '年龄不能小于0';
+                if(value > 120) return '年龄不能大于120';
+                return true;
+            }
+        }
+    ],
+    data: data,
+    render: document.body
+});
+/////////////////////////////
+function valid1(){
+    var record = table.getSelected();
+    if(record){
+        table.valid(record);
+    }else{
+        alert("请选中要验证的记录");
+    }
+}
+function valid2(){
+    var records = table.getSelecteds();
+    if(records.length>0){    
+        table.valid(records, true);
+    }else{
+        alert("请选中要验证的记录");
+    }
+}
+function valid3(){    
+    table.valid(true, true);
+}
+</script>

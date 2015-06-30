@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.TextInput()
+.set({
+    text: '单行文本框',
+    render: document.body
+});
+
+Edo.util.Dom.append(document.body, '<br/>');
+
+new Edo.controls.Password()
+.set({
+    text: '密码输入框',
+    render: document.body
+});
+
+Edo.util.Dom.append(document.body, '<br/>');
+
+new Edo.controls.TextArea()
+.set({
+    text: '多行文本框',
+    render: document.body
+});
+</script>

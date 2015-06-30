@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Box xmlns:mx="http://www.adobe.com/2006/mxml" percentWidth="100" percentHeight="100" 
+		creationComplete="consumer.subscribe()"  themeColor="#FCFCFD" backgroundColor="#FCFCFD">
+	<mx:Script>
+		<![CDATA[  
+			import mx.messaging.messages.AsyncMessage;
+			import mx.messaging.messages.IMessage;  
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			private function send():void  
+			{
+				var message:IMessage = new AsyncMessage();  
+				var name:String = new String();
+				name = OrDesignerModelLocator.getInstance().getOrchestraDesigner().userName;
+				
+				message.body.chatMessage = msg.text; 
+				message.body.name = name;
+				producer.send(message);  
+				msg.text = "";  
+			}
+			private function messageHandler(message:IMessage):void  
+			{								
+				log.text += message.body.name+":  "+message.body.chatMessage + "\n";
+			}
+		]]>
+	</mx:Script>  
+	<mx:Producer id="producer" destination="chatRoom4"/>
+	<mx:Consumer id="consumer" destination="chatRoom4"     
+				 message="messageHandler(event.message)"/> 
+		<mx:TextArea id="log" percentWidth ="100" percentHeight="95" x="0" y="0"  fontSize="13" /> 
+		<mx:ControlBar percentWidth = "100" percentHeight="4">
+			<mx:TextInput id="msg" percentWidth ="95" enter="send()" cornerRadius="3" fontSize="13" />
+			<mx:Button label="Send"  percentWidth = "4" click="send()" fillAlphas="[1.0, 1.0]" fillColors="[#6BA0CE, #6BA0CE]" cornerRadius="6" color="#06037A"/>
+		</mx:ControlBar> 
+</mx:Box>

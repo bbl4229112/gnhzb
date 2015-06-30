@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    Split分隔符应用在工具栏和菜单之中<br /><br />
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+//工具栏
+new Edo.containers.Box()
+.set({
+    cls: 'e-toolbar',
+    layout: 'horizontal',   //横向布局
+    horizontalGap: 0,       //横向间距为0
+    padding: 2,             //内边距
+    render: document.body,    
+    children: [                
+        {type: 'button', text: '打开'},
+        {type: 'button', text: '保存'},
+        {type: 'split'},    //分隔符
+        {type: 'button', text: '新增'},
+        {type: 'button', text: '保存'},
+        {type: 'button', text: '删除'}        
+    ]
+});
+
+Edo.util.Dom.append(document.body, '<br/>');
+
+//菜单
+new Edo.navigators.Menu()
+.set({            
+    render: document.body,    
+    children: [                
+        {type: 'button', text: '打开'},
+        {type: 'button', text: '保存'},
+        {type: 'hsplit'},    //横向分隔符
+        {type: 'button', text: '新增'},
+        {type: 'button', text: '保存'},
+        {type: 'button', text: '删除'}        
+    ]
+});
+</script>

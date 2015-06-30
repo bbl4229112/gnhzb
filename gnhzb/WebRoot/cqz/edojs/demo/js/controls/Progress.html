@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+    Edo.create({
+        id: 'progress',
+        type: 'progress',
+        onprogresschange: function(e){
+            progress.set({                
+                text: 'Loading...'
+            })
+            if(e.progress == 100){
+                progress.set({                
+                text: 'Complete!'
+            })
+            }
+        },
+        render: document.body
+    });
+    
+    var i = 0;
+    var t = setInterval(function(){
+        i += 10;
+        if(i>100) {
+            clearInterval(t);
+            return
+        }            
+        
+        progress.set('progress', i);
+    }, 200);
+</script>

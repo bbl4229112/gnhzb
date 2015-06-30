@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EdoJS - Easy, But Powerful Javascript Framework</title>    
+    <ASPxInclude src="~/templates/toplinks.html" />
+    <style type="text/css">
+.code
+{
+	border:dashed 1px #a0a0a0;border-left:solid 3px #6CE26C;
+	padding:5px;padding-bottom:15px;
+	margin:5px;
+	margin-left:0px;
+	margin-right:15px;	
+	margin-bottom:15px;
+	line-height:18px;
+	overflow:auto;width:750px;overflow-y:hidden;
+	font-weight:400;
+}    
+    </style>    
+</head>
+<body>
+<div class="ct">
+    <ASPxInclude src="~/templates/header.html" />
+    <div class="bd">
+    <ASPxInclude src="~/templates/tutorialnav.html" />
+        <div id="viewcontent">
+        <h1 class="vtitle">布局器篇</h1>             
+    <div class="desc-content">
+<p>布局器是EdoJS界面排布的基石，它跟容器紧密配合，排布容器内的子组件，达到理想的界面布局效果。</p>
+<p>EdoJS目前一共有4种布局器，如下：</p>
+<div class=code>
+<p>Vertical : 竖向布局器</p> 
+<p>Horizontal : 横向布局器 </p>
+<p>Absolute : 定位布局器 </p>
+<p>ViewStack : 导航布局器 </p>
+</div>
+<p>布局器只能被容器使用，一个容器必须使用一个布局器来排布其容纳的子组件们。布局器是静态对象，因此无需实例化。 </p>
+<h1>改变容器的布局器</h1>
+<p>容器有一个初始默认布局器，一般是：vertical。 
+<p>要改变一个容器的布局器，我们可以这样做：</p>
+<pre class="code">ct.<span style="color: blue">set</span>(<span style="color: #a31515">'layout'</span>, <span style="color: #a31515">'horizontal'</span>);</pre><a href="http://11011.net/software/vspaste"></a>
+<h1>布局器的布局配置属性</h1>
+<p>布局器对象本身不需要配置布局属性，但是其实从一个布局逻辑的角度来说，必然或有一些布局属性配置。 
+<p>EdoJS将布局属性分摊在容器和容器内的子组件上，比如：<pre class="code">Edo.create({
+    type: <span style="color: #a31515">'box'</span>,
+    height: 100,
+    width: 300,
+    layout: <span style="color: #a31515">'horizontal'</span>,    
+    horizontalGap: 0,           <span style="color: green">//横向间距
+    </span>verticalAlign: <span style="color: #a31515">'center'</span>,    <span style="color: green">//竖向位置
+    </span>horizontalAlign: <span style="color: #a31515">'right'</span>,   <span style="color: green">//横向位置
+    </span>children: [
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'button'</span>,
+            height: <span style="color: #a31515">'100%'
+        </span>},
+        {
+            type: <span style="color: #a31515">'text'</span>,
+            width: <span style="color: #a31515">'30%'</span>,
+            height: <span style="color: #a31515">'50%'       </span><span style="color: green">//子组件上的布局属性
+        </span>}
+    ],
+    render: document.body
+});</pre>
+<p>效果图如下： 
+</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/l1.png" /></p>
+<p>这里，horizontalGap、verticalAlign和horizontalAlign设置在容器对象上，这三个属性就是horizontal布局器需要的布局配置属性，horizontal布局器通过这三个属性的值，得知将子组件的横向间距设置为0，并且右下摆放。 
+<p>子组件的width和height属性是百分比，horizontal布局器同时从每个子组件的宽度和高度得知，他们应该是容器尺寸的百分之多少，从而设置子组件的尺寸外观大小。 
+<p>每个布局器都有自己独特的布局逻辑，并且需要容器和组件的配合。当您选择使用不同的布局器时，对容器和组件的布局属性要求也不一样。下面我们一一介绍下4种布局器的布局属性和布局效果：</p>
+<h1>Vertical 竖向布局器</h1>
+<p>Vertical 是控制竖向排布的布局器。当设置容器的layout为"vertical"时，就应用了此布局器。</p>
+<p>容器布局属性：横向定位horizontalAlign（left\center\right）, 竖向定位verticalAlign（top\middle\bottom）, 横向间距horizontalGap（Number数字），竖向间距verticalGap（Number数字）。</p>
+<p>示例代码如下：</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'box'</span>,
+    layout: <span style="color: #a31515">'vertical'</span>,
+    width: 200,
+    height: 100,
+    horizontalAlign: <span style="color: #a31515">'center'</span>,  <span style="color: green">//左右居中定位
+    </span>verticalAlign: <span style="color: #a31515">'bottom'</span>,    <span style="color: green">//上下置底定位
+    </span>verticalGap: 10,            <span style="color: green">//组件竖向间距30
+    </span>children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'按钮'
+        </span>}
+    ],
+    render: document.body
+});
+</pre>
+<p><a href="http://11011.net/software/vspaste"></a>效果如如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/l2.png" /></p>
+<h1>Horizontal 横向布局器</h1>
+<p>容器布局属性：横向定位horizontalAlign（left\center\right）, 竖向定位verticalAlign（top\middle\bottom）, 横向间距horizontalGap（Number数字），竖向间距verticalGap（Number数字）。跟Vertical竖向布局器是一样的布局属性。</p>
+<p>示例代码如下：</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'box'</span>,
+    layout: <span style="color: #a31515">'horizontal'</span>,
+    width: 200,
+    height: 100,
+    horizontalAlign: <span style="color: #a31515">'center'</span>,  <span style="color: green">//左右居中定位
+    </span>verticalAlign: <span style="color: #a31515">'middle'</span>,    <span style="color: green">//上下居中定位
+    </span>horizontal: 10,            <span style="color: green">//组件横向间距30
+    </span>children: [
+        {
+            type: <span style="color: #a31515">'text'
+        </span>},
+        {
+            type: <span style="color: #a31515">'button'</span>,
+            text: <span style="color: #a31515">'按钮'
+        </span>}
+    ],
+    render: document.body
+});</pre>
+<p><a href="http://11011.net/software/vspaste"></a>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/l3.png" /></p>
+<h1>Absolute 定位布局器 </h1>
+<p>Absolute是定位布局器，此布局器的布局属性，作用在子组件上：left,、top、right、bottom。</p>
+<p>示例代码如下：</p><pre class="code">Edo.create({
+    type: <span style="color: #a31515">'box'</span>,
+    layout: <span style="color: #a31515">'absolute'</span>,
+    width: 200,
+    height: 100,        
+    children: [
+        {
+            type: <span style="color: #a31515">'text'</span>,
+            left: 5,
+            top: 5
+        },
+        {
+            type: <span style="color: #a31515">'box'</span>,                
+            left: 30,
+            top: 40,
+            bottom: 10,
+            right: 10
+        }
+    ],
+    render: document.body
+});</pre>
+<p><a href="http://11011.net/software/vspaste"></a>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/l4.png" /></p>
+<h1>ViewStack 导航布局器 </h1>
+<p>Viewstack一个时刻只能显示容器中的某一个组件，而不能全部显示。</p>
+<p>有一个作用在容器上的布局属性：selectedIndex，表示当前显示容器内的哪一个索引号的子组件。</p>
+<p>此布局器经常用在Tabs切换导航场景中，如下示例：</p><pre class="code">Edo.build({
+    type: <span style="color: #a31515">'box'</span>, verticalGap: 0, renderTo: <span style="color: #a31515">'#body'</span>,        
+    children:[
+        {
+            type: <span style="color: #a31515">'tabbar'</span>, selectedIndex: 0,
+            onselectionchange: <span style="color: blue">function</span>(e){                    
+                ct2.<span style="color: blue">set</span>(<span style="color: #a31515">'selectedIndex'</span>, <span style="color: blue">this</span>.selectedIndex);
+            },
+            children: [{text: <span style="color: #a31515">'tab1'</span>, type: <span style="color: #a31515">'button'</span>},{text: <span style="color: #a31515">'tab2'</span>, type: <span style="color: #a31515">'button'</span>}]
+        },
+        {
+            id: <span style="color: #a31515">'ct2'</span>, type: <span style="color: #a31515">'box'</span>, border: [1,0,1,1], layout: <span style="color: #a31515">'viewstack'</span>, 
+            style: <span style="color: #a31515">'background-color:white;'</span>, width: <span style="color: #a31515">'100%'</span>,
+            children: [
+                {
+                    type: <span style="color: #a31515">'button'</span>,
+                    text: 1
+                },
+                {
+                    type: <span style="color: #a31515">'dialog'</span>,
+                    title: <span style="color: #a31515">'表单2'</span>,                        
+                    children:[
+                        {
+                            type: <span style="color: #a31515">'box'</span>,
+                            width: 100,
+                            height: 50
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+});</pre><a href="http://11011.net/software/vspaste"></a>   
+<p>效果图如下：</p> 
+<p style="text-align:center;margin-bottom:15px;"><img src="images/l5.png" /></p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/l6.png" /></p>
+   </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <ASPxInclude src="~/templates/footer.html" />
+</div>
+</body>
+</html>
+<ASPxInclude src="~/templates/bottomlinks.html" />
+<script type="text/javascript">
+togglemenu({menu:'getstarted'});
+addCls('layout', 'sel');
+</script>

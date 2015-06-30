@@ -1,0 +1,81 @@
+2015-06-12 12:09:00,756 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 12:09:00,758 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 12:17:21,481 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 12:17:21,481 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 12:19:07,760 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 12:19:07,760 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 12:20:56,934 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 12:20:56,934 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 15:43:38,854 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 15:43:38,862 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 15:53:17,686 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 15:53:17,687 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 15:58:43,524 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 15:58:43,525 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 16:37:33,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 16:37:33,752 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 23:31:42,167 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 23:31:42,188 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 23:36:09,628 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 23:36:09,663 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 23:39:03,049 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 23:39:03,049 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 23:48:35,429 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 23:48:35,430 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 23:58:00,620 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 23:58:00,620 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-12 23:59:58,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-12 23:59:58,734 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 00:05:49,147 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 00:05:49,177 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 00:12:49,763 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 00:12:49,773 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 15:04:06,703 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 15:04:06,720 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 15:06:24,018 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 15:06:24,018 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 15:10:08,446 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 15:10:08,446 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:10:13,138 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:10:13,155 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:15:27,437 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:15:27,438 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:17:23,513 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:17:23,513 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:23:56,104 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:23:56,125 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:29:25,112 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:29:25,112 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:42:40,264 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:42:40,265 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:44:24,152 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:44:24,153 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-13 16:46:45,677 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-13 16:46:45,677 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+

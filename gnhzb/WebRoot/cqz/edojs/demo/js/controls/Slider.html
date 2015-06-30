@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.Slider()
+.set({
+    onvaluechange: function(e){
+        show.set('text', this.value);
+    },
+    render: document.body
+});
+Edo.build({
+    type: 'text',    
+    id: 'show',
+    height: 50,
+    render: document.body
+});
+
+Edo.util.Dom.append(document.body, '<br/>');
+
+new Edo.controls.VSlider()
+.set({
+    onvaluechange: function(e){
+        show2.set('text', this.value);
+    },
+    render: document.body
+});
+Edo.build({
+    type: 'text',    
+    id: 'show2',
+    height: 50,
+    render: document.body
+});
+</script>

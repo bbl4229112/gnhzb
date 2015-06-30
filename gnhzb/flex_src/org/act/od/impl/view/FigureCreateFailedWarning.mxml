@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="336" height="156"
+	 title="Warning">
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+		
+			import mx.managers.PopUpManager;
+			import mx.binding.utils.BindingUtils;
+
+
+		[Bindable] private var text:String = "Only one start or end figure can be contained in a single process!";
+
+
+		public function init():void{
+			
+		}
+
+		public function onOkHandle(event:MouseEvent):void{
+			PopUpManager.removePopUp(this);
+		}
+
+		]]>
+	</mx:Script>
+	
+	<mx:HRule x="0" y="79" width="316"/>
+	<mx:Text id="file" x="10" y="30" width="295" fontWeight="normal" fontSize="10" height="41" text="{this.text}"/>
+	<mx:Button label="OK" x="223" y="89" click="onOkHandle(event)"  width="71"/>
+</mx:TitleWindow>

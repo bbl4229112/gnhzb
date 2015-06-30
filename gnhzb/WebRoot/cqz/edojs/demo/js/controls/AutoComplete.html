@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    <input type="button" value="getValue" onclick="getValue()" />
+    <input type="button" value="setValue" onclick="setValue()" /><br /><br />
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+var ac = new Edo.controls.AutoComplete()
+.set({
+    render: document.body,
+    url: 'autocomplete.php',
+    valueField: 'id',
+    displayField: 'text'
+});
+
+function getValue(){
+
+    alert(ac.getValue());
+}
+
+function setValue(){
+    ac.setValue({
+        id: '-111',
+        text: 'EdoJS'
+    });
+}
+</script>

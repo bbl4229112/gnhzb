@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    <input type="button" value="getValue" onclick="getValue()" />
+    <input type="button" value="setValue" onclick="setValue()" /><br /><br />
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+function getValue(){
+
+    alert(lov.getValue());
+}
+
+function setValue(){
+    lov.setValue({
+        company: 'plusoft',
+        update: new Date()
+    });
+}
+
+Edo.create({
+    id: 'lov',
+    type: 'lov',
+    
+    pageConfig: {                           //弹出页面的外观设置
+        width: 520,
+        height: 320
+    },
+    url: '../lists/table/paging.html',      //弹出页面url
+    params: {                               //弹出页面接收的参数对象
+        a: 1,
+        c: true
+    },
+    
+    valueField: 'company',//update       //值字段
+    displayField: 'company',    //显示的文本字段
+
+    render: document.body
+});
+
+</script>

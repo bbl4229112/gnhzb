@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.navigators.PagingBar()
+.set({
+    id: 'paging',
+    border: 1,padding:2, //cls: 'e-toolbar',
+    width: 500,
+    index: 0,
+    size: 20,
+    autoPaging: true,
+    render: document.body
+});
+
+paging.on('paging', function(e){
+    //模拟从服务端交互, 并得到总记录数    
+    setTimeout(function(){
+        paging.refresh(131);
+    }, 500);
+});
+</script>

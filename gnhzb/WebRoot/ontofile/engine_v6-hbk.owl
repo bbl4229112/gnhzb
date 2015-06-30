@@ -1,0 +1,3924 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.owl-ontologies.com/unnamed.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="喷油泵总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="燃料供给系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="带传动原理">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="机械原理"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="机油滤清器总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="润滑系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="进排气系统术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BOM术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="曲柄连杆机构术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机油泵总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#润滑系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="曲轴飞轮总成">
+    <rdfs:subClassOf rdf:resource="#曲柄连杆机构术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="启动电机总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="起动系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="电控系统总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#起动系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="离合器总成术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="固定件术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="高压油管总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#燃料供给系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="气缸盖总成术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#固定件术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="进气管总成">
+    <rdfs:subClassOf rdf:resource="#进排气系统术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="气缸盖罩总成术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#固定件术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="正时齿轮系总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="配气机构术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="齿轮机构原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="油底壳总成术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#固定件术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="齿轮室总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#配气机构术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="凸轮轴总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#配气机构术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="水泵风扇总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="冷却系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#冷却系统术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:about="#起动系统术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="凸轮机构原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机体总成术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#固定件术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="蜗杆机构原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:about="#润滑系统术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="喷油器总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#燃料供给系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#配气机构术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="燃油滤清器总成">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#燃料供给系统术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="轮系原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="节温器总成">
+    <rdfs:subClassOf rdf:resource="#冷却系统术语"/>
+  </owl:Class>
+  <owl:Class rdf:about="#燃料供给系统术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="棘轮机构原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="平面连杆机构原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="呼吸器总成术语">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#固定件术语"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="活塞连杆总成">
+    <rdfs:subClassOf rdf:resource="#曲柄连杆机构术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="发电机总成">
+    <rdfs:subClassOf rdf:resource="#起动系统术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="槽轮机构原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="增压器总成">
+    <rdfs:subClassOf rdf:resource="#进排气系统术语"/>
+  </owl:Class>
+  <owl:Class rdf:about="#固定件术语">
+    <rdfs:subClassOf rdf:resource="#BOM术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="燃油管路总成">
+    <rdfs:subClassOf rdf:resource="#燃料供给系统术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="链传动原理">
+    <rdfs:subClassOf rdf:resource="#机械原理"/>
+  </owl:Class>
+  <owl:Class rdf:ID="排气管总成">
+    <rdfs:subClassOf rdf:resource="#进排气系统术语"/>
+  </owl:Class>
+  <owl:Class rdf:ID="机油集滤器总成">
+    <rdfs:subClassOf rdf:resource="#润滑系统术语"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="材料">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="材料被用于"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="测试被用于">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="测试"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#BOM术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="原理">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#机械原理"/>
+          <owl:Class rdf:about="#BOM术语"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="原理被用于"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#测试">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <owl:inverseOf rdf:resource="#测试被用于"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="F">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="S"/>
+    </owl:inverseOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#S">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="#F"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="工艺被用于">
+    <rdfs:range rdf:resource="#BOM术语"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="工艺"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="要求被用于">
+    <rdfs:range rdf:resource="#BOM术语"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="要求"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="s">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="f"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Z">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#原理被用于">
+    <owl:inverseOf rdf:resource="#原理"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#机械原理"/>
+          <owl:Class rdf:about="#BOM术语"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#f">
+    <owl:inverseOf rdf:resource="#s"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Y">
+    <rdfs:range rdf:resource="#BOM术语"/>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="D"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#材料被用于">
+    <rdfs:range rdf:resource="#BOM术语"/>
+    <owl:inverseOf rdf:resource="#材料"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="L">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <rdfs:range rdf:resource="#BOM术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#D">
+    <rdfs:range rdf:resource="#BOM术语"/>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <owl:inverseOf rdf:resource="#Y"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#工艺">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <owl:inverseOf rdf:resource="#工艺被用于"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="故障发生于">
+    <rdfs:range rdf:resource="#BOM术语"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="故障"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="范畴">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#故障">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <owl:inverseOf rdf:resource="#故障发生于"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#要求">
+    <owl:inverseOf rdf:resource="#要求被用于"/>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="图片">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="参数"/>
+  <owl:DatatypeProperty rdf:ID="内容">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:SymmetricProperty rdf:ID="C">
+    <owl:inverseOf rdf:resource="#C"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#BOM术语"/>
+          <owl:Class rdf:about="#机械原理"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:ID="定义">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="排除方法">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="故障分析">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="类别名称">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="中文词">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="英文词">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#BOM术语"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="拼音">
+    <rdfs:domain rdf:resource="#BOM术语"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="范畴号">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <机械原理 rdf:ID="链传动"/>
+  <机械原理 rdf:ID="蜗杆机构"/>
+  <swrl:Imp rdf:ID="Rule-1"/>
+  <机械原理 rdf:ID="轮系"/>
+  <机械原理 rdf:ID="棘轮机构"/>
+  <机械原理 rdf:ID="齿轮机构"/>
+  <机械原理 rdf:ID="槽轮机构"/>
+  <配气机构术语 rdf:ID="正时齿轮系">
+    <F>
+      <正时齿轮系总成 rdf:ID="曲轴正时齿轮">
+        <Z>
+          <BOM术语 rdf:ID="bom">
+            <F>
+              <BOM术语 rdf:ID="固定件">
+                <F>
+                  <固定件术语 rdf:ID="呼吸器组件">
+                    <F>
+                      <呼吸器总成术语 rdf:ID="呼吸器法兰">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hu Xi Qi Fa Lan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >呼吸器法兰</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Respirator Flange</英文词>
+                        <S rdf:resource="#呼吸器组件"/>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="呼吸器总成">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >呼吸器总成</中文词>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hu Xi Qi Zong Cheng</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >respirator unit</英文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="滤片">
+                        <S rdf:resource="#呼吸器组件"/>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Filter disk</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lv Pian</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >滤片</中文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="垫圈___8_">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 8</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈8</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#呼吸器组件"/>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="推杆室盖垫片">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Tui Gan Shi Gai DIan Pian</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >推杆室盖垫片</中文词>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </呼吸器总成术语>
+                    </F>
+                    <S rdf:resource="#固定件"/>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="油管">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油管</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Guan</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil line</英文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="油管支架">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油管支架</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Guan Zhi Jia</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil-pipe bracket</英文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="呼吸器体焊接件">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Respirator Weldment</英文词>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >呼吸器体焊接件</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hu Xi Qi Ti Han Jie Jian</拼音>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="内通气管">
+                        <S rdf:resource="#呼吸器组件"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Nei Tong Qi Guan</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >内通气管</中文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="滤网-">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >滤网</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lv Wang</拼音>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Filter Gauze</英文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="垫圈___6_">
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈6</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 6</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="双头螺柱">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Shuang Tou Luo Zhu</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Stud</英文词>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >双头螺柱</中文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="绑带">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Bang Dai</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >绑带</中文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="外通气管">
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >外通气管</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Wai Tong Qi Guan</拼音>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="呼吸器盖">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hu Xi Qi Gai</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >呼吸器盖</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Respirator Cover</英文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="蝶形螺母M6">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >蝶形螺母M6</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Die Xing Luo Mu M6</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Butterfly Nut</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#呼吸器组件"/>
+                      </呼吸器总成术语>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="呼吸器垫圈">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hu Xi Qi Dian Quan</拼音>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >呼吸器垫圈</中文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="呼吸器体">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hu Xi Qi Ti</拼音>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >呼吸器体</中文词>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="密封垫圈">
+                        <S rdf:resource="#呼吸器组件"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >密封垫圈</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Mi Feng Dian Quan</拼音>
+                      </呼吸器总成术语>
+                    </F>
+                    <F>
+                      <呼吸器总成术语 rdf:ID="螺栓M8X20--">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M8×20</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M8×20</中文词>
+                        <S rdf:resource="#呼吸器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </呼吸器总成术语>
+                    </F>
+                  </固定件术语>
+                </F>
+                <F>
+                  <固定件术语 rdf:ID="机体总成">
+                    <F>
+                      <机体总成术语 rdf:ID="气缸盖长螺栓">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Chang Luo Shuan</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖长螺栓</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="螺柱M12X45">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Zhu M12X45</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺柱M12X45</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="主轴承盖螺栓">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Main bearing bolt</英文词>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zhu Zhou Cheng Gai Luo Shuan</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >主轴承盖螺栓</中文词>
+                      </机体总成术语>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <机体总成术语 rdf:ID="机油压力报警器">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji You Ya Li Bao Bao Jing Qi</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil Pressure Alarm</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >配置于发动机油路上，当油压超过机油开关的额定压力值时触点断开，当油压下降到低于机油开关的额定压力值时触点闭合，此时电信号输出，开始报警。</定义>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机油压力报警器</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="齿轮室定位套">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >齿轮室定位套</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Chi Lun Shi Ding Wei Tao</拼音>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="放水阀体">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放水阀体</中文词>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang Shui Fa Ti</拼音>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="油封">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Feng</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油封FB85×110×12</中文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >曲轴油封是防止机油外漏的，曲轴上有机油的油道，用来润滑曲轴的大瓦和小瓦，如果机油外漏，大小瓦德润滑得不到保证，同时也耗损机油。</定义>
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="观察孔盖">
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Guan Cha Kong Gai</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >观察孔盖</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="弹簧">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Tan Huang</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >弹簧</中文词>
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="机体">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Engine body</英文词>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji Ti</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机体</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="后主轴承盖">
+                        <S rdf:resource="#机体总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rear main bearing cap</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hou Zhu Zhou Cheng Gai</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >后主轴承盖</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="垫圈_8">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 8</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈_8</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="曲轴止推片-上">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qu Zhou Zhi Tui Pian (Shang)</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Upper thrust piece of crankshaft</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >曲轴止推片（上）</中文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >止推片作为发动机滑动轴承的一种，在发动机中主要起着曲轴轴向支撑的作用，在保证曲轴周向转动的同时，阻止曲轴轴向窜动。</定义>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="主轴瓦-下">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Main bearing halfshell(lower)</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zhu Zhou Wa (Xia）</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机体主轴承与主轴颈之间的零件。</定义>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >主轴瓦（下）</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="碗形塞-φ30">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Wan Xing Sai</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >碗形塞-φ30</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="垫圈10">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈10</中文词>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 10</拼音>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="气缸盖定位套">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Ding Wei Tao</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖定位套</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Locating sleeve</英文词>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="放水开关手柄护套">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放水开关手柄护套</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang Shui Kai Guan Shou Bing Hu Tao</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Water release drain unit</英文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="后油封盖">
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hou You Feng Gai</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >后油封盖</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="销">
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >销</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Xiao</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="主轴承盖">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Main bearing cap</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >主轴承盖</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zhu Zhou Cheng Gai</拼音>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="螺母M12">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Mu M12</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺母M12</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="放水开关手柄支架">
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang Shui Kai Guan Shou Bing Zhi Jia</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Water release drain unit</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放水开关手柄支架</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="凸轮轴后衬套">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >起衬垫作用的环套，若磨损了，可以方便更换。如果不用衬套，磨损后，更换的是零件。现在更换的是衬套（设计时，就将衬套硬度降低，使其在摩擦副中成为承磨件）。因其加工方便，更换成本低，也易换。</定义>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >凸轮轴后衬套</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rear camshaft bush</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Tu Lun Zhou Hou Chen Tao</拼音>
+                        <S rdf:resource="#机体总成"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="凸轮轴前衬套">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >起衬垫作用的环套，若磨损了，可以方便更换。如果不用衬套，磨损后，更换的是零件。现在更换的是衬套（设计时，就将衬套硬度降低，使其在摩擦副中成为承磨件）。因其加工方便，更换成本低，也易换。</定义>
+                        <S rdf:resource="#机体总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Front camshaft bush</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Tu Lun Zhou Qian Chen Tao</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >凸轮轴前衬套</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="垫圈12">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 12</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈12</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="螺栓M8X25">
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M8X25</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M8X25</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="分泵支架">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fen Beng Zhi Jia</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >分泵支架</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="碗形塞-φ55">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Wan Xing Sai</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >碗形塞-φ55</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="封水圈">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Feng Shui Quan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >封水圈</中文词>
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="后油封盖垫片">
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hou You Feng Gai Dian Pian</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >后油封盖垫片</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="气缸套">
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >分为干式气缸套（不直接和冷却液接触，而是通过接触传递，经缸套-缸体-冷却液途径散热的气缸套）湿式气缸套（直接与冷却液接触，以达到散热目的）。气缸套置于机体的气缸体孔中，上由气缸盖压紧固定。活塞在其内孔作往复运动，其外有冷却水冷却。</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Tao</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Cylinder sleeve</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸套</中文词>
+                      </机体总成术语>
+                    </F>
+                    <S rdf:resource="#固定件"/>
+                    <F>
+                      <机体总成术语 rdf:ID="螺栓M10X30">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M10X30</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M10X30</拼音>
+                        <S rdf:resource="#机体总成"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="螺钉M6">
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Ding M6</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺钉M6</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="主轴瓦-上">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zhu Zhou Wa (Shang)</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >主轴瓦（上）</中文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >主轴承盖与主轴颈之间的零件</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Main bearing halfshell(upper)</英文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="机油滤清器垫片">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机油滤清器垫片</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji You Lv Qing Qi Dian Pian</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil filter gasket</英文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="曲轴止推片-下">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lower thrust piece of crankshaft</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >曲轴止推片（下）</中文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >止推片作为发动机滑动轴承的一种，在发动机中主要起着曲轴轴向支撑的作用，在保证曲轴周向转动的同时，阻止曲轴轴向窜动。</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qu Zhou Zhi Tui Pian (Xia)</拼音>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="气缸盖短螺栓">
+                        <S rdf:resource="#机体总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Duan Luo Shuan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖短螺栓</中文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="放水开关手柄">
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang Shui Kai Guan Shou Bing</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放水开关手柄</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Water release drain unit</英文词>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="螺塞">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Stopper</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺塞</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Sai</拼音>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="垫圈6">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈6</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 6</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机体总成"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="放水阀芯">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang Shui Fa Xin</拼音>
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放水阀芯</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </机体总成术语>
+                    </F>
+                    <F>
+                      <机体总成术语 rdf:ID="凸轮轴中间衬套">
+                        <S rdf:resource="#机体总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >凸轮轴中间衬套</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >起衬垫作用的环套，若磨损了，可以方便更换。如果不用衬套，磨损后，更换的是零件。现在更换的是衬套（设计时，就将衬套硬度降低，使其在摩擦副中成为承磨件）。因其加工方便，更换成本低，也易换。</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Tu Lun Zhou Zhong Jian Chen Tao</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Middle camshaft bush</英文词>
+                      </机体总成术语>
+                    </F>
+                  </固定件术语>
+                </F>
+                <F>
+                  <固定件术语 rdf:ID="气缸盖总成">
+                    <F>
+                      <气缸盖总成术语 rdf:ID="O型密封圈">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >O Xing Mi Feng Quan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >O型密封圈23.6×3.55</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门外弹簧">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Wai Tan Huang</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve spring(outer)</英文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门外弹簧</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门弹簧的作用在于保证气门回位，在气门关闭时，保证气门与气门座之间的密封，在气门开启时，保证气门不因运动时产生的惯性力而脱离凸轮。气门弹簧多为圆柱形螺旋弹簧，它的一端支承在气缸盖上，另一端压靠在气门杆尾端的弹簧座上，弹簧座用锁片固定在气门杆的尾端。形式有：圆柱螺旋弹簧、变螺距圆柱弹簧、同心安装的两根弹簧（作用是可以防止共振（两根弹簧的振动频率不一样）；可以降低气门弹簧的高度；可以提高工作的可靠性即一个坏了，另外一个可以继续工作；并且二者旋向相反，防止折断后卡死）</定义>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="进气管垫片">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >进气管垫片</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Intake pipe gasket</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Jin Qi Guan Dian Pian</拼音>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >进排气与气缸盖间的密封垫。</定义>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门摇臂">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门摇臂的作用是改变由推杆所传推力的方向，完成发动机的进气和排气。</定义>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve rocker arm</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Yao Bi</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门摇臂</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门间隙调整螺钉">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve clearance adjusting screw</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Jian Xi Tiao Zheng Luo Ding</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门间隙调整螺钉</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门锁夹">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门锁夹也称为气门定位器、气门夹头或气门锁，主要用于固定气门弹簧座或者气门旋转机构。这样可确保气门弹簧始终把气门固定在所需的位置上。</定义>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Suo Jia</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve collets</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门锁夹</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="进气门">
+                        <S rdf:resource="#气缸盖总成"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >使新鲜空气进入发动机燃烧室内的阀门</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Jin Qi Men</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Intake valve</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >进气门</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门油封总成">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men You Feng Zong Cheng</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门油封总成</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="碗形塞">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >碗形塞</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Wan Xing Sai</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Bowl patch</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="摇臂座">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >安装摇臂或摇臂组件的零件。</定义>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >摇臂座</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Yao Bi Zuo</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rockshaft carrier</英文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <S rdf:resource="#固定件"/>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="摇臂轴">
+                        <S rdf:resource="#气缸盖总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rockshaft</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >摇臂轴</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Yao Bi Zhou</拼音>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="组合密封垫圈">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zu He Mi Feng Dian Quan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >组合密封垫圈φ8</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Washer</英文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门导管">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Dao Guan</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve stem guide</英文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门导管</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="螺栓M8">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M8</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M8</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门摇臂衬套">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Yao Bi Chen Tao</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门摇臂衬套</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rocker arm bush</英文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="垫圈8">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈8</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 8</拼音>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门间隙调整螺母">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Jian Xi Tiao Zheng Luo Mu</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门间隙调整螺母</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="螺钉M10">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺钉M10</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Ding M10</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="前吊耳">
+                        <Z rdf:resource="#bom"/>
+                        <Y>
+                          <气缸盖总成术语 rdf:ID="前吊环">
+                            <D rdf:resource="#前吊耳"/>
+                          </气缸盖总成术语>
+                        </Y>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qian Diao Er</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Front hoisting ring weldment</英文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >安装在吊物之上用于提升的吊点结构。</定义>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >前吊耳</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门摇臂轴部件">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rockshaft</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门摇臂轴部件</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Yao Bi Zhou Bu Jian</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门摇臂组件">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门摇臂组件</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve rocker arm Components</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Yao Bi Zu Jian</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="堵套">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Du Tao</拼音>
+                        <Y>
+                          <气缸盖总成术语 rdf:ID="堵塞">
+                            <D rdf:resource="#堵套"/>
+                          </气缸盖总成术语>
+                        </Y>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >堵套</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Stopper</英文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="后吊耳">
+                        <Y>
+                          <气缸盖总成术语 rdf:ID="后吊环">
+                            <D rdf:resource="#后吊耳"/>
+                          </气缸盖总成术语>
+                        </Y>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Hou Diao Er</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rear hoisting ring</英文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >后吊耳</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="螺柱M8">
+                        <S rdf:resource="#气缸盖总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Zhu M8</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺柱M8</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气缸盖">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >作用：（1）封闭气缸顶部，与活塞、缸套共同组成密闭的气缸工作空间。（2）将气缸压紧于机体正确位置上，是活塞运动正常。（3）安装柴油机各种附件，如喷油器、进、排阀装置、气缸起动阀、安全阀及气阀摇臂装置（4）布置进、排气道，冷却水道等。 材料有铸铁、铸钢、锻钢。有整体式、单体式、分组式三种。</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Cylinder head</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气缸盖罩螺母">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Zhao Luo Mu M8</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖罩螺母 M8</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门弹簧上座">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门的复位装置</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve spring seat (upper)</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门弹簧上座</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Tan Huang Shang Zuo</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门内弹簧">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门内弹簧</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Nei Tan Huang</拼音>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门弹簧的作用在于保证气门回位，在气门关闭时，保证气门与气门座之间的密封，在气门开启时，保证气门不因运动时产生的惯性力而脱离凸轮。气门弹簧多为圆柱形螺旋弹簧，它的一端支承在气缸盖上，另一端压靠在气门杆尾端的弹簧座上，弹簧座用锁片固定在气门杆的尾端。形式有：圆柱螺旋弹簧、变螺距圆柱弹簧、同心安装的两根弹簧（作用是可以防止共振（两根弹簧的振动频率不一样）；可以降低气门弹簧的高度；可以提高工作的可靠性即一个坏了，另外一个可以继续工作；并且二者旋向相反，防止折断后卡死）</定义>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Valve spring(inner)</英文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="摇臂轴紧定螺钉">
+                        <Z rdf:resource="#bom"/>
+                        <Y>
+                          <气缸盖总成术语 rdf:ID="摇臂轴定位螺钉">
+                            <D rdf:resource="#摇臂轴紧定螺钉"/>
+                          </气缸盖总成术语>
+                        </Y>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >摇臂轴紧定螺钉</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Rockshaft locating screw</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Yao Bi Zhou Jin Ding Luo Ding</拼音>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="轴套">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >做成整圆筒形的套筒</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zhou Tao</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >轴套</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="螺母M8">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺母M8</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Mu M8</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="喷油器压紧螺栓">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >喷油器压紧螺栓</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Pen You Qi Ya Jin Luo Shuan</拼音>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="排气门">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >排气门</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >允许燃烧物离开气缸时通过的气门。</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Exhaust valve</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Pai Qi Men</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气门摇臂弹簧">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Men Yao BI Tan Huang</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气门摇臂弹簧</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="进气门座">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >进气门座</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Jin Qi Men Zuo</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Intake valve seat</英文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="前摇臂座">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qian Yao Bi Zuo</拼音>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >前摇臂座</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="气缸盖机加工部件">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Ji Jia Gong Bu Jian</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖机加工部件</中文词>
+                        <S rdf:resource="#气缸盖总成"/>
+                      </气缸盖总成术语>
+                    </F>
+                    <F>
+                      <气缸盖总成术语 rdf:ID="排气门座">
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Pai Qi Men Zuo</拼音>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖上与气门锥面相贴合的部位称气门座。气门座的温度很高，又承受频率极高的冲击载荷，容易磨损。因此，铝气缸盖和大多数铸铁气缸盖均镶嵌由合金铸铁或粉末冶金或奥氏体钢制成的气门座圈。在气缸盖上镶嵌气门座圈可以延长气缸盖的使用寿命。也有一些铸铁气缸盖不镶气门座圈，直接在气缸盖上加工出气门座。</定义>
+                        <S rdf:resource="#气缸盖总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Exhaust valve seat</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >排气门座</中文词>
+                      </气缸盖总成术语>
+                    </F>
+                  </固定件术语>
+                </F>
+                <F>
+                  <固定件术语 rdf:ID="气缸盖罩总成">
+                    <Z rdf:resource="#bom"/>
+                    <S rdf:resource="#固定件"/>
+                    <F>
+                      <气缸盖罩总成术语 rdf:ID="气缸盖罩密封圈">
+                        <Y>
+                          <气缸盖罩总成术语 rdf:ID="气缸盖罩垫片">
+                            <D rdf:resource="#气缸盖罩密封圈"/>
+                          </气缸盖罩总成术语>
+                        </Y>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖罩总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖罩密封圈</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Cylinder head bonnet gasket</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Zhao Mi Feng Quan</拼音>
+                      </气缸盖罩总成术语>
+                    </F>
+                    <F>
+                      <气缸盖罩总成术语 rdf:ID="气缸盖罩">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qi Gang Gai Zhao</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸盖罩</中文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >气缸罩盖是盖在发动机钢体上的罩壳，有防止外部杂质等进入发动机，防止内部机油泄露，油雾分离，曲轴箱压力调节，隔离结构传递噪音，和做其它零部件的安装支座的作用。</定义>
+                        <S rdf:resource="#气缸盖罩总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Cylinder head bonnet</英文词>
+                      </气缸盖罩总成术语>
+                    </F>
+                    <F>
+                      <气缸盖罩总成术语 rdf:ID="铭牌">
+                        <Y>
+                          <气缸盖罩总成术语 rdf:ID="标牌">
+                            <D rdf:resource="#铭牌"/>
+                          </气缸盖罩总成术语>
+                        </Y>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖罩总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ming Pai</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Name plate</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >铭牌</中文词>
+                      </气缸盖罩总成术语>
+                    </F>
+                    <F>
+                      <气缸盖罩总成术语 rdf:ID="加油口盖部件">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Filler cap</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#气缸盖罩总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >加油口盖部件</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Jia You Kou Gai Bu Jian</拼音>
+                      </气缸盖罩总成术语>
+                    </F>
+                    <F>
+                      <气缸盖罩总成术语 rdf:ID="螺钉">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺钉 M4×6</中文词>
+                        <S rdf:resource="#气缸盖罩总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Ding</拼音>
+                      </气缸盖罩总成术语>
+                    </F>
+                  </固定件术语>
+                </F>
+                <F>
+                  <固定件术语 rdf:ID="油底壳总成">
+                    <F>
+                      <油底壳总成术语 rdf:ID="放油螺塞">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang You Luo Sai</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil rain screw plug</英文词>
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放油螺塞</中文词>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="拉紧片">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >La Jin Pian</拼音>
+                        <S rdf:resource="#油底壳总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >拉紧片</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="放油螺塞座">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >放油螺塞座</中文词>
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fang You Luo Sai Zuo</拼音>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="垫圈8---">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈8</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 8</拼音>
+                        <S rdf:resource="#油底壳总成"/>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="油底壳焊合件">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油底壳焊合件</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Di Ke Han He Jian</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#油底壳总成"/>
+                      </油底壳总成术语>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <油底壳总成术语 rdf:ID="机油尺部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#油底壳总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机油尺部件</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji You Chi Bu Jian</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil level dipstick</英文词>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="组合密封垫圈φ20">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >组合密封垫圈φ20</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Zu He Mi Feng Dian Quan</拼音>
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="机油尺">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机油尺</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil gauge dipstick</英文词>
+                        <S rdf:resource="#油底壳总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji You Chi</拼音>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="油尺套管">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Chi Tao Guan</拼音>
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dipstick Casing</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油尺套管</中文词>
+                      </油底壳总成术语>
+                    </F>
+                    <Y>
+                      <固定件术语 rdf:ID="下曲轴箱">
+                        <D rdf:resource="#油底壳总成"/>
+                      </固定件术语>
+                    </Y>
+                    <F>
+                      <油底壳总成术语 rdf:ID="螺栓M8X20">
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M8×20</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M8×20</拼音>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="油底壳体">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油底壳体</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Di Ke Ti</拼音>
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油底壳是曲轴箱的下半部，又称为下曲轴箱。作用是封闭曲轴箱作为贮油槽的外壳，防止杂质进入，并收集和储存由柴油机各摩擦表面流回的润滑油，散去部分热量，防止润滑油氧化。</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil sump</英文词>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="油底壳垫片">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >将油底壳与曲轴壳箱连接部分密封起来的零件。</定义>
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油底壳垫片</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil sump</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Di Ke Dian Pian</拼音>
+                      </油底壳总成术语>
+                    </F>
+                    <S rdf:resource="#固定件"/>
+                    <F>
+                      <油底壳总成术语 rdf:ID="机油尺油封">
+                        <S rdf:resource="#油底壳总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机油尺油封</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji You Chi You Feng</拼音>
+                      </油底壳总成术语>
+                    </F>
+                    <F>
+                      <油底壳总成术语 rdf:ID="机油尺盖">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ji You Chi Gai</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#油底壳总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >机油尺盖</中文词>
+                      </油底壳总成术语>
+                    </F>
+                  </固定件术语>
+                </F>
+                <F>
+                  <固定件术语 rdf:ID="离合器总成">
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <离合器总成术语 rdf:ID="圆柱销M10X22">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >圆柱销Ｍ10X22</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Yuan Zhu Xiao Ｍ10X22</拼音>
+                        <S rdf:resource="#离合器总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="离合器壳边盖">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >离合器壳边盖</中文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Li He Qi Ke Bian Gai</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="离合器壳护泥罩">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >离合器壳护泥罩</中文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Li He Qi Ke Hu Ni Zhao</拼音>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="螺栓M8X50--">
+                        <S rdf:resource="#离合器总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M8X50</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M8X50</中文词>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="定位螺栓">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#离合器总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >set bolt</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >定位螺栓</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ding Wei Luo Shuan</拼音>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="垫圈----8">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 8</拼音>
+                        <S rdf:resource="#离合器总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈8</中文词>
+                        <Z rdf:resource="#bom"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="螺栓-M8X35">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#离合器总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan-M8X35</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓-M8X35</中文词>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="螺栓M10X55-">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M10X55</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M10X55</中文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <Z rdf:resource="#bom"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="螺栓M8X16-">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M8X16</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M8X16</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#离合器总成"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="离合器壳">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >离合器壳</中文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Li He Qi Ke</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >clutch box</英文词>
+                        <Z rdf:resource="#bom"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="螺栓M10X20-">
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺栓M10X20</中文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Shuan M10X20</拼音>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="离合器从动盘">
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >clutch driven plate</英文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Li He Qi Cong Dong Pan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >离合器从动盘</中文词>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="垫圈----10">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈10</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 10</拼音>
+                        <S rdf:resource="#离合器总成"/>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="垫圈----6">
+                        <S rdf:resource="#离合器总成"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >垫圈6</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dian Quan 6</拼音>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="螺钉M6X10-">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺钉M6X10</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#离合器总成"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Ding M6X10</拼音>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="离合器拔叉孔盖板">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >离合器拔叉孔盖板</中文词>
+                        <S rdf:resource="#离合器总成"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Li He Qi Ba Cha Kong Gai Ban</拼音>
+                      </离合器总成术语>
+                    </F>
+                    <F>
+                      <离合器总成术语 rdf:ID="离合器压盘">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#离合器总成"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >clutch pressure plate</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Li He Qi Ya Pan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >离合器压盘</中文词>
+                      </离合器总成术语>
+                    </F>
+                    <S rdf:resource="#固定件"/>
+                  </固定件术语>
+                </F>
+                <S rdf:resource="#bom"/>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="冷却系统">
+                <S rdf:resource="#bom"/>
+                <F>
+                  <冷却系统术语 rdf:ID="节温器组件">
+                    <F>
+                      <节温器总成 rdf:ID="发电机撑杆">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="螺栓-M8X30">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="节温器-155B型">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="水管接头-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="节温器盖垫片">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="水管">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="发电机撑杆调节垫片">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="节温器壳部件">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="垫圈8--">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="节温器壳垫片">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="螺栓M8X35">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="节温器盖">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#节温器组件"/>
+                      </节温器总成>
+                    </F>
+                    <S rdf:resource="#冷却系统"/>
+                    <F>
+                      <节温器总成 rdf:ID="水温传感器">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="节温器壳-带暖风">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <F>
+                      <节温器总成 rdf:ID="螺栓M8X45-">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <节温器总成 rdf:ID="暖风放水开关">
+                        <S rdf:resource="#节温器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </节温器总成>
+                    </F>
+                  </冷却系统术语>
+                </F>
+                <F>
+                  <冷却系统术语 rdf:ID="水泵风扇组件">
+                    <原理>
+                      <带传动原理 rdf:ID="带传动概述">
+                        <原理被用于 rdf:resource="#水泵风扇组件"/>
+                        <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >带传动是利用紧套在带轮上的挠性环形带与带轮间的摩擦力来传递动力和运动的机械传动。 带传动具有结构简单、传动平稳、能缓冲吸振、可以在大的轴间距和多轴间传递动力，且其造价低廉、不需润滑、维护容易等特点，在近代机械传动中应用十分广泛。摩擦型带传动能过载打滑、运转噪声低，但传动比不准确（滑动率在2%以下）；同步带传动可保证传动同步，但对载荷变动的吸收能力稍差，高速运转有噪声。 带传动除用以传递动力外，有时也用来输送物料、进行零件的整列等。</内容>
+                        <S>
+                          <机械原理 rdf:ID="带传动">
+                            <F rdf:resource="#带传动概述"/>
+                            <F>
+                              <带传动原理 rdf:ID="带传动工作原理">
+                                <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >1、靠带做中间体而靠摩擦力工作的一种传动。
+当带绕在轮上时，带的任一边都受到相同的初拉力 。带传动工作时，带与轮之间产生摩擦力 ，主动轮上的摩擦力与带的运动方向相同，即主动轮通过摩擦力驱动带运动；从动轮上的摩擦力与带的运动方向相同，即通过摩擦力驱动从动轮。由于摩擦力的作用，带绕主动轮的一边被拉紧，称为紧边；带绕从动轮的一边被放松，称为松边。其拉力差值F= S1- S2，称为有效拉力，即带传动所传递的圆周力F。其值F为： 
+工作前 :两边初拉力F0=F0 工作时:两边拉力变化： 
+①紧边 F0→F1；②松边F0→F2 
+F=2000M/D1=1000P/v。 
+F1—F2 = 有效拉力F = 摩擦力总和 Ff 
+2、极限有效拉力及影响因素 
+主要与下列因素有关： 
+1）、初拉力S0 
+S0增大，摩擦力增大，有效拉力增大。但过大的初拉力也会增大带的应力，影响达到带的寿命。 
+2）、小轮包角 
+包角：带与论难接触弧所对的中心角。包角越小，所传递的有效拉力越小。由于小轮包角总小于大轮包角，所以小轮包角直接影响带传动的承载能力。一般要求a1≥1200。 
+3）、摩擦力 
+摩擦力越大，传动能力越大。</内容>              <原理被用于 rdf:resource="#水泵风扇组件"/>
+                                <S rdf:resource="#带传动"/>
+                              </带传动原理>
+                            </F>
+                            <F>
+                              <带传动原理 rdf:ID="带传动类型">
+                                <S rdf:resource="#带传动"/>
+                                <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >平型带传动
+平型带传动工作时带套在平滑的轮面上，借带与轮面间的摩擦进行传动。传动型式有开口传动、交叉传动和半交叉传动等，分别适应主动轴与从动轴不同相对位置和不同旋转方向的需要。平型带传动结构简单，但容易打滑，通常用于传动比为3左右的传动。
+平型带有胶带、编织带、强力锦纶带和高速环形带等。胶带是平型带中用得最多的一种。它强度较高，传递功率范围广。编织带挠性好，但易松弛。强力锦纶带强度高，且不易松弛。平型带的截面尺寸都有标准规格，可选取任意长度，用胶合、缝合或金属接头联接成环形。高速环形带薄而软、挠性好、耐磨性好，且能制成无端环形，传动平稳，专用于高速传动。
+三角带传动
+三角带传动工作时带放在带轮上相应的型槽内，靠带与型槽两壁面的摩擦实现传动。三角带通常是数根并用，带轮上有相应数目的型槽。用三角带传动时,带与轮接触良好,打滑小,传动比相对稳定,运行平稳。三角带传动适用于中心距较短和较大传动比(7左右)的场合,在垂直和倾斜的传动中也能较好工作。此外，因三角带数根并用，其中一根破坏也不致发生事故。
+带传动
+三角胶带是三角带中用得最多的一种，它是由强力层、伸张层、压缩层和包布层制成的无端环形胶带。强力层主要用来承受拉力，伸张层和压缩层在弯曲时起伸张和压缩作用，包布层的作用主要是增强带的强度。三角胶带的截面尺寸和长度都有标准规格。此外，尚有一种活络三角带,它的截面尺寸的标准与三角胶带相同,而长度规格不受限制，便于安装调紧，局部损坏可局部更换，但强度和平稳性等都不如三角胶带。三角带常多根并列使用，设计时可按传递的功率和小轮的转速确定带的型号、根数和带轮结构尺寸。
+同步齿形
+这是一种特殊的带传动。带的工作面做成齿形，带轮的轮缘表面也做成相应的齿形，带与带轮主要靠啮合进行传动。同步齿形带一般采用细钢丝绳作强力层，外面包覆聚氯脂或氯丁橡胶。强力层中线定为带的节线，带线周长为公称长度。带的基本参数是周节p和模数m 。周节p等于相邻两齿对应点间沿节线量得的尺寸，模数m=p/π。中国的同步齿形带采用模数制，其规格用模数×带宽×齿数表示。
+与普通带传动相比，同步齿形带传动的特点是：
+①钢丝绳制成的强力层受载后变形极小，齿形带的周节基本不变,带与带轮间无相对滑动,传动比恒定、准确；
+②齿形带薄且轻，可用于速度较高的场合，传动时线速度可达40米/秒，传动比可达10，传动效率可达98%；
+③结构紧凑，耐磨性好；
+④由于预拉力小，承载能力也较小；⑤制造和安装精度要求甚高，要求有严格的中心距，故成本较高。同步齿形带传动主要用于要求传动比准确的场合，如计算机中的外部设备、电影放映机、录像机和纺织机械等。</内容>
+                                <原理被用于 rdf:resource="#水泵风扇组件"/>
+                              </带传动原理>
+                            </F>
+                            <F>
+                              <带传动原理 rdf:ID="带传动效率">
+                                <S rdf:resource="#带传动"/>
+                                <原理被用于 rdf:resource="#水泵风扇组件"/>
+                                <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >带传动的功率损失有：
+（1）滑动损失 摩擦型带传动工作时，由于带轮两边的拉力差及其相应的变形差形成弹性滑动，导致带与从动轮的速度损失。弹性滑动率通常在1%～2%之间。严重滑动，特别是过载打滑，会使带的运动处于不稳定状态，效率急剧降低，磨损加剧，严重影响带的寿命。滑动损失随紧、松边拉力差的增大而增大，随带体弹性模量的增大而减小。
+（2）内摩擦损失 带在运行中的反复伸缩，在带轮上的挠曲会使带体内部产生摩擦引起功率损失。 内摩擦损失随预紧力、带厚与带轮直径比的增加而增大。减小带的拉力变化，可减小其内摩擦损失。
+（3）带与带轮工作面的粘附性以及V带楔入、退出轮槽的侧面摩擦损失。　（4）空气阻力损失 高速运行时，运行风阻引起的功率损失。其损失与速度的平方成正比。因此设计高速带传动时，应减小带的表面积，尽量用厚而窄的带；带轮的轮辐表面应平滑（如用椭圆轮辐）或用辐板以减小风阻。
+（5）轴承摩擦损失 轴承受带拉力的作用，是引起功率损失的重要因素之一。 综合上述损失，带传动的效率约在80%～98%范围内，进行传动设计时，根据带的种类选取。</内容>
+                              </带传动原理>
+                            </F>
+                            <F>
+                              <带传动原理 rdf:ID="带传动特点">
+                                <S rdf:resource="#带传动"/>
+                                <原理被用于 rdf:resource="#水泵风扇组件"/>
+                                <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >（1）优点：传动平稳、结构简单、成本低、使用维护方便、 有良好的挠性和弹性、过载打滑。
+（2） 缺点：瞬时传动比不准确、带寿命低、轴上载荷较大、传动装置外部尺寸大、效率低。
+因此，带传动常适用于大中心距、中小功率、带速v =5～25m/s，i≤7的情况。</内容>
+                              </带传动原理>
+                            </F>
+                          </机械原理>
+                        </S>
+                      </带传动原理>
+                    </原理>
+                    <F>
+                      <水泵风扇总成 rdf:ID="风扇">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="螺栓-M8X25">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <原理 rdf:resource="#带传动类型"/>
+                    <F>
+                      <水泵风扇总成 rdf:ID="皮带轮连接盘">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="挡圈35">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水泵联接板">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <原理 rdf:resource="#带传动特点"/>
+                    <S rdf:resource="#冷却系统"/>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水封">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <原理 rdf:resource="#带传动工作原理"/>
+                    <F>
+                      <水泵风扇总成 rdf:ID="轴连轴承">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="三角皮带">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="橡胶盖">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="螺栓-M8X50">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <原理 rdf:resource="#带传动效率"/>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水泵叶轮">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="垫圈8-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <图片 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        ></图片>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水泵联接板垫片">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水泵皮带轮">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水泵壳体">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="接管">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水泵合件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                    <F>
+                      <水泵风扇总成 rdf:ID="水管接头">
+                        <S rdf:resource="#水泵风扇组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </水泵风扇总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <水泵风扇总成 rdf:ID="风扇垫块">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#水泵风扇组件"/>
+                      </水泵风扇总成>
+                    </F>
+                  </冷却系统术语>
+                </F>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="曲柄连杆机构">
+                <F>
+                  <曲柄连杆机构术语 rdf:ID="活塞连杆">
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆螺母">
+                        <S rdf:resource="#活塞连杆"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >connecting rod nut</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆螺母</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lian Gan Luo Mu</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆部件">
+                        <S rdf:resource="#活塞连杆"/>
+                        <Z rdf:resource="#bom"/>
+                      </活塞连杆总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <活塞连杆总成 rdf:ID="螺旋撑簧">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Luo Xuan Cheng Huang</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >coil-spring loaded</英文词>
+                        <S rdf:resource="#活塞连杆"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >螺旋撑簧</中文词>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="闩销">
+                        <S rdf:resource="#活塞连杆"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >闩销</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >The latch</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Shuan Xiao</拼音>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆衬套">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#活塞连杆"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lian Gan Chen Tao</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆衬套</中文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆小头孔与活塞销之间的轴承，避免活塞销和曲轴过早磨损，提高发动机寿命。</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >connecting rod bushing</英文词>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆螺栓">
+                        <S rdf:resource="#活塞连杆"/>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lian Gan Luo Shuan</拼音>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连接连杆大头与大头盖，提供足够的紧固力，保证轴瓦和曲轴颈的配合间隙。</定义>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆螺栓</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >connecting rod bolt</英文词>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="第一道活塞环">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >活塞环又分为气环和油环两种，它们的功用和要求不同，因此在构造上也各有特点。气环的功用是保证活塞与气缸壁之间的密封，防止活塞上部的高压气体漏入曲轴箱。除了密封作用外，气环还起到传热作用。活塞顶部所吸收的热量，大部分要通过气环传给气缸壁，再由外部的冷却介质带走。气环的断面形状很多，最常见的形状有以下几种：矩形环、扭曲环、微锥面环、桶面环和梯形环；油环分为普通油环和组合油环两种。油环的功用主要是将气缸壁上多余的机油刮下来，流回曲轴箱中，以减少机油的消耗。</定义>
+                        <S rdf:resource="#活塞连杆"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Piston Ring</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Huo Sai Huan</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >活塞环</中文词>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="活塞销">
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连接活塞与连杆的零件。</定义>
+                        <S rdf:resource="#活塞连杆"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Huo Sai Xiao</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Piston Pin</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >活塞销</中文词>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="油环部件">
+                        <S rdf:resource="#活塞连杆"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >油环</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Oil Ring</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >You Huan</拼音>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="环体">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#活塞连杆"/>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="活塞">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >活塞</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >活塞的功用是承受气缸内燃气的压力，并将此力传给连杆。活塞的顶部还与气缸盖共同组成燃烧室，进入气缸的燃料就是在这个空间内进行燃烧的。</定义>
+                        <S rdf:resource="#活塞连杆"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Piston</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Huo Sai</拼音>
+                        <D>
+                          <活塞连杆总成 rdf:ID="鞲鞴">
+                            <Y rdf:resource="#活塞"/>
+                          </活塞连杆总成>
+                        </D>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="挡圈28">
+                        <S rdf:resource="#活塞连杆"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >挡圈</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Dang Quan</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >shield ring</英文词>
+                        <Z rdf:resource="#bom"/>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆盖">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >connecting rod lid</英文词>
+                        <S rdf:resource="#活塞连杆"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lian Gan Gai</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆盖</中文词>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆轴瓦">
+                        <S rdf:resource="#活塞连杆"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Connecting rod bearing</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆轴瓦</中文词>
+                        <D>
+                          <活塞连杆总成 rdf:ID="轴瓦">
+                            <Y rdf:resource="#连杆轴瓦"/>
+                          </活塞连杆总成>
+                        </D>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lian Gan Zhou Wa</拼音>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆大头孔与曲轴轴颈之间的轴承。作用同连杆衬套。</定义>
+                        <Z rdf:resource="#bom"/>
+                      </活塞连杆总成>
+                    </F>
+                    <S rdf:resource="#曲柄连杆机构"/>
+                    <F>
+                      <活塞连杆总成 rdf:ID="连杆">
+                        <Z rdf:resource="#bom"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >将活塞的往复运动转变为曲轴的旋转运动，并把作用在活塞组上的燃气压力传给曲轴，使曲轴带动工作机器做功。</定义>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >connecting rod</英文词>
+                        <S rdf:resource="#活塞连杆"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >连杆</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Lian Gan</拼音>
+                      </活塞连杆总成>
+                    </F>
+                    <F>
+                      <活塞连杆总成 rdf:ID="第二道活塞环">
+                        <S rdf:resource="#活塞连杆"/>
+                        <Z rdf:resource="#bom"/>
+                      </活塞连杆总成>
+                    </F>
+                  </曲柄连杆机构术语>
+                </F>
+                <F>
+                  <曲柄连杆机构术语 rdf:ID="曲轴飞轮">
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="皮带轮压紧垫圈">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >皮带轮压紧垫圈</中文词>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Pi Dai Ya Jin Dian Quan</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >pulley impact gasket</英文词>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="飞轮">
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮的主要功用是储存作功冲程的能量，克服辅助冲程的阻力以保持曲轴旋转的均匀性，使内燃机工作平稳。为此，它要能储存一定的能量，并在需要时放出。</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fei Lun</拼音>
+                        <D>
+                          <曲轴飞轮总成 rdf:ID="调速轮">
+                            <Y rdf:resource="#飞轮"/>
+                          </曲轴飞轮总成>
+                        </D>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮</中文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >flywheel</英文词>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="飞轮齿圈部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >flywheel gear ring parts</英文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fei Lun Chi Quan Bu Jian</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮齿圈部件</中文词>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="键C10X63">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Jian</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Key</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >键</中文词>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="皮带轮压紧螺栓">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Pi Dai Ya Jin Luo Shuan</拼音>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >pulley impact bolt</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >皮带轮压紧螺栓</中文词>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <Z rdf:resource="#bom"/>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="飞轮螺栓">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >flywheel bolt</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮螺栓的作用就是装配时产生足够的预紧力,使发动机在工作时飞轮与曲轴结合面间产生的摩擦力矩能够传递扭矩。</定义>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮螺栓</中文词>
+                      </曲轴飞轮总成>
+                    </F>
+                    <S rdf:resource="#曲柄连杆机构"/>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="销B10X24">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Pin</英文词>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >销</中文词>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Xiao</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="飞轮齿圈">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮齿圈</中文词>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >flywheel gear ring</英文词>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >飞轮外缘上压有一个齿圈，可与起动机的驱动齿轮啮合，把起动机的动力传递到曲轴的连接件，主要作用是实现起动机与曲轴之间动力传递，为发动机提供惯性。</定义>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Fei Lun Chi Quan</拼音>
+                        <Z rdf:resource="#bom"/>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="曲轴皮带轮">
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qu Zhou Pi Dai Lun</拼音>
+                        <Z rdf:resource="#bom"/>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >pulley crankshaft</英文词>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >曲轴皮带轮</中文词>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <D>
+                          <曲轴飞轮总成 rdf:ID="正时皮带轮">
+                            <Y rdf:resource="#曲轴皮带轮"/>
+                          </曲轴飞轮总成>
+                        </D>
+                      </曲轴飞轮总成>
+                    </F>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="曲轴">
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >crankshaft</英文词>
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >引擎的主要旋转机件，装上连杆后，可承接连杆的上下(往复)运动变成循环(旋转)运动。是发动机上的一个重要的机件，其材料是由碳素结构钢或球墨铸铁制成的，有两个重要部位：主轴颈，连杆颈，（还有其他）。主轴颈被安装在缸体上，连杆颈与连杆大头孔连接，连杆小头孔与汽缸活塞连接，是一个典型的曲柄滑块机构。曲轴的润滑主要是指与摇臂间轴瓦的润滑和两头固定点的润滑． 曲轴的旋转是发动机的动力源。也是整个机械系统的源动力。采用中频感应淬火，氮化和表面强化技术。</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Qu Zhou</拼音>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >曲轴</中文词>
+                      </曲轴飞轮总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <曲轴飞轮总成 rdf:ID="滚动轴承6203">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >滚动轴承</中文词>
+                        <S rdf:resource="#曲轴飞轮"/>
+                        <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >将球形钢珠安装在内钢圈和外钢圈中间，易滚动方式来降低动力传递过程中的摩擦力和提高机械动力的传递效率，滚动轴承不能承受较大的重载荷。</定义>
+                        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Gun Dong Zhou Cheng</拼音>
+                        <D>
+                          <曲轴飞轮总成 rdf:ID="轴承">
+                            <Y rdf:resource="#滚动轴承6203"/>
+                          </曲轴飞轮总成>
+                        </D>
+                        <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >rolling bearing</英文词>
+                        <Z rdf:resource="#bom"/>
+                      </曲轴飞轮总成>
+                    </F>
+                  </曲柄连杆机构术语>
+                </F>
+                <S rdf:resource="#bom"/>
+                <原理>
+                  <平面连杆机构原理 rdf:ID="曲柄连杆机构工作条件">
+                    <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >在发动机工作时，气缸内最高温度可达 2500K以上，最高压力可达5MPa－9MPa，现代发动机最高转速可达4000r／min－6000r／min，速度是很高的。此外，与可燃混合气和燃烧废气接触的机件（如气缸、气缸盖、活塞组等）还将受到化学腐蚀和电化学腐蚀。因此，曲柄连杆机构是在高温、高压、高速和有腐蚀的条件下工作的。</内容>
+                    <原理被用于 rdf:resource="#曲柄连杆机构"/>
+                    <S>
+                      <机械原理 rdf:ID="平面连杆机构">
+                        <F>
+                          <平面连杆机构原理 rdf:ID="曲柄连杆机构受力分析">
+                            <S rdf:resource="#平面连杆机构"/>
+                            <原理被用于 rdf:resource="#曲柄连杆机构"/>
+                            <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >由于曲柄连杆机构是在高压下作变速运动，因此，它在工作中的受力情况很复杂，其中主要有气体作用力、运动质量的惯性力、旋转运动件的离心力以及相对运动件的接触表面所产生的磨擦力等。1、气体作用力2、往复惯性力与离心力3、摩擦力。</内容>
+                          </平面连杆机构原理>
+                        </F>
+                        <F rdf:resource="#曲柄连杆机构工作条件"/>
+                        <F>
+                          <平面连杆机构原理 rdf:ID="曲柄连杆机构功用">
+                            <S rdf:resource="#平面连杆机构"/>
+                            <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >曲柄连杆机构的作用是提供燃烧场所，把燃料燃烧后产生的气体作用在活塞顶上的膨胀压力转变为曲轴旋转的转矩，不断输出动力。（1）将气体的压力变为曲轴的转矩（2）将活塞的往复运动变为曲轴的旋转运动（3）把燃烧作用在活塞顶上的力转变为曲轴的转矩，以向工作机械输出机械能。</内容>
+                            <原理被用于 rdf:resource="#曲柄连杆机构"/>
+                          </平面连杆机构原理>
+                        </F>
+                        <F>
+                          <平面连杆机构原理 rdf:ID="曲柄连杆机构原理">
+                            <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >曲柄连杆机构是往复式内燃机中的动力传递系统。曲柄连杆机构是发动机实现工作循环，完成能量转换的主要运动部分。在作功冲程中，它将燃料燃烧产生的热能活塞往复运动、由曲轴旋转运动转变为机械能，对外输出动力；在其它冲程中，则依靠曲柄和飞轮的转动惯性、通过连杆带动活塞上下运动，为下一次作功创造条件。</内容>
+                            <S rdf:resource="#平面连杆机构"/>
+                            <原理被用于 rdf:resource="#曲柄连杆机构"/>
+                          </平面连杆机构原理>
+                        </F>
+                      </机械原理>
+                    </S>
+                  </平面连杆机构原理>
+                </原理>
+                <原理 rdf:resource="#曲柄连杆机构受力分析"/>
+                <原理 rdf:resource="#曲柄连杆机构原理"/>
+                <原理 rdf:resource="#曲柄连杆机构功用"/>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="润滑系统">
+                <F>
+                  <润滑系统术语 rdf:ID="机油滤清器组件">
+                    <Z rdf:resource="#bom"/>
+                    <S rdf:resource="#润滑系统"/>
+                    <F>
+                      <机油滤清器总成 rdf:ID="垫圈8-----">
+                        <S rdf:resource="#机油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油滤清器总成>
+                    </F>
+                    <F>
+                      <机油滤清器总成 rdf:ID="螺栓--M8X50">
+                        <S rdf:resource="#机油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油滤清器总成>
+                    </F>
+                    <F>
+                      <机油滤清器总成 rdf:ID="螺栓--M8X25">
+                        <S rdf:resource="#机油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油滤清器总成>
+                    </F>
+                    <F>
+                      <机油滤清器总成 rdf:ID="机油滤清器滤芯">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油滤清器组件"/>
+                      </机油滤清器总成>
+                    </F>
+                    <F>
+                      <机油滤清器总成 rdf:ID="机油滤清器">
+                        <S rdf:resource="#机油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油滤清器总成>
+                    </F>
+                  </润滑系统术语>
+                </F>
+                <F>
+                  <润滑系统术语 rdf:ID="机油泵组件">
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵内转子">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="半圆键3X13">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="限压弹簧">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="垫圈6-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="内转子部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <S rdf:resource="#润滑系统"/>
+                    <F>
+                      <机油泵总成 rdf:ID="螺栓M6X50">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵调整垫片">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵盖">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="圆柱销">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="螺栓M6X55">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵外转子">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="垫圈12-">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵垫片">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵体">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="螺母M12X1.25">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵齿轮">
+                        <S rdf:resource="#机油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="机油泵轴">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <机油泵总成 rdf:ID="钢球φ10">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                    <F>
+                      <机油泵总成 rdf:ID="限压阀塞">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油泵组件"/>
+                      </机油泵总成>
+                    </F>
+                  </润滑系统术语>
+                </F>
+                <F>
+                  <润滑系统术语 rdf:ID="机油集滤器组件">
+                    <F>
+                      <机油集滤器总成 rdf:ID="法兰">
+                        <S rdf:resource="#机油集滤器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油集滤器总成>
+                    </F>
+                    <F>
+                      <机油集滤器总成 rdf:ID="机油集滤器总成-">
+                        <S rdf:resource="#机油集滤器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油集滤器总成>
+                    </F>
+                    <F>
+                      <机油集滤器总成 rdf:ID="垫片">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油集滤器组件"/>
+                      </机油集滤器总成>
+                    </F>
+                    <F>
+                      <机油集滤器总成 rdf:ID="吸油管">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油集滤器组件"/>
+                      </机油集滤器总成>
+                    </F>
+                    <F>
+                      <机油集滤器总成 rdf:ID="滤网">
+                        <S rdf:resource="#机油集滤器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </机油集滤器总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <S rdf:resource="#润滑系统"/>
+                    <F>
+                      <机油集滤器总成 rdf:ID="吸油管吊钩">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油集滤器组件"/>
+                      </机油集滤器总成>
+                    </F>
+                    <F>
+                      <机油集滤器总成 rdf:ID="集滤器壳">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#机油集滤器组件"/>
+                      </机油集滤器总成>
+                    </F>
+                  </润滑系统术语>
+                </F>
+                <S rdf:resource="#bom"/>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="燃料供给系统">
+                <S rdf:resource="#bom"/>
+                <F>
+                  <燃料供给系统术语 rdf:ID="高压油管组件">
+                    <F>
+                      <高压油管总成 rdf:ID="护套A">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#高压油管组件"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="喷油泵端接头螺母">
+                        <S rdf:resource="#高压油管组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="高压油管展开图">
+                        <S rdf:resource="#高压油管组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="第二缸高压油管部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#高压油管组件"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="第一缸高压油管部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#高压油管组件"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="夹箍">
+                        <S rdf:resource="#高压油管组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </高压油管总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <高压油管总成 rdf:ID="第四缸高压油管部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#高压油管组件"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="护套B">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#高压油管组件"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="第三缸高压油管部件">
+                        <S rdf:resource="#高压油管组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </高压油管总成>
+                    </F>
+                    <F>
+                      <高压油管总成 rdf:ID="喷油器端接头螺母">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#高压油管组件"/>
+                      </高压油管总成>
+                    </F>
+                    <S rdf:resource="#燃料供给系统"/>
+                  </燃料供给系统术语>
+                </F>
+                <F>
+                  <燃料供给系统术语 rdf:ID="燃油管路组件">
+                    <F>
+                      <燃油管路总成 rdf:ID="喷油器回油管部件">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <燃油管路总成 rdf:ID="输油泵出油管部件">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <S rdf:resource="#燃料供给系统"/>
+                    <F>
+                      <燃油管路总成 rdf:ID="回油管夹">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="双通接头">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#燃油管路组件"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="回油管护套">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="回油管接头">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="三通接头">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#燃油管路组件"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="柴油滤清器出油管部件">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="输油泵进油管接头">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="回油管2">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#燃油管路组件"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="回油管1">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#燃油管路组件"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="套筒">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#燃油管路组件"/>
+                      </燃油管路总成>
+                    </F>
+                    <F>
+                      <燃油管路总成 rdf:ID="输油管夹">
+                        <S rdf:resource="#燃油管路组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油管路总成>
+                    </F>
+                  </燃料供给系统术语>
+                </F>
+                <F>
+                  <燃料供给系统术语 rdf:ID="燃油滤清器组件">
+                    <F>
+                      <燃油滤清器总成 rdf:ID="垫圈--8--">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#燃油滤清器组件"/>
+                      </燃油滤清器总成>
+                    </F>
+                    <F>
+                      <燃油滤清器总成 rdf:ID="螺栓--M8X20">
+                        <S rdf:resource="#燃油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油滤清器总成>
+                    </F>
+                    <F>
+                      <燃油滤清器总成 rdf:ID="燃油滤清器滤芯">
+                        <S rdf:resource="#燃油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油滤清器总成>
+                    </F>
+                    <F>
+                      <燃油滤清器总成 rdf:ID="燃油滤清器">
+                        <S rdf:resource="#燃油滤清器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </燃油滤清器总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <S rdf:resource="#燃料供给系统"/>
+                  </燃料供给系统术语>
+                </F>
+                <F>
+                  <燃料供给系统术语 rdf:ID="喷油泵组件">
+                    <F>
+                      <喷油泵总成 rdf:ID="柱塞偶件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#喷油泵组件"/>
+                      </喷油泵总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <喷油泵总成 rdf:ID="输油泵">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="螺栓M6X16">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <S rdf:resource="#燃料供给系统"/>
+                    <F>
+                      <喷油泵总成 rdf:ID="提前器总成">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#喷油泵组件"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="垫圈--12">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="提前器压紧螺母">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="垫圈--6-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#喷油泵组件"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="高压油泵润滑油管">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="喷油泵">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="喷油泵法兰垫片">
+                        <S rdf:resource="#喷油泵组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油泵总成>
+                    </F>
+                    <F>
+                      <喷油泵总成 rdf:ID="出油阀偶件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#喷油泵组件"/>
+                      </喷油泵总成>
+                    </F>
+                  </燃料供给系统术语>
+                </F>
+                <F>
+                  <燃料供给系统术语 rdf:ID="喷油器组件">
+                    <S rdf:resource="#燃料供给系统"/>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <喷油器总成 rdf:ID="油嘴耦件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#喷油器组件"/>
+                      </喷油器总成>
+                    </F>
+                    <F>
+                      <喷油器总成 rdf:ID="喷油器">
+                        <S rdf:resource="#喷油器组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </喷油器总成>
+                    </F>
+                  </燃料供给系统术语>
+                </F>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="启动系统">
+                <F>
+                  <起动系统术语 rdf:ID="启动电机组件">
+                    <F>
+                      <启动电机总成 rdf:ID="启动电机总成-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#启动电机组件"/>
+                      </启动电机总成>
+                    </F>
+                    <S rdf:resource="#启动系统"/>
+                    <Z rdf:resource="#bom"/>
+                  </起动系统术语>
+                </F>
+                <F>
+                  <起动系统术语 rdf:ID="发电机组件">
+                    <F>
+                      <发电机总成 rdf:ID="真空泵回油管部件">
+                        <S rdf:resource="#发电机组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="真空泵进油管部件">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <S rdf:resource="#启动系统"/>
+                    <F>
+                      <发电机总成 rdf:ID="回油接头">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <发电机总成 rdf:ID="进油螺塞">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="套管">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="发电机">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="密封垫圈10">
+                        <S rdf:resource="#发电机组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="回油管">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="双通接头-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="密封垫圈16">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                    <F>
+                      <发电机总成 rdf:ID="发电机总成-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#发电机组件"/>
+                      </发电机总成>
+                    </F>
+                  </起动系统术语>
+                </F>
+                <F>
+                  <起动系统术语 rdf:ID="电控系统">
+                    <F>
+                      <电控系统总成 rdf:ID="转速处理电路">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="运算放大器">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="电缆">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                    <S rdf:resource="#启动系统"/>
+                    <F>
+                      <电控系统总成 rdf:ID="传感器">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="电容">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <电控系统总成 rdf:ID="稳压二极管">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="控制系统">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="印制电路板">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="执行器">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="硬件电路">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="压敏电阻">
+                        <S rdf:resource="#电控系统"/>
+                        <Z rdf:resource="#bom"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="瞬态电压抑制二极管">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="凸轮曲轴传感器">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                    <F>
+                      <电控系统总成 rdf:ID="电源">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#电控系统"/>
+                      </电控系统总成>
+                    </F>
+                  </起动系统术语>
+                </F>
+                <S rdf:resource="#bom"/>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="进排气系统">
+                <S rdf:resource="#bom"/>
+                <F>
+                  <进排气系统术语 rdf:ID="排气管组件">
+                    <F>
+                      <排气管总成 rdf:ID="垫圈10-">
+                        <S rdf:resource="#排气管组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </排气管总成>
+                    </F>
+                    <F>
+                      <排气管总成 rdf:ID="螺母M10">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#排气管组件"/>
+                      </排气管总成>
+                    </F>
+                    <F>
+                      <排气管总成 rdf:ID="螺柱M10X30">
+                        <S rdf:resource="#排气管组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </排气管总成>
+                    </F>
+                    <F>
+                      <排气管总成 rdf:ID="排气接管垫片">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#排气管组件"/>
+                      </排气管总成>
+                    </F>
+                    <F>
+                      <排气管总成 rdf:ID="排气管">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#排气管组件"/>
+                      </排气管总成>
+                    </F>
+                    <S rdf:resource="#进排气系统"/>
+                    <Z rdf:resource="#bom"/>
+                  </进排气系统术语>
+                </F>
+                <F>
+                  <进排气系统术语 rdf:ID="进气管组件">
+                    <F>
+                      <进气管总成 rdf:ID="螺栓-M8X16">
+                        <S rdf:resource="#进气管组件"/>
+                        <S>
+                          <进排气系统术语 rdf:ID="增压器组件">
+                            <F>
+                              <增压器总成 rdf:ID="消旋叶片">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <进气管总成 rdf:ID="搭铁线">
+                                <S rdf:resource="#进气管组件"/>
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </进气管总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="涡轮叶片">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="柴油机涡轮">
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="压气机">
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <进气管总成 rdf:ID="进气管">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#进气管组件"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </进气管总成>
+                            </F>
+                            <F>
+                              <进气管总成 rdf:ID="进气接管垫">
+                                <S rdf:resource="#进气管组件"/>
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </进气管总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="压气机背盘">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="二级增压器">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="涡轮">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </增压器总成>
+                            </F>
+                            <S rdf:resource="#进排气系统"/>
+                            <F>
+                              <进气管总成 rdf:ID="垫圈--8">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#进气管组件"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </进气管总成>
+                            </F>
+                            <F>
+                              <进气管总成 rdf:ID="进气接管">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#进气管组件"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </进气管总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="压气机叶轮">
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="轴径流压气机">
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </增压器总成>
+                            </F>
+                            <F rdf:resource="#螺栓-M8X16"/>
+                            <F>
+                              <增压器总成 rdf:ID="两级串联压气机">
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </增压器总成>
+                            </F>
+                            <F>
+                              <进气管总成 rdf:ID="进气加热器">
+                                <Z rdf:resource="#bom"/>
+                                <S rdf:resource="#进气管组件"/>
+                                <S rdf:resource="#增压器组件"/>
+                              </进气管总成>
+                            </F>
+                            <F>
+                              <增压器总成 rdf:ID="涡轮增压器转子">
+                                <S rdf:resource="#增压器组件"/>
+                                <Z rdf:resource="#bom"/>
+                              </增压器总成>
+                            </F>
+                            <Z rdf:resource="#bom"/>
+                          </进排气系统术语>
+                        </S>
+                        <Z rdf:resource="#bom"/>
+                      </进气管总成>
+                    </F>
+                    <F rdf:resource="#进气接管垫"/>
+                    <F rdf:resource="#进气管"/>
+                    <Z rdf:resource="#bom"/>
+                    <F rdf:resource="#进气接管"/>
+                    <S rdf:resource="#进排气系统"/>
+                    <F rdf:resource="#进气加热器"/>
+                    <F rdf:resource="#垫圈--8"/>
+                    <F rdf:resource="#搭铁线"/>
+                  </进排气系统术语>
+                </F>
+                <F rdf:resource="#增压器组件"/>
+              </BOM术语>
+            </F>
+            <F>
+              <BOM术语 rdf:ID="配气系统">
+                <F>
+                  <配气机构术语 rdf:ID="齿轮室组件">
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X30">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="垫圈-8-">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X45">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="提前器盖">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="齿轮室盖垫片">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="垫圈10--">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="发电机支架">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="发电机固定螺栓">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺母M8----">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺母M10--">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X90">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="油封FB55X75X12">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="提前器盖垫片">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X40">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="定时指针">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X75">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X80">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="齿轮室">
+                        <S rdf:resource="#齿轮室组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="齿轮室垫片">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺柱M8X45">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <S rdf:resource="#配气系统"/>
+                    <F>
+                      <齿轮室总成 rdf:ID="螺栓M8X65">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                    <F>
+                      <齿轮室总成 rdf:ID="齿轮室盖">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#齿轮室组件"/>
+                      </齿轮室总成>
+                    </F>
+                  </配气机构术语>
+                </F>
+                <F rdf:resource="#正时齿轮系"/>
+                <F>
+                  <配气机构术语 rdf:ID="凸轮轴组件">
+                    <F>
+                      <凸轮轴总成 rdf:ID="平键C10X25">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#凸轮轴组件"/>
+                      </凸轮轴总成>
+                    </F>
+                    <F>
+                      <凸轮轴总成 rdf:ID="气门挺柱">
+                        <S rdf:resource="#凸轮轴组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </凸轮轴总成>
+                    </F>
+                    <F>
+                      <凸轮轴总成 rdf:ID="气门推杆">
+                        <Z rdf:resource="#bom"/>
+                        <S rdf:resource="#凸轮轴组件"/>
+                      </凸轮轴总成>
+                    </F>
+                    <F>
+                      <凸轮轴总成 rdf:ID="凸轮轴">
+                        <S rdf:resource="#凸轮轴组件"/>
+                        <Z rdf:resource="#bom"/>
+                      </凸轮轴总成>
+                    </F>
+                    <Z rdf:resource="#bom"/>
+                    <S rdf:resource="#配气系统"/>
+                  </配气机构术语>
+                </F>
+                <S rdf:resource="#bom"/>
+                <原理>
+                  <凸轮机构原理 rdf:ID="配气系统原理">
+                    <原理被用于 rdf:resource="#配气系统"/>
+                    <S>
+                      <机械原理 rdf:ID="凸轮机构">
+                        <F rdf:resource="#配气系统原理"/>
+                        <F>
+                          <凸轮机构原理 rdf:ID="配气系统功用">
+                            <原理被用于 rdf:resource="#配气系统"/>
+                            <S rdf:resource="#凸轮机构"/>
+                            <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >配气机构的功用是按照发动机每一气缸内所进行的工作循环和发火次序的要求，定时开启和关闭各气缸的进、排气门，使新鲜充量得以及时进入气缸，废气得以及时从气缸排出；在压缩与膨胀行程中，保证燃烧室的密封。新鲜充量对于汽油机而言是汽油和空气的混合气，对于柴油机而言是纯空气。</内容>
+                          </凸轮机构原理>
+                        </F>
+                        <F>
+                          <凸轮机构原理 rdf:ID="配气系统分类">
+                            <S rdf:resource="#凸轮机构"/>
+                            <原理被用于 rdf:resource="#配气系统"/>
+                            <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1）气门顶置式。进气门和排气门都倒挂在气缸盖上。气门组包括气门、气门导管、气门座、弹簧座、气门弹簧、锁片等零件；气门传动组一般由摇臂、摇臂轴、推杆、挺柱、凸轮轴和正时齿轮组成。气门顶置式配气机构的工作情况是：当气缸的工作循环需要将气门打开进行换气时，由曲轴通过传动机构驱动凸轮轴旋转，使凸轮轴上的凸轮凸起部分通过挺柱、推杆、调整螺钉推动摇臂摆转，摇臂的另一端便向下推开气门，同时使弹簧进一步压缩。当凸轮的凸起部分的顶点转过挺柱以后，便逐渐减小了对挺柱的推力，气门在弹簧张力的作用下开度逐渐减小，直至最后关闭。压缩和做功行程中，气门在弹簧张力的作用下严密关闭。
+气门顶置式配气机构根据凸轮轴的位置有以下三种型式：（1）凸轮轴下置式配气机构；凸轮轴装在曲轴箱内，直接由凸轮轴正时齿轮与曲轴正时齿轮相啮合，由曲轴带动。气门传动组包括上述全部零件，其应用最为广泛。（2）凸轮轴中置式配气机构：凸轮轴位于气缸体的上部。为了减小气门传动机构的往复运动的质量，对于高转速的发动机，可将凸轮轴的位置移到气缸体的上部，由凸轮轴经过挺柱直接驱动摇臂而省去推杆。该形式的配气机构因曲轴与凸轮轴的中心线距离较远，一般要在中间加入一个中间齿轮（惰轮）。（3）凸轮轴上置式配气机构：凸轮轴布置在气缸盖上。凸轮轴直接通过摇臂来驱动气门，没有挺柱和推杆，使往复运动的质量大为减小，对凸轮轴和气门弹簧的要求也最低，因此它适用于高速强化发动机。
+四行程发动机每完成一个工作循环，曲轴旋转两圈，各缸的进、排气门各开启一次，即凸轮轴只转一圈，所以曲轴与凸轮轴的传动比为2：1。2）气门侧置式。进气门和排气、门都装置在气缸体的一侧。</内容>
+                          </凸轮机构原理>
+                        </F>
+                      </机械原理>
+                    </S>
+                    <内容 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >当发动机工作时，曲轴通过正时齿轮驱动凸轮轴旋转，使凸轮轴上的凸轮凸起部分通过挺杆、推杆、调整螺钉，推动摇臂摆转，摇臂的另一端便向下推开气门，同时使弹簧进一步压缩。当凸轮的凸起部分的顶点转过挺杆以后，便逐渐减小了对挺杆的推力，气门在其弹簧张力的作用下，开度逐渐减小，直至最后关闭，进气或排气过程即结束。压缩和做功过程中，气门在弹簧张力作用下严密关闭，使汽缸密闭。当气门完全关闭后，在气门杆尾端与摇臂端面间应留有一定的间隙，称为气门间缭，其作用是保证气门密封可靠和发动机工作良好。</内容>
+                  </凸轮机构原理>
+                </原理>
+                <原理 rdf:resource="#配气系统功用"/>
+                <原理 rdf:resource="#配气系统分类"/>
+              </BOM术语>
+            </F>
+          </BOM术语>
+        </Z>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="凸轮轴压板">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="凸轮轴正时齿轮">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="螺栓M8X16">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="燃油泵正时齿轮">
+        <S rdf:resource="#正时齿轮系"/>
+        <Z rdf:resource="#bom"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="螺栓M12X30">
+        <S rdf:resource="#正时齿轮系"/>
+        <Z rdf:resource="#bom"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="垫圈-8">
+        <S rdf:resource="#正时齿轮系"/>
+        <Z rdf:resource="#bom"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="正时惰齿轮轴">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <Z rdf:resource="#bom"/>
+    <F>
+      <正时齿轮系总成 rdf:ID="正时惰齿轮">
+        <S rdf:resource="#正时齿轮系"/>
+        <Z rdf:resource="#bom"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="螺栓M8X50">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="机油泵主动齿轮">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <S rdf:resource="#配气系统"/>
+    <F>
+      <正时齿轮系总成 rdf:ID="凸轮轴正时齿轮压板">
+        <S rdf:resource="#正时齿轮系"/>
+        <Z rdf:resource="#bom"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="垫圈-12">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="正时惰齿轮衬套">
+        <S rdf:resource="#正时齿轮系"/>
+        <Z rdf:resource="#bom"/>
+      </正时齿轮系总成>
+    </F>
+    <F>
+      <正时齿轮系总成 rdf:ID="正时惰齿轮压板">
+        <Z rdf:resource="#bom"/>
+        <S rdf:resource="#正时齿轮系"/>
+      </正时齿轮系总成>
+    </F>
+  </配气机构术语>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

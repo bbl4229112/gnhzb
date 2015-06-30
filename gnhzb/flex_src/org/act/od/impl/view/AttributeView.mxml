@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:DataGrid xmlns:mx="http://www.adobe.com/2006/mxml" editable="true" 
+			 initialize="init()"
+			 itemEditEnd="attributeViewVH.onEditEnd(event)">
+
+	<mx:Metadata>
+		[Event(name = OrDesignerControl.SHOW_ATTRIBUTE, 
+			type = "org.act.od.impl.events.ShowAttributeEvent")]
+	</mx:Metadata>
+
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.viewhelper.AttributeViewVH;
+			import org.act.od.impl.model.AttributeViewModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+
+			[Bindable]
+			private var attriViewModel :AttributeViewModel = OrDesignerModelLocator.getInstance().getAttributeViewModel();
+			//没用到……20120901
+			private var attributeViewVH :AttributeViewVH = new AttributeViewVH(this, AttributeViewVH.VH_KEY);
+
+			private function init() : void {
+				att_value.itemRenderer = new ClassFactory(AttributeItemTextRenderer);
+				
+			}
+
+		]]>
+	</mx:Script>
+
+	<mx:columns>
+		<mx:DataGridColumn id="att_name" sortable="false" headerText="属性名称" textAlign="center"
+						   dataField="name" editable="false" width="150" />
+		<mx:DataGridColumn id="att_value" sortable="false" headerText="属性内容" textAlign="center"
+						   wordWrap="true" editorDataField="newValue" rendererIsEditor="true" width="350"/>
+		<!--<mx:DataGridColumn sortable="false" editable="false"/>-->
+	</mx:columns>
+
+	<mx:dataProvider>
+		{attriViewModel.attributes}
+	</mx:dataProvider>
+
+</mx:DataGrid>

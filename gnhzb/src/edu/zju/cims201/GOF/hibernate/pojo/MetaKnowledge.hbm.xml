@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-cascade="none" default-access="property"
+	default-lazy="true" auto-import="true"><!-- edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge root -->
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"
+		table="caltks.MetaKnowledge" mutable="true" polymorphism="implicit"
+		dynamic-update="false" dynamic-insert="false"
+		select-before-update="false" optimistic-lock="version">
+		<id name="id" type="java.lang.Long" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="abstracttext" column="abstractText"
+			type="string" unique="false" optimistic-lock="true" lazy="false"
+			generated="never" />
+		<property name="securitylevel" column="securityLevel"
+			type="string" unique="false" optimistic-lock="true" lazy="false"
+			generated="never" />
+		<property name="knowledgesourcefilepath"
+			column="knowledgeSourceFilePath" type="string" unique="false"
+			optimistic-lock="true" lazy="false" generated="never" />
+		<many-to-one name="version" column="verID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.Version" not-null="true"
+			cascade="all" update="true" unique="true" insert="true" 
+			optimistic-lock="true" not-found="exception" embed-xml="true" />
+		<many-to-one name="commentrecord" column="commentrecordID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.CommentRecord"
+			cascade="all" update="true" unique="true" insert="true"
+			optimistic-lock="true" not-found="exception" embed-xml="true" />
+		<many-to-one name="ktype" column="ktypeID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.Ktype" not-null="true"
+			unique="false" update="true" insert="true" optimistic-lock="true" cascade="none" 
+			not-found="exception" embed-xml="true" />
+		<many-to-one name="domainnode" column="domainNodeID"
+			class="edu.zju.cims201.GOF.hibernate.pojo.DomainTreeNode" cascade="none"
+			not-null="false" unique="false" update="true" insert="true" 
+			optimistic-lock="true" not-found="exception" embed-xml="true" />
+		<idbag name="citationknowledges" 
+			table="caltks.CitationKnowledges" cascade="all" mutable="true"
+			optimistic-lock="true" embed-xml="true">
+			<collection-id column="id" type="java.lang.Long">
+				<generator class="increment" />
+			</collection-id>
+			<key column="cited_FK" on-delete="noaction" />
+			<many-to-many column="citaion_FK" 
+				class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"
+				embed-xml="true" not-found="exception" unique="false" />
+		</idbag>
+		<property name="uploadtime" column="uploadTime" type="timestamp"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<many-to-one name="uploader" column="uploaderID" not-null="true"
+			class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser" unique="false"
+			update="true" insert="true" optimistic-lock="true"
+			not-found="exception" embed-xml="true" />
+		<many-to-one name="knowledgetype" column="knowledgetypeId"
+			not-null="false" cascade="none" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.Knowledgetype"
+			unique="false" update="true" insert="true" optimistic-lock="true" lazy="false"
+			not-found="exception" embed-xml="true" />
+		<set name="categories" table="caltks.KnowledgeCategories" cascade="none"
+			sort="unsorted" inverse="false" mutable="true" optimistic-lock="true"
+			embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<many-to-many
+				class="edu.zju.cims201.GOF.hibernate.pojo.CategoryTreeNode"
+				embed-xml="true" not-found="exception" unique="false">
+				<column name="categoryTreeNodeID" />
+			</many-to-many>
+		</set>
+		<property name="isvisible" column="isVisible" type="boolean"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<property name="status" column="status" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<property name="identifier" column="identifier" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<set name="keywords" table="caltks.KnowledgesKeywords" 
+			cascade="none" sort="unsorted" inverse="false" mutable="true"
+			optimistic-lock="true" embed-xml="true">
+			<key column="knowledgeID" not-null="true"
+				on-delete="noaction" />
+			<many-to-many 
+				class="edu.zju.cims201.GOF.hibernate.pojo.Keyword" embed-xml="true"
+				not-found="exception" unique="false">
+				<column name="keywordID" not-null="true" />
+			</many-to-many>
+		</set>
+		<list name="kauthors" table="caltks.KnowledgesAuthors"
+			cascade="none" inverse="false" mutable="true" optimistic-lock="true"
+			embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<list-index column="orderID" base="0" />
+			<many-to-many
+				class="edu.zju.cims201.GOF.hibernate.pojo.Author" embed-xml="true"
+				not-found="exception" unique="false">
+				<column name="authorID" />
+			</many-to-many>
+		</list>
+		<set name="attachments" table="caltks.Attachments" lazy="true"
+			cascade="all-delete-orphan" sort="unsorted" inverse="false"
+			mutable="true" optimistic-lock="true" embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<one-to-many
+				class="edu.zju.cims201.GOF.hibernate.pojo.Attachment"
+				not-found="exception" embed-xml="true" />
+		</set>
+		<set name="comments" table="caltks.Comment" lazy="true" cascade="all-delete-orphan"
+			sort="unsorted" inverse="false" mutable="true" optimistic-lock="true"
+			embed-xml="true">
+			<key column="knowledgeID" on-delete="noaction" />
+			<one-to-many
+				class="edu.zju.cims201.GOF.hibernate.pojo.Comment"
+				not-found="exception" embed-xml="true" />
+		</set>
+		<property name="flashfilepath" column="flashFilePath"
+			type="string" unique="false" optimistic-lock="true" lazy="false"
+			generated="never" />
+		<property name="titlename" column="titleName" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never" />
+		<set name="userknowledgetags" table="caltks.UserKnowledgeTag" cascade="none"
+			inverse="false" sort="unsorted" mutable="true" optimistic-lock="true"
+			embed-xml="true">
+			<key on-delete="noaction">
+				<column name="knowledgeID" not-null="true" />
+			</key>
+			<one-to-many
+				class="edu.zju.cims201.GOF.hibernate.pojo.UserKnowledgeTag"
+				not-found="exception" embed-xml="true" />
+		</set>
+		
+		<joined-subclass
+			name="edu.zju.cims201.GOF.hibernate.pojo.Simpleknowledge"
+			table="CALTKS_DK_Simpleknowledge" dynamic-update="false"
+			dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+		</joined-subclass>
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Avidmknowledge"
+			table="CALTKS_DK_Avidmknowledge" dynamic-update="false"
+			dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="avidmtype" not-null="true" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmdocumentiid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmfileiid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmversioniid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmproductiid" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="avidmglobledocumentid" not-null="false"
+				length="100" type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="avidmhost" not-null="false" length="100"
+				type="java.lang.String" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+		</joined-subclass>
+		<joined-subclass
+			name="edu.zju.cims201.GOF.hibernate.pojo.Question"
+			table="CALTKS_DK_Question">
+			<key column="id" />
+			<property name="questioncontent" not-null="false"
+				length="600" type="java.lang.String" />
+			<property name="questionstatus" not-null="false" length="19"
+				type="java.lang.Long" />
+			<property name="questionsupplement" not-null="false"
+				length="200" type="java.lang.String" />
+		</joined-subclass>
+		
+		<joined-subclass
+			name="edu.zju.cims201.GOF.hibernate.pojo.Journalarticle"
+			table="CALTKS_DK_Journalarticle" dynamic-update="false"
+			dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction" />
+			<property name="journaltitle" not-null="false" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="dateofpublication" not-null="false"
+				type="timestamp" unique="false" optimistic-lock="true" lazy="false"
+				generated="never" />
+			<property name="vol" not-null="false" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="no" not-null="false" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="pagerange" not-null="false" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="organization" not-null="false" length="300"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="authorintroduction" not-null="false"
+				length="500" type="java.lang.String" unique="false"
+				optimistic-lock="true" lazy="false" generated="never" />
+			<property name="funding" not-null="false" length="500"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+			<property name="refer" not-null="false" length="3000"
+				type="java.lang.String" unique="false" optimistic-lock="true"
+				lazy="false" generated="never" />
+		</joined-subclass>
+		
+		<joined-subclass
+			name="edu.zju.cims201.GOF.hibernate.pojo.Report"
+			table="CALTKS_DK_Report">
+			<key column="id" />
+			<property name="dateofreport" not-null="false"
+				type="timestamp" />
+			<property name="refer" not-null="false" length="3000"
+				type="java.lang.String" />
+		</joined-subclass>
+		
+		<joined-subclass 
+			name="edu.zju.cims201.GOF.hibernate.pojo.Thesissecond" 
+			table="CALTKS_DK_Thesissecond">
+			<key column="id"/>
+			<property name="danwei" not-null="false" length="300" type="java.lang.String"/>
+		</joined-subclass>
+		<joined-subclass 
+			name="edu.zju.cims201.GOF.hibernate.pojo.Thesis" 
+			table="CALTKS_DK_Thesis" dynamic-update="false" dynamic-insert="false" select-before-update="false">
+			<key column="id" on-delete="noaction"/>
+			<property name="danwei" not-null="false" length="300" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+		</joined-subclass>
+		
+		<joined-subclass 
+			name="edu.zju.cims201.GOF.hibernate.pojo.News" 
+			table="CALTKS_DK_News">
+			<key column="id"/>
+			<property name="newsbody" not-null="false" length="20000" type="text"/>
+			<property name="url" not-null="false" length="300" type="java.lang.String"/>
+			<property name="parenturl" not-null="false" length="300" type="java.lang.String"/>
+			<property name="newscontent" not-null="false" length="20000" type="text"/>
+			<property name="publictime" not-null="false" length="50" type="java.lang.String"/>
+		</joined-subclass>
+		
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Patent" table="CALTKS_DK_Patent">
+			<key column="id"/>
+			<property name="patentId" not-null="true" length="100" type="java.lang.String"/>
+			<property name="appCode" not-null="true" length="100" type="java.lang.String"/>
+			<property name="appDate" not-null="false" type="timestamp"/>
+			<property name="pubCode" not-null="false" length="60" type="java.lang.String"/>
+			<property name="pubDate" not-null="false" type="timestamp"/>
+			<property name="ipc" not-null="false" length="400" type="java.lang.String"/>
+			<property name="catCode" not-null="false" length="400" type="java.lang.String"/>
+			<property name="priory" not-null="false" length="400" type="java.lang.String"/>
+			<property name="appAddress" not-null="false" length="400" type="java.lang.String"/>
+			<property name="invPerson" not-null="false" length="500" type="java.lang.String"/>
+			<property name="entNationDate" not-null="false" length="200" type="java.lang.String"/>
+			<property name="subPerson" not-null="false" length="400" type="java.lang.String"/>
+			<property name="subAgent" not-null="false" length="400" type="java.lang.String"/>
+			<property name="patAbstract" not-null="false" length="4000" type="java.lang.String"/>
+			<property name="mainPower" not-null="false" length="4000" type="java.lang.String"/>
+			<property name="appPersonNation" not-null="false" length="200" type="java.lang.String"/>
+			<property name="appPersonArea" not-null="false" length="200" type="java.lang.String"/>
+			<property name="cerDate" not-null="false" type="timestamp"/>
+			<property name="intPub" not-null="false" length="200" type="java.lang.String"/>
+			<property name="intApp" not-null="false" length="200" type="java.lang.String"/>
+			<property name="cnType" not-null="false" length="20" type="java.lang.String"/>
+			<property name="ipcPart" not-null="false" length="20" type="java.lang.String"/>
+			<property name="ipcLclass" not-null="false" length="50" type="java.lang.String"/>
+			<property name="ipcSclass" not-null="false" length="50" type="java.lang.String"/>
+			<property name="outerOlclass" not-null="false" length="50" type="java.lang.String"/>
+			<property name="outerOsclass" not-null="false" length="50" type="java.lang.String"/>
+			<property name="fullurl" not-null="false" length="2000" type="java.lang.String"/>
+			<property name="poweredurl" not-null="false" length="400" type="java.lang.String"/>
+			<property name="ispowered" not-null="false" length="10" type="java.lang.String"/>
+			<property name="category" not-null="false" length="200" type="java.lang.String"/>
+			<property name="fullurltmp" not-null="false" length="2000" type="java.lang.String"/>
+			<property name="pagenumber" not-null="false" length="300" type="java.lang.String"/>
+			<property name="poweredfullurl" not-null="false" length="500" type="java.lang.String"/>
+			<property name="poweredpagenumber" not-null="false" length="45" type="java.lang.String"/>
+		</joined-subclass>
+		
+		<joined-subclass name="edu.zju.cims201.GOF.hibernate.pojo.Article" table="CALTKS_DK_Article">
+			<key column="id"/>
+			<property name="articlecontent" not-null="true" length="4000" type="text"/>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

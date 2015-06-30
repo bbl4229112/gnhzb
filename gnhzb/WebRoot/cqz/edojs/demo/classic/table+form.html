@@ -1,0 +1,299 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">    
+    <h1>本例演示了EdoJS的表单和表格数据源绑定联动处理：</h1>
+    <ul style="margin:20px;">
+        <li>表单和表单共用一个数据源</li>
+        <li>数据源有一个"数据指针"状态, 进行第一个/前一个/下一个/最后一个记录导航</li>
+        <li>表格单元格编辑的值实施反映到表单上</li>
+        <li>表单编辑的值实施反映到表格上</li>
+        <li>另外演示了大量的表单组件, 如combo,spinner,slider,treeselect,multicom, checkgroup等组件使用场景</li>
+    </ul>    
+    <input type="button" value="新增" onclick="add()"/>
+<input type="button" value="删除" onclick="del()"/>
+<input type="button" value="修改" onclick="update()"/>
+<input type="button" value="移动" onclick="move()"/><br />
+<input type="button" value="清空" onclick="clear2()"/>
+<input type="button" value="过滤" onclick="filter()"/>
+<input type="button" value="排序" onclick="sort()"/>
+<input type="button" value="重置行" onclick="reset()"/>
+<br />
+<input type="button" value="first" onclick="first()"/>
+<input type="button" value="prev" onclick="prev()"/>
+<input type="button" value="next" onclick="next()"/>
+<input type="button" value="last" onclick="last()"/>        
+</body>
+</html>
+
+
+<script src="../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="../js/lists/table/data.js" type="text/javascript"></script>
+<script type="text/javascript">
+var employeeData = new Edo.data.DataTable().set('data', Employees);
+var positionData = new Edo.data.DataTree(Positions);
+//表单
+Edo.create({
+    autoChange: true,   //容器内组件值改变, 自动提交到data上, 从而是关联的表格行数据得到更新
+    render: document.body,
+    id: 'employeeForm',
+    type: 'fieldset',
+    legend: '员工资料',
+    padding: [10,20,15,15],layout: 'horizontal',horizontalGap: 20,
+    data: employeeData,
+    
+    children: [
+        {type: 'ct',children:[
+            {type: 'formitem', label: '员工账号:', children: [
+                {name: 'ID', type: 'text', readOnly: true}
+            ]},
+            {type: 'formitem', label: '姓名:', children: [
+                {name: 'name', type: 'text',
+                    onvaluechange: function(e){
+                        //alert(e.value);
+                    }
+                }
+            ]},
+            {type: 'formitem', label: '部门:', children: [
+                {name: 'department', type: 'combo', data: Departments, valueField: 'id', displayField: 'name'}
+            ]},
+            {type: 'formitem', label: '性别:', children: [
+                {name: 'gender', type: 'combo', data: Genders, valueField: 'id', displayField: 'name'}
+            ]},
+            {type: 'formitem', label: '年龄:', children: [
+                {name: 'age', type: 'slider'}
+            ]},
+            {type: 'formitem', label: '国家:', children: [
+                {name: 'country', type:'combo', data: Countrys, valueField: 'id', displayField: 'name'}
+            ]}
+        ]},
+        {type: 'ct',children:[            
+            {type: 'formitem', label: '职位:', children: [
+                {name: 'position', type: 'treeselect', data: Edo.clone(Positions), valueField: 'id', displayField: 'name', multiSelect: false}
+            ]},
+            {type: 'formitem', label: '薪水:', children: [
+                {name: 'salary', type: 'text'}
+            ]},
+            {type: 'formitem', label: '学历:', children: [
+                {name: 'educational',type:'combo', data: Educationals, valueField: 'id', displayField: 'name'}
+            ]},
+            {type: 'formitem', label: '婚否:', children: [
+                {name: 'married', type: 'combo', data: MarryStatus, valueField: 'id', displayField: 'name'}
+            ]},
+            {type: 'formitem', label: '出生日期:', children: [
+                {name: 'birthday', type: 'date', required: false, valueFormat: true}
+            ]},
+            {type: 'formitem', label: '邮箱:', children: [
+                {name: 'mail', type: 'text'}
+            ]}
+        ]},
+        {type: 'ct',children:[            
+            {type: 'formitem', label: '备注:', children: [
+                {name: 'notes', type: 'textarea', width: 140, height: 80}
+            ]},
+            {type: 'formitem',label: '兴趣爱好:',
+                children:[
+                    {name: 'interest',type: 'checkgroup', repeatDirection: 'horizontal',repeatItems: 3,displayField: 'name',checkField: 'checked',valueField: 'id',data: Interests}
+                ]
+            }
+        ]}
+    ]
+});
+//表格
+function educationalRenderer(v){
+    for(var i=0,l=Educationals.length; i<l; i++){
+        var o = Educationals[i];
+        if(o.id == v) return o.name;
+    }
+}
+function departmentRenderer(v){
+    for(var i=0,l=Departments.length; i<l; i++){
+        var o = Departments[i];
+        if(o.id == v) return o.name;
+    }
+}
+function countryRenderer(v){
+    for(var i=0,l=Countrys.length; i<l; i++){
+        var o = Countrys[i];
+        if(o.id == v) return o.name;
+    }
+}
+function interestRenderer(v){
+    if(!v) return;
+    var vs = v.split(',');
+    var sb = [];
+    for(var i=0,l=Interests.length; i<l; i++){
+        var o = Interests[i];
+        vs.each(function(id){
+            if(o.id == id) sb.push(o.name);
+        });
+    }
+    return sb.join(',');
+}
+
+function positionRenderer(v){
+    var o = positionData.find({id: v});
+    return o ? o.name : '';
+}
+new Edo.lists.Table()
+.set({
+    id: 'table1',
+    render: document.body,
+    rowHeight: 'auto',                              
+    width: 600,
+    height: 300,
+    enableCellSelect: true,
+    horizontalLine: true,
+    verticalLine: true,
+    enableStripe: false,
+//                verticalScrollPolicy: 'off',
+//                horizontalScrollPolicy: 'off',
+    //autoColumns: true,
+    //headerVisible: false,
+    rowSelectMode: 'multi',    
+    enableDragDrop: true,     
+    //dragDropAction: 'copy', 
+    
+    autoColumns: false,          
+    //cellValidAction: 'beforesubmitedit',
+    
+    filterRowVisible: false,
+    filterRowPosition: 'top',
+    summaryRowVisible: true,
+    summaryRowPosition: 'bottom',
+    foolterVisible: false,
+    data: employeeData,
+    columns:[
+        Edo.lists.Table.createMultiColumn(),
+        {header: '账号信息',
+            columns:[
+                {header: '员工账号', dataIndex: 'ID'},
+                {header: '姓名', dataIndex: 'name', editor: 'text'}  
+            ]
+        },
+        {header: '部门职务',
+            columns:[
+                {header: '部门', dataIndex: 'department',
+                    renderer: departmentRenderer,
+                    editor:{type:'combo', data: Departments, valueField: 'id', displayField: 'name',
+                        oneditcomplete: function(e){
+                            var record = this.owner.getEditRecord();
+                            //editdata是原值, data是新值
+                            if(e.editdata !=e.data){
+                                this.owner.data.update(record, 'position', null);
+                            }
+                        }
+                    }
+                },
+                {header: '职位', dataIndex: 'position',
+                    renderer: positionRenderer,
+                    editor:{type:'treeselect', data: positionData, valueField: 'id', displayField: 'name',multiSelect: false,
+                        oneditstart: function(e){
+                            var department = this.owner.getSelected().department;
+                            this.data.filter(function(o){
+                                if(o.id.indexOf(department) == 0) return true;
+                                return false;
+                            });
+                        }
+                    }
+                }
+            ]
+        },
+        {header: '员工信息',
+            columns:[
+                Edo.lists.Table.createRadioColumn({header: '性别', dataIndex: 'gender', data: Genders, valueField: 'id', displayField: 'name'}),       
+                Edo.lists.Table.createCheckColumn({
+                    header: '婚否',trueValue: '1', falseValue: '2', dataIndex: 'married'
+                }),
+                {header: '薪水', dataIndex: 'salary', editor: 'spinner'},
+                {header: '学历', dataIndex: 'educational',
+                    renderer: educationalRenderer,
+                    editor:{type:'combo', data: Educationals, valueField: 'id', displayField: 'name'}
+                },
+                {header: '出生日期', dataIndex: 'birthday', editor: {type: 'date', valueFormat: true}},
+                {header: '年龄', dataIndex: 'age', editor: 'spinner'},
+                {header: '邮箱', dataIndex: 'mail'},        
+                {header: '国家', dataIndex: 'country',
+                    renderer: countryRenderer,
+                    editor:{type:'combo', data: Countrys, valueField: 'id', displayField: 'name'}
+                },
+                {header: '兴趣', dataIndex: 'interest',
+                    renderer: interestRenderer,
+                    editor:{type:'multicombo', data: Interests, valueField: 'id', displayField: 'name'}
+                },        
+                {header: '备注', dataIndex: 'notes',
+                    editor: {
+                        type: 'textarea',
+                        oneditstart: function(e){
+                            this.minWidth = 200;
+                            this.minHeight = 100;
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+});
+
+
+//-------------------------------
+function add(){
+    var o = {};
+    
+    table1.data.add(o);
+    table1.data.select(o);
+    //table1.beginEdit(1,0);
+}
+function del(){
+    var sels = table1.getSelecteds();    
+    alert(sels.length+":"+table1.getSelected());    
+    table1.data.removeRange(sels);
+}
+function update(){
+    var sel = table1.getSelected();    
+    table1.data.update(sel, 1, new Date());
+}
+function move(){
+    table1.data.move(table1.data.getAt(3), 1);
+}
+function clear2(){
+    table1.data.clear();
+}
+function filter(){
+    table1.data.filter(function(o, index){
+        if(index == 2 || index == 4) return true;
+        else return false;
+    });
+}
+function sort(){
+    table1.data.sort(function(pre, next){       //小的排前
+        return next[0] < pre[0];
+    });
+}
+function reset(){
+    var sel = table1.getSelected(); 
+    table1.data.reset(sel);
+}
+function resetField(){
+    var sel = table1.getSelected(); 
+    table1.data.resetField(sel, 1);
+}
+//---------------------------------
+function first(){
+    table1.data.firstSelect();
+}
+function prev(){
+    table1.data.prevSelect();
+}
+function next(){
+    table1.data.nextSelect();
+}
+function last(){
+    table1.data.lastSelect();
+}
+
+table1.data.firstSelect();
+</script>

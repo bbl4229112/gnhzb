@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:view="org.act.od.impl.view.*"
+		   creationComplete="add_creationCompleteHandler(event)" xmlns:buttons="org.act.od.impl.figure.buttons.*" >
+	<mx:Script>
+		<![CDATA[
+			import com.adobe.serialization.json.*;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.RemoteObject;
+			
+			import org.act.od.framework.view.ViewLocator;
+			import org.act.od.impl.events.KnowledgeViewAppEvent;
+			import org.act.od.impl.figure.AbstractFigure;
+			import org.act.od.impl.model.FigureEditorModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.viewhelper.FigureAttributeNavigatorVH;
+			import org.gif.player.GIFPlayer;
+			
+			public var currentFigure:AbstractFigure;
+			private var remote:RemoteObject;
+			private var totalremote:RemoteObject;
+			private var pagesremote:RemoteObject;
+			private var norecord:Label;
+			private var img:Image;
+			[Bindable]private var total:Number = 0;
+			[Bindable]private var pages:Number = 1;
+			[Bindable]private var currentPage:Number = 1;
+			[Bindable]private var pageSize:Number = 10;
+			
+			protected function SearchKnowledge(event:Event):void {
+				if(keyword.text == "" || keyword.text == "点此输入检索词……") {
+					Alert.show("请输入检索词！", "提示");
+				} else {
+					tip.visible = false;
+					norecord.visible = false;
+					img.visible = true;
+					remote.getKnowledgeByTitle(keyword.text,0,this.pageSize);
+					remote.addEventListener(ResultEvent.RESULT, ListKnowledge);
+					this.currentPage = 1;
+					totalremote.getKnowledgeTotal(keyword.text,0,this.pageSize);
+					totalremote.addEventListener(ResultEvent.RESULT, totalHandler);
+					pagesremote.getKnowledgePages(keyword.text,0,this.pageSize);
+					pagesremote.addEventListener(ResultEvent.RESULT, pagesHandler);
+				}							
+			}
+			
+			protected function ListKnowledge(event:ResultEvent):void {
+				var dataArray:ArrayCollection = event.result as ArrayCollection;
+				knowledgeList.dataProvider = dataArray;
+				img.visible = false;
+			}
+			
+			protected function totalHandler(event:ResultEvent):void {
+				this.total = Number(event.result);
+				norecord.visible = this.total==0?true:false;
+				img.visible = false;
+			}
+			
+			protected function pagesHandler(event:ResultEvent):void {
+				this.pages = Number(event.result);
+			}
+			
+			protected function keyword_clickHandler(event:MouseEvent):void {
+				keyword.text = "";
+			}
+			
+			protected function keyword_focusOutHandler(event:FocusEvent):void {
+//				keyword.text = "查找系统中的知识进行关联……";
+			}
+			
+			protected function keyword_changeHandler(event:Event):void {				
+			}
+			
+			protected function addKnowledge_handler(event:Event):void {
+				if(knowledgeList.selectedItem == null) {
+					Alert.show("请选择要添加的知识条目！", "提示");
+				} else {
+					var col:DataGridColumn = knowledgeList.columns[0];
+					var knowledgeId:Number = knowledgeList.selectedItem[col.dataField];
+					var activeModel:FigureEditorModel = OrDesignerModelLocator.getInstance().getFigureEditorNavigatorModel().activeFigureEditorModel;
+					
+					var xmlId:Number = Number(activeModel.rootModel.fileID);    //获得当前xml文件的id，20120908。
+					currentFigure = OrDesignerModelLocator.getInstance().getKnowledgeViewModel().editedFigure;
+					var figureId:String = currentFigure.figureId;
+					var remote:RemoteObject = new RemoteObject();
+					remote.destination = "knowledgeSource";
+					var faNavVH:FigureAttributeNavigatorVH = 
+						ViewLocator.getInstance().getViewHelper(FigureAttributeNavigatorVH.VH_KEY) as FigureAttributeNavigatorVH;
+					var selectedIndex:int = faNavVH.figureAttributeNavigator.selectedIndex;
+					if(selectedIndex == 1) {
+						remote.addRecord(xmlId, figureId, knowledgeId, "input");
+					} else if(selectedIndex == 2) {
+						remote.addRecord(xmlId, figureId, knowledgeId, "related");
+					} else if(selectedIndex == 3) {
+						remote.addRecord(xmlId, figureId, knowledgeId, "output");
+					}
+					remote.addEventListener(ResultEvent.RESULT, addKnowledgeResult_handler);
+				}
+			}
+			
+			protected function addKnowledgeResult_handler(event:ResultEvent):void {
+				var result:String = event.result as String;
+				if(result == "该节点已经添加了该知识！") {
+					Alert.show("该节点已经添加了该知识！", "提示");
+				} else if(result == "添加成功！") {
+//					Alert.show("添加成功！", "提示");
+					new KnowledgeViewAppEvent(KnowledgeViewAppEvent.KNOWLEDGEVIEW_UPDATE,
+						{selectedFigure:currentFigure}).dispatch();
+					
+				} else if(result == "添加失败！") {
+					Alert.show("添加失败！", "提示");
+				}
+			}
+			
+			private function RowNum2(item:Object, column:DataGridColumn):String {
+				var index:int = this.knowledgeList.dataProvider.getItemIndex(item) +1 + 
+					this.pageSize * (this.currentPage - 1);
+				return String(index);
+			}
+			
+			protected function keyword_keyDownHandler(event:KeyboardEvent):void
+			{
+				if(event.keyCode == Keyboard.ENTER) {
+					this.SearchKnowledge(event);
+				}
+			}
+			
+			protected function firstClickHandler(event:MouseEvent):void {
+				remote.getKnowledgeByTitle(keyword.text,0,this.pageSize);
+				remote.addEventListener(ResultEvent.RESULT, ListKnowledge);
+				this.currentPage = 1;
+			}
+			
+			protected function preClickHandler(event:MouseEvent):void {
+				this.currentPage--;	
+				remote.getKnowledgeByTitle(keyword.text,this.currentPage-1,this.pageSize);
+				remote.addEventListener(ResultEvent.RESULT, ListKnowledge);
+			}
+			
+			protected function nextClickHandler(event:MouseEvent):void {
+				this.currentPage++;
+				remote.getKnowledgeByTitle(keyword.text,this.currentPage-1,this.pageSize);
+				remote.addEventListener(ResultEvent.RESULT, ListKnowledge);
+			}
+			
+			protected function lastClickHandler(event:MouseEvent):void {
+				remote.getKnowledgeByTitle(keyword.text,Math.ceil(this.total/this.pageSize)-1,this.pageSize);
+				remote.addEventListener(ResultEvent.RESULT, ListKnowledge);
+				this.currentPage = Math.ceil(this.total/this.pageSize);
+			}
+			
+			protected function add_creationCompleteHandler(event:FlexEvent):void
+			{
+				remote = new RemoteObject();
+				remote.destination = "knowledgeSource";
+				totalremote = new RemoteObject();
+				totalremote.destination = "knowledgeSource";
+				pagesremote = new RemoteObject();
+				pagesremote.destination = "knowledgeSource";
+				norecord = new Label();
+				
+				norecord.text = "没有检索到记录，请重新输入检索词。";
+				norecord.setStyle("color", "red");
+				norecord.setStyle("fontSize", 15);
+				norecord.setStyle("fontWeight", "bold");
+				norecord.x = 50;
+				norecord.y = 60;
+				norecord.visible = false;
+				this.addChild(norecord);
+				
+				var waiting:GIFPlayer = new GIFPlayer(true);
+				var request:URLRequest = new URLRequest("businessactivities/assets/waiting.gif");
+				waiting.load(request);
+				img = new Image();
+				img.x = 150;
+				img.y = 80;
+				img.visible = false;
+				img.addChild(waiting);
+				this.addChild(img);
+				
+//				keyword.focusEnabled = true;
+//				keyword.setFocus();
+//				keyword.drawFocus(true);
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:TextInput id="keyword" keyDown="keyword_keyDownHandler(event)" x="0" y="0" width="235" height="23"
+				  change="keyword_changeHandler(event)" text="点此输入检索词……" 
+				  click="keyword_clickHandler(event)" focusOut="keyword_focusOutHandler(event)"/>
+	<mx:Button x="238" y="0" label="检索"  
+			   click="SearchKnowledge(event)" 
+			   icon="@Embed('../assets/icon/container/search.gif')"
+			   />
+	<!--<mx:Label x="0" y="29" id="knowledgeListLabel" width="150"
+			  fontWeight="bold" text="检索到【{total}】条结果:"  visible="{this.total!=0?true:false}"/>-->
+	<mx:DataGrid id="knowledgeList" x="0" y="26" width="500" height="{this.height-62}" variableRowHeight="true"
+				 visible="{this.total!=0?true:false}">
+		<mx:columns>
+			<mx:DataGridColumn visible="false" dataField="id" headerText="id" textAlign="center" width="45"/>
+			<mx:DataGridColumn labelFunction="RowNum2" headerText="序号" textAlign="center" width="45"/>
+			<mx:DataGridColumn dataField="titleName" headerText="知识标题" textAlign="center" width="220"/>
+			<mx:DataGridColumn dataField="uploaderName" headerText="上传者" textAlign="center" width="50"/>
+			<mx:DataGridColumn dataField="uploadTime" headerText="上传时间" textAlign="center" width="125"/>
+			<mx:DataGridColumn dataField="knowledgeType" headerText="知识类型" textAlign="center" width="60"/>
+		</mx:columns>
+	</mx:DataGrid>		
+	<mx:Button id="addKnowledge" x="340" y="0" label="添加此知识到该节点" click="addKnowledge_handler(event)"
+			   icon="@Embed('../assets/icon/container/add.png')"  visible="{this.total!=0?true:false}"/>
+	<mx:Image id="first" source="@Embed('../assets/smallicons/first.png')" x="405" y="{this.height-34}" visible="{this.total!=0?true:false}"
+			  buttonMode="{pre.enabled}" enabled="{pre.enabled}" click="firstClickHandler(event)"/>
+	<mx:Image id="pre" source="@Embed('../assets/smallicons/previous.png')" x="425" y="{this.height-34}" visible="{this.total!=0?true:false}"
+			  buttonMode="{currentPage!=1?true:false}" enabled="{currentPage!=1?true:false}" click="preClickHandler(event)"/>
+	<mx:Image id="next" source="@Embed('../assets/smallicons/next.png')" x="445" y="{this.height-34}" visible="{this.total!=0?true:false}"
+			  buttonMode="{Math.ceil(this.total/this.pageSize)>(currentPage)?true:false}" enabled="{Math.ceil(this.total/this.pageSize)>(currentPage)?true:false}" click="nextClickHandler(event)"/>
+	<mx:Image id="last" source="@Embed('../assets/smallicons/last.png')" x="465" y="{this.height-34}" visible="{this.total!=0?true:false}"
+			  buttonMode="{next.enabled}" enabled="{next.enabled}" click="lastClickHandler(event)"/>
+	<!--<mx:Button id="first" label="首页" x="5" y="{this.height-43}" visible="{this.total!=0?true:false}" 
+			   enabled="{pre.enabled}" click="firstClickHandler(event)"/>
+	<mx:Button id="pre" label="上一页" x="63" y="{this.height-43}" visible="{this.total!=0?true:false}"
+			   enabled="{currentPage!=1?true:false}" click="preClickHandler(event)"/>
+	<mx:Button id="next" label="下一页" x="134" y="{this.height-43}" visible="{this.total!=0?true:false}"
+			   enabled="{Math.ceil(this.total/this.pageSize)>(currentPage)?true:false}" click="nextClickHandler(event)"/>
+	<mx:Button id="last" label="尾页" x="206" y="{this.height-43}" visible="{this.total!=0?true:false}"
+			   enabled="{next.enabled}" click="lastClickHandler(event)"/>-->
+	<mx:Label text="第{currentPage}/{pages}页, 每页{this.pageSize}条, 共{this.total}条" fontWeight="bold" x="10" y="{this.height-34}" visible="{this.total!=0?true:false}"/>
+	<mx:Label id="tip" text="在知识管理系统中进行全文检索，从返回的知识中选择记录添加到当前节点。" 
+			  x="0" y="50" fontSize="13" fontWeight="bold"/>
+</mx:Canvas>

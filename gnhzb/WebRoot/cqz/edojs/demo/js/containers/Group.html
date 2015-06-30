@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+Edo.build({    
+    type: 'group',
+    layout: 'horizontal',
+    cls: 'e-toolbar',
+    children: [
+        {
+            type: 'button',
+            text: '新增'
+        },
+        {
+            type: 'button',
+            text: '修改'
+        },
+        {
+            type: 'button',
+            text: '删除'
+        },
+        {
+            type: 'split'
+        },
+        {
+            type: 'button',
+            text: '导入'
+        },
+        {
+            type: 'button',
+            text: '导出'
+        }
+    ]
+    ,render: document.body
+});
+
+</script>

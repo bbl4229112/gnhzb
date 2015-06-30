@@ -1,0 +1,41 @@
+﻿html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}img,body,html{border-style: none;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul {list-style:none;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;}q:before,q:after{content:'';}                
+html,body{background:white;font-size:12px;font-family:"Trebuchet MS",Georgia,"Times New Roman",Times,sans-serif;}
+a{text-decoration:none;font-family:Arial, Verdana,宋体;font-size:12px;color:#1f1e1e;}
+a:hover{text-decoration:underline;}
+.clear{clear:both;width:0px;height:0px;overflow:hidden;}
+.demo
+{
+	padding-left:5px;padding-right:5px;margin-bottom:15px;
+}
+.demo-title
+{
+	border-bottom:solid 2px #0b94c8;
+}
+.demo-title a
+{
+	display:block;height:26px;line-height:28px;font-weight:bold;
+	background:url(../images/treeicon.gif) no-repeat 3px -45px;
+	padding-left:20px;font-size:13px;color:#333;
+}
+.demo-content a
+{
+	width:132px;height:120px;overflow:hidden;color:#1f1e1e;text-align:center;text-decoration:none;
+	float:left;display:inline;margin-right:8px;margin-top:15px;
+	padding:1px;
+}
+.demo-content a:hover
+{
+	border:solid 1px #6593cf;padding:0;background:#dfefff;
+}
+.demo-content img
+{
+	width:120px;height:88px;margin-left:3px;*margin-left:0;margin-top:5px;
+}
+.demo-content span
+{
+	line-height:20px;
+}
+.demo .collapse
+{
+	background-position:3px 5px;
+}

@@ -1,0 +1,131 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+   <h1>过滤行</h1>
+</body>
+</html>
+<script src="../../../../scripts/edo/edo.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+<script type="text/javascript">
+  
+var employeeData = new Edo.data.DataTable().set('data', Employees);
+var positionData = new Edo.data.DataTree(Positions);
+
+//列渲染器 renderers
+function educationalRenderer(v){
+    for(var i=0,l=Educationals.length; i<l; i++){
+        var o = Educationals[i];
+        if(o.id == v) return o.name;
+    }
+}
+function departmentRenderer(v){
+    for(var i=0,l=Departments.length; i<l; i++){
+        var o = Departments[i];
+        if(o.id == v) return o.name;
+    }
+}
+function countryRenderer(v){
+    for(var i=0,l=Countrys.length; i<l; i++){
+        var o = Countrys[i];
+        if(o.id == v) return o.name;
+    }
+}
+function interestRenderer(v){
+    if(!v) return;
+    var vs = v.split(',');
+    var sb = [];
+    for(var i=0,l=Interests.length; i<l; i++){
+        var o = Interests[i];
+        vs.each(function(id){
+            if(o.id == id) sb.push(o.name);
+        });
+    }
+    return sb.join(',');
+}
+
+function positionRenderer(v){
+    var o = positionData.find({id: v});
+    return o ? o.name : '';
+}
+
+    Edo.create({
+        id: 'table1',
+        render: document.body,
+        type: 'table',                       
+        height: 350, width: 800,
+        autoExpandColumn: 'id',
+        data: employeeData,
+        
+        filterRowVisible: true,
+        filterRowPosition: 'top',
+                        
+        columns:[            
+            {id: 'id', header: '员工账号', dataIndex: 'ID',
+                filter: {
+                    type: 'text',                               
+                    ontextchange: function(e){                    
+                        var text = this.text;
+                        var dataTable = this.owner.data;
+                        if(text){
+                            dataTable.filter(function(o){
+                                return o.ID.indexOf(text) != -1;                                
+                            });
+                        }else{
+                            dataTable.clearFilter();
+                        }
+                    }
+                }
+            },        
+            {header: '姓名', dataIndex: 'name', editor: 'text'},        
+            {header: '部门', dataIndex: 'department',
+                renderer: departmentRenderer,
+                editor:{type:'combo', data: Departments, valueField: 'id', displayField: 'name',
+                    oneditcomplete: function(e){                
+                        var record = this.owner.getEditRecord();
+                        //editdata是原值, data是新值
+                        if(e.editdata !=e.data){
+                            this.owner.data.update(record, 'position', null);
+                        }
+                    }
+                },
+                filter:{type:'combo', data: Departments, valueField: 'id', displayField: 'name',
+                    onselectionchange: function(e){
+                    
+                        var value = this.getValue();
+                        var dataTable = this.owner.data;
+                        dataTable.filter(function(o){
+                            return o.department == value;
+                        });                        
+                    }
+                }
+            },
+            {header: '职位', dataIndex: 'position',
+                renderer: positionRenderer,
+                editor:{type:'treeselect', data: positionData, valueField: 'id', displayField: 'name',multiSelect: false,
+                    oneditstart: function(e){
+                        var department = this.owner.getSelected().department;
+                        this.data.filter(function(o){
+                            if(o.id.indexOf(department) == 0) return true;
+                            return false;
+                        });
+                    }
+                }
+            }
+        ],
+        
+        onselectionchange: function(e){
+            var r = this.getSelecteds();
+            if(r){
+                
+            }
+        }            
+                    
+    });
+    
+
+
+</script>    

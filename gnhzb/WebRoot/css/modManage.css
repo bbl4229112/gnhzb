@@ -1,0 +1,26 @@
+.modImage{
+	text-align:center;
+	width:180px;
+	height:180px;
+	border:solid 1px #ccc;
+	float:left;
+	margin:2px;
+}
+.modImage:hover {
+	opacity:0.5;
+	filter:alpha(opacity:50);
+
+}
+.partImage{
+	text-align:center;
+	width:180px;
+	height:180px;
+	border:solid 1px #ccc;
+	float:left;
+	margin:2px;
+}
+.partImage:hover {
+	opacity:0.5;
+	filter:alpha(opacity:50);
+
+}

@@ -1,0 +1,141 @@
+/****************************************
+| Theme Name: That Game Company
+| Theme URI: http://wordpress.org/
+| Description: The WordPress theme created by Adam Foster and for use by That Game Company Only.
+| Author: Adam Foster
+| Author URI: http://www.codefor.com
+| Tags: CSS, custom header, fixed width, blue, game, clean
+| Date Created: 01-08-2009
+| Copyright 2009 Fully Illustrated
+|
+****************************************/
+
+/* CSS RESET */
+* {	margin: 0px; padding: 0px; text-indent: 0px; }
+img { border: none; padding: 0px; }
+ol, ul { list-style: none; }
+#chromeFix { display: block; position: absolute; width: 1px; height: 100%; top: 0px; left: 0px; }
+/* GLOBAL STYLES */
+a, a:visited { color: #347E94; outline: none; }
+a:hover { color: #1d3238; outline: none; }
+a:active { border: none!important; outline: none; }
+.left { float: left!important}
+.right { float: right!important}
+.clear { clear: both!important}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+.last { margin-bottom: 0px!important; }
+.end { margin-right: 0px!important; }
+.blank { background: none!important; }
+.relative { position: relative!important; }
+
+/* headers */
+h1 { font-size: 24px; line-height: 22px; color: #2a444c; font-weight: normal; }
+h2 { font-size: 18px; line-height: 18px; color: #2a444c; }
+h3 { font-size: 12px; line-height: 18px; color: #2a444c; padding-bottom: 12px; }
+
+/* sizes */
+.width448 { width: 448px!important; }
+.width416 { width: 416px!important; }
+.box-height565 {min-height:842px;background:#ffffff;}
+.width402 { width: 402px!important; }
+.width612 { width: 612px!important; }
+.width550 { width: 550px!important; }
+.width291 { width: 291px!important; }
+.width259 { width: 259px!important; }
+.width851 { width: 851px; }
+
+/* LAYOUT */
+body {  background-color: #cfd0d4; color:#347E94; font-family:"Arial",sans-serif; font-size:12px; line-height:14px;  }
+#wrapper { width: 913px; padding: 70px 40px 0; margin: 0 auto 0; }
+#main { width: 913px; }
+
+/* HEADER */
+#header { width: 983px; height: 500px;  background-image: url(login/login2.jpg);border:1px  solid; background-repeat:no-repeat; border-color:#cfd0d4; }
+#logo {  height:100px; width:400px;  margin-left:auto;margin-right:20px;margin-top:150px;}
+#logo h1 span { height:29px; width:278px; overflow: hidden; text-indent: -3000px; display: block; }
+.logininput{
+	width: 200px;
+	height:18px;
+	border:1px solid #ccc;
+}
+
+ .btn {
+      display:inline-block;
+      background:none;
+      margin:0;
+      padding:3px 0;
+      border-width:0;
+      overflow:visible;
+      font:100%/1.2 Arial,Sans-serif;
+      text-decoration:none;
+      color:#333;
+      }
+    * html button.btn {
+      padding-bottom:1px;
+      }
+    /* Immediately below is a temporary hack to serve the 
+       following margin values only to Gecko browsers
+       Gecko browsers add an extra 3px of left/right 
+       padding to button elements which can't be overriden.
+       Thus, we use -3px of left/right margin to overcome this. */
+    html:not([lang*=""]) button.btn {
+      margin:0 -3px;
+      }
+    .btn span {
+      background:#ddd  0 0;
+      margin:0;
+      padding:3px 0;
+      border-left:1px solid #bbb;
+      border-right:1px solid #aaa;
+      }
+    * html .btn span {
+      padding-top:0;
+      }
+    .btn span span {
+      position:relative;
+      padding:3px .4em;
+      border-width:0;
+      border-top:1px solid #bbb;
+      border-bottom:1px solid #aaa;
+      }
+    
+    /* pill classes only needed if using pill style buttons ( LEFT | CENTER | RIGHT ) */
+    button.pill-l span {
+      border-right-width:0;
+      }
+    button.pill-l span span {
+      border-right:1px solid #bbb;
+      }
+    button.pill-c span {
+      border-right-style:none;
+      border-left-color:#fff;
+      }
+    button.pill-c span span {
+      border-right:1px solid #bbb;
+      }
+    button.pill-r span {
+      border-left-color:#fff;
+      }
+    
+    /* only needed if implementing separate hover/focus/active state for buttons */
+    .btn:hover span, .btn:hover span span, .btn:focus span, .btn:focus span span {
+      cursor:pointer; /* important for any clickable/pressable element */
+      border-color:#9cf !important;
+      color:#000;
+      }
+    .btn:active span {
+      background-position:0 -400px;
+      outline:none;
+      }
+    .btn:focus, .btn:active {
+      outline:none; /* doesn't seem to be respected for <button>, only <a> */
+      }
+
+    /* use if one button should be the 'primary' button */
+    .primary {
+      font-weight:bold;
+      color:#000;
+      }
+
+

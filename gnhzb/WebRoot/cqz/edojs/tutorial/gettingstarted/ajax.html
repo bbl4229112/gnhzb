@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EdoJS - Easy, But Powerful Javascript Framework</title>    
+    <ASPxInclude src="~/templates/toplinks.html" />
+    <style type="text/css">
+.code
+{
+	border:dashed 1px #a0a0a0;border-left:solid 3px #6CE26C;
+	padding:5px;padding-bottom:15px;
+	margin:5px;
+	margin-left:0px;
+	margin-right:15px;	
+	margin-bottom:15px;
+	line-height:18px;
+	overflow:auto;width:750px;overflow-y:hidden;
+	font-weight:400;
+}    
+    </style>    
+</head>
+<body>
+<div class="ct">
+    <ASPxInclude src="~/templates/header.html" />
+    <div class="bd">
+    <ASPxInclude src="~/templates/tutorialnav.html" />
+        <div id="viewcontent">
+        <h1 class="vtitle">数据交互和序列化</h1>             
+    <div class="desc-content">
+<p>与所有的js框架一样，EdoJS也拥有自己的Ajax组件：Edo.util.Ajax，用于与服务端的数据交互。</p>
+<h1>一个简单的Ajax例子</h1>
+<p>我们通过一个简单的Ajax例子，来了解下EdoJS的Ajax组件使用方式：</p>
+<p>首先，服务端有一个ajax-json.txt文件，内容如下：</p><pre class="code">[     
+    {name: '谷歌', en_name:'google', site: 'http://www.google.com'},
+    {name: '百度', en_name:'baidu', site: 'http://www.baidu.com'},
+    {name: '腾讯', en_name:'qq', site: 'http://www.qq.com'},
+    {name: '易度', en_name:'edojs', site: 'http://www.edojs.com'}  
+]</pre>
+<p><a href="http://11011.net/software/vspaste"></a>然后，我们这样使用Edo.util.Ajax：</p><pre class="code">Edo.util.Ajax.request({
+    url: <span style="color: #a31515">'ajax-json.txt'</span>,
+    type: <span style="color: #a31515">'get'</span>,
+    onSuccess: <span style="color: blue">function</span>(text){
+        <span style="color: green">//text就是从url地址获得的文本字符串
+        </span>alert(text);
+    },
+    onFail: <span style="color: blue">function</span>(code){
+        <span style="color: green">//code是网络交互错误码,如404,500之类
+        </span>alert(code);
+    }
+});</pre><a href="http://11011.net/software/vspaste"></a>
+<p>Edo.util.Ajax是一个静态类，直接调用request方法，传递一个交互配置对象，就可以与服务端完成一次数据交互操作。</p>
+<h1>Edo.util.Ajax的配置对象</h1>
+<p>Edo.util.Ajax的配置对象注释如下：</p><pre class="code">{
+    type: <span style="color: #a31515">"get"</span>,            <span style="color: green">//交互方式:get,post
+    </span>url: <span style="color: blue">null</span>,              <span style="color: green">//数据源地址
+    </span>params: <span style="color: blue">null</span>,           <span style="color: green">//传递参数        
+    </span>async: <span style="color: blue">true</span>,            <span style="color: green">//是否异步    
+    </span>timeout: 0,             <span style="color: green">//超时设置,为0不设置超时
+    </span>nocache: <span style="color: blue">true</span>,          <span style="color: green">//不缓存
+    </span>onSuccess: Edo.emptyFn, <span style="color: green">//成功回调函数
+    </span>onFail: Edo.emptyFn,    <span style="color: green">//失败回调函数
+    </span>onOut: Edo.emptyFn      <span style="color: green">//超时回调函数   
+</span>} </pre>
+<h1>使用Ajax发送数据到服务端</h1>
+<p>我们可以发送很复杂的数据到服务端，服务端可以使用request对象来接收从页面使用ajax发送而来的数据，如果接收的数据是一个复杂的json字符串，在服务端可以使用一些Json序列化组件，将字符串转换为服务端数据对象，从而进行任意操作。</p>
+<p>这里，我们可以使用Ajax配置对象的params属性，发送复杂数据对象：</p><pre class="code">Edo.util.Ajax.request({
+    url: <span style="color: #a31515">'dataService.aspx'</span>, <span style="color: green">//发送到一个动态页面地址
+    </span>type: <span style="color: #a31515">'post'</span>,           <span style="color: green">//使用Post方式,发送的数据可以突破255个字符限制
+    </span>params: {               <span style="color: green">//发送的数据对象,可以是一个复杂对象
+        </span>name: <span style="color: #a31515">'edojs'</span>,
+        checked: [1,3,4],
+        date: <span style="color: blue">new </span>Date()
+    },
+    onSuccess: <span style="color: blue">function</span>(text){
+        <span style="color: green">//...
+    </span>}
+});</pre>
+<p>使用HttpWatch工具监听此次Ajax请求，截图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/a1.png" /></p>
+<p>在服务端，我们可以这样接收使用Ajax发送的数据：</p><pre class="code"><span style="color: blue">string </span>name = Request[<span style="color: #a31515">"name"</span>];
+<span style="color: blue">string </span>checks = Request[<span style="color: #a31515">"checked"</span>];
+<span style="color: blue">string </span>date = Request[<span style="color: #a31515">"date"</span>];
+
+<span style="color: green">//将复杂的json字符串,转换为服务端对象,从而进行任意操作
+</span><span style="color: #2b91af">ArrayList </span>checklist = Edo.util.<span style="color: #2b91af">Json</span>.decode(checks);</pre>
+<p>这里演示的是.net的后台接收Ajax数据代码，不同的服务端语言，这种代码是大同小异的。</p>
+<h1>Json序列化和反序列化</h1>
+<p>一般我们使用Ajax时，从后台获得的是一个json字符串。我们需要将这个json字符串转换为JS对象，从而更方便的进行操作，这里我们使用Edo.util.Json组件。</p>
+<p>接第一个示例，我们将获得的json字符串，反序列化成JS数组后，打印第2行的name属性：</p><pre class="code">Edo.util.Ajax.request({
+    url: <span style="color: #a31515">'ajax-json.txt'</span>,
+    type: <span style="color: #a31515">'get'</span>,
+    onSuccess: <span style="color: blue">function</span>(text){
+        <span style="color: blue">var </span>obj = Edo.util.Json.decode(text);
+        alert(obj[1].name);
+    },
+    onFail: <span style="color: blue">function</span>(code){
+        <span style="color: green">//code是网络交互错误码,如404,500之类
+        </span>alert(code);
+    }
+});</pre>
+<p><a href="http://11011.net/software/vspaste"></a>当然，我们也可以把从服务端获得的数组数据，设置给某一个表格，从而显示为一个表格的列表数据，如下示例代码：</p><pre class="code">Edo.build({
+    id: <span style="color: #a31515">'tb'</span>, type: <span style="color: #a31515">'table'</span>, width: 300, autoColumns: <span style="color: blue">true</span>,
+    columns:[      
+        { headerText: <span style="color: #a31515">'公司'</span>, dataIndex: <span style="color: #a31515">'en_name'</span>, editor: {type: <span style="color: #a31515">'text'</span>} },
+        { headerText: <span style="color: #a31515">'网址'</span>, dataIndex: <span style="color: #a31515">'site' </span>},
+        { headerText: <span style="color: #a31515">'中文名称'</span>, dataIndex: <span style="color: #a31515">'name'</span>, width: 150 }
+    ],      
+    render: document.body
+});
+<span style="color: blue">var </span>ajax = Edo.util.Ajax.request({
+    url: <span style="color: #a31515">'ajax-json.txt'</span>,         
+    type: <span style="color: #a31515">'get'</span>,
+    onSuccess: <span style="color: blue">function</span>(text){       
+        <span style="color: blue">var </span>json = Edo.util.Json.decode(text);
+        <span style="color: blue">var </span>data = <span style="color: blue">new </span>Edo.data.DataTable(json);
+        tb.<span style="color: blue">set</span>(<span style="color: #a31515">'data'</span>, data);
+    }
+}); </pre><a href="http://11011.net/software/vspaste"></a>
+<p>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/a2.png" /></p>    
+
+    </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <ASPxInclude src="~/templates/footer.html" />
+</div>
+</body>
+</html>
+<ASPxInclude src="~/templates/bottomlinks.html" />
+<script type="text/javascript">
+togglemenu({menu:'getstarted'});
+addCls('ajax', 'sel');
+</script>

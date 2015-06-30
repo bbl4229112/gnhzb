@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Expert root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.Expert" table="caltks.Expert">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <many-to-one name="user" class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser" fetch="select">
+		            <column name="userID" not-null="true" />
+		        </many-to-one>
+		        
+                <set name="treeNodes" table="caltks.ExpertNode" cascade="save-update" >               
+		            <key column="expertID"/>
+		            <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.TreeNode" column="treeNodeID" order-by="id desc"/>
+		        </set>
+
+                <set name="unanswers" table="caltks.ExpertUnanswer" cascade="save-update" outer-join="false" order-by="id desc">
+		            <key column="expertID"/>
+		            <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge" column="knowledgeID"/>
+		        </set>           
+        </class>
+</hibernate-mapping>

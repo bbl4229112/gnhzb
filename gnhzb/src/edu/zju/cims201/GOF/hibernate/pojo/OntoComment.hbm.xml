@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Comment root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.OntoComment" table="caltks.OntoComment">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="commmentTime" column="commmentTime" type="timestamp"/>
+                <property name="supportVoteCount" column="supportVoteCount" type="integer"/>
+                <many-to-one name="commented" column="commented" lazy="false" class="edu.zju.cims201.GOF.hibernate.pojo.OntoComment"/>
+                <many-to-one name="commenter" column="commenterID" class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser"/>
+                <set name="comments" inverse="true" table="caltks.OntoComment" cascade="delete">
+               		 	<key column="commented"/>
+                		<one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.OntoComment"/>
+                </set>
+             
+                <property name="content" column="content" type="string" length="800"/>
+                <property name="againstVoteCount" column="againstVoteCount" type="integer"/>
+                <many-to-one name="ontobuild" column="ontobuildID"
+                class="edu.zju.cims201.GOF.hibernate.pojo.OntoBuild"
+                not-null="true">
+                </many-to-one>
+                <property name="heat" column="heat" type="integer"/>
+                <property name="tail" column="tail" type="integer"/>
+                <property name="isBest" column="isBest" type="integer"/>
+                <property name="rate" column="rate" type="java.lang.Float"/>
+        </class>
+</hibernate-mapping>

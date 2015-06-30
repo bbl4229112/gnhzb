@@ -1,0 +1,65 @@
+@CHARSET "utf-8";
+
+.e-icon-column
+{
+	background-image:url(images/column.png);
+}
+
+.e-icon-line
+{
+	background-image:url(images/line.png);
+}
+
+.e-icon-pie
+{
+	background-image:url(images/pie.png);
+}
+
+.e-icon-design
+{
+	background-image:url(images/design.png);
+}
+
+.e-icon-material
+{
+	background-image:url(images/material.png);
+}
+
+.e-icon-recycle
+{
+	background-image:url(images/recycle.png);
+}
+
+.e-icon-manufacture
+{
+	background-image:url(images/manufacture.png);
+}
+.e-icon-add1
+{
+	background-image:url(images/Add.png);
+}
+.e-icon-edit1
+{
+	background-image:url(images/update.png);
+}
+.e-icon-delete1
+{
+	background-image:url(images/delete.png);
+}
+.e-icon-fold1
+{
+	background-image:url(images/folder.png);
+}
+.e-icon-service
+{
+	background-image:url(images/service1.png);
+}
+.e-icon-transport
+{
+	background-image:url(images/transportation1.png);
+}
+
+.e-icon-news
+{
+	background-image:url(images/book_small.png);
+}

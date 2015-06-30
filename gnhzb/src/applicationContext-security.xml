@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>SpringSecurity安全配置</description>
+	<!-- http安全配置 -->
+	<s:http access-decision-manager-ref="accessDecisionManager" entry-point-ref="authenticationProcessingFilterEntryPoint">
+		
+		<s:intercept-url pattern="/css/**" filters="none" />
+		<s:intercept-url pattern="/img/**" filters="none" />
+		<s:intercept-url pattern="/js/**" filters="none" />
+		<s:intercept-url pattern="/common/**" filters="none" />
+		<s:intercept-url pattern="/knowledge/fileupload!clientupload.action" filters="none" />
+		<s:intercept-url pattern="/knowledge/knowledge!listHotword.action" filters="none" />
+		
+		 <!--
+			auto-config="true"
+		-->
+		
+		<s:intercept-url pattern="/knowledge/fileupload*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" />
+		
+		<s:intercept-url pattern="/knowledge/sourcefiledownload*" access="KNOWLEDGE_DOWNLOAD,DYNAMIC" />
+		
+		<s:intercept-url pattern="/knowledge/ui*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" />
+		
+		<s:intercept-url pattern="/comment/comment*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" />
+	
+		<s:intercept-url pattern="/kmap/onto*" filters="none" />
+		
+		<s:intercept-url pattern="/knowledge/approval/approval*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		
+		
+		<s:intercept-url pattern="/knowledge/knowledge!delete*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!save*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!simplesave*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!ksearch*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!fulltextserach*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!list*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!search*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!indexall*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/knowledge!show*" access="KNOWLEDGE_VIEW,DYNAMIC" />
+		<s:intercept-url pattern="/knowledge/knowledge!modify*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" />
+		
+		
+		<s:intercept-url pattern="/knowledge/tag/tag*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/ktype/ktype*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/knowledge/property/property*" access="ROLE_SUPERADMIN" /> 
+		<s:intercept-url pattern="/message/message*" access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN" /> 
+
+		<s:intercept-url pattern="/privilege/show-button*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMIN"/> 
+		<s:intercept-url pattern="/privilege/assignprivilege*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+
+		
+		
+		<s:intercept-url pattern="/privilege/empowerment!list*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/> 
+		<s:intercept-url pattern="/privilege/empowerment!delete*"  access="DYNAMIC"/> 
+		<s:intercept-url pattern="/privilege/empowerment!save*"  access="DYNAMIC"/> 
+		<s:intercept-url pattern="/privilege/empowerment!add*"  access="DYNAMIC"/> 
+		
+		
+		<s:intercept-url pattern="/privilege/tree-empowerment!list*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/> 
+		<s:intercept-url pattern="/privilege/tree-empowermentt!delete*"  access="DYNAMIC"/> 
+		<s:intercept-url pattern="/privilege/tree-empowerment!save*"  access="DYNAMIC"/> 
+		<s:intercept-url pattern="/privilege/tree-empowerment!add*"  access="DYNAMIC"/> 
+		
+		
+		<s:intercept-url pattern="/tree/privilege-tree*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+		
+		<s:intercept-url pattern="/tree/tree!list*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+		<s:intercept-url pattern="/tree/tree!update*"  access="DYNAMIC"/>
+		<s:intercept-url pattern="/tree/tree!save*"  access="DYNAMIC"/>
+		<s:intercept-url pattern="/tree/tree!delete*"  access="DYNAMIC"/>
+		
+		<!-- 放开权限给门户20130524 panlei-->
+		<s:intercept-url pattern="/userranking/userranking!listTopFourUsers.action"  filters="none"/>
+		<s:intercept-url pattern="/statistic/khotlist!list.action"  filters="none"/>
+		<s:intercept-url pattern="/statistic/khotlist!listNews.action"  filters="none"/>
+		<s:intercept-url pattern="/statistic/khotlist!listLatestKnowledge.action"  filters="none"/>
+		<s:intercept-url pattern="/statistic/khotlist!listHotQuestions.action"  filters="none"/>
+		<s:intercept-url pattern="/statistic/khotlist!listHotDKKnowledge.action"  filters="none"/>
+		<s:intercept-url pattern="/tree/tree!listSubNode.action"  filters="none"/>
+		<s:intercept-url pattern="/knowledge/knowledge!showknowledge.action"  filters="none"/>
+		<s:intercept-url pattern="/knowledge/viewfile!view.action"  filters="none"/>
+		<s:intercept-url pattern="/knowledge/knowledge!listRcommentKnowledge.action"  filters="none"/>
+		<s:intercept-url pattern="/comment/comment!listHotComment.action"  filters="none"/>
+		
+		<s:intercept-url pattern="/statistic/**"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+		<!--<s:intercept-url pattern="/userranking/**"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+		--><s:intercept-url pattern="/user/**"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+		<s:intercept-url pattern="/user*"  access="ROLE_ADMIN,ROLE_USER,ROLE_SUPERADMINC"/>
+		
+		<s:intercept-url pattern="/sourcefile/**"  access="KNOWLEDGE_VIEW,DYNAMIC"/>
+	
+		<s:intercept-url pattern="/knowledge/viewfile**"  access="KNOWLEDGE_VIEW,DYNAMIC"/>
+		
+        <s:intercept-url pattern="/knowledge/sourcefiledownload**"  access="KNOWLEDGE_VIEW,DYNAMIC"/>
+	
+
+		<s:logout logout-success-url="/login.action" />
+
+		<s:custom-filter position="FORM_LOGIN_FILTER" ref="authenticationProcessingFilter" />
+		<!--
+		<s:form-login/>
+		-->
+		
+		<s:custom-filter before="BASIC_AUTH_FILTER" ref="clientURLRedirectFilter" />
+		<s:http-basic/>
+		
+		
+		
+		<s:custom-filter position="REMEMBER_ME_FILTER" ref="rememberMeProcessingFilter" />
+		
+		<!--
+		<s:remember-me/>
+		-->
+		<s:anonymous/>
+		
+		
+		<!-- 
+		<s:form-login login-page="/login.action" default-target-url="/" authentication-failure-url="/login.action?error=true" />
+		<s:logout logout-success-url="/login.action" />
+		 -->
+
+		
+	</s:http> 
+	
+	
+	<bean id="authenticationProcessingFilterEntryPoint" class="org.springframework.security.web.authentication.AuthenticationProcessingFilterEntryPoint">      
+        <property name="loginFormUrl" value="/login.action" />      
+        <property name="forceHttps" value="false" />      
+    </bean> 
+	<bean id="clientURLRedirectFilter" class="edu.zju.cims201.GOF.springsecurity.CustomClientURLRedirectFilter">           
+    </bean>
+	
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+	
+		<property name="allowIfAllAbstainDecisions"  value="false" /> 
+		<property name="decisionVoters">
+		<list>
+		  	
+			<bean class="org.springframework.security.access.vote.RoleVoter" />
+			<bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			<bean class="edu.zju.cims201.GOF.springsecurity.KnowledgeViewVoter"/>
+			<bean class="edu.zju.cims201.GOF.springsecurity.KnowledgeDownloadVoter"/>
+			<bean class="edu.zju.cims201.GOF.springsecurity.DynamicRoleVoter"/>
+
+		</list>
+		</property>
+	</bean>
+	<bean id="dynamicRoleProvider" class="edu.zju.cims201.GOF.springsecurity.DynamicRoleProvider">
+	</bean>
+	
+	
+	<bean id="rememberMeServices"   class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">  
+	    <property name="userDetailsService" ref="userDetailsService" />  
+	    <property name="key" value="CALTKS" />  
+	</bean> 
+	
+	
+	<bean id="rememberMeAuthenticationProvider"   class="org.springframework.security.authentication.RememberMeAuthenticationProvider">  
+    	<property name="key" value="CALTKS" />  
+	</bean>
+	
+	<bean id="authenticationProcessingFilter"   class="edu.zju.cims201.GOF.springsecurity.CustomUsernamePasswordAuthenticationFilter">    
+         
+	    <property name="authenticationManager">  
+	        <ref bean="authenticationManager" />  
+	    </property>  
+	    <property name="rememberMeServices">  
+            <ref bean="rememberMeServices" />  
+        </property> 
+        <property name="filterProcessesUrlFromClient" value="/ui!clientsearch.action"/>  
+        
+        
+        
+        <property name="authenticationFailureHandler">  
+            <ref bean="failureHandler" />  
+        </property>
+        
+        <!--  
+        <property name="successHandler">  
+            <ref bean="successHandler" />  
+        </property>
+         <property name="sysBehaviorLogService">  
+            <ref bean="sysBehaviorLogServiceImpl" />  
+        </property>  
+        -->
+        
+	</bean>  
+	
+	<bean id="failureHandler"   class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/login.action?error=true" />   
+	</bean>
+	
+	<!-- 
+	<bean id="successHandler"   class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/login.action?error=true" />   
+	</bean>
+	 -->
+	
+	<bean id="rememberMeProcessingFilter"  class="org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter">  
+        <property name="rememberMeServices" ref="rememberMeServices" />  
+        <property name="authenticationManager" ref="authenticationManager" />  
+	</bean> 
+	
+	<bean id="authenticationManager"   class="org.springframework.security.authentication.ProviderManager">  
+	    <property name="providers">  
+	        <list>  
+	            <ref local="daoAuthenticationProvider" />  
+	            <ref local="rememberMeAuthenticationProvider" />  
+	        </list>  
+	    </property>  
+	</bean> 
+	<!-- 
+	<bean id="passwordEncoder"   class="org.springframework.security.providers.encoding.Md5PasswordEncoder" />  
+  	 -->
+	<bean id="daoAuthenticationProvider"  class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">  
+	    <property name="userDetailsService" ref="userDetailsService" />  
+	    <!-- 
+	    <property name="passwordEncoder">  
+	        <ref local="passwordEncoder" />  
+	    </property>  
+	     -->
+	</bean>  
+	
+	
+	<s:authentication-manager >
+		
+		<s:authentication-provider ref="daoAuthenticationProvider">
+		</s:authentication-provider>
+		<s:authentication-provider ref="rememberMeAuthenticationProvider">
+		</s:authentication-provider>
+	</s:authentication-manager>
+
+		
+
+	<!-- 认证配置, 使用userDetailsService提供的用户信息 
+	<s:authentication-manager alias="authenticationManager">
+		<s:authentication-provider></s:authentication-provider>
+		<s:authentication-provider user-service-ref="userDetailsService">
+			<s:password-encoder hash="plaintext" />
+		</s:authentication-provider>
+	</s:authentication-manager>
+	 -->
+
+	<!-- 项目实现的用户查询服务 -->
+	<bean id="userDetailsService" class="edu.zju.cims201.GOF.springsecurity.UserDetailsServiceImpl" />
+</beans>

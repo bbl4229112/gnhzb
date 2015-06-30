@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EdoJS - Easy, But Powerful Javascript Framework</title>    
+    <ASPxInclude src="~/templates/toplinks.html" />
+    <style type="text/css">
+.code
+{
+	border:dashed 1px #a0a0a0;border-left:solid 3px #6CE26C;
+	padding:5px;padding-bottom:15px;
+	margin:5px;
+	margin-left:0px;
+	margin-right:15px;	
+	margin-bottom:15px;
+	line-height:18px;
+	overflow:auto;width:750px;overflow-y:hidden;
+	font-weight:400;
+}    
+    </style>    
+</head>
+<body>
+<div class="ct">
+    <ASPxInclude src="~/templates/header.html" />
+    <div class="bd">
+    <ASPxInclude src="~/templates/tutorialnav.html" />
+        <div id="viewcontent">
+        <h1 class="vtitle">第一个Edo程序</h1>             
+    <div class="desc-content">
+<p>我们开始编写第一个Edo程序，如下所示：</p><pre class="code"><span style="color: blue">&lt;</span><span style="color: #a31515">html</span><span style="color: blue">&gt;
+&lt;</span><span style="color: #a31515">head</span><span style="color: blue">&gt;
+    &lt;</span><span style="color: #a31515">title</span><span style="color: blue">&gt;</span>Hello, edojs!<span style="color: blue">&lt;/</span><span style="color: #a31515">title</span><span style="color: blue">&gt;
+    </span><span style="color: green">&lt;!--引入edo-all.css--&gt;
+    </span><span style="color: blue">&lt;</span><span style="color: #a31515">link </span><span style="color: red">href</span><span style="color: blue">="../../scripts/edo/res/css/edo-all.css" </span><span style="color: red">rel</span><span style="color: blue">="stylesheet" </span><span style="color: red">type</span><span style="color: blue">="text/css" /&gt;
+    </span><span style="color: green">&lt;!--引入edo.js--&gt;
+    </span><span style="color: blue">&lt;</span><span style="color: #a31515">script </span><span style="color: red">src</span><span style="color: blue">="../../scripts/edo/edo.js" </span><span style="color: red">type</span><span style="color: blue">="text/javascript"&gt;&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;
+&lt;/</span><span style="color: #a31515">head</span><span style="color: blue">&gt;
+&lt;</span><span style="color: #a31515">body </span><span style="color: red">style</span><span style="color: blue">="</span><span style="color: red">padding</span>:<span style="color: blue">10px</span>;<span style="color: blue">"&gt;
+
+&lt;/</span><span style="color: #a31515">body</span><span style="color: blue">&gt;
+&lt;/</span><span style="color: #a31515">html</span><span style="color: blue">&gt;
+&lt;</span><span style="color: #a31515">script </span><span style="color: red">type</span><span style="color: blue">="text/javascript"&gt;
+</span><span style="color: green">//使用Edo.create方法,将一个配置对象生成为edo组件对象
+</span>Edo.create({
+    id: <span style="color: #a31515">'btn1'</span>,                             <span style="color: green">//组件ID
+    </span>type: <span style="color: #a31515">'button'</span>,                         <span style="color: green">//组件类型
+     </span>width: 100,                             <span style="color: green">//宽度
+     </span>text: <span style="color: #a31515">'按钮A'</span>,                          <span style="color: green">//按钮文本内容
+     </span>onclick: <span style="color: blue">function</span>(e){                   <span style="color: green">//处理click事件
+        </span>alert(<span style="color: #a31515">"Hello, edojs!" </span>+ btn1.text); 
+    },
+    render: document.body                   <span style="color: green">//此edo对象加入的dom元素
+</span>});
+<span style="color: blue">&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;</span></pre>
+<p>在这段代码内，我们需要注意几件事：</p>
+<div class="code">
+<p>1.正确引用edo的css和js资源。</p>
+<p>2.创建一个edo组件对象，必须在edo的css和js资源引用之后。</p>
+</div>
+<p>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/d1.png" /></p>
+<h1>EdoJS的对象创建方式</h1>
+<p>EdoJS有两种创建组件的方式：一种是配置式的，如上面的示例代码；另一种是命令式的，是类似于JAVA或C#的严谨的创建方式，如下代码所示：</p><pre class="code"><span style="color: blue">&lt;</span><span style="color: #a31515">script </span><span style="color: red">type</span><span style="color: blue">="text/javascript"&gt;
+var </span>btn = <span style="color: blue">new </span>Edo.controls.Button();
+btn.<span style="color: blue">set</span>(<span style="color: #a31515">'id'</span>, <span style="color: #a31515">'btn1'</span>);      <span style="color: green">//一行代码设置一个属性
+</span>btn.<span style="color: blue">set</span>(<span style="color: #a31515">'width'</span>, 100);
+btn.<span style="color: blue">set</span>({                   <span style="color: green">//设置一个配置对象,设置多个属性
+    </span>text: <span style="color: #a31515">'按钮A'</span>,
+    height: 40
+});
+btn.on(<span style="color: #a31515">'click'</span>,  <span style="color: blue">function</span>(e){   <span style="color: green">//监听按钮的click事件
+    </span>alert(<span style="color: #a31515">"Hello, edojs!" </span>+ btn1.text); 
+});
+btn.render(document.body);      <span style="color: green">//将按钮对象最终呈现在页面
+</span><span style="color: blue">&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;</span></pre>
+<p>本例效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/d2.png" /></p>
+<h1>如何查找EdoJS对象</h1>
+<p>当我们创建一个EdoJS对象后，我们在一个特定时刻，需要找到此对象，并进行其他的操作。</p>
+<p>查找EdoJS对象有如下三种方式：</p>
+<p>1.直接返回对象，保存到一个变量中：</p><pre class="code"><span style="color: blue">var </span>btn = Edo.create({
+    type: <span style="color: #a31515">'button'</span>,    
+    render: document.body
+});
+btn.<span style="color: blue">set</span>(<span style="color: #a31515">'text'</span>, <span style="color: #a31515">'按钮'</span>);</pre>
+<p>此方法不需要对象id，即可找到并使用对象，缺点是有变量作用域的限制，如函数内的对象变量，函数外就无法访问到。</p>
+<p>2.通过Edo.get(id)方法：</p><pre class="code">Edo.create({
+    id: <span style="color: #a31515">'btn1'</span>,
+    type: <span style="color: #a31515">'button'</span>,    
+    render: document.body
+});
+<span style="color: blue">var </span>btn = Edo.<span style="color: blue">get</span>(<span style="color: #a31515">'btn1'</span>);
+btn.<span style="color: blue">set</span>(<span style="color: #a31515">'text'</span>, <span style="color: #a31515">'按钮'</span>);</pre>
+<p><a href="http://11011.net/software/vspaste"></a>3.第三种方法其实跟第二种方法是一样的，只是省略了一个Edo.get方法调用代码，如下：</p><pre class="code">Edo.create({
+    id: <span style="color: #a31515">'btn1'</span>,
+    type: <span style="color: #a31515">'button'</span>,    
+    render: document.body
+});
+btn1.<span style="color: blue">set</span>(<span style="color: #a31515">'text'</span>, <span style="color: #a31515">'按钮'</span>);</pre>
+<p><a href="http://11011.net/software/vspaste"></a>这是EdoJS的一个特性：将对象id全局化。省略了对象获取代码，从而更加自然和精炼。</p>
+<h1>事件操作</h1>
+<p>通过如上代码，大家应该知道，监听一个对象的事件，有两种方式：</p>
+<p>1.第一种是配置式的，如：</p><pre class="code">Edo.create({    
+    type: <span style="color: #a31515">'button'</span>,    
+    render: document.body,
+    onclick:  <span style="color: blue">function</span>(e){          <span style="color: green">//配置式监听对象事件
+        </span>alert(<span style="color: #a31515">"Hello, edojs!" </span>+ btn1.text); 
+    }
+});</pre>
+<p>优点是书写简单，与配置对象写在一起；缺点是这种方式，只能给对象增加一个事件监听处理函数。</p>
+<p>2.第二种是命令式的，如：</p><pre class="code">btn.on(<span style="color: #a31515">'click'</span>,  <span style="color: blue">function</span>(e){  
+    alert(<span style="color: #a31515">"Hello, edojs!" </span>+ btn1.text); 
+});
+btn.on(<span style="color: #a31515">'click'</span>,  <span style="color: blue">function</span>(e){  
+    btn.<span style="color: blue">set</span>(<span style="color: #a31515">'text'</span>, <span style="color: #a31515">'clicked!'</span>);
+});</pre>
+<p><a href="http://11011.net/software/vspaste"></a>可以给一个对象增加多个事件监听处理函数。</p>
+<h1>render显示渲染</h1>
+<p>EdoJS组件对象被创建后，需要在页面内显示。这时候就会有一个问题，这个对象在哪里显示？</p>
+<p>render就是控制EdoJS对象显示在哪里的。也有两种方式：</p>
+<p>1.配置式：</p><pre class="code">Edo.create({    
+    type: <span style="color: #a31515">'button'</span>,    
+    render: document.body
+});</pre>
+<p><a href="http://11011.net/software/vspaste"></a>2.命令式：</p><pre class="code">btn.<span style="color: blue">set</span>(<span style="color: #a31515">'render'</span>, document.body);
+<span style="color: green">//或
+</span>btn.render(document.body);</pre>
+<h1>set方法</h1>
+<p>set方法可以说是EdoJS的一个重要的核心思想：所有的组件属性，都可以通过set方法来设置，并反映到界面上。</p>
+<p>比如，在一些其他的框架，我们要修改某个对象的文本，是这样写的：</p><pre class="code">cmp.setText(<span style="color: #a31515">'文本'</span>);</pre><a href="http://11011.net/software/vspaste"></a>
+<p>有时候会这样命名这个方法：</p><pre class="code">cmp.changeText(<span style="color: #a31515">'文本'</span>);</pre><a href="http://11011.net/software/vspaste"></a>
+<p>EdoJS的set方法，意义在于：为所有的属性操作，提供一个统一的接口。</p>
+<p>使用者在查阅Api文档的时候，看到一个类有A/B/C等属性，那么它就会知道，直接可以通过cmp.set(‘A’, …)这种代码形式，来设置属性，无论在任何时刻！</p>
+<p>是的，无论在任何时刻，您都可以任意对EdoJS对象设置属性！有一些框架，他们具有一个“配置对象”的概念，这个配置对象只有在对象的初始化时刻，才能进行配置。EdoJS没有“配置对象”的概念，只有“属性”，任意时刻都可以设置属性，这一点，大大降低了学习曲线。</p>
+<p>EdoJS是一个简单、强大、高性能的跨浏览器JS组件库框架，在后续的教程中，我们将一一学习EdoJS的组件、容器、布局器、表格、树形组件等使用方式，配合Api文档，我们可以快速制作出卓越的基于web的软件!</p>    
+    
+
+    </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <ASPxInclude src="~/templates/footer.html" />
+</div>
+</body>
+</html>
+<ASPxInclude src="~/templates/bottomlinks.html" />
+<script type="text/javascript">
+togglemenu({menu:'getstarted'});
+addCls('first', 'sel');
+</script>

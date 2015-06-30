@@ -1,0 +1,26 @@
+﻿[{
+    name: 'node1',
+	icon: 'e-tree-folder',
+	expanded: false,
+    __viewicon: true
+},{
+    name: 'node2',
+    icon: 'e-tree-folder',
+    expanded: false,
+    __viewicon: true
+},{
+    name: 'node3',
+    icon: 'e-tree-folder',
+    expanded: false,
+    __viewicon: true
+},{
+    name: 'node4',
+    icon: 'e-tree-folder',
+    expanded: false,
+    __viewicon: true
+},{
+    name: 'node5',
+    icon: 'e-tree-folder',
+    expanded: false,
+    __viewicon: true
+}]

@@ -1,0 +1,21 @@
+2015-06-23 16:04:15,501 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-23 16:04:15,504 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-23 16:07:11,489 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-23 16:07:11,490 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-23 16:18:09,048 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-23 16:18:09,048 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-23 16:23:50,144 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-23 16:23:50,144 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-23 16:30:35,103 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-23 16:30:35,103 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-23 16:31:15,051 [main] WARN  [net.sf.json.JSONObject] - Tried to assign property nanos:java.lang.Integer to bean of class java.util.Date
+2015-06-23 16:31:15,051 [main] WARN  [net.sf.json.JSONObject] - Property 'timezoneOffset' has no write method. SKIPPED.
+2015-06-23 16:31:15,051 [main] WARN  [net.sf.json.JSONObject] - Property 'day' has no write method. SKIPPED.
+2015-06-23 16:31:15,052 [main] WARN  [net.sf.json.JSONObject] - Tried to assign property nanos:java.lang.Integer to bean of class java.util.Date
+2015-06-23 16:31:15,052 [main] WARN  [net.sf.json.JSONObject] - Property 'timezoneOffset' has no write method. SKIPPED.
+2015-06-23 16:31:15,052 [main] WARN  [net.sf.json.JSONObject] - Property 'day' has no write method. SKIPPED.

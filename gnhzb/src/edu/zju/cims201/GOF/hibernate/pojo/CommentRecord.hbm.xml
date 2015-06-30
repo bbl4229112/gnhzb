@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+       
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.CommentRecord" table="caltks.CommentRecord">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="commentCount" column="commentCount" type="java.lang.Long"/>
+                <property name="viewCount" column="viewCount" type="java.lang.Long"/>
+                <property name="downloadCount" column="downloadCount" type="java.lang.Long"/>
+                <property name="ratecount" column="ratecount" type="java.lang.Long"/>
+                <property name="rate" column="rate" type="java.lang.Float"/>
+                <one-to-one name="knowledge" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"  property-ref="commentrecord">
+                </one-to-one>
+                
+        </class>
+</hibernate-mapping>

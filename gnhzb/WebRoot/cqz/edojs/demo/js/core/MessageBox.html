@@ -1,0 +1,202 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+<style type="text/css">    
+
+body {
+    font-family:helvetica,tahoma,verdana,sans-serif;padding:20px;padding-top:32px;font-size:13px;background-color:#fff !important;
+}
+p {
+	margin-bottom:15px;
+}
+h1 {
+	font-size:large;margin-bottom:20px;
+}
+h2 {
+	font-size:14px;color:#333;font-weight:bold;margin:10px 0;
+}
+.example-info{
+	width:150px;border:1px solid #c3daf9;border-top:1px solid #DCEAFB;border-left:1px solid #DCEAFB;background:#ecf5fe url( info-bg.gif ) repeat-x;font-size:10px;padding:8px;
+}
+pre.code{
+	background: #F8F8F8;border: 1px solid #e8e8e8;padding:10px;margin:10px;margin-left:0px;border-left:5px solid #e8e8e8;font-size: 12px !important;line-height:14px !important;
+}
+.msg .x-box-mc {
+    font-size:14px;
+}
+#msg-div {
+    position:absolute;left:35%;top:10px;width:250px;z-index:20000;
+}
+.x-grid3-row-body p {
+    margin:5px 5px 10px 5px !important;
+}
+
+    </style>    
+</head>
+<body style="padding:10px;">
+<h1>MessageBox Dialogs</h1>
+<p>The example shows how to use the MessageBox class. Some of the buttons have animations, some are normal.</p>
+
+<p>
+    <b>Confirm</b><br />
+    Standard Yes/No dialog.
+    <button id="mb1">Show</button>
+</p>
+
+<p>
+    <b>Prompt</b><br />
+    Standard prompt dialog.
+    <button id="mb2">Show</button>
+</p>
+
+<p>
+    <b>Multi-line Prompt</b><br />
+    A multi-line prompt dialog.
+    <button id="mb3">Show</button>
+</p>
+
+<p>
+    <b>Yes/No/Cancel</b><br />
+    Standard Yes/No/Cancel dialog.
+    <button id="mb4">Show</button>
+</p>
+
+<p>
+    <b>Progress Dialog</b><br />
+    Dialog with measured progress bar.
+    <button id="mb6">Show</button>
+</p>
+
+<p>
+    <b>Wait Dialog</b><br />
+    Dialog with indefinite progress bar and custom icon (will close after 8 sec).
+    <button id="mb7">Show</button>
+</p>
+
+<p>
+    <b>Alert</b><br />
+    Standard alert message dialog.
+    <button id="mb8">Show</button>
+</p>
+
+<p>
+    <b>Icons</b><br />
+    Standard alert with optional icon.
+    <select id="icons">
+        <option value="error" selected="selected">Error</option>
+        <option value="info">Informational</option>
+        <option value="question">Question</option>
+        <option value="warning">Warning</option>
+    </select>
+    <button id="mb9">Show</button>
+</p>
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+Edo.util.Dom.on(window, 'domload', function(e){ 
+    Edo.build({
+        id: 'b1',
+        //simpleButton: true,
+        type: 'button',
+        text: '<a href="#">按钮</a>',
+        onclick: function(e){
+            Edo.MessageBox.show({
+                autoClose: 2000,
+                title: '提醒',
+                //width: 300,
+                icon: Edo.MessageBox.WARNING,
+                //msg: 'You are closing a tab that has unsaved changes. <br/>Would you like to save your changes?',
+                msg: '请选择"是"或"否"?的等22222222222222222222222222222<br/>的等待的等待的等待<br/>dsd<br/>s是<br/>都是石狮市',
+                callback: showResult,
+                buttons: Edo.MessageBox.YESNOCANCEL
+            });  
+        },
+        renderTo: '#body'
+    }); 
+    
+    b1.fireEvent('click');
+    
+    Edo.util.Dom.on('mb1', 'click', function(e){        
+        Edo.MessageBox.confirm("confirm", "confirm", showResult);
+    });
+    Edo.util.Dom.on('mb2', 'click', function(e){
+        Edo.MessageBox.prompt("prompt", "prompt", showResult);
+    });
+    Edo.util.Dom.on('mb3', 'click', function(e){        
+        Edo.MessageBox.prompt("prompt", "prompt", showResult, null, true);
+    });
+    
+    Edo.util.Dom.on('mb4', 'click', function(e){     
+    
+        Edo.MessageBox.show({
+           title:'Save Changes?',
+           msg: 'You are closing a tab that has unsaved changes. <br />Would you like to save your changes?',
+           buttons: Edo.MessageBox.YESNOCANCEL,
+           callback: showResult,           
+           icon: Edo.MessageBox.QUESTION
+       });
+    });
+    
+    Edo.util.Dom.on('mb6', 'click', function(e){        
+        Edo.MessageBox.show({
+           title: 'Please wait',
+           msg: 'Loading items...',
+           progressText: 'Initializing...',
+           progressValue: 10,
+           width:300,
+           progress:true,
+           enableClose:false,
+           callback: showResult
+        });
+        
+        var i = 0;
+        var t = setInterval(function(){
+            i += 10;
+            
+            Edo.MessageBox.updateProgress(i, i >= 100 ? 'Complete!' : 'Loading...');            
+            
+            if(i>100) {
+                clearInterval(t);      
+                Edo.MessageBox.hide();          
+            }            
+        }, 200);
+    });
+    
+    Edo.util.Dom.on('mb7', 'click', function(e){        
+        Edo.MessageBox.show({
+           msg: 'Saving your data, please wait...',
+           progressText: 'Saving...',
+           width:300,
+           wait:true,
+           interval: 200,
+           icon: 'e-dialog-download'
+       });
+        setTimeout(function(){
+            //This simulates a long-running operation like a database save or XHR call.
+            //In real code, this would be in a callback function.
+            Edo.MessageBox.hide();
+            //Ext.example.msg('Done', 'Your fake data was saved!');
+        }, 8000);
+    });
+    
+    Edo.util.Dom.on('mb8', 'click', function(e){        
+        Edo.MessageBox.alert("alert", "alert", showResult);
+    });
+    
+    Edo.util.Dom.on('mb9','click', function(){        
+        
+        Edo.MessageBox.show({
+           title: 'Icon Support',
+           msg: 'Here is a message with an icon!',
+           buttons: Edo.MessageBox.OK,           
+           callback: showResult,
+           icon: Edo.MessageBox[Edo.getDom('icons').value.toUpperCase()]
+       });
+    });    
+    function showResult(action, value){
+        alert(action +":"+ value);
+    }
+});       
+</script>

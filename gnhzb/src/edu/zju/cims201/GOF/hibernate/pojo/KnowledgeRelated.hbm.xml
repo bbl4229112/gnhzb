@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.KnowledgeRelated" table="caltks.KnowledgeRelated">
+		
+		<id name="id" type="java.lang.Long" column="id">
+            <generator class="increment"/>
+        </id>
+        
+		<property name="xmlFigureId" column="xmlFigureId" type="string"></property>
+		
+        <property name="knowledgeId" column="knowledgeId" type="java.lang.Long"></property>
+        
+        <property name="type" column="type" type="string"></property>
+        
+        <property name="createTime" column="createTime" type="timestamp"/>
+    </class>
+
+</hibernate-mapping>

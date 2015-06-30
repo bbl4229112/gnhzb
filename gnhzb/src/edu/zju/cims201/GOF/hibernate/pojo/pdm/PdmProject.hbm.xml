@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmProject" table="PdmProjcet">
+		<id name="id" type="java.lang.Long" column="id" >
+			<generator class="increment" />
+		</id>
+		<!-- 项目名称 -->
+		<property name="projectname" column="projectname" type="string" length="200"  />
+		<!-- 项目说明 -->
+		<property name="projectdetail" column="projectdetail" type="string" length="500" />
+		<!-- 项目代号-->
+		<property name="projectCode" column="projectcode" type="string" length="200" />
+		<!--和人相关的属相 -->
+		<!-- 创建者 -->
+		<many-to-one name="creater" column="createrID" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee">
+		</many-to-one>
+		<many-to-one name="developer" column="developerID" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee">
+		</many-to-one>
+		<many-to-one name="builder" column="builderID" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee">
+		</many-to-one>
+		<many-to-one name="applier" column="applierID" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee">
+		</many-to-one>
+		<property name="creatTime" column="creattime" type="timestamp" />
+		<property name="startTime" column="starttime" type="timestamp" />
+		<property name="realStartTime" column="realstarttime" type="timestamp" />
+		<property name="finishTime" column="finishtime" type="timestamp" />
+		<property name="realFinishtime" column="realFinishtime" type="timestamp" />
+		<!--完成百分比 -->
+		<property name="finishpercent" column="finishpercent" type="string" />
+		<!-- 对应模板 -->
+		<many-to-one name="pdmModule" column="moduleId"
+			 class="edu.zju.cims201.GOF.hibernate.pojo.PdmModule">
+		</many-to-one>
+		<property name="mainFileName" column="mainFileName" type="string" length="200" />
+		<property name="xmlFileName" column="xlmFileName" type="string" length="200" />
+	
+	</class>
+</hibernate-mapping>

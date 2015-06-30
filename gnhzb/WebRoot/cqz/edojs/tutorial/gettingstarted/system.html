@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EdoJS - Easy, But Powerful Javascript Framework</title>    
+    <ASPxInclude src="~/templates/toplinks.html" />
+    <style type="text/css">
+.code
+{
+	border:dashed 1px #a0a0a0;border-left:solid 3px #6CE26C;
+	padding:5px;padding-bottom:15px;
+	margin:5px;
+	margin-left:0px;
+	margin-right:15px;	
+	margin-bottom:15px;
+	line-height:18px;
+	overflow:auto;width:750px;overflow-y:hidden;
+	font-weight:400;
+}    
+    </style>    
+</head>
+<body>
+<div class="ct">
+    <ASPxInclude src="~/templates/header.html" />
+    <div class="bd">
+    <ASPxInclude src="~/templates/tutorialnav.html" />
+        <div id="viewcontent">
+        <h1 class="vtitle">EdoJS的架构体系</h1>             
+    <div class="desc-content">
+<h1>继承体系</h1>
+<p>下面用一个简单的类继承图，来说明EdoJS的类继承关系，这里不一一例举出所有的类，如下图所示：</p>
+<p style="text-align:center;margin-bottom:15px;padding-top:15px;"><img src="images/extends.png" /></p>
+<p>&nbsp;</p>
+<h1>命名空间</h1>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/namespace.png" /></p>
+<p>&nbsp;</p>
+<h1>组件、容器、布局器</h1>
+<p>组件、容器、布局器三大概念是EdoJS的架构精华!</p>
+<p>组件是一个基本功能单位，容器包含组件，通过布局器来控制容器内子组件的排布逻辑。 
+<p>比如，一个Box容器，它可以在其内部放很多组件或容器（容器也是组件），但是容器本身是没有布局子组件的能力的，容器必须依靠此容器依赖的布局器，达到布局子组件的目的。所以，当我们切换容器的布局器，此容器内部子组件的排布方式也随之改变。 
+
+<p>下面通过一个简单的例子来说明组件、容器和布局器三者之间的关系：</p><pre class="code"><span style="color: blue">&lt;</span><span style="color: #a31515">script </span><span style="color: red">type</span><span style="color: blue">="text/javascript"&gt;
+</span>Edo.create({    
+    id: <span style="color: #a31515">'box1'</span>,
+    type: <span style="color: #a31515">'box'</span>,
+    layout: <span style="color: #a31515">'vertical'</span>,         <span style="color: green">//初始布局器
+    </span>render: document.body,
+    children: [
+        {
+            type: <span style="color: #a31515">'button'</span>, text: <span style="color: #a31515">'按钮'
+        </span>},
+        {
+            id: <span style="color: #a31515">'combo1'</span>,
+            type: <span style="color: #a31515">'combo'</span>,            
+            displayField: <span style="color: #a31515">'layout'</span>,
+            data: [
+                {   layout: <span style="color: #a31515">'vertical'  </span>},
+                {   layout: <span style="color: #a31515">'horizontal'  </span>}
+            ],
+            onselectionchange: <span style="color: blue">function</span>(e){
+                <span style="color: green">//切换布局器
+                </span>box1.<span style="color: blue">set</span>(<span style="color: #a31515">'layout'</span>, e.selectedItem.layout);
+            }
+        }
+    ]
+});
+<span style="color: blue">&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;</span></pre>
+<p>效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/d3.png" /></p>
+<p>当combo1切换布局器为horizontal的时候，效果图如下：</p>
+<p style="text-align:center;margin-bottom:15px;"><img src="images/d4.png" /></p>
+<p>更多关于EdoJS命名空间、类继承结构和类信息（属性、方法、事件）资料，请查看<a href="/api/">Api文档</a>。</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <ASPxInclude src="~/templates/footer.html" />
+</div>
+</body>
+</html>
+<ASPxInclude src="~/templates/bottomlinks.html" />
+<script type="text/javascript">
+togglemenu({menu:'getstarted'});
+addCls('system', 'sel');
+</script>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:DataGrid xmlns:mx="http://www.adobe.com/2006/mxml" dragEnabled="true" 
+			 dragMoveEnabled="false" initialize="UDDIRefVH.initContent(event)">
+	
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.other.Localizator;
+			import org.act.od.impl.model.UDDIReferenceModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.viewhelper.UDDIReferenceVH;
+		
+			//view helper
+			private var UDDIRefVH : UDDIReferenceVH = new UDDIReferenceVH( this, UDDIReferenceVH.VH_KEY );
+			
+			[Bindable]
+        	private var localizator : Localizator = Localizator.getInstance();
+        	
+			[Bindable]
+			public var model :UDDIReferenceModel = OrDesignerModelLocator.getInstance().getUDDIReferenceModel();
+		
+		]]>
+		
+	</mx:Script>
+	
+	<mx:columns>
+		<mx:DataGridColumn id="serNameCol" sortable="false" headerText="{localizator.getText('uddinavigator.servicename')}" dataField="ServiceName" editable="false"/>
+		<mx:DataGridColumn id="serLoceCol" sortable="false" headerText="{localizator.getText('uddinavigator.servicelocation')}" dataField="ServiceLocation" editable="false" wordWrap="true"/>
+	</mx:columns>
+	
+	<mx:dataProvider>
+		{this.model.xmllist}
+	</mx:dataProvider>
+	
+</mx:DataGrid>

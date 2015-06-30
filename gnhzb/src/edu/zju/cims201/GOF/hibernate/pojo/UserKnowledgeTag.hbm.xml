@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Attachment root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.UserKnowledgeTag" table="caltks.UserKnowledgeTag">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                
+                <many-to-one name="tager" column="tagerID" lazy="false"
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser"
+                not-null="true">
+                </many-to-one>
+                
+                <many-to-one name="knowledge" column="knowledgeID" lazy="false"
+                class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"
+                not-null="true">
+                </many-to-one>
+                
+                <many-to-one name="tag" column="tagID" lazy="false"
+                class="edu.zju.cims201.GOF.hibernate.pojo.Tag"
+                not-null="true">
+                </many-to-one>
+                
+                 <property name="tagTime" column="tagTime" type="timestamp"/>
+                
+        </class>
+</hibernate-mapping>

@@ -1,0 +1,143 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    <p>数据源验证：</p>
+    <ul style="list-style-type:circle;margin-left:35px;">
+        <li>数据源：DataTalbe设置Fields字段配置。Field有两大功能：
+            <ul style="margin-left:35px;">
+                <li>1）进行数据转换。比如"2019-01-11"转换为Date对象；</li>
+                <li>2）valid验证器函数</li>
+            </ul>
+        </li>
+        <li>表格：设置data，遵守数据源的验证逻辑</li>        
+        <li>表单：设置data，遵守数据源的验证逻辑。并将验证逻辑通过组件的name与Field的name绑定。</li>        
+    </ul>
+    <br />
+    <b>本示例的要点：数据源统一设置Field，对应到表单的控件以及表格的列。表格与表单遵守数据源的验证逻辑。</b>
+    <p>这样可以实现：一个数据源描述和约定了业务逻辑，界面能随时动态绑定这个业务逻辑。界面可以任意变化，业务逻辑可以保持不变。</p>
+    <br /><br />
+    
+    <input type="button" value="验证(单行)" onclick="valid1()" />
+    <input type="button" value="验证(多行)" onclick="valid2()" />
+    <input type="button" value="验证(全部)"  onclick="valid3()"/>
+        
+</body>
+</html>
+
+
+<script src="../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+var data = [
+    {name: '1', date: '2008-10-10', gender: 1, age: 10},
+    {name: 'a', date: '2009-07-10', gender: 2, age: -10},
+    {name: 'b', date: '2008-11-02', gender: 2, age: 1110},
+    {name: 'c', date: '2000-04-11', gender: 1, age: 30}
+];
+var dataTable = new Edo.data.DataTable()
+.set({
+    fields: [
+        {name: 'NAME', mapping: 'name', required: true, type: 'string',
+            valid: function(value, record, field, dataTable){
+                if(value != 'abc') return '必须为abc';
+                return true;
+            }
+        },
+        {name: 'DATE', mapping: 'date', type: 'date', dateFormat: 'Y-m-d',
+            valid: function(value, record, field, dataTable){     
+                if(value < new Date(2020,1,1)) return '不能小于2010-2-1';
+                return true;
+            }
+        },
+        {   name: 'age', type: 'int',
+            valid: function(value, record, field, dataTable){     
+            
+                if(value < 0) return '年龄不能小于0';
+                if(value > 120) return '年龄不能大于120';
+                return true;
+            }
+        }
+    ],
+    data: data
+});
+
+new Edo.lists.Table()
+.set({
+    id: 'table',
+    width: 400,height: 200,
+    columns: [
+        {header: '姓名', dataIndex: 'NAME', editor: 'text'},
+        {header: '日期', dataIndex: 'DATE'},
+        {header: '性别', dataIndex: 'gender'},
+        {header: '年龄', dataIndex: 'age', editor: 'spinner'}
+    ],
+    data: dataTable,
+    render: document.body
+});
+
+new Edo.containers.Panel()
+.set({
+    render: document.body,
+    data: dataTable,
+    autoChange: true,
+    id: 'ct',
+    children: [
+        {
+            type:'error', forId: 'ct', width: '100%'
+        }
+        ,
+        {type: 'formitem', label: '姓名:',
+            children: [
+                {type: 'text', name: 'NAME'}
+            ]
+        }
+        ,
+        {type: 'formitem', label: '年龄:', 
+            children: [
+                {type: 'Slider', name: 'age', minValue: -20, maxValue: 130}
+            ]
+        },
+        {type: 'formitem', label: '日期:', 
+            children: [
+                {type: 'date', name: 'DATE'}
+            ]
+        },{type: 'formitem', label: '性别:', 
+            children: [
+                {type: 'combo', name: 'gender',valueField: 'value',
+                    data: [
+                        {text: '男', value: 1},
+                        {text: '女', value: 2}
+                    ]
+                }
+            ]
+        }
+    ]
+});
+/////////////////////
+function valid1(){
+    var record = dataTable.getSelected();
+    if(record){
+        dataTable.valid(record);
+    }else{
+        alert("请选中要验证的记录");
+    }
+}
+function valid2(){
+    var records = table.getSelecteds();
+    if(records.length>0){
+        dataTable.valid(records);
+    }else{
+        alert("请选中要验证的记录");
+    }
+}
+function valid3(){    
+    dataTable.valid(true, true);
+}
+
+function add(){
+    var record = dataTable.newRecord();
+    dataTable.insert(0, record);
+}
+</script>

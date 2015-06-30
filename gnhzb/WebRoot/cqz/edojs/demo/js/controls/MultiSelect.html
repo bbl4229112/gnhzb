@@ -1,0 +1,115 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+  
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.Button()
+.set({   
+    text: '设置选中',
+    render: document.body,
+    onclick: function(e){
+        ms.setValue([1,3])
+    }
+});
+new Edo.controls.Button()
+.set({   
+    text: '获取选中',
+    render: document.body,
+    onclick: function(e){
+        alert(ms.getValue());
+    }
+});
+
+var ms = new Edo.controls.MultiSelect();
+ms.set({    
+    render: document.body,    
+    rowSelectMode: 'multi', //single
+    autoHeight: true,
+    valueField: 'value',
+    data: [
+        {text: 'edojs', value: 1},
+        {text: 'ext', value: 2},
+        {text: 'jquery', value: 3}
+    ]
+});
+
+
+
+////////////
+Edo.util.Dom.append(document.body, '<br/><br/>');
+Edo.create({
+    type: 'box',
+    height: 100,
+    render: document.body,
+    layout: 'horizontal',
+    children: [
+        {
+            id: 'sel1',
+            type: 'multiselect',                        
+            //rowSelectMode: 'single',
+            height: '100%',
+            data: [
+                {text: '1'},
+                {text: '2'},
+                {text: '3'}
+            ]
+        },
+        {
+            type: 'ct', layout: 'vertical', verticalAlign: 'middle', height: '100%',
+            children: [
+                {
+                    type: 'button',
+                    text: '>',
+                    onclick: function(e){
+                        //获得选中行
+                        var sels = sel1.getSelecteds();
+                        //原多选框删除所有选中行
+                        sel1.data.removeRange(sels);
+                        
+                        //确定另一个多选框当前的选中索引
+                        var index = 0;
+                        var sel = sel2.getSelected();
+                        if(sel){
+                            index = sel2.data.findIndex(sel);
+                        }
+                        //将选中行插入另一个多选框的选中索引处
+                        sel2.data.insertRange(index, sels);
+                    }
+                },
+                {
+                    type: 'button',
+                    text: '<',
+                    onclick: function(e){
+                        var sels = sel2.getSelecteds();
+                        sel2.data.removeRange(sels);
+                        
+                        var index = 0;
+                        var sel = sel1.getSelected();
+                        if(sel){
+                            index = sel1.data.findIndex(sel);
+                        }                        
+                        sel1.data.insertRange(0, sels);
+                    }
+                }
+            ]
+        },
+        {
+            id: 'sel2',
+            type: 'multiselect',     
+            height: '100%',                   
+            rowSelectMode: 'single',
+            data: [
+                {text: '1'},
+                {text: '2'},
+                {text: '3'}
+            ]
+        }
+    ]
+});
+</script>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.FlowNode root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.FlowNode" table="caltks.FlowNode">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="addTime" column="addTime" type="timestamp"/>
+                
+                <many-to-one name="flow" column="flowID" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.Flow">
+                </many-to-one>
+                <many-to-one name="approverORLender" column="approverORLenderID" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+                </many-to-one>
+               
+                
+                <property name="approvalORBorrowTime" column="approvalORBorrowTime" type="timestamp"/>
+                <property name="approvalORBorrowOpinion" column="approvalORBorrowOpinion" type="string"/>
+                
+                 <many-to-one name="initiator" column="initiatorID" not-null="true" 
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+                </many-to-one>
+                
+                
+                <property name="nodeStatus" column="nodeStatus" type="string"/>
+        </class>
+</hibernate-mapping>

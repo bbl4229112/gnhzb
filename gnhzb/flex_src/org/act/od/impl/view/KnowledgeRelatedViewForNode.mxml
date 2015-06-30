@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="300"
+		   >
+	<mx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import org.act.od.impl.model.KnowledgeViewModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			
+			private function RowNum(item:Object, column:DataGridColumn):String {
+				var index:int=this.knowledgeRelated.dataProvider.getItemIndex(item) + 1;
+				return String(index);
+			}
+			
+//			protected function creationCompleteHandler(event:FlexEvent):void
+//			{
+//				if(knowledgeViewModel.knowledgeRelated == null) {
+//					this.getChildAt(0).visible = false;
+//					this.getChildAt(1).visible = false;
+//					this.getChildAt(2).visible = true;
+//				} else {
+//					this.getChildAt(0).visible = true;
+//					this.getChildAt(1).visible = true;
+//					this.getChildAt(2).visible = false;
+//				}
+//			}
+			
+		]]>
+	</mx:Script>
+
+	<mx:DataGrid id="knowledgeRelated" x="0" y="25" width="500" height="135" variableRowHeight="true">
+		<mx:columns>
+			<mx:DataGridColumn visible="false" dataField="id" headerText="id" textAlign="center" width="45"/>
+			<mx:DataGridColumn labelFunction="RowNum" headerText="序号" textAlign="center" width="45"/>
+			<mx:DataGridColumn dataField="titleName" headerText="知识标题" textAlign="center" width="220"/>
+			<mx:DataGridColumn dataField="uploader" headerText="上传者" textAlign="center" width="50"/>
+			<mx:DataGridColumn dataField="uploadTime" headerText="上传时间" textAlign="center" width="125"/>
+			<mx:DataGridColumn dataField="knowledgeType" headerText="知识类型" textAlign="center" width="60"/>
+		</mx:columns>
+	</mx:DataGrid>
+</mx:Canvas>

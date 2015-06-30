@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.ComboBox()
+.set({    
+    render: document.body,
+    
+    valueField: 'id',
+    displayField: 'label',
+    data: [
+        {label: '张三', id: '1'},
+        {label: '李四', id: '2'}
+    ],
+    
+    onselectionchange: function(e){
+        alert(this.getValue());
+    }
+});
+Edo.util.Dom.append(document.body, '<br/><div>自定义表格下拉框</div>');
+new Edo.controls.ComboBox()
+.set({    
+    render: document.body,
+    
+    valueField: 'id',
+    displayField: 'label',
+    data: [
+        {label: '张三', id: '1'},
+        {label: '李四', id: '2'}
+    ],
+    
+    onselectionchange: function(e){
+        alert(this.getValue());
+    },
+    
+    tableConfig: {
+        headerVisible: true,
+        verticalLine: true,
+        horizontalLine: true,
+        columns: [
+            {header: 'ID', dataIndex: 'id'},
+            {header: '名称', dataIndex: 'label'},
+        ]
+    }
+});
+
+  
+</script>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+				width="628" height="140">
+	<mx:Script>
+		<![CDATA[
+			import mx.events.ItemClickEvent;
+			import mx.controls.RadioButton;
+			import mx.controls.RadioButtonGroup;
+			import mx.events.CloseEvent;
+			import mx.managers.PopUpManager;
+			import mx.controls.Alert;
+			import org.act.od.impl.model.*;
+			[Embed(source="/../assets/icon/container/BasicData.png")]
+        	[Bindable]
+        	public var BasicDataicon :Class;
+        	
+        	[Bindable]
+        	[Embed(source="/../assets/icon/container/Business.png")]
+        	public var Businessicon :Class;
+        	
+        	[Bindable]
+        	[Embed(source="/../assets/icon/container/Computer.png")]
+			public var Computericon :Class;
+			
+			[Embed(source="/../assets/icon/container/BPEL.png")]
+			[Bindable]
+			public var BPELicon :Class;
+			
+			[Embed(source="/../assets/icon/container/BPMN.png")]
+			[Bindable]
+			public var BPMNicon :Class;
+			
+        	
+			//change添加大类例图
+			private var fileName :String;
+			internal function selectCategory(event:ItemClickEvent):void {
+//	            if (event.currentTarget.selectedValue == "BPMN") {
+//	                   bpelRadio.selected = false;
+//	                   bpmnRadio.selected = true;
+//	            } 
+//	            else {
+//	               	   bpelRadio.selected = true;
+//	                   bpmnRadio.selected = false;
+//	            } 
+        	}
+
+			
+			internal function onCancleHandle(event :MouseEvent) :void {
+				PopUpManager.removePopUp(this);
+			}
+			
+			internal function onConfirmHandle(event :MouseEvent) :void {
+				
+				if(fn.text==""){
+					Alert.show("Filename can't be null!");
+				}
+//				else if(BasicData.selected!=true&&Business.selected!=true&&
+//					Computer.selected!=true&&BPMN.selected!=true&&BPEL.selected!=true){
+//					Alert.show("Please select a type of file!")	
+//				}
+				else{
+					fileName = fn.text;
+					this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+					PopUpManager.removePopUp(this);
+				}
+			}
+			internal function confirm():void{
+				fileName = fn.text;
+				this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+				PopUpManager.removePopUp(this);
+			}
+			
+			public function getText():String{
+				return fileName;
+			}
+			
+			public function setTitle(title:String):void{
+				this.title="New " + title;
+				la.text=title+" Name:"
+				this.fn.setFocus();
+				
+				/*if(title=="File")
+				{
+				//	bpmnRadio.visible = true;
+					//bpelRadio.visible = true;
+					
+					//Default bpel Radio selected
+					bpelRadio.selected = true;
+					
+				}*/
+			}
+			
+			public function getSelectedFileType():String
+			{
+//				return fileType.selectedValue.toString();
+				return null;
+			}
+			//change
+//			public function getSelectedFileCategory():String
+//			{
+//				return category.selectedValue.toString();
+//			}
+			
+			public function setRenameTitle(title:String):void{
+				this.title=title;
+				la.text="新名称:";
+			}
+			public function setText(text:String):void{
+				this.fn.text = text;
+				this.fn.setSelection(0, text.length);
+				this.fn.setFocus();
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:TextInput id="fn" x="113" y="12" width="424" height="28" enter="confirm()" fontSize="14"/>
+	<mx:Label x="10" y="12" id="la" width="95" height="28" fontSize="14" textAlign="left"/>
+	<!--
+	<mx:RadioButtonGroup id="fileType" />
+	<mx:RadioButton id="bpmnRadio" x="10" y="10" group="{fileType}" label="BPMN" visible ="false"/>
+	<mx:RadioButton id="bpelRadio" x="73" y="10" group="{fileType}" label="BPEL" visible ="false"/>
+	
+	<mx:HRule x="0" y="58" width="600" height="2"/>
+	-->
+	<mx:Button id="Confirm" label="确认" x="169" y="60" click="onConfirmHandle(event)"  width="76" height="32"/>
+	<mx:Button label="取消" x="350" y="60" click="onCancleHandle(event)"  width="74" height="32"/>
+	<!--change
+	<mx:Label x="10" y="77" text="Select the type of file:" width="190" height="24" fontSize="14"/>
+	<mx:RadioButtonGroup id="category" itemClick="selectCategory(event)"/>
+	<mx:RadioButton id="BasicData" x="97" y="466" group="{category}" label="BasicData" height="22" />
+	<mx:RadioButton id="Business" x="267" y="466" group="{category}" label="Business" height="22"/>
+	<mx:RadioButton id="Computer" x="434" y="466" group="{category}" label="Computer" height="22"/>
+	<mx:RadioButton id="BPMN" x="391" y="275" group="{category}" label="BPMN" height="22" />
+	<mx:RadioButton id="BPEL" x="160" y="275" group="{category}" label="BPEL" height="22" />
+	
+	<mx:Image x="76.5" y="322" source="{BasicDataicon}" width="110" height="130"/>
+	<mx:Image x="249" y="322" source="{Businessicon}" width="110" height="130"/>
+	<mx:Image x="418" y="322" source="{Computericon}" width="119" height="130"/>
+	<mx:Image x="76.5" y="161" source="{BPELicon}" width="207" height="153"/>
+	<mx:Image x="332" y="161" source="{BPMNicon}" width="205" height="153"/>
+	-->
+	
+</mx:TitleWindow>

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="dataservice.aspx.cs" Inherits="examples_lists_table_dataservice" %>

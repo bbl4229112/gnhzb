@@ -1,0 +1,857 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+  xml:base="http://www.owl-ontologies.com/unnamed.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="术语"/>
+  <owl:Class rdf:ID="类别"/>
+  <owl:ObjectProperty rdf:ID="Z">
+    <rdfs:domain rdf:resource="#术语"/>
+    <rdfs:range rdf:resource="#术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Y">
+    <rdfs:range rdf:resource="#术语"/>
+    <rdfs:domain rdf:resource="#术语"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="D"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="L">
+    <rdfs:domain rdf:resource="#术语"/>
+    <rdfs:range rdf:resource="#术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="F">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="S"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#术语"/>
+    <rdfs:domain rdf:resource="#术语"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#S">
+    <rdfs:range rdf:resource="#术语"/>
+    <rdfs:domain rdf:resource="#术语"/>
+    <owl:inverseOf rdf:resource="#F"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#D">
+    <rdfs:range rdf:resource="#术语"/>
+    <rdfs:domain rdf:resource="#术语"/>
+    <owl:inverseOf rdf:resource="#Y"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="范畴">
+    <rdfs:range rdf:resource="#类别"/>
+    <rdfs:domain rdf:resource="#术语"/>
+  </owl:ObjectProperty>
+  <owl:SymmetricProperty rdf:ID="C">
+    <owl:inverseOf rdf:resource="#C"/>
+    <rdfs:range rdf:resource="#术语"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#术语"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:ID="定义">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#术语"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="类别名称">
+    <rdfs:domain rdf:resource="#类别"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="中文词">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#术语"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="英文词">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#术语"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="拼音">
+    <rdfs:domain rdf:resource="#术语"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="范畴号">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#类别"/>
+  </owl:FunctionalProperty>
+  <swrl:Imp rdf:ID="Rule-1"/>
+  <术语 rdf:ID="起动系统">
+    <范畴>
+      <类别 rdf:ID="柴油发动机">
+        <类别名称 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >柴油发动机</类别名称>
+      </类别>
+    </范畴>
+    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >起动系统</中文词>
+  </术语>
+  <术语 rdf:ID="活塞连杆组件">
+    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >活塞连杆组件</中文词>
+    <F>
+      <术语 rdf:ID="活塞组">
+        <F>
+          <术语 rdf:ID="活塞销">
+            <S rdf:resource="#活塞组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >huo sai xiao</拼音>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >piston pin</英文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >活塞销</中文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="弹簧">
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >tan huang</拼音>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >弹簧</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#活塞组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >spring</英文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="挡圈">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >挡圈</中文词>
+            <S rdf:resource="#活塞组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lock ring</英文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >dang quan</拼音>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="活塞">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >活塞</中文词>
+            <S rdf:resource="#活塞组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >piston</英文词>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >huo sai</拼音>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="活塞头">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >huo sai tou</拼音>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >活塞头</中文词>
+            <S rdf:resource="#活塞组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >piston head</英文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="定位销">
+            <S rdf:resource="#活塞组"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ding wei xiao</拼音>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >locating pin</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >定位销</中文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="平垫">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ping dian</拼音>
+            <S rdf:resource="#活塞组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >flat pad</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >平垫</中文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="第三气环">
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >di san qi huan</拼音>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >第三气环</中文词>
+            <S rdf:resource="#活塞组"/>
+          </术语>
+        </F>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >活塞组</中文词>
+        <F>
+          <术语 rdf:ID="第二气环">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#活塞组"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >第二气环</中文词>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ring-piston (intermediate)</英文词>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >di er qi huan</拼音>
+          </术语>
+        </F>
+        <S rdf:resource="#活塞连杆组件"/>
+        <F>
+          <术语 rdf:ID="第一气环">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >第一气环</中文词>
+            <S rdf:resource="#活塞组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >di yi qi huan</拼音>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ring-piston top</英文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="油环">
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >oil scraper</英文词>
+            <S rdf:resource="#活塞组"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >油环</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >you huan</拼音>
+          </术语>
+        </F>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <F>
+          <术语 rdf:ID="活塞裙">
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >huo sai qun</拼音>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >活塞裙</中文词>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >piston skirt</英文词>
+            <S rdf:resource="#活塞组"/>
+          </术语>
+        </F>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="连杆组">
+        <F>
+          <术语 rdf:ID="连杆螺钉">
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod screw</英文词>
+            <S rdf:resource="#连杆组"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆螺钉</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan luo ding</拼音>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="油槽">
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >you cao</拼音>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >oil groove</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >油槽</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#连杆组"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="铁丝">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >iron wire</英文词>
+            <S rdf:resource="#连杆组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >tie si</拼音>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >铁丝</中文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="连杆下轴瓦">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆下轴瓦</中文词>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod lower bearing</拼音>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod lower bearing</英文词>
+            <S rdf:resource="#连杆组"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="连杆">
+            <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >机构中两端分别与主动和从动构件铰接以传递运动和力的杆件</定义>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod</英文词>
+            <S rdf:resource="#连杆组"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <D>
+              <术语 rdf:ID="连接杆">
+                <范畴 rdf:resource="#柴油发动机"/>
+                <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >lian jie gan</拼音>
+                <S rdf:resource="#连杆组"/>
+                <Y rdf:resource="#连杆"/>
+                <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >connecting rod</英文词>
+                <定义 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >机构中两端分别与主动和从动构件铰接以传递运动和力的杆件</定义>
+                <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >连接杆</中文词>
+              </术语>
+            </D>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan</拼音>
+          </术语>
+        </F>
+        <F rdf:resource="#连接杆"/>
+        <F>
+          <术语 rdf:ID="连杆大头">
+            <S rdf:resource="#连杆组"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod big end</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆大头</中文词>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan da tou</拼音>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="连杆杆身">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan gan shen</拼音>
+            <S rdf:resource="#连杆组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod shank</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆杆身</中文词>
+          </术语>
+        </F>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <F>
+          <术语 rdf:ID="连杆小头">
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod small end</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆小头</中文词>
+            <S rdf:resource="#连杆组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan xiao tou</拼音>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="定位齿">
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >locating gear</英文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >定位齿</中文词>
+            <S rdf:resource="#连杆组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ding wei zhi</拼音>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="自锁螺母">
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >zi suo luo mu</拼音>
+            <S rdf:resource="#连杆组"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >self-locking nut</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >自锁螺母</中文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="轴瓦定位槽">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >轴瓦定位槽</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#连杆组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >bearing locating groove</英文词>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >zhou wa ding wei cao</拼音>
+          </术语>
+        </F>
+        <S rdf:resource="#活塞连杆组件"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >连杆组</中文词>
+        <F>
+          <术语 rdf:ID="连杆铜套">
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan tong tao</拼音>
+            <S rdf:resource="#连杆组"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod copper bush</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆铜套</中文词>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="油孔">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >油孔</中文词>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >oil hole</英文词>
+            <S rdf:resource="#连杆组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >you kong</拼音>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="连杆上轴瓦">
+            <S rdf:resource="#连杆组"/>
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod upper bearing</英文词>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆上轴瓦</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan shang zhou wa</拼音>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="连杆盖">
+            <英文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >connecting rod cover</英文词>
+            <S rdf:resource="#连杆组"/>
+            <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >lian gan gai</拼音>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >连杆盖</中文词>
+          </术语>
+        </F>
+      </术语>
+    </F>
+    <S>
+      <术语 rdf:ID="曲柄连杆机构">
+        <范畴 rdf:resource="#柴油发动机"/>
+        <F>
+          <术语 rdf:ID="曲轴组件">
+            <S rdf:resource="#曲柄连杆机构"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="曲轴皮带轮组件">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >曲轴皮带组件</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#曲柄连杆机构"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="曲轴油封组件">
+            <S rdf:resource="#曲柄连杆机构"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >曲轴油封组件</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="曲轴后油封座组件">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >曲轴后油封座组件</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#曲柄连杆机构"/>
+          </术语>
+        </F>
+        <拼音 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >qu bing lian gan ji gou</拼音>
+        <F rdf:resource="#活塞连杆组件"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >曲柄连杆机构</中文词>
+        <F>
+          <术语 rdf:ID="飞轮组件">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#曲柄连杆机构"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >飞轮组件</中文词>
+          </术语>
+        </F>
+      </术语>
+    </S>
+    <范畴 rdf:resource="#柴油发动机"/>
+  </术语>
+  <术语 rdf:ID="固定件">
+    <F>
+      <术语 rdf:ID="油底壳紧固组件">
+        <范畴 rdf:resource="#柴油发动机"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >油底壳紧固组件</中文词>
+        <S rdf:resource="#固定件"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="机体组件">
+        <S rdf:resource="#固定件"/>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >机体组件</中文词>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="气缸罩壳组件">
+        <范畴 rdf:resource="#柴油发动机"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >气缸罩壳组件</中文词>
+        <S rdf:resource="#固定件"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="机体盖板组件">
+        <S rdf:resource="#固定件"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >机体盖板组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="油底壳组件">
+        <S rdf:resource="#固定件"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >油底壳组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="气缸盖紧固组件">
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >气缸盖紧固组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <S rdf:resource="#固定件"/>
+      </术语>
+    </F>
+    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >固定件</中文词>
+    <范畴 rdf:resource="#柴油发动机"/>
+  </术语>
+  <术语 rdf:ID="气门机构组件">
+    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >气门机构组件</中文词>
+    <范畴 rdf:resource="#柴油发动机"/>
+    <S>
+      <术语 rdf:ID="进排气系统">
+        <F>
+          <术语 rdf:ID="进气管路组件">
+            <S rdf:resource="#进排气系统"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >进气管路组件</中文词>
+          </术语>
+        </F>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <F>
+          <术语 rdf:ID="排气管紧固件组件">
+            <S rdf:resource="#进排气系统"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >排气管紧固件组件</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <S rdf:resource="#进排气系统"/>
+        <F>
+          <术语 rdf:ID="燃料供给系统">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >燃料供给系统</中文词>
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#进排气系统"/>
+            <F>
+              <术语 rdf:ID="燃料管路组件">
+                <范畴 rdf:resource="#柴油发动机"/>
+                <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >燃料管路组件</中文词>
+                <F>
+                  <术语 rdf:ID="起动电机组件">
+                    <范畴 rdf:resource="#柴油发动机"/>
+                    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >起动电机组件</中文词>
+                    <S rdf:resource="#燃料管路组件"/>
+                  </术语>
+                </F>
+                <F>
+                  <术语 rdf:ID="充电发电机组件">
+                    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >充电发电机组件</中文词>
+                    <范畴 rdf:resource="#柴油发动机"/>
+                    <S rdf:resource="#燃料管路组件"/>
+                    <S>
+                      <术语 rdf:ID="润滑系统">
+                        <F>
+                          <术语 rdf:ID="增压器机油管路组件">
+                            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >增压器机油管路组件</中文词>
+                            <S rdf:resource="#润滑系统"/>
+                            <范畴 rdf:resource="#柴油发动机"/>
+                          </术语>
+                        </F>
+                        <F rdf:resource="#充电发电机组件"/>
+                        <F>
+                          <术语 rdf:ID="机油冷却器和滤清器组件">
+                            <S rdf:resource="#润滑系统"/>
+                            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >机油冷却器和滤清器组件</中文词>
+                            <范畴 rdf:resource="#柴油发动机"/>
+                          </术语>
+                        </F>
+                        <F>
+                          <术语 rdf:ID="机油泵组件">
+                            <范畴 rdf:resource="#柴油发动机"/>
+                            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >机油泵组件</中文词>
+                            <S rdf:resource="#润滑系统"/>
+                          </术语>
+                        </F>
+                        <F>
+                          <术语 rdf:ID="油尺组件">
+                            <S rdf:resource="#润滑系统"/>
+                            <范畴 rdf:resource="#柴油发动机"/>
+                            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >油尺组件</中文词>
+                          </术语>
+                        </F>
+                        <F>
+                          <术语 rdf:ID="机油管路组件">
+                            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >机油管路组件</中文词>
+                            <S rdf:resource="#润滑系统"/>
+                            <范畴 rdf:resource="#柴油发动机"/>
+                          </术语>
+                        </F>
+                        <范畴 rdf:resource="#柴油发动机"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >润滑系统</中文词>
+                      </术语>
+                    </S>
+                  </术语>
+                </F>
+                <F>
+                  <术语 rdf:ID="电磁切断器组件">
+                    <范畴 rdf:resource="#柴油发动机"/>
+                    <S rdf:resource="#燃料管路组件"/>
+                    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >电磁切断器组件</中文词>
+                  </术语>
+                </F>
+                <S rdf:resource="#燃料供给系统"/>
+              </术语>
+            </F>
+            <F>
+              <术语 rdf:ID="燃油滤清器组件">
+                <范畴 rdf:resource="#柴油发动机"/>
+                <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >燃油滤清器组件</中文词>
+                <S rdf:resource="#燃料供给系统"/>
+              </术语>
+            </F>
+            <F>
+              <术语 rdf:ID="定时齿轮组件">
+                <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >定时齿轮组件</中文词>
+                <范畴 rdf:resource="#柴油发动机"/>
+                <S>
+                  <术语 rdf:ID="配气机构">
+                    <F rdf:resource="#气门机构组件"/>
+                    <F>
+                      <术语 rdf:ID="通气管组件">
+                        <范畴 rdf:resource="#柴油发动机"/>
+                        <S rdf:resource="#配气机构"/>
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >通气管组件</中文词>
+                      </术语>
+                    </F>
+                    <F>
+                      <术语 rdf:ID="通风帽组件">
+                        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >通风帽组件</中文词>
+                        <范畴 rdf:resource="#柴油发动机"/>
+                        <S rdf:resource="#配气机构"/>
+                      </术语>
+                    </F>
+                    <F rdf:resource="#定时齿轮组件"/>
+                    <范畴 rdf:resource="#柴油发动机"/>
+                    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >配气机构</中文词>
+                  </术语>
+                </S>
+                <S rdf:resource="#燃料供给系统"/>
+              </术语>
+            </F>
+            <F>
+              <术语 rdf:ID="喷油泵调速组件">
+                <S rdf:resource="#燃料供给系统"/>
+                <范畴 rdf:resource="#柴油发动机"/>
+                <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >喷油泵调速组件</中文词>
+              </术语>
+            </F>
+            <F>
+              <术语 rdf:ID="喷油管路组件">
+                <S rdf:resource="#燃料供给系统"/>
+                <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >喷油管路组件</中文词>
+                <范畴 rdf:resource="#柴油发动机"/>
+              </术语>
+            </F>
+          </术语>
+        </F>
+        <F rdf:resource="#进排气系统"/>
+        <F>
+          <术语 rdf:ID="排气歧管组件">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >排气歧管组件</中文词>
+            <S rdf:resource="#进排气系统"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="增压器组件">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >增压器组件</中文词>
+            <S rdf:resource="#进排气系统"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="空气滤清器组件">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#进排气系统"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >空气滤清器组件</中文词>
+          </术语>
+        </F>
+        <F rdf:resource="#气门机构组件"/>
+        <F>
+          <术语 rdf:ID="排气引射器组件">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <S rdf:resource="#进排气系统"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >排气引射器组件</中文词>
+          </术语>
+        </F>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >进排气系统</中文词>
+        <F>
+          <术语 rdf:ID="进排气管路组件">
+            <范畴 rdf:resource="#柴油发动机"/>
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >进排气管路组件</中文词>
+            <S rdf:resource="#进排气系统"/>
+          </术语>
+        </F>
+        <F>
+          <术语 rdf:ID="消声器组件">
+            <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >消声器组件</中文词>
+            <S rdf:resource="#进排气系统"/>
+            <范畴 rdf:resource="#柴油发动机"/>
+          </术语>
+        </F>
+      </术语>
+    </S>
+    <S rdf:resource="#配气机构"/>
+  </术语>
+  <术语 rdf:ID="冷却系统">
+    <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >冷却系统</中文词>
+    <F>
+      <术语 rdf:ID="调温器组件">
+        <S rdf:resource="#冷却系统"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >调温器组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="风扇支架组件">
+        <S rdf:resource="#冷却系统"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >风扇支架组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="冷却水管路组件">
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >冷却水管路组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <S rdf:resource="#冷却系统"/>
+      </术语>
+    </F>
+    <范畴 rdf:resource="#柴油发动机"/>
+    <F>
+      <术语 rdf:ID="水泵组件">
+        <S rdf:resource="#冷却系统"/>
+        <范畴 rdf:resource="#柴油发动机"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >水泵组件</中文词>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="风扇及防护罩组件">
+        <范畴 rdf:resource="#柴油发动机"/>
+        <S rdf:resource="#冷却系统"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >风扇及防护罩组件</中文词>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="风扇皮带轮组件">
+        <S rdf:resource="#冷却系统"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >风扇皮带轮组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="三角带组件">
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >三角带组件</中文词>
+        <S rdf:resource="#冷却系统"/>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+    <F>
+      <术语 rdf:ID="传动装置油冷却组件">
+        <S rdf:resource="#冷却系统"/>
+        <中文词 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >传动装置油冷却组件</中文词>
+        <范畴 rdf:resource="#柴油发动机"/>
+      </术语>
+    </F>
+  </术语>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

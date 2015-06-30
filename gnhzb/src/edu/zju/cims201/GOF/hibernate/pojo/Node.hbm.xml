@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- edu.zju.cims201.GOF.hibernate.pojo.Author root -->
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.Node" table="Nodde">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+	    <property name="name" column="name" type="string"/>
+	    <property name="img" column="img" type="string"/>
+	    <property name="label" column="label" type="string"/>
+	    <property name="nodedrawtype" column="nodedrawtype" type="string"/>
+	    <property name="description" column="description" type="string"/>
+	    <many-to-one name="nodecategory" column="nodecategory" lazy="false" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.Nodecategory">
+		</many-to-one>
+	    <many-to-one name="nodetype" column="nodetype" lazy="false" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.Nodetype">
+		</many-to-one>
+		
+		<set name="functions" table="NodeFunction" lazy="false" cascade="none" inverse="false">
+             <key column="nodeid"/>
+             
+             <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Function">
+             	<column name="functionid"></column>
+             </many-to-many>
+         </set>
+	</class>
+</hibernate-mapping>
+
+	

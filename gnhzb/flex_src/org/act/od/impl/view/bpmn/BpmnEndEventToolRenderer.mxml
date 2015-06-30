@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off" initialize="init()">
+
+	<mx:Script>
+		<![CDATA[
+			import org.act.od.impl.other.BpmnResource;
+
+			[Bindable]
+			public var noneEndEvent :Class = BpmnResource.getInstance().icon_tool_none_end;
+
+
+			[Bindable]
+			private var iconClass :Class;
+
+			[Bindable]
+			private var iconName :String;
+
+			public function init() :void{
+				this.iconName = lab.text;
+				initToolPic(iconName);
+			}
+
+			private function initToolPic(label :String) :void{
+
+				if(label.localeCompare("Message") == 0) {
+
+				}
+				else if(label.localeCompare("None") == 0) {
+					iconClass = noneEndEvent;
+				}
+				else {
+
+				}
+			}
+
+		]]>
+	</mx:Script>
+
+	<mx:LinkButton id="btn" icon="{iconClass}" width="40" height="40" buttonMode="false" toolTip="{data.label}"/>
+	<mx:Label id="lab" text="{data.label}" textAlign="center" height="100%" buttonMode="true" fontSize="20"
+			  fontStyle="italic" visible="false"/>
+
+</mx:HBox>

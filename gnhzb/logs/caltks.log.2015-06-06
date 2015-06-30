@@ -1,0 +1,130 @@
+2015-06-06 10:06:58,191 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 10:06:58,193 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 10:11:25,623 [main] ERROR [org.hibernate.LazyInitializationException] - failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:383)
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationExceptionIfNotConnected(AbstractPersistentCollection.java:375)
+	at org.hibernate.collection.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:368)
+	at org.hibernate.collection.AbstractPersistentCollection.read(AbstractPersistentCollection.java:111)
+	at org.hibernate.collection.PersistentBag.iterator(PersistentBag.java:272)
+	at net.sf.json.JSONArray._fromCollection(JSONArray.java:839)
+	at net.sf.json.JSONArray.fromObject(JSONArray.java:137)
+	at net.sf.json.JSONObject._processValue(JSONObject.java:2402)
+	at net.sf.json.JSONObject._setInternal(JSONObject.java:2447)
+	at net.sf.json.JSONObject.setValue(JSONObject.java:1189)
+	at net.sf.json.JSONObject._fromBean(JSONObject.java:725)
+	at net.sf.json.JSONObject.fromObject(JSONObject.java:182)
+	at net.sf.json.JSONArray._processValue(JSONArray.java:2294)
+	at net.sf.json.JSONArray.processValue(JSONArray.java:2325)
+	at net.sf.json.JSONArray.addValue(JSONArray.java:2312)
+	at net.sf.json.JSONArray.element(JSONArray.java:1488)
+	at net.sf.json.JSONArray.addAll(JSONArray.java:1048)
+	at edu.zju.cims201.GOF.web.server.BomService.sendBom(BomService.java:114)
+	at edu.zju.cims201.GOF.web.server.ModuleService.sendBom(ModuleService.java:15)
+	at edu.zju.cims201.GOF.web.client.Test.main(Test.java:12)
+2015-06-06 10:28:00,104 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 10:28:00,105 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 10:28:00,667 [main] ERROR [org.hibernate.LazyInitializationException] - failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:383)
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationExceptionIfNotConnected(AbstractPersistentCollection.java:375)
+	at org.hibernate.collection.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:368)
+	at org.hibernate.collection.AbstractPersistentCollection.read(AbstractPersistentCollection.java:111)
+	at org.hibernate.collection.PersistentBag.iterator(PersistentBag.java:272)
+	at net.sf.json.JSONArray._fromCollection(JSONArray.java:839)
+	at net.sf.json.JSONArray.fromObject(JSONArray.java:137)
+	at net.sf.json.JSONObject._processValue(JSONObject.java:2402)
+	at net.sf.json.JSONObject._setInternal(JSONObject.java:2447)
+	at net.sf.json.JSONObject.setValue(JSONObject.java:1189)
+	at net.sf.json.JSONObject._fromBean(JSONObject.java:725)
+	at net.sf.json.JSONObject.fromObject(JSONObject.java:182)
+	at net.sf.json.JSONArray._processValue(JSONArray.java:2294)
+	at net.sf.json.JSONArray.processValue(JSONArray.java:2325)
+	at net.sf.json.JSONArray.addValue(JSONArray.java:2312)
+	at net.sf.json.JSONArray.element(JSONArray.java:1488)
+	at net.sf.json.JSONArray.addAll(JSONArray.java:1048)
+	at edu.zju.cims201.GOF.web.server.BomService.sendBom(BomService.java:113)
+	at edu.zju.cims201.GOF.web.server.ModuleService.sendBom(ModuleService.java:15)
+	at edu.zju.cims201.GOF.web.client.Test.main(Test.java:12)
+2015-06-06 10:30:01,354 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 10:30:01,355 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 10:30:01,948 [main] ERROR [org.hibernate.LazyInitializationException] - failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:383)
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationExceptionIfNotConnected(AbstractPersistentCollection.java:375)
+	at org.hibernate.collection.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:368)
+	at org.hibernate.collection.AbstractPersistentCollection.read(AbstractPersistentCollection.java:111)
+	at org.hibernate.collection.PersistentBag.iterator(PersistentBag.java:272)
+	at net.sf.json.JSONArray._fromCollection(JSONArray.java:839)
+	at net.sf.json.JSONArray.fromObject(JSONArray.java:137)
+	at net.sf.json.JSONObject._processValue(JSONObject.java:2402)
+	at net.sf.json.JSONObject._setInternal(JSONObject.java:2447)
+	at net.sf.json.JSONObject.setValue(JSONObject.java:1189)
+	at net.sf.json.JSONObject._fromBean(JSONObject.java:725)
+	at net.sf.json.JSONObject.fromObject(JSONObject.java:182)
+	at net.sf.json.JSONArray._processValue(JSONArray.java:2294)
+	at net.sf.json.JSONArray.processValue(JSONArray.java:2325)
+	at net.sf.json.JSONArray.addValue(JSONArray.java:2312)
+	at net.sf.json.JSONArray.element(JSONArray.java:1488)
+	at net.sf.json.JSONArray.addAll(JSONArray.java:1048)
+	at edu.zju.cims201.GOF.web.server.BomService.sendBom(BomService.java:113)
+	at edu.zju.cims201.GOF.web.server.ModuleService.sendBom(ModuleService.java:15)
+	at edu.zju.cims201.GOF.web.client.Test.main(Test.java:12)
+2015-06-06 10:32:00,017 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 10:32:00,018 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 10:32:05,103 [main] ERROR [org.hibernate.LazyInitializationException] - failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:383)
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationExceptionIfNotConnected(AbstractPersistentCollection.java:375)
+	at org.hibernate.collection.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:368)
+	at org.hibernate.collection.AbstractPersistentCollection.read(AbstractPersistentCollection.java:111)
+	at org.hibernate.collection.PersistentBag.toString(PersistentBag.java:506)
+	at java.lang.String.valueOf(String.java:2827)
+	at java.io.PrintStream.println(PrintStream.java:771)
+	at edu.zju.cims201.GOF.web.server.BomService.sendBom(BomService.java:113)
+	at edu.zju.cims201.GOF.web.server.ModuleService.sendBom(ModuleService.java:15)
+	at edu.zju.cims201.GOF.web.client.Test.main(Test.java:12)
+2015-06-06 10:46:20,542 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 10:46:20,543 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 10:46:29,940 [main] ERROR [org.hibernate.LazyInitializationException] - failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree.children, no session or session was closed
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:383)
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationExceptionIfNotConnected(AbstractPersistentCollection.java:375)
+	at org.hibernate.collection.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:368)
+	at org.hibernate.collection.AbstractPersistentCollection.read(AbstractPersistentCollection.java:111)
+	at org.hibernate.collection.PersistentBag.iterator(PersistentBag.java:272)
+	at net.sf.json.JSONArray._fromCollection(JSONArray.java:839)
+	at net.sf.json.JSONArray.fromObject(JSONArray.java:137)
+	at net.sf.json.JSONObject._processValue(JSONObject.java:2402)
+	at net.sf.json.JSONObject._setInternal(JSONObject.java:2447)
+	at net.sf.json.JSONObject.setValue(JSONObject.java:1189)
+	at net.sf.json.JSONObject._fromBean(JSONObject.java:725)
+	at net.sf.json.JSONObject.fromObject(JSONObject.java:182)
+	at net.sf.json.JSONArray._processValue(JSONArray.java:2294)
+	at net.sf.json.JSONArray.processValue(JSONArray.java:2325)
+	at net.sf.json.JSONArray.addValue(JSONArray.java:2312)
+	at net.sf.json.JSONArray.element(JSONArray.java:1488)
+	at net.sf.json.JSONArray.addAll(JSONArray.java:1048)
+	at edu.zju.cims201.GOF.web.server.BomService.sendBom(BomService.java:113)
+	at edu.zju.cims201.GOF.web.server.ModuleService.sendBom(ModuleService.java:15)
+	at edu.zju.cims201.GOF.web.client.Test.main(Test.java:12)
+2015-06-06 11:09:59,260 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 11:09:59,260 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 11:12:50,147 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 11:12:50,147 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 11:17:10,551 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 11:17:10,551 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 11:18:33,743 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 11:18:33,743 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+
+2015-06-06 11:19:57,967 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - Unsuccessful: alter table node_function add constraint FKB4579975B736BFC1 foreign key (functionid) references functions
+2015-06-06 11:19:57,968 [main] ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - ORA-02264: 名称已被一现有约束条件占用
+

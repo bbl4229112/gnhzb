@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns="org.act.od.impl.*" xmlns:mx="http://www.adobe.com/2006/mxml" 
+		   xmlns:buttons="org.act.od.impl.figure.buttons.*"  
+		   width="46" height="80" verticalScrollPolicy="off" horizontalScrollPolicy="off" 
+		   rollOut="this.currentState=null" styleName="Balloon" resizeEffect="{resize}" 
+		   xmlns:view="org.act.od.impl.view.*">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.containers.Box;
+			import mx.containers.Canvas;
+			import mx.controls.Alert;
+			import mx.controls.Button;
+			import mx.controls.DataGrid;
+			import mx.controls.Label;
+			import mx.controls.LinkButton;
+			import mx.controls.Text;
+			import mx.controls.TextArea;
+			import mx.controls.TextInput;
+			import mx.controls.dataGridClasses.DataGridColumn;
+			import mx.core.mx_internal;
+			import mx.effects.easing.Bounce;
+			import mx.events.FlexEvent;
+			
+			import org.act.od.impl.events.KnowledgeViewAppEvent;
+			import org.act.od.impl.events.LabelNodeEvent;
+			import org.act.od.impl.figure.AbstractFigure;
+			import org.act.od.impl.figure.buttons.GlowButton;
+			import org.act.od.impl.model.AttributeViewModel;
+			import org.act.od.impl.model.FigureEditorModel;
+			import org.act.od.impl.model.KnowledgeViewModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.other.BpmnResource;
+			import org.act.od.impl.other.Resource;
+
+			protected var glowbutton0:GlowButton = new GlowButton();
+			protected var glowbutton1:GlowButton = new GlowButton();
+		
+			[Bindable]
+			public static var btn_label :Class = Resource.getInstance().smallicons_btn_label;
+			[Bindable]
+			public static var btn_resources :Class = Resource.getInstance().smallicons_btn_resources;
+			[Bindable]
+			public static var balloon :Class = Resource.getInstance().smallicons_balloon;
+			[Bindable]
+			public var nodeName:String;
+			
+			[Bindable]
+			private var attriViewModel :AttributeViewModel = OrDesignerModelLocator.getInstance().getAttributeViewModel();
+			[Bindable]
+			private var knowledgeRelated:ArrayCollection;
+			private var processType:String = FigureEditorModel.BPEL_PROCESS_TYPE;
+			
+			private var datagrid:DataGrid;
+			private var headerHeight:Number;
+			private var rowHeight:Number;
+			private var currentPage:Number = 1;
+			private var pageSize:Number = 5;
+			private var totalPage:Number;
+			private var btnPre:Button;
+			private var btnNext:Button;
+			private var current:Label;
+			
+			private var midHDPanel:Canvas;
+
+			public function init(processType:String = "BPEL"):void{
+				this.processType = processType;
+
+				glowbutton0.source = btn_label;
+				glowbutton0.setStyle("glowColor","#000000");
+				glowbutton0.y = 20;
+				glowbutton0.setStyle("right","9");
+				glowbutton0.addEventListener(MouseEvent.CLICK, viewInfor);
+				
+				glowbutton1.source = btn_resources;
+				glowbutton1.setStyle("glowColor","#000000");
+				glowbutton1.y = 65;
+				glowbutton1.setStyle("right","9");
+				glowbutton1.addEventListener(MouseEvent.CLICK, viewResources);
+
+				this.addChild(glowbutton0);
+				this.addChild(glowbutton1);
+				this.setStyle("borderSkin", balloon);
+				
+				datagrid = new DataGrid();
+				headerHeight = datagrid.headerHeight;
+				rowHeight = 28;  //既然第一次是20，第二次是28，我就把你定为28！20121015
+				
+				var recordId:DataGridColumn = new DataGridColumn();
+				recordId.visible = false;
+				recordId.dataField = "id";
+				datagrid.columns = datagrid.columns.concat(recordId);
+				
+				var knowledgeId:DataGridColumn = new DataGridColumn();
+				knowledgeId.visible = false;
+				knowledgeId.dataField = "knowledgeId";
+				datagrid.columns = datagrid.columns.concat(knowledgeId);
+				
+				var linenum:DataGridColumn = new DataGridColumn();
+				linenum.headerText = "序号";
+				linenum.setStyle("textAlign", "center");
+				linenum.width = 40;
+//				linenum.labelFunction = RowNum;
+				linenum.visible = false;
+				datagrid.columns = datagrid.columns.concat(linenum);
+				
+				var knowledgeName:DataGridColumn = new DataGridColumn();
+				knowledgeName.headerText = "知识标题";
+				knowledgeName.dataField = "titleName";
+				knowledgeName.setStyle("textAlign", "center");
+				knowledgeName.width = 220;
+				knowledgeName.itemRenderer = new ClassFactory(KnowledgeNameRenderer);
+				datagrid.columns = datagrid.columns.concat(knowledgeName);
+				
+				var uploader:DataGridColumn = new DataGridColumn();
+				uploader.headerText = "上传者";
+				uploader.dataField = "uploader";
+				uploader.setStyle("textAlign", "center");
+				uploader.width = 50;
+				datagrid.columns = datagrid.columns.concat(uploader);
+				
+				var uploadTime:DataGridColumn = new DataGridColumn();
+				uploadTime.headerText = "上传时间";
+				uploadTime.dataField = "uploadTime";
+				uploadTime.setStyle("textAlign", "center");
+				uploadTime.width = 125;
+				datagrid.columns = datagrid.columns.concat(uploadTime);
+				
+				var knowledgeType:DataGridColumn = new DataGridColumn();
+				knowledgeType.headerText = "知识类型";
+				knowledgeType.dataField = "knowledgeType";
+				knowledgeType.setStyle("textAlign", "center");
+				knowledgeType.width = 60;
+				datagrid.columns = datagrid.columns.concat(knowledgeType);	
+				
+				this.addEventListener(MouseEvent.DOUBLE_CLICK, stopPropagation);
+				
+				
+			}
+			
+			private function stopPropagation(event:MouseEvent):void {
+				event.stopPropagation();
+			}
+			
+			private function viewInfor(event:Event):void {
+				this.removeChild(this.glowbutton0);
+				this.removeChild(this.glowbutton1);
+				
+				var nodeinfor:Label = new Label();
+				nodeinfor.text="节点属性";
+				nodeinfor.setStyle("color", "#0000FF");
+				nodeinfor.x=11;
+				nodeinfor.y=9;
+				this.addChild(nodeinfor);
+				
+				var attrarr:ArrayCollection = attriViewModel.attributes as ArrayCollection;		
+				for(var i=0;i<attrarr.length;i++) {
+					var label:Label = new Label();
+					label.text = "[" + attrarr.getItemAt(i).name + "]：" + attrarr.getItemAt(i).value;
+					label.x = 11;
+					label.y = 32 + 20*i;
+					label.width = 300;
+					label.addEventListener(FlexEvent.CREATION_COMPLETE, labelCreationComplete);
+					this.addChild(label);
+					
+//					var textarea:TextArea = new TextArea();
+//					textarea.editable = false;
+//					textarea.setStyle("borderThickness", "0");
+//					textarea.text = "[" + attrarr.getItemAt(i).name + "]：" + attrarr.getItemAt(i).value;
+//					textarea.x = 11;
+//					textarea.y = 32 + 20*i;
+//					textarea.width = 300;
+//					this.addChild(textarea);
+					
+				}
+				
+				this.width = 325;
+				this.height = 157;
+				var buttonInfor0:Button=new Button();
+				buttonInfor0.label="确 定";
+				buttonInfor0.x = this.width / 2 - 20;
+				buttonInfor0.y = this.height - 36;
+				buttonInfor0.width = 63;
+				buttonInfor0.addEventListener(MouseEvent.CLICK,handleLabelbuttonInfor0Click);
+				this.addChild(buttonInfor0);
+			}
+			
+			private function viewResources(event:Event):void {			
+				
+				this.removeChild(glowbutton0);
+				this.removeChild(glowbutton1);
+				
+				var button0:Button = new Button();
+				button0.label="确 定";
+				button0.width = 63;
+				button0.addEventListener(MouseEvent.CLICK, handleLabelbutton0Click);
+
+				var tempFigure:AbstractFigure = this.parent as AbstractFigure;
+//				Alert.show(tempFigure.x.toString(),"tempFigure x");
+//				Alert.show(tempFigure.y.toString(),"tempFigure y");
+//				Alert.show(tempFigure.height.toString(),"tempFigure height");
+//				Alert.show(tempFigure.width.toString(),"tempFigure width");
+//				Alert.show(tempFigure.height.toString(),"figure");
+//				Alert.show(this.y.toString(),"");
+				knowledgeRelated = tempFigure.getKnowledgeRelated() as ArrayCollection;
+				
+				if(knowledgeRelated.length == 0) {
+					this.width = 165;
+					this.height = 80;
+					
+					var norecord:Label = new Label();
+					norecord.x = 11;
+					norecord.y = 14;
+					norecord.text = "该节点当前没有支撑知识。";
+					norecord.setStyle("color", "#0000FF");
+					
+					button0.x = 50;
+					button0.y = 47;
+					
+					this.addChild(norecord);
+					
+				} else {
+					var hasrecord:Label = new Label();
+					hasrecord.x = 11;
+					hasrecord.y = 9;
+					hasrecord.text = "该节点当前的支撑知识有【"+knowledgeRelated.length.toString()+"】条：";
+					hasrecord.setStyle("color", "#0000FF");
+					
+					datagrid.x = 11;
+					datagrid.y = 32;
+					datagrid.width = 455;	
+					datagrid.verticalScrollPolicy = "off";
+//					Alert.show(datagrid.rowHeight.toString(),"row");
+//					Alert.show(datagrid.headerHeight.toString(),"header");
+					
+					if(knowledgeRelated.length > 5) {
+						currentPage = 1;
+						if(knowledgeRelated.length % pageSize == 0) {
+							totalPage = Math.floor(knowledgeRelated.length / pageSize);
+						} else {
+							totalPage = Math.floor(knowledgeRelated.length / pageSize + 1);
+						}
+						var array:Array = knowledgeRelated.toArray();
+						datagrid.dataProvider = array.slice(0,pageSize);
+						datagrid.height = rowHeight * 5 + headerHeight;
+						btnPre = new Button();
+						btnPre.label = "上一页";
+						btnNext = new Button();
+						btnNext.label = "下一页";
+						btnPre.x = 45;
+						btnPre.y = datagrid.y + datagrid.height + 5;
+						btnNext.x = 120;
+						btnNext.y = datagrid.y + datagrid.height + 5;
+						btnPre.addEventListener(MouseEvent.CLICK, btnPreClickHandler);
+						btnNext.addEventListener(MouseEvent.CLICK, btnNextClickHandler);
+						
+						this.addChild(btnPre);
+						btnPre.enabled = false;
+						this.addChild(btnNext);
+						
+						current = new Label();
+						current.text = "第 "+currentPage+" / "+totalPage+" 页";
+						current.setStyle("color", "#0000FF");
+						current.x = 390;
+						current.y = btnPre.y;
+						this.addChild(current);
+						
+						this.height = btnPre.y + btnPre.height + 45;
+					} else {
+						datagrid.dataProvider = knowledgeRelated;
+						datagrid.height = knowledgeRelated.length * rowHeight + headerHeight;
+						this.height = datagrid.y + datagrid.height + 45;
+					}
+					
+					this.width = datagrid.x + datagrid.width + 12;
+					
+					button0.x = 220;
+					button0.y = this.height - 36;
+					
+					this.addChild(hasrecord);
+					this.addChild(datagrid);
+				}
+
+				this.addChild(button0);				
+			}
+			
+			//被KnowledgeNameRenderer调用，20120929.
+			public function rendererHandler(data:Object, linkButton:LinkButton):void { 
+				//window.parent!--20121008
+				if(ExternalInterface.available == true) {
+					var func:String = "flexShowKnowledgeDetail_View";
+					var s:String = ExternalInterface.call(func, data.knowledgeId,data.titleName);
+					//Alert.show(s);
+				} else {
+					Alert.show("当前浏览器环境不支持此项操作，请联系管理员。");
+				}
+			}
+			
+			private function labelCreationComplete(event:FlexEvent):void {
+				var currentLabel:Label = event.currentTarget as Label;
+//				Alert.show("1");
+				currentLabel.mx_internal::getTextField().wordWrap = true;
+//				Alert.show("2");
+			}
+			
+			private function btnPreClickHandler(event:MouseEvent):void {
+				currentPage--;
+				btnNext.enabled = true;
+				if(currentPage == 1) {
+					btnPre.enabled = false;
+				}
+				var array:Array = knowledgeRelated.toArray();
+				datagrid.dataProvider = array.slice((currentPage-1)*pageSize,currentPage*pageSize);
+				current.text = "第 "+currentPage+" / "+totalPage+" 页";
+			}
+			
+			private function btnNextClickHandler(event:MouseEvent):void {
+				currentPage++;
+				btnPre.enabled = true;
+				if(currentPage == totalPage) {
+					btnNext.enabled = false;
+				}
+				var array:Array = knowledgeRelated.toArray();
+				datagrid.dataProvider = array.slice((currentPage-1)*pageSize,currentPage*pageSize);
+				current.text = "第 "+currentPage+" / "+totalPage+" 页";
+			}
+			
+			override public function stylesInitialized():void{
+
+			}
+
+			private function handleLabelbuttonInfor0Click(event:MouseEvent):void{
+				this.resetAll(this.processType);
+			}
+			
+			private function handleLabelbutton0Click(event:MouseEvent):void{
+				this.resetAll(this.processType);
+			}
+			
+			public function resetAll(processType:String):void{
+				this.removeAllChildren();
+				this.height=112;
+				this.width=46;
+				this.addChild(this.glowbutton0);
+				this.addChild(this.glowbutton1);
+			}
+		]]>
+	</mx:Script>
+	<mx:Resize id="resize" easingFunction="{Bounce.easeOut}"/>
+</mx:Canvas>

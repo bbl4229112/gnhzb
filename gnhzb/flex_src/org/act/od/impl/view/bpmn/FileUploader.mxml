@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<mx:TitleWindow	xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="500" height="343"
+					initialize="init()">
+		<mx:Script>
+			<![CDATA[
+				import mx.collections.ArrayCollection;
+				import mx.controls.Alert;
+				import mx.events.ItemClickEvent;
+				import mx.managers.PopUpManager;
+				import mx.core.ComponentDescriptor;
+				import mx.containers.Panel;
+				import mx.containers.TitleWindow;
+				import mx.events.ListEvent;
+				import mx.events.FlexMouseEvent;
+				import mx.controls.Text;
+				import mx.controls.Alert;
+				import mx.events.CloseEvent;
+				import mx.controls.TextArea;
+
+
+				private var fileRef:FileReference;
+				private var xmlTypes:Array ;
+				private var text_input : String ;
+				private var select_radio_distant : Boolean = true;
+				private var _window:TitleWindow;
+
+				private const FILE_UPLOAD_URL:String ="./UploadExample";
+
+				public var dataPortType = Array;
+
+				public var wsdlFileName : String;
+
+
+
+				[Bindable]
+				[Embed(source="/../assets/icon/tool/subprocess.gif")]
+				public static var errorIcon :Class;
+
+				private function init():void
+				{
+					fileRef = new FileReference();
+					var textTypes:FileFilter = new FileFilter("WSDL file", "*.pdf ; *.wsdl");
+					xmlTypes= new Array(textTypes);
+
+
+					//the upload
+					fileRef.addEventListener(Event.SELECT, fileRef_select);
+					fileRef.addEventListener(Event.COMPLETE, fileRef_complete);
+					fileRef.addEventListener(ProgressEvent.PROGRESS, fileRef_progressHandler);
+
+
+				}
+
+				internal function onCancleHandle(event :MouseEvent) :void {
+					PopUpManager.removePopUp(this);
+				}
+
+				private function handleCard(event:ItemClickEvent):void {
+					//file distant
+					if (event.currentTarget.selectedValue == "distant") {
+						select_radio_distant=true;
+						DeGriseAreaText();
+
+					}
+					else {
+						select_radio_distant=false;
+						GriseAreaText();
+						btn_upload.enabled = true;
+
+					}
+				}
+
+				private function GriseAreaText():void {
+					// Handle event.
+					forChange.text="";
+					forChange.editable = false;
+					forChange.setStyle('backgroundColor', '0x999999');
+					btn_upload.label = "Explore file";
+
+
+				}
+				private function DeGriseAreaText():void {
+					// Handle event.
+					forChange.text="";
+					errorMessage.text="";
+					forChange.setStyle('backgroundColor', '0xffffff');
+					forChange.editable=true;
+					forChange.useHandCursor;
+					btn_upload.label = "Upload file";
+
+				}
+				private function browseAndUpload():void
+				{
+					/* if(select_radio_distant)
+					   {
+					   //send the adress to the server
+					   }
+					   else {
+					   fileRef.browse(xmlTypes);
+					   }
+					 */
+
+					fileRef.browse(xmlTypes);
+					btn_upload.enabled = true;
+
+
+				}
+
+				private function fileRef_select(evt:Event):void {
+
+					try {
+						fileRef.upload(new URLRequest(FILE_UPLOAD_URL));
+						//display the name of the file in the AreaText
+						this.wsdlFileName = fileRef.name;
+						forChange.text = fileRef.name;
+
+						//fill in the file in the List
+						myCB.dataProvider = this.dataPortType;
+
+					} catch (err:Error) {
+						Alert.show("ERROR to upload the file");
+					}
+				}
+				private function griseButtom():void{
+					btn_validate.enabled=true;
+				}
+
+				private function fileRef_complete(evt:Event):void
+				{
+					//Alert.show("uploaded is completed");
+				}
+
+				private function tFocusDown(evt:Event):void
+				{
+
+					if(forChange.text.toString().substr(0,7)=="http://" || forChange.text.toString().substr(0,8)=="https://")
+					{
+						btn_upload.enabled = true;
+						errorMessage.text="";
+						erroImage.visible = false;
+					}
+					else
+					{
+						errorMessage.text="  Type URL must not be qualified.";
+						btn_upload.enabled = false;
+						erroImage.visible=true;
+					}
+				}
+				private function fileRef_progressHandler(event:ProgressEvent):void {
+
+					event.bytesLoaded;
+					event.bytesTotal;
+
+				}
+
+			]]>
+		</mx:Script>
+		<mx:RadioButtonGroup id="urltype" itemClick="handleCard(event);"/>
+		<mx:RadioButton groupName="urltype" id="local" value="local" label="Local URL"  width="103"  x="217"  y="27" height="24"  selected="true" visible="false"/>
+		<mx:RadioButton groupName="urltype"  id="distant" value="distant" label="Distante URL"  width="117" x="71"   y="27" height="25" visible="false"/>
+		<mx:List id="myCB" rowCount="7" width="460" dataProvider="{dataPortType}"  x="10" y="91" height="177" itemClick="{griseButtom();}"/>
+		<mx:Button label="Cancel" id="btn_cancel" x="257" y="271" click="onCancleHandle(event)"/>
+		<mx:Button label="OK" id="btn_validate" enabled="false" x="156" y="271"/>
+		<mx:Button label="Upload file" id="btn_upload" click="browseAndUpload();"  x="384" y="59" enabled="true"/>
+		<mx:TextArea id="errorMessage" x="28" y="10" width="442" fontWeight="bold" fontSize="12" height="22" editable="false"  borderStyle="none"  enabled="true" color="#F4260B" visible="false"/>
+		<!--<mx:TextArea id="forChange" width="366" height="23"   y="60" x="10"  change="tFocusDown(event);" initialize="tFocusDown(event)" />-->
+		<mx:TextArea id="forChange" width="366" height="23"   y="60" x="10"  />
+		<mx:Image id="erroImage" x="10" y="10" width="22" height="20"   source="{errorIcon}" visible="false"/>
+
+
+	</mx:TitleWindow>

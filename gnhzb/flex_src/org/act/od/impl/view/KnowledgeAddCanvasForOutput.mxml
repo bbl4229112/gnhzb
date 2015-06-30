@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.rpc.remoting.RemoteObject;
+			import mx.rpc.events.ResultEvent;
+			import mx.collections.ArrayCollection;
+			import org.act.od.impl.model.FigureEditorModel;
+			import org.act.od.impl.model.OrDesignerModelLocator;
+			import org.act.od.impl.figure.AbstractFigure;
+			import org.act.od.impl.viewhelper.FigureAttributeNavigatorVH;
+			import org.act.od.framework.view.ViewLocator;
+			import org.act.od.impl.events.KnowledgeViewAppEvent;
+			
+			public var currentFigure:AbstractFigure;
+			
+			protected function SearchKnowledge(event:Event):void {
+				if(keyword.text == "") {
+					Alert.show("请输入搜索词！", "提示");
+				} else {
+					var remote:RemoteObject = new RemoteObject();
+					remote.destination = "knowledgeSource";
+					remote.getKnowledgeByTitle("知识管理");
+					remote.addEventListener(ResultEvent.RESULT, ListKnowledge);
+				}							
+			}
+			
+			protected function ListKnowledge(event:ResultEvent):void {
+				var dataArray:ArrayCollection = event.result as ArrayCollection;
+				knowledgeList.dataProvider = dataArray;
+			}
+			
+			protected function keyword_clickHandler(event:MouseEvent):void {
+				keyword.text = "";
+			}
+			
+			protected function keyword_focusOutHandler(event:FocusEvent):void {
+				keyword.text = "查找系统中的知识进行关联……";
+			}
+			
+			protected function keyword_changeHandler(event:Event):void {				
+			}
+			
+			protected function addKnowledge_handler(event:Event):void {
+				if(knowledgeList.selectedItem == null) {
+					Alert.show("请选择要添加的知识条目！", "提示");
+				} else {
+					var col:DataGridColumn = knowledgeList.columns[0];
+					var knowledgeId:Number = knowledgeList.selectedItem[col.dataField];
+					var activeModel:FigureEditorModel = OrDesignerModelLocator.getInstance().getFigureEditorNavigatorModel().activeFigureEditorModel;
+					
+					var xmlId:Number = Number(activeModel.rootModel.fileID);    //获得当前xml文件的id，20120908。
+					currentFigure = OrDesignerModelLocator.getInstance().getKnowledgeOutputModel().editedFigure;
+					var figureId:String = currentFigure.figureId;
+					var remote:RemoteObject = new RemoteObject();
+					remote.destination = "knowledgeSource";
+					var faNavVH:FigureAttributeNavigatorVH = 
+						ViewLocator.getInstance().getViewHelper(FigureAttributeNavigatorVH.VH_KEY) as FigureAttributeNavigatorVH;
+					var selectedIndex:int = faNavVH.figureAttributeNavigator.selectedIndex;
+					if(selectedIndex == 1) {
+						remote.addRecord(xmlId, figureId, knowledgeId, "input");
+					} else if(selectedIndex == 2) {
+						remote.addRecord(xmlId, figureId, knowledgeId, "related");
+					} else if(selectedIndex == 3) {
+						remote.addRecord(xmlId, figureId, knowledgeId, "output");
+					}
+					remote.addEventListener(ResultEvent.RESULT, addKnowledgeResult_handler);
+				}
+			}
+			
+			protected function addKnowledgeResult_handler(event:ResultEvent):void {
+				var result:String = event.result as String;
+				if(result == "该节点已经添加了该知识！") {
+					Alert.show("该节点已经添加了该知识！", "提示");
+				} else if(result == "添加成功！") {
+//					Alert.show("添加成功！", "提示");
+					new KnowledgeViewAppEvent(KnowledgeViewAppEvent.KNOWLEDGEOUTPUT_UPDATE,
+						{selectedFigure:currentFigure}).dispatch();
+					
+				} else if(result == "添加失败！") {
+					Alert.show("添加失败！", "提示");
+				}
+			}
+			
+			protected function RowNum2(item:Object, column:DataGridColumn):String {
+				var index:int = this.knowledgeList.dataProvider.getItemIndex(item) +1;
+				return String(index);
+			}
+			
+			protected function keyword_keyDownHandler(event:KeyboardEvent):void
+			{
+				if(event.keyCode == Keyboard.ENTER) {
+					this.SearchKnowledge(event);
+				}
+			}
+		]]>
+	</mx:Script>
+	<mx:TextInput id="keyword" keyDown="keyword_keyDownHandler(event)" x="0" y="0" width="246" height="25" 
+				  text="查找系统中的知识作为输出文档……" change="keyword_changeHandler(event)" 
+				  click="keyword_clickHandler(event)" focusOut="keyword_focusOutHandler(event)"/>
+	<mx:Button x="248" y="0" label="搜索"  
+			   click="SearchKnowledge(event)" 
+			   icon="@Embed('../assets/icon/container/search.gif')"
+			   />
+	<mx:Label x="0" y="27" id="knowledgeListLabel" width="80" height="23"  
+			  fontWeight="bold" text="搜索结果:"/>
+	<mx:DataGrid id="knowledgeList" x="0" y="46" width="500" height="115" variableRowHeight="true"
+				 dragEnabled="true">
+		<mx:columns>
+			<mx:DataGridColumn visible="false" dataField="id" headerText="id" textAlign="center" width="45"/>
+			<mx:DataGridColumn labelFunction="RowNum2" headerText="序号" textAlign="center" width="45"/>
+			<mx:DataGridColumn dataField="titleName" headerText="知识标题" textAlign="center" width="220"/>
+			<mx:DataGridColumn dataField="uploaderName" headerText="上传者" textAlign="center" width="50"/>
+			<mx:DataGridColumn dataField="uploadTime" headerText="上传时间" textAlign="center" width="125"/>
+			<mx:DataGridColumn dataField="knowledgeType" headerText="知识类型" textAlign="center" width="60"/>
+		</mx:columns>
+	</mx:DataGrid>		
+	<mx:Button id="addKnowledge" x="340" y="19" label="添加此知识到该节点" click="addKnowledge_handler(event)"
+			   icon="@Embed('../assets/icon/container/add.png')"/>
+</mx:Canvas>

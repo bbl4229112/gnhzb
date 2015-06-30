@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="336" height="156"
+	 title="Delete Resources">
+	<mx:Script>
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			import org.act.od.impl.model.*;
+			import mx.events.CloseEvent;
+						
+			private var _fileName :String;
+			
+			internal function onCancleHandle(event :MouseEvent) :void {
+				PopUpManager.removePopUp(this);
+			}
+			
+			internal function onConfirmHandle(event :MouseEvent) :void {
+				
+				PopUpManager.removePopUp(this);
+				this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+			}
+			public function set fileName(fileName:String):void{
+				this._fileName=fileName;
+				file.text="Do you want to delete '"+this._fileName+"' from the file system?";
+			}
+		]]>
+	</mx:Script>
+	<mx:Text id="file" x="10" y="30" width="295" fontWeight="normal" fontSize="10" height="41"/>
+	<mx:HRule x="0" y="79" width="316"/>
+	<mx:Button label="Confirm" x="64" y="89" click="onConfirmHandle(event)" />
+	<mx:Button label="Cancel" x="186" y="89" click="onCancleHandle(event)" />
+	
+</mx:TitleWindow>

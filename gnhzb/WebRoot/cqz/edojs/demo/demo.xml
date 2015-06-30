@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <demo name="工具箱">
+    <run name="Edo.util.XML" src="js/util/XML.html"></run>
+  </demo>
+  <demo name="组件库" expanded="true">
+    <demo name="基础">
+      <!--<run name="Component" src="js/core/Component.html"></run>
+      <run name="UIComponent" src="js/core/UIComponent.html"></run>-->
+      <run name="Space" src="js/core/Space.html"></run>
+      <run name="Split" src="js/core/Split.html"></run>
+      <run name="Module" src="js/core/Module.html"></run>
+      <run name="Validator" src="js/core/Validator.html"></run>
+    </demo>
+    <demo name="表单">      
+      <run name="Button" src="js/controls/Button.html"></run>
+      <run name="Text" src="js/controls/Text.html"></run>
+      <run name="Combo" src="js/controls/Combo.html"></run>
+      <run name="Date" src="js/controls/Date.html"></run>
+      <run name="DatePicker" src="js/controls/DatePicker.html"></run>
+      <run name="TreeSelect" src="js/controls/TreeSelect.html"></run>
+      <run name="MultiCombo" src="js/controls/MultiCombo.html"></run>
+      <run name="Lov" src="js/controls/Lov.html"></run>
+      <run name="SuperSelect" src="js/controls/SuperSelect.html"></run>
+      <run name="Search" src="js/controls/Search.html"></run>
+      <run name="Label" src="js/controls/Label.html"></run>
+      <run name="Slider" src="js/controls/Slider.html"></run>
+      <run name="Spinner" src="js/controls/Spinner.html"></run>
+      <run name="ScrollBar" src="js/controls/ScrollBar.html"></run>
+      <run name="Progress" src="js/controls/Progress.html"></run>
+      <run name="CheckBox" src="js/controls/CheckBox.html"></run>
+      <run name="Radio" src="js/controls/Radio.html"></run>
+      <run name="CheckGroup" src="js/controls/CheckGroup.html"></run>
+      <run name="RadioGroup" src="js/controls/RadioGroup.html"></run>      
+      <run name="MultiSelect" src="js/controls/MultiSelect.html"></run>
+      <run name="SWF" src="js/controls/SWF.html"></run>
+      <run name="FileUpload" src="js/controls/FileUpload.html"></run>
+      <run name="HtmlEditor" src="js/controls/HtmlEditor.html"></run>
+      <run name="AutoComplete" src="js/controls/AutoComplete.html"></run>
+      <run name="Error" src="js/controls/Error.html"></run>
+    </demo>
+    <demo name="列表">
+      <demo name="Table">
+        <run name="基本表格" src="js/lists/table/table.html"></run>
+        <run name="自定义列和渲染器" src="js/lists/table/renderer.html"></run>
+        <run name="单元格编辑器" src="js/lists/table/celledit.html"></run>
+        <run name="行选择" src="js/lists/table/rowselect.html"></run>
+        <run name="数据操作" src="js/lists/table/datatable.html"></run>
+        <run name="分页" src="js/lists/table/paging.html" target="http://x.edojs.com/demo/js/lists/table/paging.html"></run>
+        <run name="表头显示/隐藏" src="js/lists/table/hideheader.html"></run>
+        <run name="多表头" src="js/lists/table/multiheader.html"></run>
+        <run name="列自适应宽度" src="js/lists/table/autocolumn.html"></run>
+        <run name="列宽调节/拖拽移位" src="js/lists/table/dragcolumn.html"></run>
+        <run name="行拖拽移位" src="js/lists/table/rowdragdrop.html"></run>
+        <run name="汇总" src="js/lists/table/summary.html"></run>
+      </demo>
+      <demo name="Tree">
+        <run name="BasicTree" src="js/lists/tree/Tree.html"></run>
+        <run name="TreeGrid" src="js/lists/tree/TreeGrid.html"></run>
+        <run name="CheckTree" src="js/lists/tree/CheckTree.html"></run>
+        <run name="DragDropTree" src="js/lists/tree/DragDropTree.html"></run>
+        <run name="AjaxTree" src="js/lists/tree/AjaxTree.html"></run>        
+      </demo>
+    </demo>
+    <demo name="导航器">
+      <run name="Menu" src="js/navigators/Menu.html"></run>
+      <run name="ToggleBar" src="js/navigators/ToggleBar.html"></run>
+      <run name="TabBar" src="js/navigators/TabBar.html"></run>
+      <run name="PagingBar" src="js/navigators/PagingBar.html"></run>      
+    </demo>
+    <demo name="容器">
+      <run name="Container" src="js/containers/Container.html"></run>
+      <run name="Box" src="js/containers/Box.html"></run>
+      <run name="Panel" src="js/containers/Panel.html"></run>
+      <run name="FormItem" src="js/containers/FormItem.html"></run>
+      <run name="FieldSet" src="js/containers/FieldSet.html"></run>
+      <run name="Group" src="js/containers/Group.html"></run>
+      <run name="Application" src="js/containers/Application.html"></run>
+      <run name="Window" src="js/containers/Window.html"></run>
+    </demo>
+    <demo name="布局器">
+      <run name="Vertical" src="js/layouts/Vertical.html"></run>
+      <run name="Horizontal" src="js/layouts/Horizontal.html"></run>
+      <run name="ViewStack" src="js/layouts/ViewStack.html"></run>
+      <run name="Absolute" src="js/layouts/Absolute.html"></run>
+      <demo name="扩展布局">
+        <run name="OutLook" src="js/layouts/OutLook.html"></run>
+        <run name="Accordion" src="js/layouts/Accordion.html"></run>
+        <run name="Border" src="js/layouts/Border.html"></run>
+        <run name="TabPanel" src="js/layouts/TabPanel.html"></run>
+      </demo>
+    </demo>
+    <demo name="管理器">
+      <run name="DragManager" src="js/managers/DragManager.html"></run>
+      <run name="PopupManager" src="js/managers/PopupManager.html"></run>
+      <run name="ResizeManager" src="js/managers/ResizeManager.html"></run>
+      <run name="TipManager" src="js/managers/TipManager.html"></run>
+    </demo>
+    <!--<demo name="数据组件">
+      <demo name="DataTree">
+        <run name="" src=""></run>
+      </demo>
+      <demo name="DataTree">
+        <run name="" src=""></run>
+      </demo>
+      <demo name="DataGantt">
+        <run name="" src=""></run>
+      </demo>      
+    </demo>-->    
+    <run name="MessageBox" src="js/core/MessageBox.html"></run>
+  </demo>
+  <!--<demo name="可视化开发">
+    <run name="拖拽组件" src=""></run>
+    <run name="属性设置" src=""></run>
+    <run name="布局调整" src=""></run>
+    <run name="表格列配置" src=""></run>
+  </demo>-->
+  <!--<demo name="甘特图">
+    <run name="基础甘特图" src="js/lists/gantt/BasicGantt"></run>
+    <run name="标准甘特图" src="js/lists/gantt/StandardGantt"></run>
+    <run name="事件监听和操作" src="js/lists/GanttEvent/"></run>
+    <run name="可编辑性控制" src="js/lists/EditGantt/"></run>
+    <run name="甘特图的日历" src="js/lists/GanttCalendar/"></run>
+    <run name="自定义甘特图" src="js/lists/DiyGantt/"></run>
+    <run name="自定义Tips" src="js/lists/GanttTips/"></run>
+    <run name="自定义右键菜单" src="js/lists/GanttMenu/"></run>
+    <run name="数据量和性能优化" src="js/lists/Performance/"></run>
+  </demo>-->
+  <demo name="数据验证" expanded="true">   
+    <run name="表单验证" src="valid/valid-form.html"></run>
+    <run name="表格验证" src="valid/valid-table.html"></run>
+    <run name="数据源验证(推荐)" src="valid/valid-data.html"></run>    
+  </demo>
+  <demo name="典型应用" expanded="true">
+    <run name="表单(验证/设置/获取)" src="classic/form.html"></run>
+    <run name="表格CURD" src="classic/table+CURD.html" target="http://x.edojs.com/edojs.com/table+CURD.html"></run>    
+    <run name="表格+表单CURD" src="classic/form+table+CURD.html" target="http://x.edojs.com/edojs.com/form+table+CURD.html"></run>
+    <run name="表格CURD(多次操作一次保存)" src="classic/table+CURD+save.html" target="http://x.edojs.com/edojs.com/table+CURD+save.html"></run>
+    <run name="门户(Portal)" src="classic/portal/portal.html"></run>
+    <run name="表格与表单数据源绑定" src="classic/table+form.html"></run>
+  </demo>  
+</root>

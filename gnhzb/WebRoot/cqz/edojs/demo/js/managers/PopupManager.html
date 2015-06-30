@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    <input type="button" value="弹出" onclick="popup()"/>
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var dialog = Edo.create({
+    type: 'panel',
+    shadow: true,
+    render: document.body,
+    children: [
+        {
+            type: 'box',
+            width: 200,
+            height: 120
+        }
+    ],
+    titlebar: [
+        {type: 'button', cls: 'e-titlebar-close',
+            onclick: function(e){
+                Edo.managers.PopupManager.removePopup(this.parent.owner);
+            }
+        }
+    ]
+});
+
+function popup(){
+    Edo.managers.PopupManager.createPopup({
+        target: dialog,
+        modal: true
+    }); 
+}
+</script>

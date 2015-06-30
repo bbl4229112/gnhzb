@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="424" height="202" title="UDDI Configuration" creationComplete="init()">
+	<mx:Script>
+		<![CDATA[
+			/**
+			 * Show the "UDDI Configuration" Window.
+			 */
+			import mx.core.Application;
+			import mx.events.CloseEvent;
+			import mx.managers.PopUpManager;
+			private function init():void{
+				Application.application.focusManager.setFocus(address);
+			}
+			internal function onCancleHandle(event :MouseEvent) :void {
+				PopUpManager.removePopUp(this);
+			}
+			internal function onConfirmHandle(event :MouseEvent) :void{
+				this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+				PopUpManager.removePopUp(this);
+			}
+			/**
+			 * Get UDDI server's address.
+			 */
+			public function getAddress():String{
+				return address.text;
+			}
+			/**
+			 * Get Web Service's name.
+			 */
+			public function getName():String{
+				return serviceName.text;
+			}
+		]]>
+	</mx:Script>
+	<mx:Label x="20" y="20" text="UDDI Server Address :"/>
+	<mx:TextInput id="address" x="152" y="18" width="242" text="" focusEnabled="true"/>
+	<mx:Label x="20" y="68" text="Service Name :"/>
+	<mx:TextInput id="serviceName" x="152" y="66" width="240"/>
+	<mx:HRule x="0" y="105" width="404" height="4"/>
+	<mx:Button label="Confirm" x="64" y="118" click="onConfirmHandle(event)" />
+	<mx:Button label="Cancel" x="262" y="118" click="onCancleHandle(event)" />
+</mx:TitleWindow>

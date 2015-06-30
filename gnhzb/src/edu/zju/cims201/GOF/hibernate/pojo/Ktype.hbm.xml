@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Ktype root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.Ktype" table="caltks.Ktype">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                <property name="tableName" column="tableName" type="string"/>
+                <property name="name" column="name" type="string"/>
+                <property name="templateXMLPath" column="templateXMLPath" type="string"/>
+                <property name="className" column="className" type="string"/>
+                <property name="templatePath" column="templatePath" type="string"/>
+                <property name="ktypeName" column="ktypeName" type="string"/>
+                <list name="ktypeproperties" table="caltks.KtypeProperty" lazy="true" cascade="all">
+                 
+                        <key column="ktypeID"/>
+                        <list-index column="ORDERID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.KtypeProperty"/>
+                </list>
+        </class>
+</hibernate-mapping>

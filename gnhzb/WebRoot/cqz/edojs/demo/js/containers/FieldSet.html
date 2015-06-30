@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var ct = new Edo.containers.FieldSet()
+.set({
+    legend: '折叠容器',
+    enableCollapse: true,//允许折叠
+    layout: 'vertical',    
+    children: [
+        {
+            type: 'button',
+            text: '按钮'
+        },
+        {
+            type: 'text',
+            text: '文本框'
+        },
+        {
+            type: 'combo',
+            readOnly: true,
+            onselectionchange: function(e){
+                if(this.selectedItem) ct.set('layout', this.selectedItem.text);
+            },
+            data: [
+                {text: 'vertical'},
+                {text: 'horizontal'}
+            ]
+        }
+    ],
+    render: document.body
+});
+</script>

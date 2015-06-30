@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- edu.zju.cims201.GOF.hibernate.pojo.Author root -->
+	<class name="edu.zju.cims201.GOF.hibernate.pojo.pdm.LcaTask" table="LcaTask">
+		<id name="id" type="java.lang.Long" column="id">
+			<generator class="increment"/>
+		</id>
+	    <property name="name" column="name" type="string"/>
+	    <property name="status" column="status" type="string"/>
+	    <many-to-one name="checkperson" column="checkpersonID" 
+			class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee">
+		</many-to-one>
+		<many-to-one name="carrier" column="carrierID" not-null="true"
+			class="edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee">
+		</many-to-one>
+		
+		<property name="mainFileName" column="mainFileName" type="string" length="200" />
+		<property name="starttime" column="starttime" type="timestamp"/>
+		<property name="endtime" column="endtime" type="timestamp"/>
+		<many-to-one name="processTemplate" class="edu.zju.cims201.GOF.hibernate.pojo.ProcessTemplate" column="templateid"></many-to-one>
+		<many-to-one name="pdmModule" class="edu.zju.cims201.GOF.hibernate.pojo.PdmModule" column="pdmModuleid"></many-to-one>
+		<many-to-one name="pdmProject" class="edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmProject" column="pdmProjectid"></many-to-one>
+		<many-to-one name="lcaModule" class="edu.zju.cims201.GOF.hibernate.pojo.LcaModule" column="lcaModuleid"></many-to-one>
+	     <set name="subLcaTasks" table="LcaTask" lazy="false" cascade="all">
+                        <key column="parentId"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.pdm.LcaTask"/>
+                </set>
+                 <many-to-one name="parentLcaTask" column="parentId" 
+					class="edu.zju.cims201.GOF.hibernate.pojo.pdm.LcaTask">
+				</many-to-one>
+	</class>
+</hibernate-mapping>
+
+	

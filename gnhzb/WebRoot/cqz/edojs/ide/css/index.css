@@ -1,0 +1,211 @@
+
+.drop
+{
+	/*border:solid 1px red;*/
+	background-color:Red;
+}
+
+.selected
+{
+	position:absolute;left:0px;top:0px;width:100%;height:100%;background-color:red;	
+	cursor:default;
+}
+.cmpSel
+{
+	background-color:Gray;
+}
+.cmpSel td
+{
+	color:White;
+}
+#app_container .e-resizer-square .e-resizer{
+    width:5px;
+    height:5px;
+    border:solid 1px #000;
+    margin:0px;
+    background:none;
+    background-color:White;
+}
+#app_container .e-resizer-square .e-resizer-e, #app_container .e-resizer-square .e-resizer-w{
+    top:50%;
+    margin-top:-4px;
+}
+#app_container .e-resizer-square .e-resizer-n, #app_container .e-resizer-square .e-resizer-s{
+    left:50%;
+    margin-left:-4px;
+}
+
+/*	...	*/
+
+.home
+{
+	background-image:url(../images/home.gif);    
+}  
+.msg
+{
+	background-image:url(../images/msg.gif);    
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	
+}  
+.lock
+{
+	background-image:url(../images/lock.gif);    
+}  
+.logout
+{
+	background-image:url(../images/logout.gif);    
+}  
+
+.folder
+{
+	background-image:url(../images/folder.gif);    
+}   
+
+#app_code textarea
+{
+	border-bottom:0;
+}
+
+/*ui icons*/
+.ui-html
+{
+	background:url(../images/ui/html.bmp) center center no-repeat;    	
+}  
+.ui-button
+{
+	background:url(../images/ui/button.bmp) center center no-repeat;    	
+}  
+.ui-combo
+{
+	background:url(../images/ui/combo.bmp) center center no-repeat;    	
+}  
+.ui-trigger
+{
+	background:url(../images/ui/combo.bmp) center center no-repeat;    	
+}  
+.ui-lov
+{
+	background:url(../images/ui/combo.bmp) center center no-repeat;    	
+}  
+.ui-date
+{
+	background:url(../images/ui/date.bmp) center center no-repeat;    	
+}  
+.ui-datepicker
+{
+	background:url(../images/ui/datepicker.bmp) center center no-repeat;    	
+}  
+.ui-check
+{
+	background:url(../images/ui/check.bmp) center center no-repeat;    	
+}  
+.ui-radio
+{
+	background:url(../images/ui/radio.bmp) center center no-repeat;    	
+}  
+.ui-text, .ui-password, .ui-textarea
+{
+	background:url(../images/ui/text.bmp) center center no-repeat;    	
+}  
+.ui-label
+{
+	background:url(../images/ui/label.bmp) center center no-repeat;    	
+}  
+.ui-slider
+{
+	background:url(../images/ui/slider.bmp) center center no-repeat;    	
+}  
+.ui-vslider
+{
+	background:url(../images/ui/vslider.bmp) center center no-repeat;    	
+}  
+.ui-spinner
+{
+	background:url(../images/ui/spinner.bmp) center center no-repeat;    	
+}  
+.ui-space
+{
+	background:url(../images/ui/space.bmp) center center no-repeat;    	
+}  
+.ui-module
+{
+	background:url(../images/ui/module.bmp) center center no-repeat;    	
+}  
+.ui-datespinner
+{
+	background:url(../images/ui/spinner.bmp) center center no-repeat;    	
+}  
+.ui-timespinner
+{
+	background:url(../images/ui/spinner.bmp) center center no-repeat;    	
+}  
+
+.ui-ct
+{
+	background:url(../images/ui/box.bmp) center center no-repeat;    	
+}  
+.ui-panel
+{
+	background:url(../images/ui/panel.png) center center no-repeat;    	
+}  
+.ui-dialog
+{
+	background:url(../images/ui/panel.png) center center no-repeat;    	
+}  
+.ui-form
+{
+	background:url(../images/ui/form.png) center center no-repeat;    	
+}  
+.ui-formitem
+{
+	background:url(../images/ui/formitem.bmp) center center no-repeat;    	
+}  
+.ui-box
+{
+	background:url(../images/ui/box.bmp) center center no-repeat;    	
+}  
+.ui-fieldset
+{
+	background:url(../images/ui/app.bmp) center center no-repeat;    	
+}  
+.ui-app
+{
+	background:url(../images/ui/app.bmp) center center no-repeat;    	
+}  
+
+.ui-buttonbar
+{
+	background:url(../images/ui/buttonbar.bmp) center center no-repeat;    	
+}  
+.ui-togglebar
+{
+	background:url(../images/ui/togglebar.bmp) center center no-repeat;    	
+}  
+.ui-tabbar
+{
+	background:url(../images/ui/tabbar.bmp) center center no-repeat;    	
+}  
+.ui-menu
+{
+	background:url(../images/ui/app.bmp) center center no-repeat;    	
+}  
+.ui-tree
+{
+	background:url(../images/ui/tree.gif) center center no-repeat;    	
+}  
+.ui-table
+{
+	background:url(../images/ui/table.gif) center center no-repeat;    	
+}  
+
+.ui-tools
+{
+	background:url(../images/ui/tools.bmp) center center no-repeat;    	
+}  
+
+/**/
+.e-dragmove .e-resizer
+{
+	display:none;
+}

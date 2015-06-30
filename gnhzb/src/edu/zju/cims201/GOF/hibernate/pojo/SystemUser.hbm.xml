@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.User root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.SystemUser" table="caltks.SystemUser" discriminator-value="N">
+                <id name="id" type="java.lang.Long" column="id">
+                        <generator class="increment"/>
+                </id>
+                
+                <discriminator column="isAdmin" type="string"/>
+                
+                <property name="name" column="name" type="string"/>
+                <property name="sex" column="sex" type="string"/>
+                <property name="picturePath" column="picturePath" type="string"/>
+                <property name="isVisible" column="isVisible" type="boolean"/>
+                <property name="email" column="email" type="string"/>
+                <property name="password" column="password" type="string"/>
+                <property name="introduction" column="introduction" type="string"/>
+                   <property name="orgname" column="orgname" type="string"/>
+                   <property name="securityLevel" column="securityLevel" type="java.lang.Integer"/>
+                <set name="uploadKnowledges" table="caltks.MetaKnowledge" lazy="true" cascade="none">
+                        <key column="uploaderID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.MetaKnowledge"/>
+                </set>
+                
+                <set name="roleNodes" table="caltks.UserRoleNodes" lazy="true" inverse="true" cascade="none">
+                        <key column="userID"/>
+                        <many-to-many class="edu.zju.cims201.GOF.hibernate.pojo.RoleTreeNode">
+                        	<column name="roleTreeNodeID"></column>
+                        </many-to-many>
+                </set>
+                
+                <property name="hobby" column="hobby" type="string"/>
+                
+                 <set name="initiatedFlows" table="caltks.Flow" lazy="true"  cascade="all-delete-orphan">
+                        <key column="initiatorID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Flow"/>
+                </set>
+                
+                <set name="receivedFlowNodes" table="caltks.FlowNode" lazy="true">
+                        <key column="approverORLenderID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.FlowNode"/>
+                </set>
+                
+                <set name="receivedMessages" table="caltks.Message" lazy="true" inverse="true" cascade="all">
+                        <key column="receiverID"/>
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Message"/>
+                </set>
+                
+                <set name="interestModels" table="caltks.InterestModel" lazy="true"  cascade="all-delete-orphan">
+                        <key column="userID"/>
+                      
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.InterestModel"/>
+                </set>
+                
+                
+                 <set name="empowerments" table="caltks.Empowerment" lazy="true" inverse="true" >
+                        <key column="userID"/>
+                      
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.Empowerment"/>
+                </set>
+                
+                
+             	<set name="userPrivilegeTriples" table="caltks.UserPrivilegeTriple" lazy="true" inverse="true" cascade="all">
+                        <key column="userID"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.UserPrivilegeTriple"/>      
+                       
+                </set>
+                <set name="userKnowledgeTags" table="caltks.UserKnowledgeTag" inverse="true">
+                	<key>
+                		<column name="tagerID" not-null="true" />
+                	</key>
+                	<one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.UserKnowledgeTag"/>
+                	
+                </set>
+                
+  
+                
+                
+                <!-- 记录用户的积分的属性 -->
+		<property name="totoalscore" type="java.lang.Integer">
+			<column name="totoalscore"></column>
+        </property>
+        
+		<!-- 记录用户的贡献度积分的属性 -->
+		<property name="contributionscore" type="java.lang.Integer">
+			<column name="contributionscore"></column>
+        </property>
+        
+        		<!-- 记录用户的本周贡献度积分-->
+		<property name="weekcscore" type="java.lang.Integer">
+			<column name="weekcscore"></column>
+        </property>
+        
+        		<!-- 记录用户的上周贡献度积分 -->
+		<property name="lastweekcscore" type="java.lang.Integer">
+			<column name="lastweekcscore"></column>
+        </property>
+        
+                		<!-- 记录用户的近两周贡献度积分 -->
+		<property name="lasttwoweekcscore" type="java.lang.Integer">
+			<column name="lasttwoweekcscore"></column>
+        </property>
+        
+       
+        		<!-- 记录用户的本月贡献度积分 -->
+		<property name="monthcscore" type="java.lang.Integer">
+			<column name="monthcscore"></column>
+        </property>
+                <!-- 记录用户的上月贡献度积分-->
+		<property name="lastmonthcscore" type="java.lang.Integer">
+			<column name="lastmonthcscore"></column>
+        </property>
+        
+        		<!-- 记录用户的本年贡献度积分 -->
+		<property name="yearcscore" type="java.lang.Integer">
+			<column name="yearcscore"></column>
+        </property>
+        
+        		<!-- 记录用户的上年贡献度积分 -->
+		<property name="lastyearcscore" type="java.lang.Integer">
+			<column name="lastyearcscore"></column>
+        </property>  
+        
+        
+                		<!-- 记录用户的本周参与度积分-->
+		<property name="weekpscore" type="java.lang.Integer">
+			<column name="weekpscore"></column>
+        </property>
+        
+        		<!-- 记录用户的上周参与度积分 -->
+		<property name="lastweekpscore" type="java.lang.Integer">
+			<column name="lastweekpscore"></column>
+        </property>
+        
+                		<!-- 记录用户的近两周参与度积分 -->
+		<property name="lasttwoweekpscore" type="java.lang.Integer">
+			<column name="lasttwoweekpscore"></column>
+        </property>
+        
+       
+        		<!-- 记录用户的本月参与度积分 -->
+		<property name="monthpscore" type="java.lang.Integer">
+			<column name="monthpscore"></column>
+        </property>
+                <!-- 记录用户的上月参与度积分-->
+		<property name="lastmonthpscore" type="java.lang.Integer">
+			<column name="lastmonthpscore"></column>
+        </property>
+        
+        		<!-- 记录用户的本年参与度积分 -->
+		<property name="yearpscore" type="java.lang.Integer">
+			<column name="yearpscore"></column>
+        </property>
+        
+        		<!-- 记录用户的上年参与度积分 -->
+		<property name="lastyearpscore" type="java.lang.Integer">
+			<column name="lastyearpscore"></column>
+        </property>   
+                
+                
+                
+               
+               	<set name="sysBehaviorlogs" table="caltks.sysBehaviorLog" lazy="true" inverse="true" cascade="all">
+                        <key column="userid"/>
+                        
+                        <one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.SysBehaviorLog"/>      
+                       
+                </set> 
+               
+                <subclass name="edu.zju.cims201.GOF.hibernate.pojo.AdminUser" discriminator-value="Y">
+                	<set name="adminPrivilegeTriples" table="caltks.AdminPrivilegeTriple" >
+                		<key>
+                			<column name="adminID" not-null="true" />
+                		</key>
+                		<one-to-many class="edu.zju.cims201.GOF.hibernate.pojo.AdminPrivilegeTriple"/>
+                	
+              		  </set>
+              		          
+        		</subclass>
+                
+                
+                
+        </class>
+</hibernate-mapping>

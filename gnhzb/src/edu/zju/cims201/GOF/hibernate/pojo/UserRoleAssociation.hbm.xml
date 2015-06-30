@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+        <!-- edu.zju.cims201.GOF.hibernate.pojo.Author root -->
+        <class name="edu.zju.cims201.GOF.hibernate.pojo.UserRoleAssociation" table="caltks.UserRoleNodes">
+		<composite-id name="pk" class="edu.zju.cims201.GOF.hibernate.pojo.UserRolePK">
+            <key-property name="userId" type="java.lang.Long">
+                <column name="userID" />
+            </key-property>
+            <key-property name="roleNodeId" type="java.lang.Long">
+                <column name="roleTreeNodeID" />
+            </key-property>
+        </composite-id>  
+        
+        <property name="orderId" type="java.lang.Long">
+        	 <column name="orderId" />
+        </property>
+        
+        <!-- 
+        
+        <many-to-one name="user" column="userID" not-null="true" insert="false" update="false"
+                class="edu.zju.cims201.GOF.hibernate.pojo.SystemUser">
+        </many-to-one>
+        
+        <many-to-one name="roleNode" column="roleTreeNodeID" not-null="true" insert="false" update="false"
+                class="edu.zju.cims201.GOF.hibernate.pojo.TreeNode">
+        </many-to-one>
+        
+         -->
+            
+        </class>
+</hibernate-mapping>

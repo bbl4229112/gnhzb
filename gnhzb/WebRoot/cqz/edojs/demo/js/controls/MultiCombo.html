@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.Button()
+.set({   
+    text: 'setValue',
+    render: document.body,
+    onclick: function(e){            
+        ms.setValue('123,232');
+    }
+});
+Edo.util.Dom.append(document.body, '<br/><br/>');
+new Edo.controls.Button()
+.set({   
+    text: 'getValue',
+    render: document.body,
+    onclick: function(e){    
+        alert(ms.getValue());
+    }
+});
+Edo.util.Dom.append(document.body, '<br/><br/>');
+
+new Edo.controls.MultiCombo()
+.set({
+    id:'ms',                
+    render: document.body,    
+    multiSelect: false,
+    displayField: 'text',
+    valueField: 'text',       
+    data: [
+        {text: 123},
+        {text: 232},
+        {text: 3421},
+        {text: 43331665},
+        {text: 5678}
+    ]
+});
+
+
+</script>

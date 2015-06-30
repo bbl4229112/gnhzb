@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+<p>Edo.util.XML可以将XML与JSON两种数据格式相互序列化和反序列化</p>
+<ul style="list-style-type:circle;margin-left:30px;">
+    <li>var jsonObj = Edo.util.XML.encode(xmlStr)</li>
+    <li>var xmlStr = Edo.util.XML.decode(jsonObj)</li>
+</ul>
+<p>一般使用Ajax将XML数据获取后，用Edo.util.XML.encode(xml)直接获得JS对象，稍作处理后绑定到界面组件上。</p>
+<br />
+XML：<br />
+ <textarea id="xml" style="width:400px;height:200px;">
+<?xml version="1.0" standalone="no"?>
+<root error="0">
+  <person id="1">
+    <name>Alan</name>
+    <name>BBB</name>
+    <url>http://www.google.com</url>
+    <birthday>2010-11-12T22:00:00</birthday>
+  </person>
+  <person id="2">
+    <name>Louis</name>
+    <url>http://www.yahoo.com</url>
+    <age v="123"/>
+  </person>
+</root>
+ </textarea><br />
+ XML转JSON：<br />
+ <textarea id="xml2json" style="width:400px;height:200px;">
+ </textarea><br />
+ JSON转XML：<br />
+ <textarea id="json2xml" style="width:400px;height:200px;">
+ </textarea>
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+var xml = document.getElementById('xml').value;
+
+var obj = Edo.util.XML.decode(xml);
+
+var json = Edo.util.JSON.encode(obj);
+var xml = Edo.util.XML.encode(obj);
+
+document.getElementById('xml2json').value = json;
+document.getElementById('json2xml').value = xml;
+</script>

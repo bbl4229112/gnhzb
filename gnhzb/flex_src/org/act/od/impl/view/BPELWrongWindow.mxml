@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="336" height="156"
+	title="BPEL Wrong">
+	<mx:Script>
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			/**
+			 * Close the <code> PopUpManager </code> window.
+			 * 
+			 * @param event : Mose event.
+			*/
+			internal function onOKHandle(event :MouseEvent) :void {
+				PopUpManager.removePopUp(this);
+			}
+			/**
+			 * Set message of text's zonne given in parametor.
+			 * 
+			 * @param message.
+			*/
+			public function setmessage(message :String):void{
+				file.text = message;
+			}
+		]]>
+	</mx:Script>
+	<!---  Separator line -->
+	
+	<mx:HRule x="0" y="79" width="316"/>
+	
+	<!---   zone of message text -->
+	
+	<mx:Text id="file" x="10" y="10" width="295" fontWeight="normal" fontSize="10" height="71"/>
+	
+	<!---  Button to exit window  -->	
+	<mx:Button label="OK" x="223" y="89" click="onOKHandle(event)"  width="71"/>
+</mx:TitleWindow>

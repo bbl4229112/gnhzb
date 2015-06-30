@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+    <title>EdoJS - 企业级Ajax框架!</title>
+    <link href="../../../scripts/edo/res/css/edo-all.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:10px;">
+    
+</body>
+</html>
+<script src="../../../scripts/edo/edo.js" type="text/javascript"></script>
+<script type="text/javascript">
+new Edo.controls.Date()
+.set({    
+    ondatechange: function(e){
+        alert(e.date.format('Y-m-d'));
+    },
+    render: document.body
+});
+</script>

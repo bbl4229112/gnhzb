@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "dwr20.dtd">
+
+<dwr>
+	<allow>
+	
+		<convert converter="bean" match="edu.zju.cims201.GOF.rs.dto.UserDTO"/>
+		
+		
+		<create creator="spring" javascript="ChatManager">
+		<param name="beanName" value="chatManager"/>
+		<param name="location" value="applicationContext.xml"/>
+			<!-- <param name="class" value="edu.zju.cims201.GOF.web.message.dwr.ChatManager"/>-->
+		</create>
+		
+		<create creator="spring" javascript="CommentMessage">
+		<param name="beanName" value="commentMessage"/>
+		<param name="location" value="applicationContext.xml"/>
+		</create>
+		
+		
+	
+	
+  
+ 
+	</allow>
+</dwr>
