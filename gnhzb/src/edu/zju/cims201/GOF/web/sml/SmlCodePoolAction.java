@@ -39,7 +39,7 @@ public class SmlCodePoolAction extends ActionSupport implements
 	
 	public void addSmlCode() throws IOException{
 		String msg =smlCodePoolService.addSmlCode(firstCode,codeName,information);
-		out =response.getWriter();
+		out = response.getWriter();
 		out.print(msg);
 	}
 	

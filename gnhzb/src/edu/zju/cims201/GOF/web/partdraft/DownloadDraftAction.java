@@ -49,8 +49,10 @@ public class DownloadDraftAction extends ActionSupport {
 
 	public InputStream getInputStream(){
 		fileName =this.getChineseFileName();
+		System.out.println(fileName);
 		String suffix =fileName.substring(fileName.lastIndexOf(".")+1);
 		draftName =this.getDraftName()+"."+suffix;
+		System.out.println(draftName);
 		boolean ismaster=partDraftService.isMasterByFileName(fileName);
 		String url="";
 		if(ismaster){

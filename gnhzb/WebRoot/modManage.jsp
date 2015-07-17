@@ -51,11 +51,6 @@
 
 
 
-
-
-
-
-
 <script type="text/javascript" src="<%=basePath%>js/swfupload/swfupload.queue.js"></script>
 
 <%--<!-- 搜索 -->
@@ -318,9 +313,7 @@
 	                },
 	               
 	                {
-
 	                    type: 'label', height:76, style: 'padding-left:2px; padding-right:2px;padding-top:5px;', text: '<a href=""><div class="cims201_topbar_icon">&nbsp;<image height=45 width=45 src=css/images/home2.png><br>&nbsp;系统主页</div></a>'
-
 	                },
 	                //陈谦庄 模块化
 	                {

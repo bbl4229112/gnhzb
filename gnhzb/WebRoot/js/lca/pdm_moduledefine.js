@@ -57,89 +57,89 @@ function getmoduleprocessdefinebox(cell){
 					{	type : 'formitem',label : '执行模块:',labelWidth : 100,labelAlign : 'right',layout: 'horizontal',
 						    children : [{type : 'text',width : 200,id : 'tasktreenodeid',text:levelmodule.levelmoduleobject.tasktreenodeid,visible:false},{type : 'text',width : 200,id : 'tasktreenodename',text:levelmodule.levelmoduleobject.tasktreenodename},
 						                {type : 'button',text:'请选择模块',
-					   	onclick: function(e){
-					   	var roledataTable = new Edo.data.DataTable()
-							.set({
-							    fields: [
-							        {name: 'id', mapping: 'id', type: 'string'
-							           
-							        },
-							        {name: 'name', mapping: 'name',  type: 'string'
-							        }
-							    ]
-							});
-					   	var tasktreeTable = new Edo.data.DataTree()
-					   	.set({
-					   	    fields: [
-					   	        {name: 'id', mapping: 'id', type: 'string'
-					   	           
-					   	        },
-					   	        {name: 'name', mapping: 'name',  type: 'string'
-					   	        }
-					   	    ]
-					   	});
-						var url=basepathh+'/department/department!getOperationRoles.action';
-						var param={};
-						var id='role';
-						refreshdata(roledataTable,url,param,id);
-							var box=Edo.create(
-							{type: 'box',width: '100%',height:'100%',layout: 'horizontal',
-							children:[
-								{
-							type:'box',
-							height: '100%',
-							layout:'vertical',
-							children:[	
-						        {		
-								id: 'role', type: 'table', width: '100%', height: '100%',autoColumns: true,
-								padding:[0,0,0,0],
-								rowSelectMode : 'single',
-								columns:[{
-									 headerText: '',
-									 align: 'center',
-									 width: 10,                        
-									 enableSort: false,
-									 enableDragDrop: true,
-									 enableColumnDragDrop: false,
-									 style:  'cursor:move;',
-									 renderer: function(v, r, c, i, data, t){
-									 return i+1;}},
-									 {header:'权限名称',dataIndex: 'name', width: '100',headerAlign: 'center',align: 'center'}
-									 ],
-					             data:roledataTable,
-					             onselectionchange: function(e){	
-					            	 var r=role.getSelected();
-					            	   if(r!=null){
-					            	   var data= cims201.utils.getData(basepathh+'/tasktree/tasktree!getTaskTreebyRole.action',{role:r.id});
-					            	   tasktreeTable.set('data',data);
-								}}}]},
-						      
-						   		{
-					   			id: 'tasktree',
-					   			type: 'tree',
-								width: '260',
-						        height: '100%',
-						        headerVisible: false,
-						        autoColumns: true,
-						        horizontalLine: false,
-								padding:[0,0,0,0],
-							    rowSelectMode : 'single',
-							    columns:[
-					                 {header:'名称',dataIndex: 'name', width: '100',headerAlign: 'center',align: 'center'}
-					                 ],
-					             data:tasktreeTable
-						   		}
-								]})
-					   	    var func=function(){
-					   	
-					    	var row=Edo.get('tasktree').getSelected();
-					        Edo.get('tasktreenodename').set('text',row.name);
-					        Edo.get('tasktreenodeid').set('text',row.id);
-					       }
-					    var toolbar=new gettoolbar(null,func);
-					    var winfm=getmywin(400,400,'选择功能模块',[box,toolbar]);
-					    winfm.show('center', 'middle', true);
-						}}]
+										   	onclick: function(e){
+										   	var roledataTable = new Edo.data.DataTable()
+												.set({
+												    fields: [
+												        {name: 'id', mapping: 'id', type: 'string'
+												           
+												        },
+												        {name: 'name', mapping: 'name',  type: 'string'
+												        }
+												    ]
+												});
+										   	var tasktreeTable = new Edo.data.DataTree()
+										   	.set({
+										   	    fields: [
+										   	        {name: 'id', mapping: 'id', type: 'string'
+										   	           
+										   	        },
+										   	        {name: 'name', mapping: 'name',  type: 'string'
+										   	        }
+										   	    ]
+										   	});
+											var url=basepathh+'/department/department!getOperationRoles.action';
+											var param={};
+											var id='role';
+											refreshdata(roledataTable,url,param,id);
+												var box=Edo.create(
+												{type: 'box',width: '100%',height:'100%',layout: 'horizontal',
+												children:[
+													{
+												type:'box',
+												height: '100%',
+												layout:'vertical',
+												children:[	
+											        {		
+													id: 'role', type: 'table', width: '100%', height: '100%',autoColumns: true,
+													padding:[0,0,0,0],
+													rowSelectMode : 'single',
+													columns:[{
+														 headerText: '',
+														 align: 'center',
+														 width: 10,                        
+														 enableSort: false,
+														 enableDragDrop: true,
+														 enableColumnDragDrop: false,
+														 style:  'cursor:move;',
+														 renderer: function(v, r, c, i, data, t){
+														 return i+1;}},
+														 {header:'权限名称',dataIndex: 'name', width: '100',headerAlign: 'center',align: 'center'}
+														 ],
+										             data:roledataTable,
+										             onselectionchange: function(e){	
+										            	 var r=role.getSelected();
+										            	   if(r!=null){
+										            	   var data= cims201.utils.getData(basepathh+'/tasktree/tasktree!getTaskTreebyRole.action',{role:r.id});
+										            	   tasktreeTable.set('data',data);
+													}}}]},
+											      
+											   		{
+										   			id: 'tasktree',
+										   			type: 'tree',
+													width: '260',
+											        height: '100%',
+											        headerVisible: false,
+											        autoColumns: true,
+											        horizontalLine: false,
+													padding:[0,0,0,0],
+												    rowSelectMode : 'single',
+												    columns:[
+										                 {header:'名称',dataIndex: 'name', width: '100',headerAlign: 'center',align: 'center'}
+										                 ],
+										             data:tasktreeTable
+											   		}
+													]})
+										   	    var func=function(){
+										   	
+										    	var row=Edo.get('tasktree').getSelected();
+										        Edo.get('tasktreenodename').set('text',row.name);
+										        Edo.get('tasktreenodeid').set('text',row.id);
+										       }
+										    var toolbar=new gettoolbar(null,func);
+										    var winfm=getmywin(400,400,'选择功能模块',[box,toolbar]);
+										    winfm.show('center', 'middle', true);
+											}}]
 						    },
            	    {	type : 'formitem',label : '模块名称:',labelWidth : 100,labelAlign : 'right',
            	    children : [{type : 'text',width : 200,id : 'processname',text:levelmodule.levelmoduleobject.processname}]

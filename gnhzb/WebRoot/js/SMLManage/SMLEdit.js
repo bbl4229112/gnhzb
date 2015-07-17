@@ -120,7 +120,7 @@ function createSMLEdit(){
 		columnChildren[1]={header:'partId',dataIndex:'partId',visible:false};
 		for(var i=2;i<columnsData.length+2;i++){
 			var columnData=columnsData[i-2];
-			columnChildren[i] ={header:columnData.headShow+'(<span style="color:red;">'+columnData.tableHead+'</span>)',dataIndex:columnData.tableHead,headerAlign: 'center',align:'center'};
+			columnChildren[i] = {header:columnData.headShow+'(<span style="color:red;">'+columnData.tableHead+'</span>)',dataIndex:columnData.tableHead,headerAlign: 'center',align:'center'};
 		}
 
 		var table =new Edo.lists.Table();
@@ -177,9 +177,6 @@ function createSMLEdit(){
 			form.setForm(e.record);
 
 		});
-		 
-		
-		
 		return table;
 	}
 	/**

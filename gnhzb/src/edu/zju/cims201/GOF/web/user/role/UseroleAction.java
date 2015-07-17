@@ -95,10 +95,7 @@ public class UseroleAction extends CrudActionSupport<TreeNode> implements Servle
 
 	@Override
 	protected void prepareModel() throws Exception {
-		
-		
-		
-		
+
 	}
 
 	//-- CRUD Action 函数 --//

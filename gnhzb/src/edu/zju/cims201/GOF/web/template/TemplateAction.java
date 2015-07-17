@@ -68,7 +68,6 @@ public class TemplateAction extends ActionSupport implements ServletResponseAwar
   	  int endNub = 0;
   	  NodeList cells = analyticXML(data);
   	         for(int i=0;i<cells.getLength();i++){
-  	        	 
   	        	 Element cellElement =  (Element) cells.item(i);
   	             String difference = cellElement.getAttribute("difference");
   	             if(difference.equals("1")||difference == "1"){

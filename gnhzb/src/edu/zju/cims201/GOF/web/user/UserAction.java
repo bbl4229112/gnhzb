@@ -108,13 +108,13 @@ public class UserAction extends CrudActionSupport<SystemUser> implements Servlet
 			HashMap<String, String> jsonMap=(HashMap<String, String>)reader.read(json);
 			
 			if(null!=jsonMap.get("email")){
-			String email=jsonMap.get("email").toString();
-			systemUser=userServiceImpl.getUser(email);
-			if(null==systemUser)
-			{
-				systemUser=new SystemUser();
-				systemUser.setEmail(jsonMap.get("email"));
-			}
+				String email=jsonMap.get("email").toString();
+				systemUser=userServiceImpl.getUser(email);
+				if(null==systemUser)
+				{
+					systemUser=new SystemUser();
+					systemUser.setEmail(jsonMap.get("email"));
+				}
 			}
 			else{
 				systemUser=new SystemUser();

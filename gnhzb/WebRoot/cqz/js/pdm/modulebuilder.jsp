@@ -62,6 +62,8 @@
 		// DOM node with the specified ID. This function is invoked
 		// from the onLoad event handler of the document (see below).
 		var basepathh='http://localhost:8080/gnhzb/'
+		
+		//
 		var moduleobject={
 			versionid:null,
 			modulename:null,
@@ -70,6 +72,8 @@
 		    issaved:false,
 		    style:null
 		}
+		
+		//某一层的模板的某一节点信息？（层信息，可视节点id的信息，节点执行信息）
 		function levelmodule(level,cell){
 			this.level=level;
 			this.levelmoduleobject={
@@ -86,8 +90,6 @@
 				type:null,
 				tasktreenodeid:null,
 				tasktreenodename:null
-				
-			
 			};
 			this.childlevel=null;
 		}
@@ -95,6 +97,7 @@
 		levelmodule.prototype.createlavelid=function(){
 		
 		}
+		//表示所有层，包括跟节点层，当前层次，所有层（用数组表示）
 		function alllevel(){
 		}
 		alllevel.prototype.constructor = alllevel;
@@ -125,9 +128,11 @@
 			this.setcurrentlevel(newlevel);
 		 
 		};
-		alllevel.prototype.addlevelmodule=function(cell){
+		alllevel.prototype.addlevelmodule = function(cell){
 			return this.currentlevel.addlevelmodule(cell);
 		};
+		
+		//表示某一层的对象，（父层，父层id，父层节点id，xml文件信息，cells和levelmodules指什么？）
 		function level(type){
 		    this.parentcellid=null;
 			this.levelmodules=new Array();
@@ -411,15 +416,16 @@
                 {  
                     return createPopupMenu(graph, menu, cell, evt);  
                 };  
+                //双击不起作用？
 				graph.dblClick = function(evt, cell)
 				{
-				var type =  graph.model.getStyle(cell);
-				if(type==null){
-				return null;
-				}
-				if(type!='process'&&type!='taskprocess'){
+					var type =  graph.model.getStyle(cell);
+					if(type==null){
 					return null;
-				}
+					}
+					if(type!='process'&&type!='taskprocess'){
+						return null;
+					}
 
 				/* if(label=='process'){
 				type='process';
@@ -749,7 +755,7 @@
 				
 				    
 				});
-				editor.addAction('moduleassign', function(editor, cell)
+				editor. ('moduleassign', function(editor, cell)
 						{ 
 					     var graph=editor.graph;
 						 var cells =  graph.getChildCells();
@@ -1169,17 +1175,18 @@
 			mxUtils.write(button, label);
 			toolbar.appendChild(button);
 		};
+		//添加右键跳出菜单
 		function createPopupMenu(graph, menu, cell, evt)  
 		{  
 		    var model = graph.getModel(); 
 		    var level=wholelevel.getcurrentlevel();
 		    if (cell != null)  
-		    {   
+		    {   //
 		        if (model.isVertex(cell))  
 		        { 
 		           if (level.type=='modulelevel')  
 		       	   {  
-		       	   menu.addItem('选择/取消选择', null, function()  
+		       	   	menu.addItem('选择/取消选择', null, function()  
 		            {   
 		            	var style=cell.getStyle();
 			            var label =  graph.convertValueToString(cell);
@@ -1233,12 +1240,18 @@
 				            {  
 				            	 var cell=editor.graph.getSelectionCell();
 							       if(cell!=null&&editor.graph.model.getStyle(cell)=='process'){
+							       			//获得当前层
 								          var level=wholelevel.getcurrentlevel();
+									       //当前层的modules对象
 									       var modules=level.levelmodules;
+									       //当前层的cell
 									       level.cells=editor.graph.getChildCells();
+									       //遍历当前层的所有module，找与之对应的cell
 									       for(var i=0;i<modules.length;i++){
 										       if(modules[i].levelmoduleobject.cellid==cell.getId()){
+										         
 										         savecells();
+										         //如果下一层编辑过，存在childlevel，则直接获得它被设置为currentlevel,得到它的cells，初始化graph
 										            if(modules[i].childlevel!=null){
 										             initgraph();
 										            var childlevel=modules[i].childlevel;
@@ -1252,6 +1265,7 @@
 										             editor.graph.addCells(cells);
 										             wholelevel.setcurrentlevel(childlevel);
 										            }else{
+										            //不存在下一层，那么就为modules[i]添加下一层
 										            wholelevel.addlevel(modules[i]);
 										            initgraph();
 										       		} 
@@ -1267,14 +1281,14 @@
 				            {  
 				            	var label =  graph.model.getStyle(cell);
 				            	if(label=='process'){
-						  	    var level=wholelevel.getcurrentlevel();
-					      	    var modules=level.levelmodules;
-						        for(var i=0;i<modules.length;i++){
-							       if(modules[i].levelmoduleobject.cellid==cell.getId()){
-									    parent.moduleprocessdefine(cell,modules[i]);
-									    break;
-							    	}
-								}
+							  	    var level=wholelevel.getcurrentlevel();
+						      	    var modules=level.levelmodules;
+							        for(var i=0;i<modules.length;i++){
+								       if(modules[i].levelmoduleobject.cellid==cell.getId()){
+										    parent.moduleprocessdefine(cell,modules[i]);
+										    break;
+								    	}
+									}
 			            		}
 				            }
 				            );
@@ -1298,6 +1312,7 @@
 		            
 		        }
 		        }else if (level.type!='modulelevel')  
+		        	//没有选中节点并且右击空地的时候
 		       	{  
 		          menu.addItem('粘贴', null, function()  
 	            {  
@@ -1404,6 +1419,7 @@
 				var model = graph.getModel();
 				//alert(parent.getId());
 				var v1 = null;
+				//回调函数，拖拽工具栏图标的时候触发。
 				var funct = function(graph, evt, cell, x, y)
 			        {
 			  		var parent = graph.getDefaultParent();
@@ -1629,6 +1645,7 @@
 		       }
 	       }
 		}
+		//添加新过程节点
 		function addnewprocess(label,x,y,width,height,type,color){
 			var graph=editor.graph;
 			var model = graph.getModel();  
@@ -1655,6 +1672,7 @@
 		    v.indexname=label;
 			return v;
 			}
+		//将cells信息和xml信息保存当前层
 		function savecells(){
 			var cells = editor.graph.getChildCells();
 			 wholelevel.getcurrentlevel().cells=cells;

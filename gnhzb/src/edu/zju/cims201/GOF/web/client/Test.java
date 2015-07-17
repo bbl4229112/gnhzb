@@ -17,7 +17,7 @@ public class Test {
 		//ms.sendTreeNodes2SynModel();    //同步分类树主模型，成功
 		//ms.sendTreeNodes2SynSelf();       //同步分类树自定义文档，成功
 		
-		ms.sendTreeNodes2SynImg();
+		//ms.sendTreeNodes2SynImg();
 	}
 }
 

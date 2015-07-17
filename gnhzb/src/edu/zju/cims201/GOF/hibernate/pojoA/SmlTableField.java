@@ -55,6 +55,5 @@ public class SmlTableField {
 	public void setOutput(int output) {
 		this.output = output;
 	}
-	
-	
+
 }

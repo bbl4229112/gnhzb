@@ -89,23 +89,23 @@ function updateUser(){
 function delRow(){
 var rs=myTable.getSelectedItems();
 
-if(rs){
-	myTable.deleteRecord(rs);
-	cims201.utils.getData('user!delete.action',{id:rs[0].id});
-	myTable.search();	
-	
-}
+	if(rs){
+		myTable.deleteRecord(rs);
+		cims201.utils.getData('user!delete.action',{id:rs[0].id});
+		myTable.search();	
+		
+	}
 //myTable.search();
 //var abddd = 1;
 }
 function setAdmin(){
-var rs=myTable.getSelectedItems();
+	var rs=myTable.getSelectedItems();
 
-if(rs){
-	myTable.deleteRecord(rs);
-	cims201.utils.getData('user!user2adminsave.action',{id:rs[0].id});
-	alert("已把该用户设为管理员");
-}
+	if(rs){
+		myTable.deleteRecord(rs);
+		cims201.utils.getData('user!user2adminsave.action',{id:rs[0].id});
+		alert("已把该用户设为管理员");
+	}
 }
 
 function chkEmail(v){

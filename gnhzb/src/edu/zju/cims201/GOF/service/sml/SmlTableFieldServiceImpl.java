@@ -1,8 +1,11 @@
 package edu.zju.cims201.GOF.service.sml;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.transform.Transformers;
@@ -132,11 +135,11 @@ public class SmlTableFieldServiceImpl implements SmlTableFieldService {
 	public String getSmlTableByTableName(String tableName){
 		tableName=tableName.replaceAll("-", "_");
 		String selectUrl ="select * from "+tableName;
-		List list=smlTableFieldDao.getSession().createSQLQuery(selectUrl).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		List list = smlTableFieldDao.getSession().createSQLQuery(selectUrl).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 		List<SmlTableField>stf= getSmlTableFieldByTableName(tableName);
 		StringBuffer sb =new StringBuffer("[");
 		for(int i =0;i<list.size();i++){
-			Map map =(Map)list.get(i);
+			Map map =(Map)list.get(i); 
 			sb.append("{'id':'"+map.get("id")+"','partname':'"+map.get("part_name")+"','partnumber':'"+map.get("part_number")+"','partId':'"+map.get("part_id")+"',");
 			 for(int j=0;j<stf.size();j++){
 					if(stf.get(j).getTableHead().equals("partname") ||stf.get(j).getTableHead().equals("partnumber")||stf.get(j).getTableHead().equals("partname")){

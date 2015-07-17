@@ -94,7 +94,4 @@ public class SmlParameterPool {
 	public void setCodeBelong(SmlCodePool codeBelong) {
 		this.codeBelong = codeBelong;
 	}
-	
-
-
 }

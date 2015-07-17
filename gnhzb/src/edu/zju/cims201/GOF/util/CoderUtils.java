@@ -101,9 +101,7 @@ public class CoderUtils {
 		for(int i= 0;i<6;i++){
 			six[i] ='0';
 		}
-		
-		
-		
+
 		return si;
 	}
 
