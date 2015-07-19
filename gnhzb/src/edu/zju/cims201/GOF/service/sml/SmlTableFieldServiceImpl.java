@@ -140,7 +140,7 @@ public class SmlTableFieldServiceImpl implements SmlTableFieldService {
 		StringBuffer sb =new StringBuffer("[");
 		for(int i =0;i<list.size();i++){
 			Map map =(Map)list.get(i); 
-			sb.append("{'id':'"+map.get("id")+"','partname':'"+map.get("part_name")+"','partnumber':'"+map.get("part_number")+"','partId':'"+map.get("part_id")+"',");
+			sb.append("{'id':'"+map.get("ID")+"','partname':'"+map.get("PART_NAME")+"','partnumber':'"+map.get("PART_NUMBER")+"','partId':'"+map.get("PART_ID")+"',");
 			 for(int j=0;j<stf.size();j++){
 					if(stf.get(j).getTableHead().equals("partname") ||stf.get(j).getTableHead().equals("partnumber")||stf.get(j).getTableHead().equals("partname")){
 						continue;

@@ -76,6 +76,9 @@ public class SmlTableFieldAction extends ActionSupport implements ServletRespons
 	
 	public void getSmlTableByTableName() throws IOException{
 		String msg=smlTableFieldService.getSmlTableByTableName(tableName);
+		System.out.println("获得事物特性表的数据：");
+		System.out.println(tableName);
+		System.out.println(msg);
 		out = response.getWriter();
 		out.print(msg);
 	}
