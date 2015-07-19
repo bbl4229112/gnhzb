@@ -25,7 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     
   </body>
+ 
   <script src="<%=basePath %>cqz/edojs/scripts/edo/edo.js" type="text/javascript"></script>
+   <script src="<%=basePath %>js/commontools/Window.js" type="text/javascript"></script>
+   <script src="<%=basePath %>js/commontools/PopupManager.js" type="text/javascript"></script>
   <script src="<%=basePath %>js/cims201.js" type="text/javascript"></script>
   <script src="<%=basePath %>js/utils.js" type="text/javascript"></script>
   <script src="<%=basePath %>cqz/js/pdm/department.js" type="text/javascript"></script>
