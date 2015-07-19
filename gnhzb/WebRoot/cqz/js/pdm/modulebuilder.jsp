@@ -755,7 +755,7 @@
 				
 				    
 				});
-				editor. ('moduleassign', function(editor, cell)
+				editor.addAction ('moduleassign', function(editor, cell)
 						{ 
 					     var graph=editor.graph;
 						 var cells =  graph.getChildCells();
@@ -1785,12 +1785,7 @@
 </head>
 
 <!-- Page passes the container for the graph to the program -->
-<body onload="main(document.getElementById('graphContainer'),
-			document.getElementById('outlineContainer'),
-		 	document.getElementById('toolbarContainer'),
-			document.getElementById('modelbarContainer'),
-			document.getElementById('sidebartree'),
-			document.getElementById('statusContainer'));" style="margin:0px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#2894FF), to(#B5E3E0));">
+<body onload="main(document.getElementById('graphContainer'),document.getElementById('outlineContainer'),document.getElementById('toolbarContainer'),document.getElementById('modelbarContainer'),document.getElementById('sidebartree'),document.getElementById('statusContainer'));" style="margin:0px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#2894FF), to(#B5E3E0));">
 	
 	<!-- Creates a container for the splash screen -->
 	<div id="splash"
