@@ -172,7 +172,7 @@ public class SmlTableFieldServiceImpl implements SmlTableFieldService {
 		return msg;
 	}
 	
-	public String modifyPartSML(String tableName,long id,String tableHead, String smlValue,String dataType){
+	public String modifyPartSML(String tableName,long partId,String tableHead, String smlValue,String dataType){
 		double smlValueD =0;
 		int smlValueI=0;
 		tableName=tableName.replaceAll("-", "_");
@@ -210,7 +210,7 @@ public class SmlTableFieldServiceImpl implements SmlTableFieldService {
 				return "输入值不在许可范围内，请重新输入";
 			}
 		}
-		String updateSql="update "+tableName+" set "+tableHead+"='"+smlValue+"' where id="+id;
+		String updateSql="update "+tableName+" set "+tableHead+"='"+smlValue+"' where PART_ID="+partId;
 		try {
 			smlTableFieldDao.getSession().createSQLQuery(updateSql).executeUpdate();
 		} catch (HibernateException e) {

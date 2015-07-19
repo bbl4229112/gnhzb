@@ -19,7 +19,9 @@ public class SmlTableFieldAction extends ActionSupport implements ServletRespons
 	private HttpServletResponse response;
 	private SmlTableFieldService smlTableFieldService;
 	PrintWriter out;
+	//该id是smlTableField类的id，不是partId
 	private long id;
+	private long partId;
 	private long treeId;
 	private String tableName;
 	private long smlParameterId;
@@ -91,7 +93,7 @@ public class SmlTableFieldAction extends ActionSupport implements ServletRespons
 	}
 	
 	public void modifyPartSML() throws IOException{
-		String msg=smlTableFieldService.modifyPartSML(tableName,id,tableHead,smlValue,dataType);
+		String msg=smlTableFieldService.modifyPartSML(tableName,partId,tableHead,smlValue,dataType);
 		out = response.getWriter();
 		out.print(msg);
 	}
@@ -183,6 +185,16 @@ public class SmlTableFieldAction extends ActionSupport implements ServletRespons
 
 	public void setSmlValue(String smlValue) {
 		this.smlValue = smlValue;
+	}
+
+
+	public long getPartId() {
+		return partId;
+	}
+
+
+	public void setPartId(long partId) {
+		this.partId = partId;
 	}
 
 
