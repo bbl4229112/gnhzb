@@ -3,6 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/My Java EE5 Libraries"/>
 	<classpathentry kind="lib" path="Library/axis/axis-ant.jar"/>
 	<classpathentry kind="lib" path="Library/axis/axis.jar"/>
 	<classpathentry kind="lib" path="Library/axis/commons-discovery-0.2.jar"/>
@@ -141,6 +142,5 @@
 	<classpathentry kind="lib" path="Library/jacob.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="Library/ezmorph-1.0.2.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/My Java EE5 Libraries"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
