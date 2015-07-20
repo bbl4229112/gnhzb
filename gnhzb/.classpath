@@ -141,6 +141,6 @@
 	<classpathentry kind="lib" path="Library/jacob.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="Library/ezmorph-1.0.2.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/My Java EE5 Libraries"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/My JavaEE5"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
