@@ -150,9 +150,6 @@ public class ClassificationTree  {
 	public void setSelfFlag(int selfFlag) {
 		this.selfFlag = selfFlag;
 	}
-	
-	
-	
-	
+
 
 }

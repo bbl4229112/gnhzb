@@ -114,7 +114,6 @@ function createSMLEdit(){
 		   SMLEdit_SMLTable.destroy();
 	    }
 		var columnsData =cims201.utils.getData('sml/sml-table-field!getSmlTableField.action?tableName='+tableName);
-		console.log(columnsData);
 		var columnChildren = new Array();
 		columnChildren[0]={header:'id',dataIndex:'id',visible:false};
 		columnChildren[1]={header:'partId',dataIndex:'partId',visible:false};
@@ -144,6 +143,7 @@ function createSMLEdit(){
 		    	}else{
 		    		SMLEdit_ct.set('enable',true);
 		    		var tableData = cims201.utils.getData('sml/sml-table-field!getSmlTableByTableName.action?tableName='+tableName);
+		    		console.log(tableData);
 		    		table.set('data',tableData);
 		    	}
 		    },
@@ -169,11 +169,10 @@ function createSMLEdit(){
 			var unit=data.unit;
 			var smlName =data.smlName;
 			var dataType = data.dataType;
-			console.log(unit);
 			var fieldLabel =smlName+'(<span style="color:red;">'+unit+'</span>)：';
-			console.log(fieldLabel);
 			e.record.dataType=dataType;
 			var form = showEditPartSMLForm(tableName,fieldName,fieldLabel);
+			console.log(e.record);
 			form.setForm(e.record);
 
 		});
@@ -202,7 +201,7 @@ function createSMLEdit(){
 					}
 				},
 				children:[
-					{type:'formitem',visible:false,children:[{type:'text',name:'id'}]},
+					{type:'formitem',visible:false,children:[{type:'text',name:'partId'}]},
 					{type:'formitem',visible:false,children:[{type:'text',name:'dataType'}]},
 					{
 					    type: 'formitem',padding:[20,0,10,0],labelWidth :'83',label: '实例编码：',

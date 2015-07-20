@@ -240,7 +240,7 @@ cims201.utils.saveData = function(url,params){
 返回一个window窗口
 */
 cims201.utils.getWin = function(width,height,title,children){
-	var win = new Edo.containers.MyWindow();
+	var win = new Edo.containers.Window();
 
 	win.set('title', title);
 	win.set('titlebar',
@@ -253,7 +253,6 @@ cims201.utils.getWin = function(width,height,title,children){
 	                //this.parent.owner就是
 	           
 	                this.parent.owner.hide();       //hide方法
-	                //deleteMask();
 	            }
 	        }
 	    ]
@@ -267,7 +266,6 @@ cims201.utils.getWin = function(width,height,title,children){
 	    border: [1,1,1,1],
 	    children: children
 	});	
-	deleteMask();
 	return win;
 }
 
