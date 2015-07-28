@@ -268,7 +268,7 @@ public class BomServiceImpl implements BomService {
 						 BomDetailDTO node = new BomDetailDTO();
 						 node.setBomId(bomId);
 						 node.setModuleCode(tempNode.getCode());
-						 node.setModuleId(tempNode.getId());
+						 node.setModuleId(tempNode.getId()); 
 						 node.setModuleName(tempNode.getText());
 						 nodes.add(node);
 						 //停止循环,跳到flag1标志的循环外面
