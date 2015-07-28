@@ -444,6 +444,7 @@ function createNav_ModManageAccordin(){
 			//{id:017,index:'SMLPoolManage_view',name:'事物特性池浏览'},
 			{id:018,index:'SMLModeling',name:'事物特性建模'},
 			{id:019,index:'SMLEdit',name:'事物特性编辑'},
+			{id:020,index:'variantDesign',name:'变型设计任务'}
 			//{id:020,index:'SMLEdit_view',name:'事物特性浏览'}
 		];
 	var pzxqdata =[
