@@ -53,6 +53,10 @@ function createVariantDesign(){
 		var form  = showVariantTaskForm();
 		form.setForm(VariantDesign_TaskTable.selected);
 	});
+	
+	VariantDesign_ExecuteTask.on('click',function(){
+		console.log('任务开始执行。');
+	});
 	function showVariantTaskForm(){
 		if(!Edo.get('VariantDesign_VariantTaskForm')){
 			Edo.create({
