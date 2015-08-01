@@ -232,6 +232,7 @@
 <script src="<%=basePath%>js/SMLManage/SMLParamPool.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/SMLManage/SMLPoolManage_view.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/SMLManage/SMLPoolManage.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/SMLManage/VariantDesign.js" type="text/javascript"></script>
 
 <!-- 配置需求管理 陈谦庄 -->
 <script src="<%=basePath%>js/ConfigDemandManage/checkorder.js" type="text/javascript"></script>
