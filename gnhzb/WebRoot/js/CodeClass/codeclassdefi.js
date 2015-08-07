@@ -98,6 +98,8 @@ function createCodeClassDefi(){
 	    var form = showAddForm();
 	    form.reset();
 	});
+	
+	
 	CodeClassDefi_rebtn.on('click', function(e){
 		codeclassdefiTb.set("data",
     			cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
@@ -138,7 +140,7 @@ function createCodeClassDefi(){
 				    params:{id:record.id},
 				    onSuccess: function(text){
 				    	 Edo.MessageBox.alert("提示", "删除成功！");
-				    	 
+				    	 Edo.get("CodeClassDefi_addbtn").set('enable',true);
 				    },
 				    onFail: function(code){
 				        Edo.MessageBox.alert("提示", "删除失败"+code);
@@ -226,7 +228,9 @@ function createCodeClassDefi(){
 										    	}
 										    	codeclassdefiTb.set("data",
 			                                			cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
+			                                			
 			                                	);
+										    	Edo.get("CodeClassDefi_addbtn").set('enable',false);
 										    	 
 										    	 
 										    },
@@ -255,6 +259,8 @@ function createCodeClassDefi(){
 	    return addForm;
 
 	};
+	
+	
 	
 	function showEditForm(){
 	    if(!Edo.get('editForm')) {

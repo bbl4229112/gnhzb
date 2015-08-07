@@ -139,6 +139,24 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		return null;
 	}
 	
+	/**
+	 * luweijiang
+	 * @return
+	 * @throws Exception
+	 */
+	public String findUnConstructedCodeClassById() throws Exception{
+		
+		CodeClass cc=codeClassService.findUnConstructedCodeClassById(id);
+		if (cc!=null) {
+			List<CodeClass> ccs=new ArrayList<CodeClass>();
+			ccs.add(cc);
+			String ccsStr =JSONUtil.write(ccs);
+			out=response.getWriter();
+			out.print(ccsStr);
+		}
+		return null;
+	}
+	
 	public String addConstructedCodeClass() throws IOException{
 		codeClassService.addConstructedByCodeClass(classcode);
 		out=response.getWriter();

@@ -29,6 +29,14 @@ function createCodeClassManage(){
 				 cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClass.action')
 		 );
 	 });
+	 //luweijiang
+	 function codeClassManageTask(codeClassId){
+		 showAddClassForm();
+		 addClassCombo.set('data',
+				 cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClassById.action',{id:codeClassId})
+		 );
+
+	 }
 	 CodeClassManageDeleBtn.on("click",function(e){
 		 var classcode =ClassTree.selected.classcode;
 		 if(!classcode){
@@ -147,4 +155,5 @@ function createCodeClassManage(){
 	 this.getTree = function(){
 	 	return tree;
 	 };
+	 codeClassManageTask(2901);
 }
