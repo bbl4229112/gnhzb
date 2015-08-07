@@ -3,6 +3,7 @@ package edu.zju.cims201.GOF.web.codeclass;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,17 +48,29 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		out =response.getWriter();
 		CodeClass nameFlag =codeClassService.findUniqueByClassName(classname);
 		if(nameFlag!=null){
-			out.print("类别名称已存在！");
+			HashMap<String, String> map=new HashMap<String, String>();
+			map.put("isSuccess", "1");
+			map.put("message", "类别名称已存在！");
+			String jsonString =JSONUtil.write(map);
+			out.print(jsonString);
 			return null;
 		};
 		CodeClass codeFlag =codeClassService.findUniqueByClassCode(classcode);
 		if(codeFlag!=null){
-			out.print("类别代号已存在！");
+			HashMap<String, String> map=new HashMap<String, String>();
+			map.put("isSuccess", "1");
+			map.put("message", "类别代号已存在！");
+			String jsonString =JSONUtil.write(map);
+			out.print(jsonString);
 			return null;
 		};
 		CodeClass ruleFlag =codeClassService.findUniqueByRule(codehead);
 		if(ruleFlag!=null){
-			out.print("类别码首字段已存在！");
+			HashMap<String, String> map=new HashMap<String, String>();
+			map.put("isSuccess", "1");
+			map.put("message", "类别码首字段已存在！");
+			String jsonString =JSONUtil.write(map);
+			out.print(jsonString);
 			return null;
 		};
 		
@@ -66,11 +79,21 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		cc.setUuid(UUID.randomUUID().toString());
 		cc.setClassname(classname);
 		cc.setClasscode(classcode);
-		cc.setRule(codehead);
+		cc.setRule(codehead);	
 		cc.setFlag(0);
 		codeClassService.saveCodeClass(cc);
+		HashMap<String, Object> map=new HashMap<String, Object>();
+		map.put("isSuccess", "1");
+		map.put("message", "添加成功！");
+		List<HashMap<String, String>> resultlist=new ArrayList<HashMap<String,String>>();
+		HashMap<String, String> resultitem=new HashMap<String, String>();
+		resultitem.put("name", "classcode");
+		resultitem.put("value", String.valueOf(cc.getId()));
+		resultlist.add(resultitem);
+		map.put("resultlist", resultlist);
 		
-		out.print("添加成功！");
+		String jsonString =JSONUtil.write(map);
+		out.print(jsonString);
 		return null;
 	}
 	

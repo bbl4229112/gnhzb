@@ -1,33 +1,57 @@
 var basepathh='http://localhost:8080/gnhzb';
-var tasktreedataTable = new Edo.data.DataTree()
-.set({
-    fields: [
-        {name: 'id', mapping: 'id', type: 'string'
-           
-        },
-        {name: 'name', mapping: 'name',  type: 'string'
-        },
-        {name: 'des', mapping: 'des',  type: 'string'
-        },
-        {name: 'url', mapping: 'url',  type: 'string'
-        },
-        {name: 'code', mapping: 'code',  type: 'string'
-        }
-       
-    ]
-});
+//var tasktreedataTable = new Edo.data.DataTree()
+//.set({
+//    fields: [
+//        {name: 'id', mapping: 'id', type: 'string'
+//           
+//        },
+//        {name: 'name', mapping: 'name',  type: 'string'
+//        },
+//        {name: 'des', mapping: 'des',  type: 'string'
+//        },
+//        {name: 'url', mapping: 'url',  type: 'string'
+//        },
+//        {name: 'code', mapping: 'code',  type: 'string'
+//        }
+//       
+//    ]
+//});
 var dataRelatedModel;
 function init ()
 {
 	var url=basepathh+'/pdmtask/task!getTaskTreeCollectionbyTaskid.action';
 	var param={taskid:taskid};
-	var id='tasktree';
-	refreshdata(tasktreedataTable,url,param,id);
-	var i=0;
-	
-	openNewTab('001', tasktreedataTable.source[i].url,"<div class=cims201_tab_font align=center>任务"+(i+1)+tasktreedataTable.source[i].name+"</div>",{type:tasktreedataTable.source[i].url,btIcon:'cims201_myknowledgebase_icon_'+tasktreedataTable.source[i].url+'_small'});
-	Edo.get('input').set('text',tasktreedataTable.source[i].input);
-    Edo.get('output').set('text',tasktreedataTable.source[i].output)
+//	var id='tasktree';
+//	refreshdata(tasktreedataTable,url,param,id);
+//	var i=0;
+	var data= cims201.utils.getData(url,param);
+	openNewTab('001', data.url,"<div class=cims201_tab_font align=center>任务"+data.name+"</div>",{type:data.url,btIcon:'cims201_myknowledgebase_icon_'+data.url+'_small'},data);
+	var rows=data.Inparamlist;
+	var inputparams='';
+	for ( var i = 0; i < rows.length; i++) {
+		var paramobj={};
+		paramobj.name=rows[i].name;
+		paramobj.descri=rows[i].descri;
+		inputparams = inputparams
+				+ rows[i].name+':'+rows[i].descri
+				+ ";"
+	}
+	inputparams = inputparams
+			.substr(0,inputparams.length - 1);
+	var rows2=data.Outparamlist;
+	var outputparams='';
+	for ( var i = 0; i < rows2.length; i++) {
+		var paramobj={};
+		paramobj.name=rows2[i].name;
+		paramobj.descri=rows2[i].descri;
+		outputparams = outputparams
+				+ rows2[i].name+':'+rows2[i].descri
+				+ ";"
+	}
+	outputparams = outputparams
+			.substr(0,outputparams.length - 1);
+	Edo.get('input').set('text',inputparams);
+    Edo.get('output').set('text',outputparams);
 	//1.这个是在Panel中显示推送的知识名称的代码
 	//需要引入的js文件： js/knowledge/knowledge-list-box.js
 
@@ -49,12 +73,12 @@ function init ()
 	}
 	*/
 }
-function refreshdata(dataTable,url,param,id){
-    var data= cims201.utils.getData(url,param);
-	dataTable.set('data',data[0].children);
-	Edo.get('tasktree').set('data',dataTable);
-	leftPanel.set('title',data[0].name);
-};
+//function refreshdata(dataTable,url,param,id){
+//    var data= cims201.utils.getData(url,param);
+//	dataTable.set('data',data[0].children);
+//	Edo.get('tasktree').set('data',dataTable);
+//	leftPanel.set('title',data[0].name);
+//};
 
 var myModuleSearchInput = Edo.create({
 	type: 'autocomplete', 
@@ -136,57 +160,57 @@ Edo.build(
 			              layout: 'horizontal',
 			              padding:0,
 			              children:[
-                                    //左侧边
-			                        {
-			                        	id:'leftPanel',
-			                        	type: 'panel',
-			                            title: '导航列表',
-			                            width: 260,
-			                            height: '100%',
-			                            verticalGap:'0',
-			        				    padding:[0,0,0,0],
-			                            collapseProperty: 'width',
-			                            enableCollapse: true,
-			                            splitRegion: 'west',
-			                            splitPlace: 'after',
-			                            layout:'vertical',
-			                            titlebar:[
-			                                      {
-			                                          cls:'e-titlebar-toggle-west',
-			                                          icon: 'button',
-			                                          onclick: function(e){this.parent.owner.toggle();}
-			                                      }
-			                                      ],
-			                            children:[
-											{
-												id:'tasktree',
-												type: 'tree',
-												width: '260',
-										        height: '100%',
-										        headerVisible: false,
-										        autoColumns: true,
-										        horizontalLine: false,
-										        columns: [{header: '名称',dataIndex: 'name',
-										        	 renderer: function(value, record, column, rowIndex, data, table){ 
-										        		 return (rowIndex+1)+'. '+value;
-										        		 }}],
-										        	 
-										        data:tasktreedataTable,
-										        onselectionchange: function(e){	
-										            var r=tasktree.getSelected();
-										            Edo.get('input').set('text',r.input);
-										            Edo.get('output').set('text',r.output)
-										           /* for (var s in r)
-										            	{alert(s);
-										            	alert(r['_index']);
-										            	}*/
-										            var index=tasktree.data.indexOf(r);
-										        	openNewTab('00'+(index+1), r.url,"<div class=cims201_tab_font align=center>任务"+(index+1)+r.name+"</div>",{type:r.url,btIcon:'cims201_myknowledgebase_icon_'+r.url+'_small'});
-										        	
-										         }
-										       }		                                      
-			                                    	          ]			                            
-			                                       },
+//                                    //左侧边
+//			                        {
+//			                        	id:'leftPanel',
+//			                        	type: 'panel',
+//			                            title: '导航列表',
+//			                            width: 260,
+//			                            height: '100%',
+//			                            verticalGap:'0',
+//			        				    padding:[0,0,0,0],
+//			                            collapseProperty: 'width',
+//			                            enableCollapse: true,
+//			                            splitRegion: 'west',
+//			                            splitPlace: 'after',
+//			                            layout:'vertical',
+//			                            titlebar:[
+//			                                      {
+//			                                          cls:'e-titlebar-toggle-west',
+//			                                          icon: 'button',
+//			                                          onclick: function(e){this.parent.owner.toggle();}
+//			                                      }
+//			                                      ],
+//			                            children:[
+//											{
+//												id:'tasktree',
+//												type: 'tree',
+//												width: '260',
+//										        height: '100%',
+//										        headerVisible: false,
+//										        autoColumns: true,
+//										        horizontalLine: false,
+//										        columns: [{header: '名称',dataIndex: 'name',
+//										        	 renderer: function(value, record, column, rowIndex, data, table){ 
+//										        		 return (rowIndex+1)+'. '+value;
+//										        		 }}],
+//										        	 
+//										        data:tasktreedataTable,
+//										        onselectionchange: function(e){	
+//										            var r=tasktree.getSelected();
+//										            Edo.get('input').set('text',r.input);
+//										            Edo.get('output').set('text',r.output)
+//										           /* for (var s in r)
+//										            	{alert(s);
+//										            	alert(r['_index']);
+//										            	}*/
+//										            var index=tasktree.data.indexOf(r);
+//										        	openNewTab('00'+(index+1), r.url,"<div class=cims201_tab_font align=center>任务"+(index+1)+r.name+"</div>",{type:r.url,btIcon:'cims201_myknowledgebase_icon_'+r.url+'_small'});
+//										        	
+//										         }
+//										       }		                                      
+//			                                    	          ]			                            
+//			                                       },
 			                        
 			                        //右主界面
 			                        {
@@ -339,7 +363,8 @@ function openModule(src){
 }
 
 //打开新的选项卡
-function openNewTab(id, index, title, params){
+var realComponent;
+function openNewTab(id, index, title, params,data){
 	//首先将enter事件取消注册
 	currentEventID = null;
 
@@ -348,21 +373,25 @@ function openNewTab(id, index, title, params){
 	var tabSize1 = mainTabBar.children.length;
 	var tabSelectedIndex1 = mainTabBar.selectedIndex;
 	var c = null;
-	var module = getComponentByIndex('cont_'+index+''+id,index,params);
+	var resultComponent = getComponentByIndex('cont_'+index+''+id,index,params);
+	var module=resultComponent.myComponent;
 	if(module=='error')
-		{
-		}
-		else{
+	{
+	}
+	else{
 		if(module == null){
 			module = Edo.create({
 		
-				type: 'module',
-				width: '100%',
-	    		height: '95%',
-				src: 'building.jsp'
-			});
-		}
-	
+			type: 'module',
+			width: '100%',
+    		height: '95%',
+			src: 'building.jsp'
+		});
+	}
+	realComponent=resultComponent.realComponent;
+	realComponent.initinputparam(data.Inparamlist);
+	realComponent.initresultparam(data.Outparamlist);
+	realComponent.submitResult();
 	
 	
 	mainTabBar.children.each(function(o){		
