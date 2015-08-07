@@ -272,11 +272,11 @@ function createSMLEdit(){
 		var selected = SMLEdit_SMLTable.selected;
 		form.set('title','建立<span style="color:red">'+selected.partname+'</span>的变型任务');
 		var output = selected.output.split(",");
-		var requirement = "实例名称="+selected.partname+"；实例编码="+selected.partnumber+"；";
+		var requirement = "实例名称="+selected.partname+";实例编码="+selected.partnumber+";";
 		for(var i=0;i<output.length;i++){
-			requirement += output[i] +"="+selected[output[i]]+"；";
+			requirement += output[i] +"="+selected[output[i]]+";";
 		}
-		requirement=requirement.substring(0, requirement.length-1);
+		//requirement=requirement.substring(0, requirement.length-1);
 		selected.requirement=requirement;
 		form.setForm(selected);		
 	});
