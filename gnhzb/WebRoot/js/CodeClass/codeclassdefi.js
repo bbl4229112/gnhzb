@@ -1,5 +1,37 @@
 function createCodeClassDefi(){
 	//菜单栏
+	inputparam=new Array();
+	this.initinputparam=function(param){
+		if(param!=null){
+			for (var i=0;i<param.length;i++){
+				var data={};
+				data.descri=param[i].descri;
+				data.name=param[i].name;
+				data.name=param[i].value;
+				inputparam.push(data);
+			}
+		}
+		alert(inputparam.length)
+		return inputparam;
+	}
+	var outputparam=new Array();
+	this.initresultparam=function(param){
+		if(param!=null){
+			for (var i=0;i<param.length;i++){
+				var data={};
+				data.descri=param[i].descri;
+				data.name=param[i].name;
+				data.value=param[i].value;
+				outputparam.push(data);
+			}
+		}
+		alert(outputparam.length)
+		return outputparam;
+	}
+	this.submitResult=function(){
+		 alert('提交结果');
+		
+	}
 	var Menu =Edo.create({
         		    type: 'group',
         		    width: '100%',
@@ -175,7 +207,23 @@ function createCodeClassDefi(){
 										    type: 'post',
 										    params:o,
 										    onSuccess: function(text){
-										    	Edo.MessageBox.alert("提示", text);
+										    	var data=Edo.util.Json.decode(text);
+										    	Edo.MessageBox.alert("提示", data.message);
+										    	if(data.isSuccess=='1'){
+										    		var resultlist=data.resultlist;
+										    		for(var i=0;i<resultlist.length;i++){
+										    			
+										    			alert(outputparam.length)
+											    		for (var j=0;j<outputparam.length;j++){
+											    			alert('1'+outputparam[j].name);
+											    			alert('2'+resultlist[i].name)
+															if(outputparam[j].name==resultlist[i].name){
+																outputparam[j].value=resultlist[i].value;
+																alert('得到的结果为:'+resultlist[i].value)
+															}
+														}
+										    		}
+										    	}
 										    	codeclassdefiTb.set("data",
 			                                			cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
 			                                	);
