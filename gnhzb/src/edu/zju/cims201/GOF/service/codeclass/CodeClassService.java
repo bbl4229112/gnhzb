@@ -22,5 +22,9 @@ public interface CodeClassService{
 	public void updateRuleByClassCode2(String classcode,String encodetype,String codelength,int ruleLayerNub);
 	public void deleteRuleNodByClassCode(String classcode,int ruleLayerNub);
 	
+	/*luweijiang*/
+	public CodeClass findUnConstructedCodeClassById(long id);
+	public CodeClass findCodeClassById(long id);
+	
 	
 }

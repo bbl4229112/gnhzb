@@ -1,4 +1,8 @@
 function createCodeClassRuleManage(){
+	//luweijiang
+	function codeClassRuleManageTask(codeClassId){
+		ClassNameCombo.set('data',cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClassById.action',{id:codeClassId}));
+	}
 	var topbar = Edo.create({
 		
 			type:'box',width: '100%',height: '40',cls: 'e-toolbar',
@@ -330,5 +334,5 @@ function createCodeClassRuleManage(){
 	this.getRuleTree = function(){
 		return ruleTree;
 	};
-	
+	codeClassRuleManageTask(1822);
 }
