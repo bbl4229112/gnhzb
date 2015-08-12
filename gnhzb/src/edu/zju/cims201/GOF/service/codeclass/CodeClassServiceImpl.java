@@ -315,21 +315,5 @@ public class CodeClassServiceImpl implements CodeClassService{
 	}
 
 
-	/**
-	 * luweijiang
-	 */
-	public CodeClass findUnConstructedCodeClassById(long id) {
-		// TODO Auto-generated method stub
-		CodeClass cc=codeClassDao.findUniqueBy("id", id);
-		
-		return cc;
-	}
-
-	public CodeClass findCodeClassById(long id) {
-		// TODO Auto-generated method stub
-		CodeClass cc=codeClassDao.findUniqueBy("id", id);
-		return cc;
-	}
-	
 
 }
