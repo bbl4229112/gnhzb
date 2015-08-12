@@ -22,6 +22,8 @@ public class VariantTask {
    private String requirement;
 
    private String demo;
+   private String filename;
+   private String filePath;
 
 
    private String status;
@@ -100,5 +102,26 @@ public class VariantTask {
 		this.taskName = taskName;
 	}
 
+
+	public String getFilename() {
+		return filename;
+	}
+
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	
 
 }

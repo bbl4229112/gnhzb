@@ -49,7 +49,6 @@ function createVariantDesign(){
 	VariantDesign_TaskTable.set('data',cims201.utils.getData('sml/variant!getAllVariantTask.action'));
 	
 	VariantDesign_LookupTask.on('click',function(){
-		console.log(VariantDesign_TaskTable.selected);
 		var form  = showVariantTaskForm();
 		form.setForm(VariantDesign_TaskTable.selected);
 	});
@@ -61,7 +60,7 @@ function createVariantDesign(){
 		if(!Edo.get('VariantDesign_VariantTaskForm')){
 			Edo.create({
 				id:'VariantDesign_VariantTaskForm',
-				titile:'变型任务详情',
+				title:'变型任务详情',
 				type:'window',
 				width:'350',
 				render:document.body,
@@ -77,7 +76,7 @@ function createVariantDesign(){
 					    children:[{type: 'text',width:'250',name: 'taskName',readOnly:true}]
 					},
 					{
-					    type: 'formitem',padding:[20,0,10,0],labelWidth :'75',label: '实例编码：',
+					    type: 'formitem',padding:[0,0,10,0],labelWidth :'75',label: '实例编码：',
 					    children:[{type: 'text',width:'250',name: 'partNumber',readOnly:true}]
 					},
 					{
@@ -86,7 +85,7 @@ function createVariantDesign(){
 					},
 					{
 					    type: 'formitem',padding:[0,0,10,0],labelWidth :'75',label: '变型要求：',
-					    children:[{type: 'textarea',width:'250',name: 'requirement',readOnly:true}]
+					    children:[{type: 'textarea',width:'250',height:'100',name: 'requirement',readOnly:true}]
 					},
 					{
 					    type: 'formitem',padding:[0,0,10,0],labelWidth :'75',label: '备注：',

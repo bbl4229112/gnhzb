@@ -136,6 +136,16 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		return null;
 	}
 	
+	public String findById() throws IOException{
+		List<CodeClass> cc = codeClassService.findById(id);
+		if(cc!=null){
+			String sscStr =JSONUtil.write(cc);
+			out=response.getWriter();
+			out.print(sscStr);
+		}
+		return null;
+	}
+	
 	public String updateById() throws IOException{
 		codeClassService.updateById(id, classname, classcode, codehead);
 		out=response.getWriter();

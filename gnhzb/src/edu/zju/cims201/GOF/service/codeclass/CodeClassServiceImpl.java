@@ -291,5 +291,10 @@ public class CodeClassServiceImpl implements CodeClassService{
 		}
 		codeClassDao.save(cc);
 	}
+	
+	public List<CodeClass> findById(long id){
+		List<CodeClass> cc = codeClassDao.findBy("id", id);
+		return cc;
+	}
 
 }
