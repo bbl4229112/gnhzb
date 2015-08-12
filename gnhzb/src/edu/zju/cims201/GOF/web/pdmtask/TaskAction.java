@@ -33,6 +33,7 @@ import org.springside.modules.orm.Page;
 
 import EDU.oswego.cs.dl.util.concurrent.Takable;
 import edu.zju.cims201.GOF.web.CrudActionSupport;
+import edu.zju.cims201.GOF.dao.task.PdmtaskDAO;
 import edu.zju.cims201.GOF.hibernate.pojo.Function;
 import edu.zju.cims201.GOF.hibernate.pojo.Node;
 import edu.zju.cims201.GOF.hibernate.pojo.PdmModule;
@@ -46,6 +47,8 @@ import edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmProject;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.LcaTask;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmTask;
+import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskIOParam;
+import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskTreeIOParam;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskTreeNode;
 import edu.zju.cims201.GOF.rs.dto.PageDTO;
 import edu.zju.cims201.GOF.rs.dto.TaskDTO;
@@ -93,6 +96,7 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 	PrintWriter out;
 	private String tasktype;
 	private String processtemplateid;
+	private String result;
 
 
 	public LcaTask getModel() {
@@ -164,7 +168,6 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 			page.setPageNo(this.getIndex());
 			Page<PdmTask> newpage = null;
 			newpage = taskService.getPdmtasks(user, page);
-
 			PageDTO pagedto = new PageDTO();
 			pagedto.setTotal(newpage.getTotalCount());
 			pagedto.setPagesize(newpage.getPageSize());
@@ -230,10 +233,45 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 			return null;
 		}else {
 			return null;
+		}		
+	}
+	
+	
+	public void submitTask(){
+		
+		PdmTask task=taskService.getPdmTask(Long.valueOf(taskid));
+		List<PdmTask> tasks=new ArrayList<PdmTask>();
+		if(task.getCheckperson()==null){
+			task.setStatus(Constants.TASK_STATUS_FINISH);
+			List<PdmTask> nextTasks=taskService.getTaskByPreTaskId(task.getTaskid(), task.getPdmProject().getId());
+		    for(PdmTask t:nextTasks){
+	        	t.setStatus(Constants.TASK_STATUS_ACTIVE);
+	        	tasks.add(t);
+	        }	
+		}else{
+			task.setStatus(Constants.TASK_STATUS_TO_CHECK);
+			
 		}
+		tasks.add(task);
+      	taskService.updateTaskStatus(tasks);
 		
 		
 	}
+	
+	public void submitTaskCheck(){
+		List<PdmTask> tasks=new ArrayList<PdmTask>();
+		PdmTask task=taskService.getPdmTask(Long.valueOf(taskid));
+		task.setStatus(Constants.TASK_STATUS_FINISH);
+		List<PdmTask> nextTasks=taskService.getTaskByPreTaskId(task.getTaskid(), task.getPdmProject().getId());
+	    for(PdmTask t:nextTasks){
+        	t.setStatus(Constants.TASK_STATUS_ACTIVE);
+        	tasks.add(t);
+        }	
+	    tasks.add(task);
+	    taskService.updateTaskStatus(tasks);
+	}
+	
+	
 	public void getkeywordidsbyprocess() throws IOException{
     	PdmProcessTemplate p=moduleService.getprocesstemplate(processtemplateid);
     	Set<RelatedModel> relatedmodels=p.getRelatedmodels();
@@ -252,27 +290,49 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
     	ObjectMapper objectMapper = new ObjectMapper();	
 	    objectMapper.writeValue(response.getWriter(),list);
     }
+	
+	
+	
+	
+	
+	
     public void getTaskTreeCollectionbyTaskid() throws IOException{
     	PdmTask t=taskService.getPdmTask(Long.valueOf(taskid));
-    	System.out.println("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss");
     	PdmProcessTemplate p=t.getPdmprocessTemplate();
-    	TaskTreeNode parentnode=p.getTasktreenode();
-    	PdmProject pro=t.getPdmProject();
-    	PdmModule parentmodule=p.getModule();
-    	PdmModule superparentmodule=parentmodule.getParent();
-    	List<HashMap<String, Object>> list=new ArrayList<HashMap<String,Object>>();
+    	TaskTreeNode node=p.getTasktreenode();
     	HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("id", parentnode.getId());
+		map.put("id", node.getId());
 		map.put("name", p.getName());	
-		map.put("des", parentnode.getNodeDescription());	
-		map.put("url", parentnode.getUrl());
+		map.put("des", node.getNodeDescription());	
+		map.put("url", node.getUrl());
 		map.put("processtemplateid", p.getId());
-		map.put("code", parentnode.getCode());	
-		map.put("children", getsubnodes(p,parentmodule.getLevelid(),String.valueOf(superparentmodule.getId())));	
-		list.add(map);
+		map.put("code", node.getCode());	
+		List<HashMap<String, String>> Inparamlist=new ArrayList<HashMap<String, String>>();
+		List<HashMap<String, String>> Outparamlist=new ArrayList<HashMap<String, String>>();
+		List<TaskIOParam> params=taskService.getTaskParamsByTask(Long.valueOf(taskid));
+		for(TaskIOParam param:params){
+			HashMap<String, String> parammap=new HashMap<String, String>();
+			parammap.put("descri", param.getDescri());
+			parammap.put("name", param.getName());
+			parammap.put("value", param.getValue());
+			if(param.getIotype()==1){
+				parammap.put("type", "1");
+				Inparamlist.add(parammap);
+			}else{
+				parammap.put("type", "0");
+				Outparamlist.add(parammap);
+			}
+		}
+		map.put("Inparamlist", Inparamlist);
+		map.put("Outparamlist", Outparamlist);
     	ObjectMapper objectMapper = new ObjectMapper();	
-	    objectMapper.writeValue(response.getWriter(),list);
+	    objectMapper.writeValue(response.getWriter(),map);
     }
+    
+    
+    
+    
+    
     public List getsubnodes(PdmProcessTemplate p,String parentlevelid,String supermoduleid){
     	List<HashMap<String, Object>> nodelist=new ArrayList<HashMap<String,Object>>();
     	PdmModule submodule =moduleService.getPdmModulebyparentandprocess(parentlevelid,
@@ -287,8 +347,8 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
         		HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put("id", subnode.getId());
 				map.put("name", pt.getName());
-				map.put("input", pt.getInput());
-				map.put("output", pt.getOutput());
+//				map.put("input", pt.getInput());
+//				map.put("output", pt.getOutput());
 				map.put("des", subnode.getNodeDescription());	
 				map.put("url", subnode.getUrl());
 				map.put("processtemplateid", pt.getId());
@@ -524,6 +584,16 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 
 	public void setProcesstemplateid(String processtemplateid) {
 		this.processtemplateid = processtemplateid;
+	}
+
+
+	public String getResult() {
+		return result;
+	}
+
+
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	/**

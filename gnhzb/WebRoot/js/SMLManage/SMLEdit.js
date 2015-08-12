@@ -109,8 +109,11 @@ function createSMLEdit(){
 	});
 	
 
-	SMLEditClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
-	
+	//SMLEditClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
+	//luweijiang
+	function SMLEditTask(classficationTreeId){
+		SMLEditClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStructById.action',{id:classficationTreeId}));
+	}
 	function createSMLTable(tableName){
 		if(Edo.get('SMLEdit_SMLTable')){
 		   SMLEdit_SMLTable.destroy();
@@ -369,4 +372,5 @@ function createSMLEdit(){
 	this.getSMLEditCt=function(){
 		return smlEditCt;
 	};
+	SMLEditTask(3041);
 }

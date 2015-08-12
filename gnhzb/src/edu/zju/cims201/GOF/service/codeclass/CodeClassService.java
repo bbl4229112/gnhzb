@@ -23,5 +23,9 @@ public interface CodeClassService{
 	public void deleteRuleNodByClassCode(String classcode,int ruleLayerNub);
 	public List<CodeClass> findById(long id);
 	
+	/*luweijiang*/
+	public CodeClass findUnConstructedCodeClassById(long id);
+	public CodeClass findCodeClassById(long id);
+	
 	
 }

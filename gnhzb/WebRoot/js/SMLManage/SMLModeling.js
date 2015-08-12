@@ -103,8 +103,12 @@ function createSMLModeling(){
 		]
 	});
 	
-	SMLModelingClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
-	
+	//SMLModelingClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
+	//luweijiang
+	function SMLModelingTask(classficationTreeId){
+		SMLModelingClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStructById.action',{id:classficationTreeId}));
+	}
+
 	var smlModeling =Edo.create({
 		id:'SMLModeling_ct',
 		type:'ct',
@@ -460,5 +464,5 @@ function createSMLModeling(){
 		return smlModeling;
 	};
 
-
+	SMLModelingTask(3041);
 }
