@@ -1999,6 +1999,10 @@ function getComponentByIndex(id,index,params){
 				    	myCodeClassManage.getTree()
 				    ]
 				});
+			    resultComponent={
+						myComponent:myComponent,
+						realComponent:myCodeClassManage
+				};
 			}
 			
 		}

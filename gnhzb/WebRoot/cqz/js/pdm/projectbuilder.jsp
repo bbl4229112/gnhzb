@@ -1179,6 +1179,7 @@
 			}
 		   initgraph();
      	   var parentlevel=level3.getparentlevel();
+     	   currentmoduleid=parentlevel.levelmodules[0].levelmoduleobject.pdmmoduleid;
           /*  var modules1=parentlevel.levelmodules;
            var cells=new Array();
             for(var i=0;i<modules1.length;i++){
@@ -1247,8 +1248,6 @@
 								             editor.graph.addCells(childlevel.cells);
 								             wholelevel.setcurrentlevel(childlevel);
 								            }else{
-								               var newlevel=wholelevel.addlevel(modules[i]);
-								               newlevel.type='tasklevel';
 								               var processid=cell.getId();
 										       var parentmoduleid=currentmoduleid;
 										       Edo.util.Ajax.request({
@@ -1265,6 +1264,8 @@
 								                    return null;
 								                    }
 								                    savecells();
+							                        var newlevel=wholelevel.addlevel(modules[i]);
+								               		newlevel.type='tasklevel';
 								                    var data = Edo.util.Json.decode(text);
 								                    var moduleid=data;
 								                    showmodule(moduleid);
@@ -1290,7 +1291,6 @@
 									       var modules=level.levelmodules;
 									       for(var i=0;i<modules.length;i++){
 										       if(modules[i].levelmoduleobject.cellid==cell.getId()){
-										    	   alert('存在cell')
 												    parent.showdetail(cell,modules[i],currentmoduleid);
 												    return null;
 										    	}

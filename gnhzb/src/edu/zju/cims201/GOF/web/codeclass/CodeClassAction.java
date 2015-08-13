@@ -87,7 +87,7 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		map.put("message", "添加成功！");
 		List<HashMap<String, String>> resultlist=new ArrayList<HashMap<String,String>>();
 		HashMap<String, String> resultitem=new HashMap<String, String>();
-		resultitem.put("name", "classcode");
+		resultitem.put("name", "codeclassid");
 		resultitem.put("value", String.valueOf(cc.getId()));
 		resultlist.add(resultitem);
 		map.put("resultlist", resultlist);
@@ -145,15 +145,23 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 	 * @throws Exception
 	 */
 	public String findUnConstructedCodeClassById() throws Exception{
-		
+		HashMap<String, Object> resultmap=new HashMap<String, Object>();
 		CodeClass cc=codeClassService.findUnConstructedCodeClassById(id);
 		if (cc!=null) {
 			List<CodeClass> ccs=new ArrayList<CodeClass>();
 			ccs.add(cc);
-			String ccsStr =JSONUtil.write(ccs);
-			out=response.getWriter();
-			out.print(ccsStr);
+			resultmap.put("isSuccess", "1");
+			resultmap.put("message", "成功");
+			resultmap.put("result", ccs);
+			
+			
+		}else{
+			resultmap.put("isSuccess", "0");
+			resultmap.put("message", "查询出错，请联系管理员！");
 		}
+		String jsonString =JSONUtil.write(resultmap);
+		out=response.getWriter();
+		out.print(jsonString);
 		return null;
 	}
 	

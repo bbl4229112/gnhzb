@@ -11,6 +11,7 @@
 	    <property name="descri" column="descri" type="string"/>
 	    <property name="name" column="name" type="string"/>
 	    <property name="iotype" column="iotype" type="int"/>
+	    <property name="isarray" column="isarray" type="int"/>
 	    <property name="value" column="value" type="string"/>
 		<many-to-one name="process" class="edu.zju.cims201.GOF.hibernate.pojo.PdmProcessTemplate" column="processtemplateid"></many-to-one>
 	</class>

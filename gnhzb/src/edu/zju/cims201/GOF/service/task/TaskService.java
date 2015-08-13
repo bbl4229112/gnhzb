@@ -10,6 +10,7 @@ import edu.zju.cims201.GOF.hibernate.pojo.ProcessUrl;
 import edu.zju.cims201.GOF.hibernate.pojo.SystemUser;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.LcaTask;
+import edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmProjectValuePool;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmTask;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskIOParam;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskTreeIOParam;
@@ -28,5 +29,9 @@ public interface TaskService {
 	
 	public List<PdmTask> getTaskByPreTaskId(String prevtaskid,long projectid);
 	
-	public List<TaskIOParam> getTaskParamsByTask(Long id);
+	public List<TaskIOParam> getTaskParamsByTask(Long id,int iotype);
+	public void saveIoPrams(List<TaskIOParam> params);
+	public PdmTask getTaskByparentTaskId(String parenttaskid, long projectid);
+	public void savePdmProjectValuePool(List<PdmProjectValuePool> items);
+	public List<PdmProjectValuePool> getPdmProjectValuePools(Long id);
 }

@@ -9,6 +9,9 @@
 			<generator class="increment"/>
 		</id>
 	    <property name="value" column="value" type="string"/>
+	    <property name="name" column="name" type="string"/>
+	    <property name="iotype" column="iotype" type="int"/>
+	    <property name="isarray" column="isarray" type="int"/>
 		<many-to-one name="project" class="edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmProject" column="pdmProjectId"></many-to-one>
 	</class>
 </hibernate-mapping>

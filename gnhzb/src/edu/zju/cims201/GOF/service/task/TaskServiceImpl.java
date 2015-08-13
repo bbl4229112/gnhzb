@@ -17,6 +17,7 @@ import edu.zju.cims201.GOF.hibernate.pojo.ProcessUrl;
 import edu.zju.cims201.GOF.hibernate.pojo.SystemUser;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.Employee;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.LcaTask;
+import edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmProjectValuePool;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.PdmTask;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskIOParam;
 import edu.zju.cims201.GOF.hibernate.pojo.pdm.TaskTreeIOParam;
@@ -66,9 +67,12 @@ public class TaskServiceImpl implements TaskService {
 		
 	}
 	public List<PdmTask> getTaskByPreTaskId(String prevtaskid, long projectid) {
-		return sessionFactory.getCurrentSession().createQuery("from PdmTask task where task.prevtaskid=?").setParameter(0, prevtaskid).setParameter(1, projectid).list();
+		return sessionFactory.getCurrentSession().createQuery("from PdmTask task where task.prevtaskid=? and task.pdmProject.id=?").setParameter(0, prevtaskid).setParameter(1, projectid).list();
 	}
 	
+	public PdmTask getTaskByparentTaskId(String parenttaskid, long projectid) {
+		return (PdmTask)sessionFactory.getCurrentSession().createQuery("from PdmTask task where task.taskid=? and task.pdmProject.id=?").setParameter(0, parenttaskid).setParameter(1, projectid).list().get(0);
+	}
 	
 	public List<PdmTask> getTaskByParentLevelModule(int istop,
 			String parenttaskid,long projectid) {
@@ -79,7 +83,6 @@ public class TaskServiceImpl implements TaskService {
 	public void saveLcaTask(LcaTask t) {
 		
 		sessionFactory.getCurrentSession().save(t);
-		
 	}
 	public void savePdmTask(PdmTask t){
 		
@@ -126,8 +129,31 @@ public class TaskServiceImpl implements TaskService {
 		this.pdmtaskDAO = pdmtaskDAO;
 	}
 	
-	public List<TaskIOParam> getTaskParamsByTask(Long id) {
-		return sessionFactory.getCurrentSession().createQuery("from TaskIOParam t where t.task.id=?").setParameter(0, id).list();
+	public List<TaskIOParam> getTaskParamsByTask(Long id,int iotype) {
+		if(iotype == -1){
+			return sessionFactory.getCurrentSession().createQuery("from TaskIOParam t where t.task.id=?").setParameter(0, id).list();
+
+		}else{
+			
+			return sessionFactory.getCurrentSession().createQuery("from TaskIOParam t where t.task.id=? and t.iotype=?").setParameter(0, id).setParameter(1, iotype).list();
+
+		}
+	}
+	public void saveIoPrams(List<TaskIOParam> params) {
+		for(TaskIOParam param:params){
+			sessionFactory.getCurrentSession().saveOrUpdate(param);
+		}
+		
+		
+	}
+	public void savePdmProjectValuePool(List<PdmProjectValuePool> items) {
+		for(PdmProjectValuePool item:items){
+			sessionFactory.getCurrentSession().saveOrUpdate(item);
+		}
+	}
+	
+	public List<PdmProjectValuePool> getPdmProjectValuePools(Long id) {
+		return sessionFactory.getCurrentSession().createQuery("from PdmProjectValuePool p where p.project.id=? and p.iotype=0").setParameter(0, id).list();
 	}
 	
 	
