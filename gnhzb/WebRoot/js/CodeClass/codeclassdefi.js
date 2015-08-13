@@ -82,6 +82,7 @@ function createCodeClassDefi(){
 	CodeClassDefi_addbtn.on('click', function(e){
 	    var form = showAddForm();
 	    form.reset();
+		//createCodeClassDefi_check(1822);
 	});
 	
 	

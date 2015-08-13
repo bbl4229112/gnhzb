@@ -291,6 +291,13 @@ public class CodeClassServiceImpl implements CodeClassService{
 		}
 		codeClassDao.save(cc);
 	}
+
+	
+	public List<CodeClass> findById(long id){
+		List<CodeClass> cc = codeClassDao.findBy("id", id);
+		return cc;
+	}
+
 	/**
 	 * luweijiang
 	 */
@@ -306,6 +313,7 @@ public class CodeClassServiceImpl implements CodeClassService{
 		CodeClass cc=codeClassDao.findUniqueBy("id", id);
 		return cc;
 	}
-	
+
+
 
 }

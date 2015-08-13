@@ -212,6 +212,7 @@
 <script src="<%=basePath%>js/CodeClass/CodeClassManage.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/CodeClass/CodeClassRuleManage.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/CodeClass/CodeClassStructManage.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/CodeClass/codeclassdefi_check.js" type="text/javascript"></script>
 
 <!-- 模块管理系统 陈谦庄 -->
 <script src="<%=basePath%>js/ModuleManage/DocTypeManage.js" type="text/javascript"></script>
