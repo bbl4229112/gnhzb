@@ -59,8 +59,47 @@ function createCodeClassDefi_check(codeClassId){
 	        }]
 		});
 	}
-	var data = cims201.utils.getData('codeclass/code-class!findById.action',{id:codeClassId});
-	console.log(data);
-	codeclassdefiTb_check.set('data',data);
-	createCodeClassDefi_check_Window.show('center', 'middle', true);
+	var inputparam=new Array();
+	var outputparam=new Array();
+	this.initinputparam=function(param){
+		inputparam=param;
+		return inputparam;
+	}
+	this.initresultparam=function(param){
+		outputparam=param;
+		return outputparam;
+
+	}
+	this.submitResult=function(){
+		return outputparam;
+	}
+	this.inittask=function(){
+		var codeClassId=null;
+		var isexist=false;
+		for(var i=0;i<inputparam.length;i++){
+			if(inputparam[i].name == 'codeclassid'){
+				isexist=true;
+				codeClassId=inputparam[i].value;
+				break;
+			}
+		}
+		if(isexist){
+			var data = cims201.utils.getData('codeclass/code-class!findById.action',{id:codeClassId});
+			console.log(data);
+			if(data.isSuccess == '1'){
+				codeclassdefiTb_check.set('data',data.result);
+			}else{
+				codeclassdefiTb_check.set("data",
+					cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
+				);
+			}
+			Edo.MessageBox.alert(data.message);
+		}else{
+			codeclassdefiTb_check.set("data",
+				cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
+			);
+			Edo.MessageBox.alert("查询任务结果出错，请联系管理员！");
+		}
+		createCodeClassDefi_check_Window.show('center', 'middle', true);
+	}
 }

@@ -429,6 +429,7 @@ public class ModuleAction extends CrudActionSupport<Material> implements
 		for(ProcessTemplateIOParam param:params){
 			HashMap<String, String> parammap=new HashMap<String, String>();
 			parammap.put("descri", param.getDescri());
+			parammap.put("isarray", String.valueOf(param.getIsarray()));
 			parammap.put("name", param.getName());
 			if(param.getIotype()==1){
 				parammap.put("type", "1");

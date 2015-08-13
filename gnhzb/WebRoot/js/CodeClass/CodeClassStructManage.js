@@ -802,5 +802,4 @@ function createCodeClassStructManage(){
 	this.getFlmclForm = function(){
 		return FlmclForm;
 	};
-	codeClassStructManageTask(3041);
 }

@@ -10,6 +10,7 @@ public class ProcessTemplateIOParam {
 	private String descri;
 	private String name;
 	private String value;
+	private int isarray=1;
 	private int iotype;
 	public Long getId() {
 		return id;
@@ -47,6 +48,12 @@ public class ProcessTemplateIOParam {
 	}
 	public void setIotype(int iotype) {
 		this.iotype = iotype;
+	}
+	public int getIsarray() {
+		return isarray;
+	}
+	public void setIsarray(int isarray) {
+		this.isarray = isarray;
 	}
 	
 }

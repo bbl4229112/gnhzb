@@ -218,10 +218,12 @@ public class ProjectAction extends CrudActionSupport<CProject> implements
 				for(HashMap h1:InList){
 					String name=String.valueOf(h1.get("name"));
 					String descri=String.valueOf(h1.get("descri"));
+					int isarray=Integer.valueOf(h1.get("isarray").toString());
 					TaskIOParam param=new TaskIOParam();
 					param.setDescri(descri);
 					param.setName(name);
 					param.setIotype(1);
+					param.setIsarray(isarray);
 					params.add(param);
 				}
 			}
@@ -232,10 +234,12 @@ public class ProjectAction extends CrudActionSupport<CProject> implements
 				for(HashMap h2:OutList){
 					String name=String.valueOf(h2.get("name"));
 					String descri=String.valueOf(h2.get("descri"));
+					int isarray=Integer.valueOf(h2.get("isarray").toString());
 					TaskIOParam param=new TaskIOParam();
 					param.setDescri(descri);
 					param.setName(name);
 					param.setIotype(0);
+					param.setIsarray(isarray);
 					params.add(param);
 				}
 			}

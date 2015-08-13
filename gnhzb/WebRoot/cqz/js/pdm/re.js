@@ -17,14 +17,19 @@ var basepathh='http://localhost:8080/gnhzb';
 //    ]
 //});
 var dataRelatedModel;
+var tasktype=1;//1代表执行任务，2代表审查任务
 function init ()
 {
-	var url=basepathh+'/pdmtask/task!getTaskTreeCollectionbyTaskid.action';
+	var url=basepathh+'/pdmtask/task!getTaskDetailbyTaskid.action';
 	var param={taskid:taskid};
 //	var id='tasktree';
 //	refreshdata(tasktreedataTable,url,param,id);
 //	var i=0;
 	var data= cims201.utils.getData(url,param);
+	if(data.status == '等待审查'){
+		alert('等待审查');
+		tasktype=2;
+	}
 	openNewTab('001', data.url,"<div class=cims201_tab_font align=center>任务"+data.name+"</div>",{type:data.url,btIcon:'cims201_myknowledgebase_icon_'+data.url+'_small'},data);
 	var rows=data.Inparamlist;
 	var inputparams='';
@@ -33,7 +38,7 @@ function init ()
 		paramobj.name=rows[i].name;
 		paramobj.descri=rows[i].descri;
 		inputparams = inputparams
-				+ rows[i].name+':'+rows[i].descri
+		+ '名称:'+rows[i].name+' 说明:'+rows[i].descri+' 值:'+rows[i].value
 				+ ";"
 	}
 	inputparams = inputparams
@@ -45,13 +50,17 @@ function init ()
 		paramobj.name=rows2[i].name;
 		paramobj.descri=rows2[i].descri;
 		outputparams = outputparams
-				+ rows2[i].name+':'+rows2[i].descri
+				+ '名称:'+rows2[i].name+' 说明:'+rows2[i].descri+' 值:'+rows2[i].value
 				+ ";"
 	}
 	outputparams = outputparams
 			.substr(0,outputparams.length - 1);
 	Edo.get('input').set('text',inputparams);
-    Edo.get('output').set('text',outputparams);
+	Edo.get('output').set('text',outputparams);
+	if(tasktype==2){
+		submitbutton.set('visible',false);
+		submitcheckbutton.set('visible',true);
+	}
 	//1.这个是在Panel中显示推送的知识名称的代码
 	//需要引入的js文件： js/knowledge/knowledge-list-box.js
 
@@ -317,20 +326,47 @@ Edo.build(
 			                     	            	 layout: 'horizontal',
 			                     	            	 width: '100%', 
 			                     	            	 children:[
-			                                                     {
-			                                                     id:'button',
-			         		                                    type:'button',
-			         		                                    text: '上一步',
-			         		                                    width: '40%',
-			         		                                    height: 30,
+			                     	            	          {
+				                                                    id:'submitbutton',
+				         		                                    type:'button',
+				         		                                    text: '提交',
+				         		                                    width: '40%',
+				         		                                    height: 30,
+				         		                                    onclick: function(e){
+				         		                                    	resultparam=realComponent.submitResult();
+				         		                                    	var url=basepathh+'/pdmtask/task!submitTask.action';
+				         		                                    	var param={resultparam:resultparam,taskid:taskid};
+				         		                                    	var data= cims201.utils.getData(url,param);
+				         		      					        	}
 			         	                                        },
 			         	                                        {
-			         	                                        id:'next',	
-			         	                                        type:'button',
-			         	                                        text: '下一步',
-			         	                                        width: '40%',
-			         	                                        height: 30,
+				                                                    id:'submitcheckbutton',
+				         		                                    type:'button',
+				         		                                    visible:false,
+				         		                                    text: '提交',
+				         		                                    width: '40%',
+				         		                                    height: 30,
+				         		                                    onclick: function(e){
+				         		                           			var url=basepathh+'/pdmtask/task!submitTaskCheck.action';
+				         		                                	var param={taskid:taskid};
+				         		                                	var data= cims201.utils.getData(url,param);
+				         		                                	Edo.MessageBox.alert("提示", data.message);
+				         		                       		}
 			         	                                        }
+//			                                                     {
+//			                                                     id:'button',
+//			         		                                    type:'button',
+//			         		                                    text: '上一步',
+//			         		                                    width: '40%',
+//			         		                                    height: 30,
+//			         	                                        },
+//			         	                                        {
+//			         	                                        id:'next',	
+//			         	                                        type:'button',
+//			         	                                        text: '下一步',
+//			         	                                        width: '40%',
+//			         	                                        height: 30,
+//			         	                                        }
 			                     	            	           ]
 			                     	              }
 			                     	             ]
@@ -377,8 +413,10 @@ function openNewTab(id, index, title, params,data){
 	var module=resultComponent.myComponent;
 	if(module=='error')
 	{
+		
 	}
-	else{
+	else
+	{
 		if(module == null){
 			module = Edo.create({
 		
@@ -389,11 +427,36 @@ function openNewTab(id, index, title, params,data){
 		});
 	}
 	realComponent=resultComponent.realComponent;
-	realComponent.initinputparam(data.Inparamlist);
-	realComponent.initresultparam(data.Outparamlist);
-	realComponent.submitResult();
+	var inputparam=new Array();
+	var outputparam=new Array();
+	if(tasktype == 1){
+		
+		if(data.Inparamlist.length >= 1){
+			var param=data.Inparamlist;
+			for (var i=0;i<param.length;i++){
+				var data1={};
+				data1.descri=param[i].descri;
+				data1.name=param[i].name;
+				data1.name=param[i].value;
+				inputparam.push(data1);
+			}
+			realComponent.initinputparam(param);
+		}
+		if(data.Outparamlist.length >= 1){
+			var param=data.Outparamlist;
+			for (var i=0;i<param.length;i++){
+				var data2={};
+				data2.descri=param[i].descri;
+				data2.name=param[i].name;
+				data2.value=param[i].value;
+				outputparam.push(data2);
+			}
+			realComponent.initresultparam(param);
+		}
+		realComponent.inittask();
+	}
 	
-	
+	//realComponent.submitResult();
 	mainTabBar.children.each(function(o){		
 		if(('tbar'+index+''+id) == o.id){
 			c = o;		

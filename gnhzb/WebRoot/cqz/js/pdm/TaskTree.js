@@ -177,6 +177,7 @@ function roleSelect()
 }
 
 function getNewParentWin(){
+	taskTreeNode={};
 	var func=function(id){
 		taskTreeNode.name=Edo.get('name').text;
 		taskTreeNode.des=Edo.get('des').text;
@@ -187,6 +188,7 @@ function getNewParentWin(){
 		var data= cims201.utils.getData(basepathh+'/tasktree/tasktree!saveTaskTreeNode.action',{taskTreeNode:taskTreeNode});
 	    new roleSelect();
 	    taskTreeNode={};
+	    
 		  
 		
  	}
@@ -197,15 +199,12 @@ function getNewParentWin(){
 	
 }
 function getNewChildWin(){
+	taskTreeNode={};
 	var func=function(id){
 		taskTreeNode.name=Edo.get('name').text;
 		taskTreeNode.des=Edo.get('des').text;
 		taskTreeNode.url=Edo.get('url').text;
 		taskTreeNode.code=Edo.get('code').text;
-		taskTreeNode.input=Edo.get('input').text;
-		taskTreeNode.inputdescrip=Edo.get('inputdescrip').text;
-		taskTreeNode.output=Edo.get('output').text;
-		taskTreeNode.outputdescrip=Edo.get('outputdescrip').text;
 		var r=tasktree.getSelected();
 		taskTreeNode.parent=r.id;
 		var r2=role.getSelected();
@@ -223,7 +222,7 @@ function getNewChildWin(){
 	
 }
 function getModifyNodeWin(r){
-	
+	taskTreeNode={};
 	var func=function(id){
 		taskTreeNode.name=Edo.get('name').text;
 		taskTreeNode.des=Edo.get('des').text;
@@ -239,7 +238,7 @@ function getModifyNodeWin(r){
 	    var content=new departNodedef(false,r);
 	   // Edo.get('name').set('text',r.name);
 	    var toolbar=new gettoolbar(null,func);
- 	    var win=getmywin(400,320,'修改部门信息',[content,toolbar]);
+ 	    var win=getmywin(400,320,'修改信息',[content,toolbar]);
 	    win.show('center', 'middle', true);
 	    
 	

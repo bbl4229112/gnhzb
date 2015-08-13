@@ -9,6 +9,7 @@ public class TaskIOParam {
 	private String name;
 	private String value;
 	private int iotype;
+	private int isarray=1;
 	public Long getId() {
 		return id;
 	}
@@ -45,6 +46,12 @@ public class TaskIOParam {
 	}
 	public void setIotype(int iotype) {
 		this.iotype = iotype;
+	}
+	public int getIsarray() {
+		return isarray;
+	}
+	public void setIsarray(int isarray) {
+		this.isarray = isarray;
 	}
 	
 }
