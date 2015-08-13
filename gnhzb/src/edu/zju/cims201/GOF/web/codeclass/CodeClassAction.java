@@ -187,11 +187,18 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 	
 	public String findById() throws IOException{
 		List<CodeClass> cc = codeClassService.findById(id);
+		HashMap<String, Object> resultmap=new HashMap<String, Object>();
 		if(cc!=null){
-			String sscStr =JSONUtil.write(cc);
-			out=response.getWriter();
-			out.print(sscStr);
+			resultmap.put("isSuccess", "1");
+			resultmap.put("message", "成功");
+			resultmap.put("result", cc);
+		}else{
+			resultmap.put("isSuccess", "0");
+			resultmap.put("message", "查询任务结果出错，请联系管理员！");
 		}
+		String jsonString =JSONUtil.write(resultmap);
+		out=response.getWriter();
+		out.print(jsonString);
 		return null;
 	}
 	
