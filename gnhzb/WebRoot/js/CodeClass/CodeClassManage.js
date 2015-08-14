@@ -141,7 +141,18 @@ function createCodeClassManage(){
 										    url: 'codeclass/code-class!addConstructedCodeClass.action?classcode='+o.classcode,
 										    type: 'post',
 										    onSuccess: function(text){
-										    	 Edo.MessageBox.alert("提示", text);
+										    	 var data=Edo.util.Json.decode(text);
+										    	 Edo.MessageBox.alert("提示", data.message);
+										    	 if(data.isSuccess=='1'){
+											    		var resultlist=data.resultlist;
+											    		for(var i=0;i<resultlist.length;i++){
+												    		for (var j=0;j<outputparam.length;j++){
+																if(outputparam[j].name == resultlist[i].name){
+																	outputparam[j].value=resultlist[i].value;
+																}
+															}
+											    		}
+											     }
 										    	 CodeClassManageDeleBtn.set('enable',false);
 										    	 var classTreeData =cims201.utils.getData('codeclass/code-class!findConstructedCodeClass.action');
 										    		for(var i=0;i<classTreeData.length;i++){

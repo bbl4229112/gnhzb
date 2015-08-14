@@ -3,6 +3,7 @@ package edu.zju.cims201.GOF.web.classificationtree;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -71,15 +72,23 @@ public class ClassificationTreeAction extends ActionSupport implements
 
 	// luweijiang
 	public String getClassStructById()throws IOException {
-		//此id是ClassificationTree中的id不是codeClass中的id
+		//此id是classification中的id
+		HashMap<String, Object> resultmap=new HashMap<String, Object>();
 		ClassificationTree tree=classificationTreeService.getNode(id);
-		if (tree!=null) {
+		if (tree != null) {
 			List<ClassificationTree> treeList=new ArrayList<ClassificationTree>();
 			treeList.add(tree);
-			String treeStr =JSONUtil.write(treeList);
-			out =response.getWriter();
-			out.print(treeStr);
+			resultmap.put("isSuccess", "1");
+			resultmap.put("message", "成功");
+			resultmap.put("result", treeList);
+
+		}else{
+			resultmap.put("isSuccess", "0");
+			resultmap.put("message", "查询出错，请联系管理员！");
 		}
+		String jsonString =JSONUtil.write(resultmap);
+		out =response.getWriter();
+		out.print(jsonString);
 		return null;
 	}
 

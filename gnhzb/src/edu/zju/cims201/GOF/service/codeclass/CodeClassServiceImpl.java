@@ -260,7 +260,7 @@ public class CodeClassServiceImpl implements CodeClassService{
 	 * 根据大类的编码为某一编码大类建立大类结构
 	 * @param classcode 大类的编码
 	 */
-	public void addConstructedByCodeClass(String classcode) {
+	public ClassificationTree addConstructedByCodeClass(String classcode) {
 		// TODO Auto-generated method stub
 		CodeClass cc =codeClassDao.findUniqueBy("classcode", classcode);
 		cc.setFlag(1);
@@ -274,6 +274,7 @@ public class CodeClassServiceImpl implements CodeClassService{
 		cTree.setCode(cc.getRule().split("-")[0]);
 		codeClassDao.save(cc);
 		classificationTreeDao.save(cTree);
+		return cTree;
 	}
 	/**
 	 * 删除编码大类的大类结构(待完善)
@@ -302,14 +303,12 @@ public class CodeClassServiceImpl implements CodeClassService{
 	 * luweijiang
 	 */
 	public CodeClass findUnConstructedCodeClassById(long id) {
-		// TODO Auto-generated method stub
 		CodeClass cc=codeClassDao.findUniqueBy("id", id);
 		
 		return cc;
 	}
 
 	public CodeClass findCodeClassById(long id) {
-		// TODO Auto-generated method stub
 		CodeClass cc=codeClassDao.findUniqueBy("id", id);
 		return cc;
 	}
