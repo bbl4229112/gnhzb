@@ -90,6 +90,13 @@ public class PlatformManageAction extends ActionSupport implements
 		out=response.getWriter();
 		out.print(str);
 	}
+	
+	public void getPlatformById() throws IOException{
+		List<PlatformManageDTO> platList = platformManageService.getPlatformById(id);
+		String str = JSONUtil.write(platList);
+		out=response.getWriter();
+		out.print(str);
+	}
 	public void changePlat2CheckStatus() throws IOException{
 		String msg = platformManageService.changePlat2CheckStatus(id);
 		out=response.getWriter();

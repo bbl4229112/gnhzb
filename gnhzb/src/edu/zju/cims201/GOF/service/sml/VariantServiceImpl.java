@@ -146,6 +146,33 @@ public class VariantServiceImpl implements VariantService{
 		return list2;
 	}
 	
+	public List<VariantTaskDTO> getVariantTaskById(long id){
+		List<VariantTask> list = variantTaskDao.findBy("id",id);
+		List<VariantTaskDTO> list2 = new ArrayList<VariantTaskDTO>();
+		int length = list.size();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		for(int i=0;i<length;i++){
+			VariantTask vt = list.get(i);
+			VariantTaskDTO vt2 = new VariantTaskDTO();
+			vt2.setDemo(vt.getDemo());
+			String endDate = sdf.format(vt.getEndDate());
+			vt2.setEndDate(endDate);
+			vt2.setId(vt.getId());
+			vt2.setPartId(vt.getPart().getId());
+			vt2.setPartName(vt.getPart().getPartName());
+			vt2.setPartNumber(vt.getPart().getPartNumber());
+			vt2.setRequirement(vt.getRequirement());
+			String startDate = sdf.format(vt.getStartDate());
+			vt2.setStartDate(startDate);
+			vt2.setStatus(vt.getStatus());
+			vt2.setTaskName(vt.getTaskName());
+			list2.add(vt2);
+			
+		}
+		log.info("getVariantTaskById("+id+"):"+JSONUtil.write(list2));
+		return list2;
+	}
+	
 	@Autowired
 	public void setVariantTaskDao(VariantTaskDao variantTaskDao) {
 		this.variantTaskDao = variantTaskDao;

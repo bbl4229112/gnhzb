@@ -57,7 +57,7 @@ function createPlatform(){
 		var form = showCreatePlatForm();
 		form.set('title','编辑产品平台');
 		form.setForm(platform_platTable.selected);
-		form.children[2].children[0].set('enable',false);
+		//form.children[2].children[0].set('enable',false);
 	});
 	
 	paltform_deletePlatForm.on('click',function(e){
@@ -109,10 +109,10 @@ function createPlatform(){
 	                    type: 'formitem',padding:[20,0,10,0],labelWidth :'60',label: '平台名称:',
 	                    children:[{type: 'text', width:'170',name: 'platName'}]
 	                },
-	                {
+/*	                {
 	                    type: 'formitem',labelWidth :'60',label: '审核人员:',
 	                    children:[{type: 'combo', width:'170',name: ''}]
-	                },
+	                },*/
 	                {
 	                    type: 'formitem',padding:[10,0,0,0],labelWidth :'60',label: '平台描述:',
 	                    children:[{type: 'textarea', width:'170',height:'100',name: 'info'}]
@@ -175,6 +175,7 @@ function createPlatform(){
 	this.getPanel =function(e){
 		return panel;
 	};
-	
+	//审批测试
+	createPlatform_check(741);
 
 }

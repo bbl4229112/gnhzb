@@ -23,8 +23,8 @@ function createNeworder(){
 				        	if(neworder_OrderChooseButton.text=='选择配置需求'){
 				        		showNewOrderChooseWin();
 				        		//neworderTask(orderManageId);
-				        		neworderTask(3121);
-					        	//neworder_NewOrderChooseTable.set('data',cims201.utils.getData('order/order-manage!getAllOrder.action'));
+				        		//neworderTask(3121);
+					        	neworder_NewOrderChooseTable.set('data',cims201.utils.getData('order/order-manage!getAllOrder.action'));
 					        	neworder_NewOrderChooseTable.data.filter(function(o, i){
 					                if(o.statusName =='待录入') return true;
 					                else return false;
@@ -298,8 +298,8 @@ function createNeworder(){
                 	        { header: '描述', enableSort: true, dataIndex: 'info', headerAlign: 'center',align: 'center'},
                 	        { header: '开始日期', enableSort: true, dataIndex: 'beginDate', headerAlign: 'center',align: 'center'},
                 	        { header: '发放日期', enableSort: true, dataIndex: 'endDate', headerAlign: 'center',align: 'center'},
-                	        { header: '录入人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
-                	        { header: '审核人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
+                	        //{ header: '录入人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
+                	        //{ header: '审核人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
                 	        { header: '状态', enableSort: true, dataIndex: 'statusName', headerAlign: 'center',align: 'center',
                 	        	renderer:function(v){
                 	        		return '<font color="#0000FF">待录入</font>';
@@ -431,4 +431,5 @@ function createNeworder(){
 	this.getPanel = function(){
 		return panel;
 	};
+	createNewOrder_check(3484);
 }

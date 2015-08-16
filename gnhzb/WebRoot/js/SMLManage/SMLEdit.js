@@ -97,8 +97,8 @@ function createSMLEdit(){
         	             //{type:'button',text:'参与计算整机长'},
         	             //{type:'split'},
         	             {type:'button',text:'查看接口'},
-        	             {type:'split'},
-        	             {type:'button',id:'SMLEditBuildVariantTask',text:'建立变型任务'},
+        	             //{type:'split'},
+        	             //{type:'button',id:'SMLEditBuildVariantTask',text:'建立变型任务'},
         	             {type:'space',width:'100%'},
         	             {type:'label',text:'<span style="color:red;">双击字段进行编辑</span>'}
 		        	   ]
@@ -109,7 +109,7 @@ function createSMLEdit(){
 	});
 	
 
-	//SMLEditClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
+	SMLEditClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
 	//luweijiang
 	function SMLEditTask(classficationTreeId){
 		SMLEditClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStructById.action',{id:classficationTreeId}));
@@ -266,7 +266,8 @@ function createSMLEdit(){
 		return SMLEdit_EditPartSmlForm;
 	}
 	
-	SMLEditBuildVariantTask.on('click',function(e){
+	
+/*	SMLEditBuildVariantTask.on('click',function(e){
 		if(SMLEdit_SMLTable.selecteds.length!=1){
 			Edo.MessageBox.alert("提示","请选择一项建立变型设计任务");
 			return;
@@ -282,7 +283,7 @@ function createSMLEdit(){
 		//requirement=requirement.substring(0, requirement.length-1);
 		selected.requirement=requirement;
 		form.setForm(selected);		
-	});
+	});*/
 	function showBuildVariantTaskForm(){
 		if(!Edo.get('SMLEdit_BuildVariantTaskForm')){
 			Edo.create({
@@ -372,5 +373,7 @@ function createSMLEdit(){
 	this.getSMLEditCt=function(){
 		return smlEditCt;
 	};
-	SMLEditTask(3041);
+	//SMLEditTask(3041);
+	//审批测试
+	createSMLEdit_check(602);
 }

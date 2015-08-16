@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.zju.cims201.GOF.hibernate.pojoA.VariantTask;
 import edu.zju.cims201.GOF.rs.dto.VariantTaskDTO;
 import edu.zju.cims201.GOF.service.sml.VariantService;
 import edu.zju.cims201.GOF.util.JSONUtil;
@@ -29,6 +30,7 @@ public class VariantAction extends ActionSupport implements ServletResponseAware
 	private String endDate;
 	private String requirement;
 	private String demo;
+	private long id;
 	private VariantService variantService;
 	
 	
@@ -38,6 +40,13 @@ public class VariantAction extends ActionSupport implements ServletResponseAware
 		out.print(msg);
 	}
 
+	public void getVariantTaskById() throws IOException{
+		List<VariantTaskDTO>  taskList=variantService.getVariantTaskById(id);
+		String listStr =  JSONUtil.write(taskList);
+		out = response.getWriter();
+		out.print(listStr);
+		
+	}
 	public void getAllVariantTask() throws IOException{
 		List<VariantTaskDTO> data = variantService.getAllVariantTask();
 		String dataStr = JSONUtil.write(data);
@@ -103,6 +112,14 @@ public class VariantAction extends ActionSupport implements ServletResponseAware
 
 	public void setStartDate(String startDate) {
 		this.startDate = startDate;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	

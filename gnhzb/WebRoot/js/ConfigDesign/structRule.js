@@ -96,7 +96,7 @@ function createStructRule(){
          ]	
 	});
 	
-	//structRule_combo.set('data',cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStruct.action'));
+	structRule_combo.set('data',cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStruct.action'));
 	//luweijiang
 	function structRuleTask(platStructTreeId){
 		structRule_combo.set('data',cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStructById.action',{id:platStructTreeId}));
@@ -410,5 +410,7 @@ function createStructRule(){
 	this.getStructRulePanel = function(){
 		return structRulePanel;
 	};
-	structRuleTask(3148);
+	//structRuleTask(3148);
+	//审批测试
+	createStructRule_check(742);
 }

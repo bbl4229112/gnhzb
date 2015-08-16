@@ -42,6 +42,8 @@ function createCodeClassManage(){
 		 addClassCombo.set('data',
 				 cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClass.action')
 		 );
+		 //审批调用测试
+		 //createCodeClassManage_check(601);
 	 });
 	 //luweijiang
 	 this.inittask=function(){

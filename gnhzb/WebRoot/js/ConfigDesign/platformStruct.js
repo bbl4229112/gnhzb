@@ -116,7 +116,7 @@ function createPlatformStruct(){
 
 	});
 	
-	//platformStruct_combo.set('data',cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStruct.action'));
+	platformStruct_combo.set('data',cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStruct.action'));
 	//luweijiang
 	function platformStructTask(platStructTreeId){
 		platformStruct_combo.set('data',cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStructById.action',{id:platStructTreeId}));
@@ -444,12 +444,13 @@ function createPlatformStruct(){
 			});
 		}
 		
-		/*var lbdhTreeData = cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action');
+		var lbdhTreeData = cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action');
 		for(var i=0;i<lbdhTreeData.length;i++){
 			lbdhTreeData[i].icon ='e-tree-folder';
-		}*/
-		var lbdhTreeData = platformStructlbdhTreeTask(3041);
-		console.log(lbdhTreeData);
+		}
+		//luweijiang
+//		var lbdhTreeData = platformStructlbdhTreeTask(3041);
+
 		platformStruct_LbdhTree.set("data",lbdhTreeData);
 		platformStruct_addNodeWin.show('center','middle',true);
 		return platformStruct_addNodeWin;
@@ -560,5 +561,7 @@ function createPlatformStruct(){
 	this.getPanel =function(){
 		return panel;
 	};
-	platformStructTask(3148);
+	
+	//platformStructTask(3148);
+	createPlatformStruct_check(742);
 }

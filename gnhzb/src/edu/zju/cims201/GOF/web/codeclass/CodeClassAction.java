@@ -178,6 +178,8 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		return null;
 	}
 	
+	
+	
 	public String deleteById() throws IOException{
 		codeClassService.deleteById(id);
 		out=response.getWriter();
@@ -209,9 +211,18 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		return null;
 	}
 	
+
 	public String getRule() throws IOException{
 		String ruleStr = codeClassService.getRuleByClassCode(classcode);
 		out =response.getWriter();
+		out.print(ruleStr);
+		return null;
+	}
+	//审批用
+	public String getRuleByCodeClassId() throws IOException{
+		HashMap<String,Object> codelClassRule = codeClassService.getRuleByCodeClassId(id);
+		String ruleStr = JSONUtil.write(codelClassRule);
+		out = response.getWriter();
 		out.print(ruleStr);
 		return null;
 	}

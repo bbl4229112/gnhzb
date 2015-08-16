@@ -40,8 +40,8 @@ function createOrdermanage(){
 		        { header: '描述', dataIndex: 'info', headerAlign: 'center',align: 'center' },
 		        { header: '开始日期', dataIndex: 'beginDate', headerAlign: 'center',align: 'center'},
 		        { header: '发放日期', dataIndex: 'endDate', headerAlign: 'center',align: 'center'},
-		        { header: '录入人', dataIndex: '', headerAlign: 'center',align: 'center'},
-		        { header: '审核人', dataIndex: '', headerAlign: 'center',align: 'center'},
+		        //{ header: '录入人', dataIndex: '', headerAlign: 'center',align: 'center'},
+		        //{ header: '审核人', dataIndex: '', headerAlign: 'center',align: 'center'},
 		        { header: '状态', dataIndex: 'statusName', headerAlign: 'center',align: 'center',
 		        	renderer:function(v){
 		        		switch(v)
@@ -141,7 +141,7 @@ function createOrdermanage(){
 		                    type: 'formitem',labelWidth :'90',label: '需求描述:',
 		                    children:[{type: 'textarea', height:'100',width:'195',name: 'info'}]
 		                },
-		                {
+/*		                {
 		                    type: 'formitem',padding:[10,0,0,0],labelWidth :'90',label: '指定录入人员:',
 		                    children:[{type: 'combo',width:'195',name: '',displayField:'',valueField:'',readOnly:true}]
 		                }, 
@@ -150,7 +150,7 @@ function createOrdermanage(){
 		                    children:[{type: 'combo',width:'195',name: '',displayField:'',valueField:'',readOnly:true,
 		                    	onselectionchange:function(e){}
 		                    }]
-		                },  
+		                },  */
 		                {
 		                    type: 'formitem',layout:'horizontal', padding: [20,0,10, 0],
 		                    children:[
@@ -220,7 +220,7 @@ function createOrdermanage(){
 		                    type: 'formitem',labelWidth :'90',label: '需求描述:',
 		                    children:[{type: 'textarea', height:'100',width:'195',name: 'info'}]
 		                },
-		                {
+/*		                {
 		                    type: 'formitem',padding:[10,0,0,0],labelWidth :'90',label: '指定录入人员:',
 		                    children:[{type: 'combo',width:'195',name: '',displayField:'',valueField:'',readOnly:true}]
 		                }, 
@@ -229,7 +229,7 @@ function createOrdermanage(){
 		                    children:[{type: 'combo',width:'195',name: '',displayField:'',valueField:'',readOnly:true,
 		                    	onselectionchange:function(e){}
 		                    }]
-		                },  
+		                }, */ 
 		                {
 		                    type: 'formitem',padding:[10,0,0,0],labelWidth :'90',label: '配置需求状态:',
 		                    children:[{type: 'combo',width:'195',name: 'statusId',displayField:'statusName',valueField:'id',readOnly:true}]
@@ -273,7 +273,7 @@ function createOrdermanage(){
 				});
 				var statusData = cims201.utils.getData('order/order-manage!getAllStatus.action');
 				statusData.splice(6,1);
-				ordermanage_UpdateOrderForm.children[5].children[0].set('data',statusData);
+				ordermanage_UpdateOrderForm.children[3].children[0].set('data',statusData);
 				ordermanage_UpdateOrderForm.setForm(ordermanageTb.selected);
 				ordermanage_UpdateOrderForm.show('center','middle',true);
 				return ordermanage_UpdateOrderForm;
@@ -362,6 +362,8 @@ function createOrdermanage(){
 	this.getTable = function(){
 		return Table;
 	};
+	
+	createOrdermanage_check(882);
 }
 	
 	

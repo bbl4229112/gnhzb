@@ -343,5 +343,7 @@ function createCodeClassRuleManage(){
 	this.getRuleTree = function(){
 		return ruleTree;
 	};
-	codeClassRuleManageTask(1822);
+	//codeClassRuleManageTask(1822);
+	//测试审批
+	//createCodeClassRuleManage_check(601);
 }

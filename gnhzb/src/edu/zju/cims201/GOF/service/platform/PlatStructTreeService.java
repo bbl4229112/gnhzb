@@ -23,4 +23,6 @@ public interface PlatStructTreeService {
 	//luweijiang
 	public List<PlatStructTree> getUnfinishedPlatStructById(long id);
 
+	public List<PlatStructTree> getPlatStructById(long id);
+
 }

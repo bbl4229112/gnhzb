@@ -802,4 +802,6 @@ function createCodeClassStructManage(){
 	this.getFlmclForm = function(){
 		return FlmclForm;
 	};
+	//审批测试
+	//createCodeClassStructManage_check(602);
 }
