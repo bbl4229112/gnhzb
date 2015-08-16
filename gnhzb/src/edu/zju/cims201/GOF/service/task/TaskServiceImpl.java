@@ -108,7 +108,6 @@ public class TaskServiceImpl implements TaskService {
 
 
 	public PdmTask getPdmTask(long id) {
-		
 		return (PdmTask)sessionFactory.getCurrentSession().get(PdmTask.class, id);
 	}
 	public LcaTask getLcaTask(long id) {
@@ -155,7 +154,7 @@ public class TaskServiceImpl implements TaskService {
 		return sessionFactory.getCurrentSession().createQuery("from PdmProjectValuePool p where p.project.id=? and p.iotype=0").setParameter(0, id).list();
 	}
 	public List<PdmTask> getTaskByNextTaskId(String nextidsstring, Long projectid) {
-		return sessionFactory.getCurrentSession().createQuery("from PdmTask task where task.taskid in ? and task.pdmProject.id=?").setParameter(0, nextidsstring).setParameter(1, projectid).list();
+		return sessionFactory.getCurrentSession().createQuery("from PdmTask task where task.taskid in (?) and task.pdmProject.id=?").setParameter(0, nextidsstring).setParameter(1, projectid).list();
 
 	}
 	public int checkTasksIsFinished(String taskids1string, Long projectid) {

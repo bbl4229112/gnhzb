@@ -1948,6 +1948,34 @@ function getComponentByIndex(id,index,params){
 					realComponent:myCodeClassDefi
 			};
 		}
+		else if('CodeClassDeficheck'==index){
+			var existcomponent = iscomponentexist(id,'CodeClassDeficheck234');
+			if(null!=existcomponent){
+				myComponent=existcomponent;
+			}else{
+				var myCodeClassDeficheck = new createCodeClassDefi_check();
+				enterEventList[enterEventList.length] = myCodeClassDeficheck;
+				enterEventIDList[enterEventIDList.length] = 'CodeClassDeficheck';
+			  
+				myComponent = Edo.create({
+					id: id?id:'CodeClassDeficheck234',   
+				    type: 'box',                 
+				    layout: 'vertical',  
+				    verticalGap:0,
+				    width: '100%',
+				    height: '100%',
+				    border:[0,0,0,0],
+				    padding: [0,10,0,5],
+				    children: [
+				    	myCodeClassDeficheck.getBox()
+				    ]
+				});
+			}
+		    resultComponent={
+					myComponent:myComponent,
+					realComponent:myCodeClassDeficheck
+			};
+		}
 		else if('CodeClassRuleManage'==index){
 
 			var existcomponent = iscomponentexist(id,'CodeClassRuleManage234');

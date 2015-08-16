@@ -30,7 +30,11 @@ function init ()
 		alert('等待审查');
 		tasktype=2;
 	}
-	openNewTab('001', data.url,"<div class=cims201_tab_font align=center>任务"+data.name+"</div>",{type:data.url,btIcon:'cims201_myknowledgebase_icon_'+data.url+'_small'},data);
+	if(tasktype == 1){
+		openNewTab('001', data.url,"<div class=cims201_tab_font align=center>任务"+data.name+"</div>",{type:data.url,btIcon:'cims201_myknowledgebase_icon_'+data.url+'_small'},data);
+	}else{
+		openNewTab('001', data.url+'check',"<div class=cims201_tab_font align=center>任务"+data.name+"</div>",{type:data.url,btIcon:'cims201_myknowledgebase_icon_'+data.url+'_small'},data);
+	}
 	var rows=data.Inparamlist;
 	var inputparams='';
 	for ( var i = 0; i < rows.length; i++) {
@@ -345,7 +349,7 @@ Edo.build(
 				                                                    id:'submitcheckbutton',
 				         		                                    type:'button',
 				         		                                    visible:false,
-				         		                                    text: '提交',
+				         		                                    text: '审核通过',
 				         		                                    width: '40%',
 				         		                                    height: 30,
 				         		                                    onclick: function(e){
@@ -444,6 +448,19 @@ function openNewTab(id, index, title, params,data){
 			}
 			realComponent.initinputparam(param);
 		}
+		if(data.Outparamlist.length >= 1){
+			var param=data.Outparamlist;
+			for (var i=0;i<param.length;i++){
+				var data2={};
+				data2.descri=param[i].descri;
+				data2.name=param[i].name;
+				data2.value=param[i].value;
+				outputparam.push(data2);
+			}
+			realComponent.initresultparam(param);
+		}
+		realComponent.inittask();
+	}else{
 		if(data.Outparamlist.length >= 1){
 			var param=data.Outparamlist;
 			for (var i=0;i<param.length;i++){

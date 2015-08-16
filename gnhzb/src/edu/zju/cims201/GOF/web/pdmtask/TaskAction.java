@@ -316,12 +316,12 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 	    	alltaskList.add(parenttask);
 	    	String nexttaskids=parenttask.getNexttaskid();
 	    	String[] nexttaskarray=nexttaskids.split(";");
-	    	String nextidsstring="(";
+	    	String nextidsstring="";
 	    	for(String nexttaskid:nexttaskarray){
 	    		nextidsstring=nextidsstring+nexttaskid+",";
 	    	}
 	    	nextidsstring=nextidsstring.substring(0,nextidsstring.length()-1);
-	    	nextidsstring=nextidsstring+")"; 
+	    	//nextidsstring=nextidsstring+")"; 
 	    	if(parenttask.getIstail() == 1){
 	    		return;
 	    	}
@@ -345,12 +345,12 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 	    }else{
 	    	String nexttaskids=task.getNexttaskid();
 	    	String[] nexttaskarray=nexttaskids.split(";");
-	    	String nextidsstring="(";
+	    	String nextidsstring="";
 	    	for(String nexttaskid:nexttaskarray){
 	    		nextidsstring=nextidsstring+nexttaskid+",";
 	    	}
 	    	nextidsstring=nextidsstring.substring(0,nextidsstring.length()-1);
-	    	nextidsstring=nextidsstring+")"; 
+//	    	nextidsstring=nextidsstring+")"; 
 	    	List<PdmTask> nextTasks=taskService.getTaskByNextTaskId(nextidsstring, task.getPdmProject().getId());
 	    	for(PdmTask t:nextTasks){
 	    		
