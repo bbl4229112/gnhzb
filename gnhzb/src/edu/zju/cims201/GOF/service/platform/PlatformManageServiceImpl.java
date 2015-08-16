@@ -139,6 +139,29 @@ public class PlatformManageServiceImpl implements PlatformManageService{
 		return platListRe;
 	}
 	
+	public List<PlatformManageDTO> getPlatformById(long id){
+
+		// TODO Auto-generated method stub
+		List<PlatformManage> platList = platformManageDao.findBy("id",id);
+		List<PlatformManageDTO> platListRe = new ArrayList<PlatformManageDTO>();
+		for(PlatformManage plat:platList){
+			PlatformManageDTO platDTO = new PlatformManageDTO();
+			platDTO.setBeginDate(new SimpleDateFormat("yyyy-MM-dd").format(plat.getBeginDate()));
+			platDTO.setCheckUserName("");
+			platDTO.setId(plat.getId());
+			platDTO.setInfo(plat.getInfo());
+			platDTO.setInputUserName("");
+			platDTO.setPlatName(plat.getPlatName());
+			PlatformStatus status= plat.getStatus();
+			platDTO.setStatusId(status.getId());
+			platDTO.setStatusName(status.getStatusName());
+			platListRe.add(platDTO);
+		}
+		
+		return platListRe;
+	
+	}
+	
 	public List<PlatformManageDTO> getAllPlatform(){
 		List<PlatformManage> platList = platformManageDao.getAll();
 		List<PlatformManageDTO> platListRe = new ArrayList<PlatformManageDTO>();

@@ -922,16 +922,16 @@
 			    }
 			}
 		   // var data= cims201.utils.getData(basepathh+'node/node!getnodelist.action',{});
-		    addSidebarIcon(null,graph, sidebar, null, 'img/start.png','start','开始');
+		 /*    addSidebarIcon(null,graph, sidebar, null, 'img/start.png','start','开始');
 		    var br = document.createElement('br');
-			sidebar.appendChild(br);
+			sidebar.appendChild(br); */
 			addSidebarIcon(null,graph, sidebar, '模块节点', 'img/cell.png','process','模块节点');
 			var br = document.createElement('br');
 			sidebar.appendChild(br);
 			/* addSidebarIcon(null,graph, sidebar, '执行节点', 'img/cell.png','taskprocess','执行节点');
 			var br = document.createElement('br');
 			sidebar.appendChild(br); */
-			addSidebarIcon(null,graph, sidebar, null, 'img/stop.png','end','结束');
+			//addSidebarIcon(null,graph, sidebar, null, 'img/stop.png','end','结束');
 			  /*  editor.setToolbarContainer(sidebar);
                  editor.toolbar.addMode('ss', 'img/earth.png', null, null);
                   var combo=editor.toolbar.addCombo();

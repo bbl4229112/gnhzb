@@ -19,7 +19,7 @@ function createCheckplatform(){
 			        {type:'button',id:'checkplatform_platChooseBtn',text:'选择配置平台',onclick:function(e){
 			        	if(checkplatform_platChooseBtn.text=='选择配置平台'){
 				        	 showPlat2CheckWin();	
-				        	 checkplatformTask(3147);
+				        	 checkplatformTask(3511);
 				        	 //checkplatform_CheckPlatChooseTable.set('data',cims201.utils.getData('platform/platform-manage!getPlatform2Check.action'));  	 
 			        	}
 			        	if(checkplatform_platChooseBtn.text=='取消该配置平台审核'){
@@ -29,7 +29,13 @@ function createCheckplatform(){
 			        		checkplatform_platStruct2CheckGridTree.set('data',[]);
 			        		checkplatform_TableAndGroupCt.set('enable',false);
 			        	}
-			        }}								        		        
+			        }},{
+			        	type:'space',
+			        	width:'100%'
+			        },{
+			        	type:'label',
+			        	text:'<span style="color:red">双击模块查看具体规则</span>'
+			        }								        		        
 			    ]
 			},
 			{
@@ -161,8 +167,8 @@ function createCheckplatform(){
             			        { header: '平台名称', enableSort: true, dataIndex: 'platName', headerAlign: 'center',align: 'center'},
             			        { header: '平台描述', enableSort: true, dataIndex: 'info', headerAlign: 'center',align: 'center'},
             			        { header: '状态', enableSort: true, dataIndex: 'statusName', headerAlign: 'center',align: 'center'},
-            			        { header: '搭建者', enableSort: true,dataIndex: 'inputUserName', headerAlign: 'center',align: 'center' },
-            			        { header: '审核者', enableSort: true, dataIndex: 'checkUserName', headerAlign: 'center',align: 'center'},
+            			        //{ header: '搭建者', enableSort: true,dataIndex: 'inputUserName', headerAlign: 'center',align: 'center' },
+            			        //{ header: '审核者', enableSort: true, dataIndex: 'checkUserName', headerAlign: 'center',align: 'center'},
             			        { header: '最后修改时间', enableSort: true, dataIndex: 'beginDate', headerAlign: 'center',align: 'center'}			      
             			    ]
                       },

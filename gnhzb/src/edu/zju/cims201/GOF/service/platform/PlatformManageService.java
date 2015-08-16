@@ -31,4 +31,6 @@ public interface PlatformManageService {
 
 	public List<PlatformManageDTO> getFinishedPlatformById(long id);
 
+	public List<PlatformManageDTO> getPlatformById(long id);
+
 }

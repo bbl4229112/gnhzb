@@ -116,8 +116,8 @@ function createCheckorder(){
                 	        { header: '描述', enableSort: true, dataIndex: 'info', headerAlign: 'center',align: 'center'},
                 	        { header: '开始日期', enableSort: true, dataIndex: 'beginDate', headerAlign: 'center',align: 'center'},
                 	        { header: '发放日期', enableSort: true, dataIndex: 'endDate', headerAlign: 'center',align: 'center'},
-                	        { header: '录入人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
-                	        { header: '审核人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
+                	       // { header: '录入人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
+                	       // { header: '审核人', enableSort: true, dataIndex: '', headerAlign: 'center',align: 'center'},
                 	        { header: '状态', enableSort: true, dataIndex: 'statusName', headerAlign: 'center',align: 'center',
                 	        	renderer:function(v){
                 	        		return '<font color="#0000FF">待审核</font>';

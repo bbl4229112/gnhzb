@@ -2416,6 +2416,33 @@ function getComponentByIndex(id,index,params){
 				});
 			}
 		}
+		else if('VariantDesignBuild'==index){
+
+			var existcomponent = iscomponentexist(id,'VariantDesignBuild');
+			if(null!=existcomponent){
+				myComponent=existcomponent;
+			}else{
+				var myVariantDesignBuild = new VariantDesignBuild();
+
+				enterEventList[enterEventList.length] = myVariantDesignBuild;
+				enterEventIDList[enterEventIDList.length] = 'VariantDesignBuild';
+			
+				myComponent = Edo.create({
+					id: id?id:'VariantDesignBuild234',   
+				    type: 'box',                 
+				    layout: 'horizontal',  
+				    horizontalGap:0,
+				    width: '100%',
+				    height: '100%',
+				    border:[0,0,0,0],
+				    padding: [0,0,0,0],
+				    children: [
+		               myVariantDesignBuild.getCodeClassChoose(),
+		               myVariantDesignBuild.getVariantDesignCt()
+				    ]
+				});
+			}
+		}
 		else if('variantDesign'==index){
 
 			var existcomponent = iscomponentexist(id,'variantDesign');

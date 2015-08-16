@@ -62,6 +62,13 @@ public class PlatStructTreeAction extends ActionSupport implements
 		out=response.getWriter();
 		out.print(jsonString);
 	}
+	
+	public void getPlatStructById() throws IOException{
+		List<PlatStructTree> list=platStructTreeService.getPlatStructById(id);
+		String listStr = JSONUtil.write(list);
+		out =response.getWriter();
+		out.print(listStr);
+	}
 	/**
 	 * 获取平台树的根节点
 	 * @throws IOException

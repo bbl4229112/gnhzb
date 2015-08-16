@@ -45,6 +45,12 @@ function createVariantDesign(){
 		]
 		
 	});
+	VariantDesign_ExecuteTask.on('click',function(){
+		console.log("123123");
+		//var objShell = new ActiveXObject("wscript.shell");
+		//objShell.Run("D:\Program Files\PTC\Creo 2.0\Parametric\bin\parametric.exe");
+		//objShell = null;
+	});
 	
 	VariantDesign_TaskTable.set('data',cims201.utils.getData('sml/variant!getAllVariantTask.action'));
 	

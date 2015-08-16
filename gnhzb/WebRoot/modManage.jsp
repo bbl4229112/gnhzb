@@ -213,6 +213,10 @@
 <script src="<%=basePath%>js/CodeClass/CodeClassRuleManage.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/CodeClass/CodeClassStructManage.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/CodeClass/codeclassdefi_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/CodeClass/CodeClassManage_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/CodeClass/CodeClassRuleManage_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/CodeClass/CodeClassStructManage_check.js" type="text/javascript"></script>
+
 
 <!-- 模块管理系统 陈谦庄 -->
 <script src="<%=basePath%>js/ModuleManage/DocTypeManage.js" type="text/javascript"></script>
@@ -233,7 +237,15 @@
 <script src="<%=basePath%>js/SMLManage/SMLParamPool.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/SMLManage/SMLPoolManage_view.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/SMLManage/SMLPoolManage.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/SMLManage/VariantDesignBuild.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/SMLManage/VariantDesign.js" type="text/javascript"></script>
+
+
+
+<script src="<%=basePath%>js/SMLManage/SMLEdit_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/SMLManage/SMLModeling_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/SMLManage/VariantDesignBuild_check.js" type="text/javascript"></script>
+
 
 <!-- 配置需求管理 陈谦庄 -->
 <script src="<%=basePath%>js/ConfigDemandManage/checkorder.js" type="text/javascript"></script>
@@ -244,6 +256,10 @@
 <script src="<%=basePath%>js/ConfigDemandManage/orderview.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/ConfigDemandManage/templatemanage.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/ConfigDemandManage/templateupdate.js" type="text/javascript"></script>
+
+<script src="<%=basePath%>js/ConfigDemandManage/ordermanage_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/ConfigDemandManage/neworder_check.js" type="text/javascript"></script>
+
 
 <!-- 模块配置设计 陈谦庄 -->
 <script src="<%=basePath%>js/ConfigDesign/BomCheck.js" type="text/javascript"></script>
@@ -256,6 +272,13 @@
 <script src="<%=basePath%>js/ConfigDesign/structRule_view.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/ConfigDesign/structRule.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/ConfigDesign/checkplatform.js" type="text/javascript"></script>
+
+<script src="<%=basePath%>js/ConfigDesign/platform_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/ConfigDesign/platformStruct_check.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/ConfigDesign/structRule_check.js" type="text/javascript"></script>
+
+
+
 
 <script src="<%=basePath%>js/ModTemp/IndustryProductAnalyse.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/ModTemp/CustomerDemandMatch.js" type="text/javascript"></script>

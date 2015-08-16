@@ -466,5 +466,5 @@ function createStructRule(){
 	this.getStructRulePanel = function(){
 		return structRulePanel;
 	};
-	
+	//审批测试
 }
