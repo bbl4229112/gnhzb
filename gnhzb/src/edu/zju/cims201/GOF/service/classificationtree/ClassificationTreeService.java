@@ -1,5 +1,6 @@
 package edu.zju.cims201.GOF.service.classificationtree;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.activation.DataHandler;
@@ -79,4 +80,6 @@ public interface ClassificationTreeService {
 	 * @param treeNodes
 	 */
 	public void UpdateImgFinish(List<ClassificationTree> treeNodes);
+	
+	public HashMap<String, Object> getRuleByClassificationTreeId(long id);
 }

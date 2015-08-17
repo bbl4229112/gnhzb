@@ -131,7 +131,7 @@ function createSMLEdit(){
 		for(var i=0;i<inputparam.length;i++){
 			if(inputparam[i].name == 'classificationtreeid'){
 				for(var j=0;j<outputparam.length;j++){
-					if(outputparam[j].name == 'structuploadclassificationtreeid'){
+					if(outputparam[j].name == 'smleditclassificationtreeid'){
 						outputparam[j].value=inputparam[i].value;
 						isexist=true;
 						break;

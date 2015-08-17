@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -587,6 +588,42 @@ public class ClassificationTreeServiceImpl implements ClassificationTreeService{
 		if(tempZip.exists()){
 			tempZip.delete();
 		}
+	}
+	
+	public HashMap<String, Object> getRuleByClassificationTreeId(long id) {
+		ClassificationTree ctree=classificationTreeDao.get(id);
+		CodeClass cc=ctree.getCodeClass();
+		String className = cc.getClassname();
+		String ruleStr=cc.getRule();
+		String[] ruleAra=ruleStr.split("-");
+		StringBuilder sb =new StringBuilder();
+		sb.append("[");
+		for(int i =0;i<ruleAra.length;i++){
+			sb.append("{'text':'");
+			if(i==0){
+				sb.append("分类码 首字段："+ruleAra[i]);
+			}else{
+				sb.append("分类码 第【"+i+"】层");
+				if(ruleAra[i].startsWith("C")){
+					sb.append(" 字符型，长度：");
+					sb.append(ruleAra[i].substring(1));
+				}else if(ruleAra[i].startsWith("N")){
+					sb.append(" 数字，长度：");
+					sb.append(ruleAra[i].substring(1));
+				}else if(ruleAra[i].startsWith("B")){
+					sb.append(" 混合型，长度：");
+					sb.append(ruleAra[i].substring(1));
+				}
+			}
+			sb.append("','value':'"+i+":"+ruleAra[i]+"'},");
+		}
+		String rule=sb.toString().substring(0, sb.lastIndexOf(","));
+		rule =rule+"]";
+		System.out.println(rule);
+		HashMap<String,Object> data = new HashMap<String,Object>();
+		data.put("className",className);
+		data.put("rule", rule);
+		return data;
 	}
 	
 }

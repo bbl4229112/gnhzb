@@ -223,7 +223,6 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		out.print(jsonString);
 		return null;
 	}
-	
 	public String updateById() throws IOException{
 		codeClassService.updateById(id, classname, classcode, codehead);
 		out=response.getWriter();
@@ -238,15 +237,6 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		out.print(ruleStr);
 		return null;
 	}
-	//审批用
-	public String getRuleByCodeClassId() throws IOException{
-		HashMap<String,Object> codelClassRule = codeClassService.getRuleByCodeClassId(id);
-		String ruleStr = JSONUtil.write(codelClassRule);
-		out = response.getWriter();
-		out.print(ruleStr);
-		return null;
-	}
-	
 	public String updateRule() throws IOException{
 		codeClassService.updateRuleByClassCode(classcode, encodetype, codelength);
 		out =response.getWriter();

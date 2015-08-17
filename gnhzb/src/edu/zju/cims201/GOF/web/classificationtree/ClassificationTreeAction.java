@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.zju.cims201.GOF.hibernate.pojoA.ClassificationTree;
+import edu.zju.cims201.GOF.hibernate.pojoA.CodeClass;
 import edu.zju.cims201.GOF.service.classificationtree.ClassificationTreeService;
 import edu.zju.cims201.GOF.service.classificationtree.ClassificationTreeServiceImpl;
 import edu.zju.cims201.GOF.util.JSONUtil;
@@ -91,7 +92,46 @@ public class ClassificationTreeAction extends ActionSupport implements
 		out.print(jsonString);
 		return null;
 	}
+	//审批用
+		public String getRuleByClassificationTreeId() throws IOException{
+			HashMap<String,Object> codelClassRule = classificationTreeService.getRuleByClassificationTreeId(id);
+			HashMap<String, Object> resultmap=new HashMap<String, Object>();
+			if (codelClassRule != null) {
+				resultmap.put("isSuccess", "1");
+				resultmap.put("message", "成功");
+				resultmap.put("result", codelClassRule);
 
+			}else{
+				resultmap.put("isSuccess", "0");
+				resultmap.put("message", "查询出错，请联系管理员！");
+			}
+			String jsonString =JSONUtil.write(resultmap);
+			out =response.getWriter();
+			out.print(jsonString);
+			return null;
+		}
+		
+	
+	public String findCodeClassByClassTreeId() throws IOException{
+		//该id为classClassificationTree 
+		ClassificationTree tree=classificationTreeService.getNode(id);
+		CodeClass cc=tree.getCodeClass();
+		HashMap<String, Object> resultmap=new HashMap<String, Object>();
+		if(cc!=null){
+			List<CodeClass> cclist =new ArrayList<CodeClass>();
+			cclist.add(cc);
+			resultmap.put("isSuccess", "1");
+			resultmap.put("message", "成功");
+			resultmap.put("result", cc);
+		}else{
+			resultmap.put("isSuccess", "0");
+			resultmap.put("message", "查询任务结果出错，请联系管理员！");
+		}
+		String jsonString =JSONUtil.write(resultmap);
+		out=response.getWriter();
+		out.print(jsonString);
+		return null;
+	}
 	public String getChildrenNode() throws IOException {
 		List<ClassificationTree> treeList = classificationTreeService
 				.getChildrenNode(pid);

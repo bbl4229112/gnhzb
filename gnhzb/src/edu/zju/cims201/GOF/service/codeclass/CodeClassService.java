@@ -24,7 +24,6 @@ public interface CodeClassService{
 	public void updateRuleByClassCode2(String classcode,String encodetype,String codelength,int ruleLayerNub);
 	public void deleteRuleNodByClassCode(String classcode,int ruleLayerNub);
 	public List<CodeClass> findById(long id);
-	public HashMap<String, Object> getRuleByCodeClassId(long id);
 	
 	/*luweijiang*/
 	public CodeClass findUnConstructedCodeClassById(long id);

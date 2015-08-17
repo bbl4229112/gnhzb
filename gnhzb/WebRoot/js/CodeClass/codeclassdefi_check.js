@@ -92,16 +92,9 @@ function createCodeClassDefi_check(){
 			console.log(data);
 			if(data.isSuccess == '1'){
 				codeclassdefiTb_check.set('data',data.result);
-			}else{
-				codeclassdefiTb_check.set("data",
-					cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
-				);
 			}
 			Edo.MessageBox.alert("提示",data.message);
 		}else{
-			codeclassdefiTb_check.set("data",
-				cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
-			);
 			Edo.MessageBox.alert("提示","查询任务结果出错，请联系管理员！");
 		}
 		//createCodeClassDefi_check_Window.show('center', 'middle', true);

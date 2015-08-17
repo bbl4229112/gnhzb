@@ -64,10 +64,20 @@ public class PlatStructTreeAction extends ActionSupport implements
 	}
 	
 	public void getPlatStructById() throws IOException{
+		HashMap<String, Object> resultmap=new HashMap<String, Object>();
 		List<PlatStructTree> list=platStructTreeService.getPlatStructById(id);
-		String listStr = JSONUtil.write(list);
-		out =response.getWriter();
-		out.print(listStr);
+		if(CollectionUtils.isNotEmpty(list)){
+			resultmap.put("isSuccess", "1");
+			resultmap.put("message", "成功");
+			resultmap.put("result", list);
+		}else{
+			resultmap.put("isSuccess", "0");
+			resultmap.put("message", "查询出错，请联系管理员！");
+		}
+		
+		String jsonString =JSONUtil.write(resultmap);
+		out=response.getWriter();
+		out.print(jsonString);
 	}
 	/**
 	 * 获取平台树的根节点
