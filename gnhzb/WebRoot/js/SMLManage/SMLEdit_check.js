@@ -1,4 +1,4 @@
-function createSMLEdit_check(classficationTreeId){
+function createSMLEdit_check(){
 	var inputparam=new Array();
 	var outputparam=new Array();
 	this.initinputparam=function(param){

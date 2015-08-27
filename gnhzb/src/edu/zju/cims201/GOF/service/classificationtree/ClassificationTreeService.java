@@ -81,5 +81,4 @@ public interface ClassificationTreeService {
 	 */
 	public void UpdateImgFinish(List<ClassificationTree> treeNodes);
 	
-	public HashMap<String, Object> getRuleByClassificationTreeId(long id);
 }

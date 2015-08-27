@@ -342,8 +342,9 @@ Edo.build(
 				         		                                    		var url=basepathh+'/pdmtask/task!submitTask.action';
 					         		                                    	var param={resultparam:resultparam,taskid:taskid};
 					         		                                    	var data= cims201.utils.getData(url,param);
+					         		                                    	Edo.MessageBox.alert("提示",data.message);
 				         		                                    	}
-				         		      					        	}
+				         		                                    }
 			         	                                        },
 			         	                                        {
 				                                                    id:'submitcheckbutton',

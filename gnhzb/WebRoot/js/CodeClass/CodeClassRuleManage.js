@@ -25,7 +25,7 @@ function createCodeClassRuleManage(){
 				break;
 			}
 		if(!isexist){
-			Edo.MessageBox.alert('对应的编码大类不存在');
+			Edo.MessageBox.alert('提示','对应的编码大类不存在');
 			return null;
 		}
 		return outputparam;
@@ -50,12 +50,12 @@ function createCodeClassRuleManage(){
 					cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClass.action')
 				);
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert("提示",data.message);
 		}else{
 			ClassNameCombo.set('data',
 				cims201.utils.getData('codeclass/code-class!findAllCodeClass.action')
 			);
-			Edo.MessageBox.alert("查询上一任务输出结果出错，请联系管理员！");
+			Edo.MessageBox.alert('提示',"查询上一任务输出结果出错，请联系管理员！");
 		}
 	}
 	var topbar = Edo.create({

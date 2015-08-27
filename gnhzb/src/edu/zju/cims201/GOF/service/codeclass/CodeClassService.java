@@ -29,6 +29,6 @@ public interface CodeClassService{
 	public CodeClass findUnConstructedCodeClassById(long id);
 	public CodeClass findCodeClassById(long id);
 	
-	
+	public HashMap<String, Object> getRuleByCodeClassId(long id);
 	
 }

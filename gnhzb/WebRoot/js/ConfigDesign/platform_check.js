@@ -42,7 +42,6 @@ function createPlatform_check(){
 //			title:'平台类型审批',
 			width:600,
 			height:200,
-            render: document.body,
 //            titlebar: [
 //                {                  
 //                    cls:'e-titlebar-close',
@@ -83,7 +82,7 @@ function createPlatform_check(){
 		});
 	}
 	this.getBox=function(){
-		return SMLEdit_check_window;
+		return platform_check_window;
 	}
 //	platform_platTable_check.set('data',
 //			cims201.utils.getData('platform/platform-manage!getPlatformById.action',{id:platformId}));

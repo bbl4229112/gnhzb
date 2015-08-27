@@ -1,4 +1,4 @@
-function createNewOrder_check(orderId){
+function createNewOrder_check(){
 	var orderId=null;
 	var inputparam=new Array();
 	var outputparam=new Array();

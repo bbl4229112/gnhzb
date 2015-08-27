@@ -1,4 +1,4 @@
-function createCodeClassStructManage_check(classficationTreeId){
+function createCodeClassStructManage_check(){
 	var inputparam=new Array();
 	var outputparam=new Array();
 	this.initinputparam=function(param){

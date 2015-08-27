@@ -1,4 +1,4 @@
-function createStructRule_check(platStructId){
+function createStructRule_check(){
 	var inputparam=new Array();
 	var outputparam=new Array();
 	this.initinputparam=function(param){
@@ -152,7 +152,6 @@ function createStructRule_check(platStructId){
 //			title:'平台规则审批',
 			width:800,
 			height:400,
-            render: document.body,
 //            titlebar: [
 //                {                  
 //                    cls:'e-titlebar-close',
@@ -171,7 +170,7 @@ function createStructRule_check(platStructId){
 		});
 	}
 	this.getBox=function(){
-		return platformStruct_check_window;
+		return structRule_check_window;
 	}
 //	var data = cims201.utils.getData('platform/plat-struct-tree!getPlatStructById.action',{id:platStructId});
 //	if(data[0].leaf==0){

@@ -166,6 +166,24 @@ public class CodeClassAction extends ActionSupport implements ServletResponseAwa
 		out.print(jsonString);
 		return null;
 	}
+	//审批用
+	public String getRuleByCodeClassId() throws IOException{
+		HashMap<String,Object> codelClassRule = codeClassService.getRuleByCodeClassId(id);
+		HashMap<String, Object> resultmap=new HashMap<String, Object>();
+		if (codelClassRule != null) {
+			resultmap.put("isSuccess", "1");
+			resultmap.put("message", "成功");
+			resultmap.put("result", codelClassRule);
+
+		}else{
+			resultmap.put("isSuccess", "0");
+			resultmap.put("message", "查询出错，请联系管理员！");
+		}
+		String jsonString =JSONUtil.write(resultmap);
+		out =response.getWriter();
+		out.print(jsonString);
+		return null;
+	}
 	
 	public String addConstructedCodeClass() throws IOException{
 		HashMap<String, Object> resultmap=new HashMap<String, Object>();

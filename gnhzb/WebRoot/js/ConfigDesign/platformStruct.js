@@ -24,7 +24,7 @@ function createPlatformStruct(){
 		for(var i=0;i<inputparam.length;i++){
 			if(inputparam[i].name == 'platstructtreeid'){
 				for(var j=0;j<outputparam.length;j++){
-					if(outputparam[j].name == 'platformstructplatformstructid'){
+					if(outputparam[j].name == 'platformstructplatformstructtreeid'){
 						outputparam[j].value=inputparam[i].value;
 						isexist=true;
 						break;
@@ -34,7 +34,7 @@ function createPlatformStruct(){
 				break;
 			}
 		if(!isexist){
-			Edo.MessageBox.alert('对应的平台结构树不存在');
+			Edo.MessageBox.alert('提示','对应的平台结构树不存在');
 			return null;
 		}
 		return outputparam;
@@ -68,17 +68,17 @@ function createPlatformStruct(){
 				}
 				lbdhTreeData=resultdata;
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert('提示',data.message);
 		}
 		if(isexist2){
 			var data =cims201.utils.getData('platform/plat-struct-tree!getUnfinishedPlatStructById.action',{id:platstructtreeid});
 			if(data.isSuccess == '1'){
 				platformStruct_combo.set('data',data.result);
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert('提示',data.message);
 		}
 		if(!isexist1 || !isexist2){
-			Edo.MessageBox.alert("查询前置任务输出结果出错，请联系管理员！");
+			Edo.MessageBox.alert('提示',"查询前置任务输出结果出错，请联系管理员！");
 		}
 	}
 
@@ -644,5 +644,4 @@ function createPlatformStruct(){
 	};
 	
 	//platformStructTask(3148);
-	createPlatformStruct_check(742);
 }

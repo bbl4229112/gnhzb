@@ -1,4 +1,4 @@
-function createOrdermanage_check(orderId){
+function createOrdermanage_check(){
 	var inputparam=new Array();
 	var outputparam=new Array();
 	this.initinputparam=function(param){

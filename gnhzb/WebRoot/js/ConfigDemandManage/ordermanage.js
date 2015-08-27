@@ -389,7 +389,6 @@ function createOrdermanage(){
 		return Table;
 	};
 	
-	createOrdermanage_check(882);
 }
 	
 	

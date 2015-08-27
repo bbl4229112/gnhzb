@@ -26,7 +26,7 @@ function createCodeClassStructManage(){
 				break;
 			}
 		if(!isexist){
-			Edo.MessageBox.alert('对应的编码结构树不存在');
+			Edo.MessageBox.alert("提示",'对应的编码结构树不存在');
 			return null;
 		}
 		return outputparam;
@@ -77,7 +77,7 @@ function createCodeClassStructManage(){
 					children : lbdhTreeData
 				} ]);
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert("提示",data.message);
 		}else{
 			var lbdhTreeData = cims201.utils
 				.getData('classificationtree/classification-tree!getClassStruct.action');
@@ -90,7 +90,7 @@ function createCodeClassStructManage(){
 				expanded : true,
 				children : lbdhTreeData
 			} ]);
-			Edo.MessageBox.alert("查询前置任务输出结果出错，请联系管理员！");
+			Edo.MessageBox.alert("提示","查询前置任务输出结果出错，请联系管理员！");
 		}
 	}
 	var LbdhPanel =Edo.create({          
@@ -157,7 +157,7 @@ function createCodeClassStructManage(){
                 }
             ]	
 	});
-	/*
+	
 	var lbdhTreeData = cims201.utils
 			.getData('classificationtree/classification-tree!getClassStruct.action');
 	for ( var i = 0; i < lbdhTreeData.length; i++) {
@@ -168,7 +168,7 @@ function createCodeClassStructManage(){
 		icon : 'e-tree-folder',
 		expanded : true,
 		children : lbdhTreeData
-	} ]);*/
+	} ]);
 	
 	//分类结构
 	var FljgPanel = Edo.create({		

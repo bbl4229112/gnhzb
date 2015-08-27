@@ -1,4 +1,4 @@
-function createCodeClassManage_check(codeClassId){
+function createCodeClassManage_check(){
 	var inputparam=new Array();
 	var outputparam=new Array();
 	this.initinputparam=function(param){

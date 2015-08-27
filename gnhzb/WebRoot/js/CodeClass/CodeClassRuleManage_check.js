@@ -1,4 +1,4 @@
-function createCodeClassRuleManage_check(codeClassId){
+function createCodeClassRuleManage_check(){
 	
 //	var ruleData = cims201.utils.getData('classificationtree/classification-tree!getRuleByClassificationTreeId.action',{id:codeClassId});
 //	var ruleObj =  Edo.util.JSON.decode(ruleData.rule);
@@ -27,10 +27,11 @@ function createCodeClassRuleManage_check(codeClassId){
 			}
 		}
 		if(isexist){
-			var data = cims201.utils.getData('classificationtree/classification-tree!getRuleByClassificationTreeId.action',{id:codeclassrulemanagecodeclassid});
+			var data = cims201.utils.getData('codeclass/code-class!getRuleByCodeClassId.action',{id:codeclassrulemanagecodeclassid});
 			console.log(data);
 			if(data.isSuccess == '1'){
-				CodeClassRuleManageTree_check_window.set("data",data.result.rule);
+				var ruleObj =  Edo.util.JSON.decode(data.result.rule);
+				CodeClassRuleManageTree_check.set("data",ruleObj);
 			}
 			Edo.MessageBox.alert("提示",data.message);
 		}else{
@@ -64,7 +65,7 @@ function createCodeClassRuleManage_check(codeClassId){
 			        }
 			    ],
 			    //data:[{'text':'分类码 首字段：T','value':'0:T'},{'text':'分类码 第【1】层 字符型，长度：5','value':'1:C5'},{'text':'分类码 第【2】层 字符型，长度：5','value':'2:C5'},{'text':'分类码 第【3】层 字符型，长度：5','value':'3:C5'}]
-			    data:ruleObj
+			    //data:ruleObj
 			}]
 		});
 	}

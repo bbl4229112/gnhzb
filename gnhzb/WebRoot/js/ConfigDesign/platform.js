@@ -11,6 +11,14 @@ function createPlatform(){
 		
 	}
 	this.submitResult=function(){
+		for(var i=0;i<outputparam.length;i++){
+			if(outputparam[i].value == '' || outputparam[i].value == null ||outputparam[i].value == 'null'){
+				Edo.MessageBox.alert("提示",'输出参数值不完整');
+				return null;
+			}
+				
+		}
+		
 		return outputparam;
 	}
 	this.inittask=function(){
@@ -202,7 +210,5 @@ function createPlatform(){
 	this.getPanel =function(e){
 		return panel;
 	};
-	//审批测试
-	createPlatform_check(741);
 
 }

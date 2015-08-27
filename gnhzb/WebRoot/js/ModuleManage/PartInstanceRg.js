@@ -101,7 +101,7 @@ function createPartInstanceRg(){
 				break;
 			}
 		if(!isexist){
-			Edo.MessageBox.alert('对应的编码结构树不存在');
+			Edo.MessageBox.alert("提示",'对应的编码结构树不存在');
 			return null;
 		}
 		return outputparam;
@@ -124,10 +124,10 @@ function createPartInstanceRg(){
 			}else{
 				PartInstanceRgClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert("提示",data.message);
 		}else{
 			PartInstanceRgClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
-			Edo.MessageBox.alert("查询前置任务输出结果出错，请联系管理员！");
+			Edo.MessageBox.alert("提示","查询前置任务输出结果出错，请联系管理员！");
 		}
 	}
 

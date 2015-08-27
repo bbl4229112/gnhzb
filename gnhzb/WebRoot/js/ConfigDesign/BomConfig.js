@@ -126,9 +126,6 @@ function createBomConfig(){
 	            }
 	        ]
 	});
-	function bomConfig_platformTableTask(platformId){
-		BomConfig_platformTable.set('data',cims201.utils.getData('platform/platform-manage!getFinishedPlatformById.action',{id:platformId}));
-	}
 	var platForm = Edo.create({	
 			id:'BomConfig_platStructPanel',
 	        type: 'panel',
@@ -148,7 +145,6 @@ function createBomConfig(){
 	        					return;
 	        				}
 	        				var win = showPlatformWin();
-	        				bomConfig_platformTableTask(741);
 	        				if(BomConfig_platformTabledata==null){
 	        					BomConfig_platformTable.set('data',cims201.utils.getData('platform/platform-manage!getFinishedPlatform.action'));
 	        				}else{

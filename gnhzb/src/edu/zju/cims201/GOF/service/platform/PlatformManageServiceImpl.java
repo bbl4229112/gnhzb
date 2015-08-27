@@ -86,10 +86,11 @@ public class PlatformManageServiceImpl implements PlatformManageService{
 		map.put("isSuccess", "1");
 		map.put("message", "平台创建成功！");
 		List<HashMap<String, String>> resultlist=new ArrayList<HashMap<String,String>>();
+		HashMap<String, String> resultitem1=new HashMap<String, String>();
 		HashMap<String, String> resultitem=new HashMap<String, String>();
 		resultitem.put("name", "platformmanageid");
 		resultitem.put("value", String.valueOf(plat.getId()));
-		HashMap<String, String> resultitem1=new HashMap<String, String>();
+		resultlist.add(resultitem);
 		resultitem1.put("name", "platstructtreeid");
 		resultitem1.put("value", String.valueOf(pst.getId()));
 		resultlist.add(resultitem1);

@@ -53,7 +53,6 @@ function createPlatformStruct_check(){
 //			title:'平台结构审批',
 			width:700,
 			height:300,
-            render: document.body,
 //            titlebar: [
 //                {                  
 //                    cls:'e-titlebar-close',

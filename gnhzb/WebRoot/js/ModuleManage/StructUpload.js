@@ -104,7 +104,7 @@ function createStructUpload(){
 				break;
 			}
 		if(!isexist){
-			Edo.MessageBox.alert('对应的编码结构树不存在');
+			Edo.MessageBox.alert("提示",'对应的编码结构树不存在');
 			return null;
 		}
 		return outputparam;
@@ -127,10 +127,10 @@ function createStructUpload(){
 			}else{
 				StructUploadClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert("提示",data.message);
 		}else{
 			StructUploadClassNameCombo.set('data',cims201.utils.getData('classificationtree/classification-tree!getClassStruct.action'));
-			Edo.MessageBox.alert("查询前置任务输出结果出错，请联系管理员！");
+			Edo.MessageBox.alert("提示","查询前置任务输出结果出错，请联系管理员！");
 		}
 	}
 
@@ -421,10 +421,10 @@ function createStructUpload(){
 			        	  id:'StructUpload_UploadModel',
 			        	  width:'200',
 			              swfUploadConfig: {              
-			                  upload_url: 'draft/upload-model!uploadModel.action', 
-			                  flash_url : 'js/swfupload/swfupload.swf',
-			                  flash9_url : "js/swfupload/swfupload_fp9.swf",
-			                  button_image_url : 'js/swfupload/XPButtonNoText_61x22.png',     
+			                  upload_url: '/gnhzb/draft/upload-model!uploadModel.action', 
+			                  flash_url : '/gnhzb/js/swfupload/swfupload.swf',
+			                  flash9_url : "/gnhzb/js/swfupload/swfupload_fp9.swf",
+			                  button_image_url : '/gnhzb/js/swfupload/XPButtonNoText_61x22.png',     
 			                  button_text : '<span class="browseButton">浏&nbsp;览</span>',       
 			                  button_text_style : '.browseButton {text-align: center;font-weight: bold; font-size: 12pt;}', 
 			                  file_types: '*',                       

@@ -19,7 +19,6 @@ function createCodeClassManage(){
 		var isexist=false;
 		for(var i=0;i<inputparam.length;i++){
 			if(inputparam[i].name == 'codeclassid'){
-				alert('存在输入参数');
 				isexist=true;
 				codeClassId=inputparam[i].value;
 				break;
@@ -35,12 +34,12 @@ function createCodeClassManage(){
 					cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClass.action')
 				);
 			}
-			Edo.MessageBox.alert(data.message);
+			Edo.MessageBox.alert('提示',data.message);
 		}else{
 			addClassCombo.set('data',
 				cims201.utils.getData('codeclass/code-class!findUnConstructedCodeClass.action')
 			);
-			Edo.MessageBox.alert("查询前置任务输出结果出错，请联系管理员！");
+			Edo.MessageBox.alert('提示',"查询前置任务输出结果出错，请联系管理员！");
 		}
 	}
 	 var topBar = Edo.create({

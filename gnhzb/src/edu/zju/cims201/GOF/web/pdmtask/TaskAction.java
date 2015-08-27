@@ -424,7 +424,7 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 		map.put("id", node.getId());
 		map.put("name", p.getName());	
 		map.put("des", node.getNodeDescription());	
-		map.put("url", node.getUrl());
+		map.put("url", node.getUrl().trim());
 		map.put("status", t.getStatus());
 		map.put("processtemplateid", p.getId());
 		map.put("code", node.getCode());	
@@ -432,6 +432,7 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 		List<HashMap<String, String>> Outparamlist=new ArrayList<HashMap<String, String>>();
 		List<TaskIOParam> params=taskService.getTaskParamsByTask(Long.valueOf(taskid),-1);
 		List<PdmProjectValuePool> items=taskService.getPdmProjectValuePools(t.getPdmProject().getId());
+		List<TaskIOParam> updateparams=new ArrayList<TaskIOParam>();
 		for(TaskIOParam param:params){
 			HashMap<String, String> parammap=new HashMap<String, String>();
 			parammap.put("descri", param.getDescri());
@@ -439,7 +440,7 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 			if(param.getIotype()==1){
 				parammap.put("type", "1");
 				if(StringUtils.isEmpty(param.getValue())){
-					updateparamvalue(param,items);
+					updateparamvalue(param,items,updateparams);
 				}
 				parammap.put("value", param.getValue());
 				Inparamlist.add(parammap);
@@ -450,16 +451,18 @@ public class TaskAction extends CrudActionSupport<LcaTask> implements
 			}
 			
 		}
+		taskService.saveIoPrams(updateparams);
 		map.put("Inparamlist", Inparamlist);
 		map.put("Outparamlist", Outparamlist);
     	ObjectMapper objectMapper = new ObjectMapper();	
 	    objectMapper.writeValue(response.getWriter(),map);
     }
-    public void updateparamvalue(TaskIOParam param,List<PdmProjectValuePool> items){
+    public void updateparamvalue(TaskIOParam param,List<PdmProjectValuePool> items,List<TaskIOParam> updateparams){
     	PdmProject project=param.getTask().getPdmProject();
     	for(PdmProjectValuePool item : items){
     		if(item.getName().equals(param.getName()) && !StringUtils.isEmpty(item.getValue())){
     			param.setValue(item.getValue());
+    			updateparams.add(param);
         	}
     	}
     }
